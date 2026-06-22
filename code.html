@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en-GB"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scotland 247 Taxis | Reliable Airport Transfers Across Scotland</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed": "#261900",
+                "charcoal-text": "#2D2D2D",
+                "surface-container-lowest": "#ffffff",
+                "primary-container": "#0a1d37",
+                "on-secondary-container": "#785a1a",
+                "warm-amber": "#D4AF37",
+                "on-error-container": "#93000a",
+                "secondary-container": "#fed488",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#001b3c",
+                "primary-fixed": "#d6e3ff",
+                "on-primary-fixed": "#081c36",
+                "secondary-fixed": "#ffdea5",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#2e3132",
+                "tertiary-container": "#011d3e",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "mist-white": "#F8F9FA",
+                "error-container": "#ffdad6",
+                "deep-navy": "#0A1D37",
+                "on-primary-container": "#7586a5",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-fixed-variant": "#5d4201",
+                "on-background": "#191c1d",
+                "error": "#ba1a1a",
+                "surface-bright": "#f8f9fa",
+                "on-surface": "#191c1d",
+                "surface-tint": "#4e5f7c",
+                "on-surface-variant": "#44474d",
+                "on-secondary": "#ffffff",
+                "inverse-primary": "#b6c7e9",
+                "on-tertiary-container": "#6f86ac",
+                "secondary-fixed-dim": "#e9c176",
+                "primary": "#00030a",
+                "tertiary-fixed-dim": "#b0c7f1",
+                "secondary": "#775a19",
+                "surface-dim": "#d9dadb",
+                "surface-variant": "#e1e3e4",
+                "prestige-gold": "#C5A059",
+                "tertiary": "#00030b",
+                "surface-container": "#edeeef",
+                "tertiary-fixed": "#d5e3ff",
+                "outline": "#75777e",
+                "surface-container-high": "#e7e8e9",
+                "on-primary-fixed-variant": "#364763",
+                "on-tertiary-fixed-variant": "#30476a",
+                "background": "#f8f9fa",
+                "primary-fixed-dim": "#b6c7e9",
+                "surface-container-low": "#f3f4f5",
+                "outline-variant": "#c5c6ce",
+                "surface": "#f8f9fa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-desktop": "48px",
+                "stack-lg": "32px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "stack-md": "16px",
+                "stack-sm": "8px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Playfair Display"],
+                "label-sm": ["Montserrat"],
+                "body-md": ["Montserrat"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "title-md": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .luxury-shadow { box-shadow: 0 4px 20px rgba(10,29,55,0.05); }
+        .hero-gradient { background: linear-gradient(135deg, rgba(10,29,55,0.88) 0%, rgba(10,29,55,0.5) 55%, rgba(10,29,55,0.78) 100%); }
+
+        /* Ken Burns */
+        @keyframes kenburns { 0%{transform:scale(1)} 100%{transform:scale(1.08)} }
+        .ken-burns { animation: kenburns 20s linear infinite alternate; }
+        @media(max-width:768px){.ken-burns{animation:none!important}}
+
+        /* Scroll progress bar */
+        #scroll-progress {
+            position:fixed;top:0;left:0;height:3px;z-index:9999;width:0%;
+            background:linear-gradient(90deg,#C5A059,#f0d080,#D4AF37);
+            box-shadow:0 0 10px rgba(197,160,89,0.7);
+            transition:width 0.08s linear;
+        }
+
+        /* Glassmorphism Navbar */
+        header {
+            background:rgba(248,249,250,0.88)!important;
+            backdrop-filter:blur(24px) saturate(180%);
+            -webkit-backdrop-filter:blur(24px) saturate(180%);
+            border-bottom:1px solid rgba(197,160,89,0.12)!important;
+            transition:all 0.45s cubic-bezier(0.16,1,0.3,1)!important;
+        }
+        header.scrolled {
+            background:rgba(10,29,55,0.96)!important;
+            border-bottom:1px solid rgba(197,160,89,0.25)!important;
+            box-shadow:0 8px 50px rgba(10,29,55,0.4)!important;
+        }
+        header.scrolled nav a { color:rgba(248,249,250,0.85)!important; }
+        header.scrolled nav a:hover { color:#C5A059!important; }
+
+        /* Gold shimmer */
+        @keyframes goldShimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+        .text-prestige-gold {
+            background:linear-gradient(90deg,#C5A059 0%,#f0d48a 40%,#C5A059 60%,#a07830 100%);
+            background-size:250% auto;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            animation:goldShimmer 4s linear infinite;
+        }
+
+        /* Nav underline */
+        .nav-link-underline { position:relative; }
+        .nav-link-underline::after {
+            content:'';position:absolute;width:100%;transform:scaleX(0);
+            height:2px;bottom:-4px;left:0;background-color:#C5A059;
+            transform-origin:bottom left;transition:transform 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .nav-link-underline:hover::after { transform:scaleX(1); }
+
+        /* Route link underline */
+        .route-link-underline { position:relative; }
+        .route-link-underline::after {
+            content:'';position:absolute;width:100%;transform:scaleX(0);
+            height:1px;bottom:-2px;left:0;background-color:#C5A059;
+            transform-origin:bottom left;transition:transform 0.25s ease-out;
+        }
+        .group:hover .route-link-underline::after { transform:scaleX(1); }
+
+        /* Floating ambient orbs */
+        @keyframes floatOrb { 0%,100%{transform:translateY(0) scale(1);opacity:0.6} 50%{transform:translateY(-28px) scale(1.06);opacity:0.9} }
+        .hero-orb {
+            position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;
+        }
+        .hero-orb-1 {
+            width:350px;height:350px;
+            background:radial-gradient(circle,rgba(197,160,89,0.22) 0%,transparent 70%);
+            top:5%;left:3%;
+            animation:floatOrb 9s ease-in-out infinite;
+        }
+        .hero-orb-2 {
+            width:450px;height:450px;
+            background:radial-gradient(circle,rgba(10,29,55,0.35) 0%,transparent 70%);
+            bottom:0;right:5%;
+            animation:floatOrb 11s ease-in-out infinite;animation-delay:-5s;
+        }
+        .hero-orb-3 {
+            width:220px;height:220px;
+            background:radial-gradient(circle,rgba(212,175,55,0.12) 0%,transparent 70%);
+            top:50%;right:30%;
+            animation:floatOrb 7s ease-in-out infinite;animation-delay:-3s;
+        }
+
+        /* Particle canvas */
+        #particle-canvas { position:absolute;inset:0;pointer-events:none;z-index:2; }
+
+        /* Form glow pulse */
+        @keyframes borderGlow {
+            0%,100%{box-shadow:0 0 22px rgba(197,160,89,0.15),0 20px 60px rgba(10,29,55,0.15)}
+            50%{box-shadow:0 0 40px rgba(197,160,89,0.32),0 20px 60px rgba(10,29,55,0.22)}
+        }
+        .hero-form-card { animation:borderGlow 3.5s ease-in-out infinite; border-radius:6px; }
+
+        /* Input gold focus */
+        input:focus,select:focus {
+            outline:none!important;border-color:#C5A059!important;
+            box-shadow:0 0 0 3px rgba(197,160,89,0.18),inset 0 1px 3px rgba(10,29,55,0.04)!important;
+            transition:all 0.25s ease!important;
+        }
+
+        /* Feature cards */
+        .feature-card {
+            transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s ease,background 0.35s ease,border-color 0.35s ease;
+            padding:2rem 1.5rem;border-radius:14px;border:1px solid transparent;
+        }
+        .feature-card:hover {
+            transform:translateY(-10px);
+            box-shadow:0 28px 60px rgba(10,29,55,0.13),0 0 0 1px rgba(197,160,89,0.22);
+            background:white;border-color:rgba(197,160,89,0.2);
+        }
+        .feature-icon {
+            display:inline-flex;align-items:center;justify-content:center;
+            width:68px;height:68px;border-radius:50%;
+            background:rgba(197,160,89,0.08);margin-bottom:1.25rem;
+            transition:all 0.35s ease;
+        }
+        .feature-card:hover .feature-icon {
+            background:rgba(197,160,89,0.18);
+            transform:scale(1.12) rotate(6deg);
+            box-shadow:0 8px 28px rgba(197,160,89,0.25);
+        }
+
+        /* Route cards */
+        .route-card {
+            border-radius:10px;overflow:hidden;
+            transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s ease;
+        }
+        .route-card:hover {
+            transform:translateY(-12px) scale(1.015);
+            box-shadow:0 40px 80px rgba(10,29,55,0.45),0 0 0 1px rgba(197,160,89,0.4);
+        }
+
+        /* Testimonial cards */
+        .testimonial-card {
+            transition:transform 0.3s ease,box-shadow 0.3s ease;border-radius:8px;
+        }
+        .testimonial-card:hover {
+            transform:translateY(-6px);
+            box-shadow:0 22px 55px rgba(10,29,55,0.14),0 0 0 1px rgba(197,160,89,0.18);
+        }
+
+        /* FAQ premium */
+        .faq-item { border:1px solid transparent;transition:all 0.3s ease;border-radius:8px; }
+        .faq-item:hover { border-color:rgba(197,160,89,0.15); }
+        .faq-item.faq-open {
+            background:white!important;
+            box-shadow:0 10px 40px rgba(10,29,55,0.1),0 0 0 1px rgba(197,160,89,0.2)!important;
+            border-color:rgba(197,160,89,0.2)!important;
+        }
+
+        /* CTA button shimmer */
+        .btn-shimmer { position:relative;overflow:hidden; }
+        .btn-shimmer::after {
+            content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;
+            background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.18) 50%,rgba(255,255,255,0) 100%);
+            transform:skewX(-20deg);transition:left 0.6s ease;
+        }
+        .btn-shimmer:hover::after { left:125%; }
+
+        /* Stats bar */
+        .stats-bar {
+            background:linear-gradient(135deg,#0A1D37 0%,#0d2545 50%,#0A1D37 100%);
+            border-top:1px solid rgba(197,160,89,0.2);
+            border-bottom:1px solid rgba(197,160,89,0.2);
+        }
+
+        /* Pulse dot */
+        @keyframes pulseDot {
+            0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.5)}
+            50%{box-shadow:0 0 0 10px rgba(197,160,89,0)}
+        }
+        .pulse-dot {
+            width:8px;height:8px;background:#C5A059;border-radius:50%;
+            display:inline-block;animation:pulseDot 2s ease-out infinite;
+        }
+
+        /* Gold animated divider */
+        @keyframes dividerShimmer {
+            0%{background-position:-200% center}
+            100%{background-position:200% center}
+        }
+        .gold-divider-animated {
+            height:2px;border:none;
+            background:linear-gradient(90deg,transparent,#C5A059,#D4AF37,#C5A059,transparent);
+            background-size:200% auto;
+            animation:dividerShimmer 3s linear infinite;
+        }
+
+        /* Footer premium */
+        footer { background:linear-gradient(180deg,#0A1D37 0%,#06111f 100%)!important; }
+
+        /* Prefers reduced motion */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after {
+                animation:none!important;transition-property:opacity!important;transform:none!important;
+            }
+        }
+
+        /* Section overflow for orbs */
+        #home { overflow:hidden!important; }
+    </style>
+</head>
+<body class="bg-mist-white text-charcoal-text font-body-md selection:bg-prestige-gold selection:text-deep-navy">
+<!-- TopNavBar -->
+<header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="#home" class="flex items-center">
+                <img src="logo.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
+            </a>
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-prestige-gold border-b-2 border-prestige-gold pb-1 font-body-md text-body-md" href="#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#popular-routes">Airports</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#quote">Executive</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#reviews">Reviews</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#faq">FAQ</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a class="hidden sm:flex items-center px-4 py-2 bg-deep-navy text-mist-white font-label-sm text-label-sm hover:bg-[#152e52] hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="tel:+447469598219">
+                    Call Now
+                </a>
+<a class="flex items-center px-4 py-2 bg-prestige-gold text-deep-navy font-label-sm text-label-sm hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="https://wa.me/447469598219">
+                    WhatsApp
+                </a>
+<button class="lg:hidden text-deep-navy">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section id="home" class="relative min-h-[870px] flex items-center justify-center overflow-hidden bg-[#788696]">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="A luxury black executive sedan parked on a winding road in the Scottish Highlands, with rolling green hills and a dramatic misty sky in the background, conveying a sense of premium travel and reliability." class="w-full h-full object-cover ken-burns" data-alt="A luxury black executive sedan parked on a scenic winding road overlooking the Scottish Highlands at twilight. The sky is a palette of deep blues and purples, mirroring the prestige-gold and deep-navy branding. Soft golden light from the setting sun glints off the polished car body, emphasizing premium reliability. The atmosphere is quiet, professional, and tranquil, reflecting a high-end editorial automotive photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuKbHxu5XlQt3abV-eKUlhK7rXgY8HEgkQrlBu1Eqv7sN7Ib-kF4Hqr-xGiaBou6XPAcS6RnD1MK9dky1YSemI9zcK9f-4OOmRQ2QH6oweXSCPKkNgxMIvhzQQw4rC269XzU4J9BvzY5HwTyqT2EGcNCTQCziw499DU7K43to5G9rq3uQ1oQxWQ1s4_1dwzCNhvMFiOsL59_A0lNtuPGK3bDQ160D4IT585Ayi6GLm0KkSTl2AsFVJEEh4V9zyEYVqHApI1g-Pm6-K"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h1 class="font-display-lg text-display-lg text-mist-white leading-tight overflow-hidden">
+                        <span class="block hero-headline-line">Reliable Airport Transfers</span>
+                        <span class="block hero-headline-line text-prestige-gold">Across Scotland</span>
+</h1>
+<p class="font-body-lg text-body-lg text-mist-white/90 max-w-xl hero-subtext">
+                        Fixed pricing, professional drivers, flight tracking &amp; 24/7 support wherever you need to go, we get you there on time.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start hero-cta">
+<a class="px-8 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber transition-colors" href="#quote">
+                            Get Instant Quote
+                        </a>
+<a class="px-8 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy transition-all" href="#">
+                            WhatsApp Us
+                        </a>
+</div>
+</div>
+<!-- Bento-style Form Container -->
+<div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold hero-form-card" id="quote">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-6">Get Your Fixed Price Quote</h2>
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Pickup Location</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" required/>
+</div>
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Drop-off Location</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Date</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Time</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Passengers</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors">
+<option>1-4</option>
+<option>5-8</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Luggage Pieces</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors">
+<option>1-2 Bags</option>
+<option>3-4 Bags</option>
+<option>5+ Bags</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Flight Number</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" required/>
+</div>
+
+<!-- Vehicle Selection Component -->
+<div class="col-span-2 mt-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-2 block">Select Vehicle Type</label>
+<div class="grid grid-cols-3 gap-3">
+<!-- Standard Card -->
+<div id="vehicle-standard" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('standard')">
+<div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-standard">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<img src="standard_sedan.png" alt="Standard Sedan" class="w-full h-16 object-contain mb-2"/>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Standard</span>
+<span class="text-[11px] text-on-surface-variant block">1-4 Pax</span>
+</div>
+</div>
+<!-- Executive Card -->
+<div id="vehicle-executive" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('executive')">
+<div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-executive">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<img src="executive_sedan.png" alt="Executive Sedan" class="w-full h-16 object-contain mb-2"/>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Executive</span>
+<span class="text-[11px] text-on-surface-variant block">1-4 Pax / Luxury</span>
+</div>
+</div>
+<!-- Van Card -->
+<div id="vehicle-van" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('van')">
+<div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-van">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<img src="premium_van.png" alt="Premium Van" class="w-full h-16 object-contain mb-2"/>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Van</span>
+<span class="text-[11px] text-on-surface-variant block">5-8 Pax</span>
+</div>
+</div>
+</div>
+<input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
+</div>
+
+<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#152e52] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
+                            Get My Fixed Quote
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section id="features-section" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Why Thousands of Passengers Choose Scotland 247 Taxis</h2>
+<div class="w-24 h-1 bg-prestige-gold mx-auto mb-16"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">payments</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Fixed Pricing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enjoy peace of mind with a guaranteed price at the time of booking. We never charge extra for traffic or peak times, ensuring full transparency for every journey.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">flight_takeoff</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Flight Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We monitor your flight's status in real-time, adjusting pickup times for delays or early arrivals so your driver is always there when you land.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">verified_user</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Professional Licensed Drivers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our team consists of fully vetted, experienced professionals with expert knowledge of Scotland’s roads, committed to your safety and comfort.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">support_agent</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">24/7 Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Whether it’s an early morning flight or a late-night arrival, our dedicated support team is available around the clock to assist with your booking.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">person_pin_circle</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Meet &amp; Greet Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver will meet you in the arrivals hall with a clear name board, assisting with your luggage for a seamless transition from plane to car.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">price_check</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">No Hidden Charges</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">What we quote is what you pay. We include all airport drop-off and pickup fees in our fixed prices, so there are never any surprises.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Routes -->
+<section id="popular-routes" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Most Popular Routes</h2>
+<div class="w-24 h-1 bg-prestige-gold"></div>
+</div>
+<p class="font-body-lg text-body-lg text-mist-white/70 max-w-md">Reliable door-to-door service to and from Scotland's major hubs and scenic destinations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="routes-grid">
+<!-- Route Card -->
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="The historic Edinburgh skyline viewed from a distance during the golden hour, symbolizing the route between Perth and Edinburgh Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A cinematic wide shot of the Edinburgh skyline at golden hour, featuring the castle perched on its volcanic rock against a sky of orange and deep blue. The lighting is warm and high-contrast, creating an editorial feel. The image represents the premium nature of the Perth to Edinburgh airport transfer, focusing on luxury and historical beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCugXYvNRR8Jj4ClE8RhHcPSIM21DRMlhmLTujf5LN7VUEuN5B8AAMXNQTt59qos8r8MzKltnxH8Q7W5vo_erFs3eH-8-ORYjYhGkeKKaF27sTAS9AqGukrr4JKnQv15Ca8cN1XUTQqVAYR6xXtXWm_tTR4URQTGe7xKuvc6mG6Zs8KFrGXSbj3RIJIdcK4EkJZxCOJFMGRChSZ6RCrCysN8wBcZd_beHv4AEvo7qBfwcnLbtxlp5WwFOv-fJ47tEgp2RtXkMXDT4pb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Perth to Edinburgh Airport</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experience a stress-free transfer directly to the terminal in approx. 1h 15m.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="Modern architecture of Glasgow city centre reflecting in the Clyde river, representing the transfer to Glasgow Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A modern, sharp architectural photograph of the Glasgow Riverside Museum and the surrounding cityscape at night. Vivid artificial lights reflect off the dark river water, creating a vibrant, high-energy atmosphere. The color palette is dominated by deep navy blues and sharp whites, perfectly matching the professional and modern brand identity of Scotland 247 Taxis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfFMbCWqecucttEFiswAETClGPqukTXi-utxx8_c5ivrdnxw5DAqcBRNARZ6Tlzbz8hd8ed2a5ALnuWes4wHWW-cB_wJwmC-mIbJceRQQE5N6_6Y5qViJKHmQBtlOIg7ABDIRahBJX6lEyeMoQKNeXwwom5jEMa04X1Lsh5yKo8bID2-NBNm14s7g9SFZ-ZvjPJZvu12D7B4j0YkvO1gHNa8KHpLLKqQ9wP9gCDklCNgsLAq2PN0l0yH_cz9vSbS7PLbaA9lIFecu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Perth to Glasgow Airport</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Reliable door-to-door service, ensuring you arrive relaxed for your flight.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="The Old Course in St Andrews with the iconic bridge and historic buildings in the background, representing the route from Edinburgh." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="An expansive, lush view of the iconic Old Course in St Andrews on a bright, clear day. The vibrant green turf contrasts beautifully with the ancient grey stone architecture of the town in the distance. The lighting is crisp and bright, conveying a sense of prestige and history. Perfect for representing the premier travel route for golfers and high-end visitors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAEEPcuZTAkVMDCe5bY7fCuMpbZaD_YbIoawW1b0z6iFeIvgKPRQYA1xITRijenoNMy4tOyzsz_WgMlVk1f0TVfV3pV1HH3dbCB23aQ8SRKlYoDOR6wZvoOUqJjrSThAo4mLeWJOXxWZiVPsUMSJ94rY59EGpIdOXv9GPXbq83MQTtrKnRbKFduGlusUHrfhzlkQHgvApfanuprmD98smPo4J2BRK3T69EjgaLSgeTTthcUvmNUM4fwwMu_kShQA-G_wWVHiuNISRn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Edinburgh to St Andrews</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">The premier choice for golfers with plenty of room for clubs and luggage.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="A serene view of the River Tay in Perth, Scotland, under a soft morning mist." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A serene landscape of the River Tay flowing through the heart of Perth, Scotland. The bridge is illuminated by soft dawn light, casting long shadows and reflections on the calm water. The palette is muted and sophisticated, with hints of grey, navy, and soft gold, evoking the calm and reliable journey offered by Scotland 247 Taxis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2xp8vi8bi2GC8M5U7RKvqNLK3lfh8upu1cQdFMTgjMtRxoBfUc9VBdsDS5D__68ROjMNP4qNK8rQ1_hF8VChg4job5jC1J85uXHH6QTBKXNgFA-ss_33mTanrr1S_EK8hzUezn4gDA8SVUu4hpEw--jsFVaa-ZFYXyN2BOVtBOD5zsxlwumfn-sfJvUEarUZ5gKQZMcg59XgbfzVs6uEZwY9P_LlWKz9dWVx9khVaalnjsyJTgKnvXEhfbF4Mg0s0w8vjwUwVe6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Glasgow to Perth</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Professional private hire service for those travelling between the West Coast and heart of Scotland.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section id="reviews" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-16">What Our Passengers Say</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Review Card 1 -->
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
+<div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
+<div>
+<div class="flex text-prestige-gold mb-4">
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Incredibly punctual service for my early morning flight to Edinburgh. The driver was professional and the car was immaculate."</p>
+</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">David M., Perth</p>
+</div>
+<!-- Review Card 2 -->
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
+<div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
+<div>
+<div class="flex text-prestige-gold mb-4">
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"The meet and greet was seamless. Our driver was waiting right where he said he’d be and helped us with all four of our large suitcases."</p>
+</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Sarah L., St Andrews</p>
+</div>
+<!-- Review Card 3 -->
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
+<div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
+<div>
+<div class="flex text-prestige-gold mb-4">
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Fixed pricing is a huge plus for my company expenses. Excellent 24/7 support too. Always discreet and professional."</p>
+</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">James W., Glasgow</p>
+</div>
+<!-- Review Card 4 -->
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
+<div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
+<div>
+<div class="flex text-prestige-gold mb-4">
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Brilliant service for a long-distance transfer. The flight tracking gave me such peace of mind knowing they were monitoring my journey."</p>
+</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Emma R., Inverness</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-mist-white">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-16">Booking Your Transfer Is Simple</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative steps-container">
+<!-- Connection Line -->
+<div class="hidden md:block absolute top-12 left-[16.67%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-1 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[50%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-2 origin-left scale-x-0"></div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-1 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">1</span>
+</div>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Request a Quote</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your journey details on our website or send us a quick message via WhatsApp to receive your fixed price quote instantly.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-2 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">2</span>
+</div>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Confirm Your Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Once you're happy with the price, confirm your booking through our secure system. You'll receive immediate confirmation.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-3 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">3</span>
+</div>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Sit Back and Enjoy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver will arrive promptly. Relax in our premium vehicles and enjoy a smooth, professional journey to your destination.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq" class="py-24 bg-surface-container px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-12 faq-header">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- Accordion 1 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            Do you track flights?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Yes, we monitor all flights in real-time using live tracking data. If your flight is delayed or arrives early, your driver will automatically adjust their arrival time at no extra cost.
+                        </p>
+</div>
+</div>
+<!-- Accordion 2 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            Are your prices fixed with no hidden charges?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                            Absolutely. The price we quote you is the final price you pay. This includes all airport fees, tolls, and taxes—there are never any hidden surprises.
+                        </p>
+</div>
+</div>
+<!-- Accordion 3 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            Can I pre-book in advance?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                            We highly recommend pre-booking as early as possible to guarantee availability, especially during peak travel seasons. You can book months in advance or at short notice.
+                        </p>
+</div>
+</div>
+<!-- Accordion 4 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            Do you cover all of Scotland?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                            Yes, while we have popular routes, we provide transfers to and from any location in Scotland, including all major cities, airports, and remote Highland destinations.
+                        </p>
+</div>
+</div>
+<!-- Accordion 5 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            What payment methods do you accept?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                            We accept all major credit and debit cards, as well as cash. For your convenience, we can also arrange secure payment links or corporate account invoicing.
+                        </p>
+</div>
+</div>
+<!-- Accordion 6 -->
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
+                            Do you offer meet and greet service?
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+</div>
+<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                            Yes, our standard airport service includes a professional meet and greet in the arrivals hall. Your driver will be waiting with a name board to assist you.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-deep-navy text-mist-white relative overflow-hidden cta-section">
+<div class="absolute top-0 right-0 w-64 h-64 bg-prestige-gold/5 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-prestige-gold/5 rounded-full -ml-48 -mb-48"></div>
+<div class="max-w-container-max mx-auto text-center px-margin-mobile relative z-10 cta-content">
+<h2 class="font-display-lg text-display-lg mb-6">Ready to Book Your Transfer?</h2>
+<p class="font-body-lg text-body-lg text-mist-white/80 max-w-2xl mx-auto mb-12">
+                    Experience the gold standard in Scottish private hire. Get in touch today for a fixed price quote and travel with confidence.
+                </p>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="px-10 py-5 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+                        Book Now
+                    </a>
+<a class="px-10 py-5 border border-prestige-gold text-prestige-gold font-title-md text-title-md hover:bg-prestige-gold hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+                        WhatsApp Us
+                    </a>
+<a class="px-10 py-5 border border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="tel:+447469598219">
+                        Call Us
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="contact" class="bg-deep-navy dark:bg-primary text-mist-white w-full py-stack-lg border-t border-mist-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="bg-white p-2 rounded-lg inline-block mb-4 shadow-sm">
+                    <img src="logo.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain"/>
+                </div>
+<p class="font-body-md text-body-md opacity-80 italic">Reliable Airport Transfers Across Scotland</p>
+<div class="flex space-x-4 mt-6">
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Contact</h4>
+<ul class="space-y-2 font-body-md text-body-md opacity-80">
+<li>Phone: 07469 598219</li>
+<li>WhatsApp: 07469 598219</li>
+<li>Email: info@scotland247taxis.co.uk</li>
+<li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Reviews</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Legal</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Accessibility</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-mist-white/10 text-center px-margin-mobile">
+<p class="font-body-md text-label-sm opacity-60">
+                © 2026 Scotland 247 Taxis. Premium Reliability in Every Mile. All rights reserved.
+            </p>
+</div>
+</footer>
+<!-- Micro-interaction Scripts & GSAP Animation Code -->
+<script>
+        // Vehicle Selection Toggle Function
+        function selectVehicle(type) {
+            document.getElementById('selected-vehicle').value = type;
+            const vehicles = ['standard', 'executive', 'van'];
+            vehicles.forEach(v => {
+                const card = document.getElementById('vehicle-' + v);
+                const check = document.getElementById('check-' + v);
+                if (v === type) {
+                    card.classList.remove('border-outline-variant');
+                    card.classList.add('border-prestige-gold');
+                    check.classList.remove('hidden');
+                    check.classList.add('flex');
+                    // Scale pop using GSAP
+                    if (window.gsap) {
+                        gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
+                    }
+                } else {
+                    card.classList.remove('border-prestige-gold');
+                    card.classList.add('border-outline-variant');
+                    check.classList.remove('flex');
+                    check.classList.add('hidden');
+                }
+            });
+        }
+
+        // FAQ Accordion Toggle Function
+        function toggleFaq(el) {
+            const content = el.querySelector('.faq-content');
+            const chevron = el.querySelector('.faq-chevron');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== el) {
+                    const c = item.querySelector('.faq-content');
+                    const ch = item.querySelector('.faq-chevron');
+                    c.style.maxHeight = null;
+                    ch.classList.remove('rotate-180');
+                    item.classList.remove('bg-surface-container-low', 'bg-white');
+                    item.classList.add('bg-mist-white');
+                }
+            });
+            
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = null;
+                chevron.classList.remove('rotate-180');
+                el.classList.remove('bg-surface-container-low', 'bg-white');
+                el.classList.add('bg-mist-white');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                chevron.classList.add('rotate-180');
+                el.classList.remove('bg-mist-white');
+                el.classList.add('bg-surface-container-low', 'bg-white');
+            }
+        }
+
+        // Initialize animations on window load
+        window.addEventListener('load', () => {
+            // Set scrollHeight for first open FAQ item
+            const firstFaq = document.getElementById('faq-first-item');
+            if (firstFaq) {
+                const content = firstFaq.querySelector('.faq-content');
+                const chevron = firstFaq.querySelector('.faq-chevron');
+                content.style.maxHeight = content.scrollHeight + "px";
+                chevron.classList.add('rotate-180');
+                firstFaq.classList.remove('bg-mist-white');
+                firstFaq.classList.add('bg-surface-container-low', 'bg-white');
+            }
+
+            // Simple parallax effect for hero image
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.hero-gradient').previousElementSibling;
+                if (heroImage && heroImage.tagName === 'IMG') {
+                    heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+
+            // Shrink header padding and shadow on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.remove('h-20');
+                    header.classList.add('h-16', 'shadow-md');
+                } else {
+                    header.classList.remove('h-16', 'shadow-md');
+                    header.classList.add('h-20');
+                }
+            });
+
+            // GSAP Animations
+            if (window.gsap && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Check for prefers-reduced-motion
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                if (!prefersReducedMotion) {
+                    // Stagger headline lines
+                    gsap.from(".hero-headline-line", {
+                        y: 40,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: "power3.out"
+                    });
+                    
+                    // Stagger subtext and CTAs
+                    gsap.from(".hero-subtext, .hero-cta", {
+                        y: 20,
+                        opacity: 0,
+                        duration: 0.8,
+                        delay: 0.4,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                    });
+                    
+                    // Slide in booking form card
+                    gsap.from(".hero-form-card", {
+                        x: 50,
+                        opacity: 0,
+                        duration: 0.9,
+                        delay: 0.2,
+                        ease: "power3.out"
+                    });
+
+                    // Scroll Reveal - Features Grid
+                    gsap.from(".feature-card", {
+                        scrollTrigger: {
+                            trigger: "#features-section",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                    });
+
+                    // Scroll Reveal - Popular Routes Grid
+                    gsap.from(".route-card", {
+                        scrollTrigger: {
+                            trigger: "#popular-routes",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                    });
+
+                    // Scroll Reveal - Testimonial Cards & Elements
+                    gsap.utils.toArray(".testimonial-card").forEach((card) => {
+                        let tl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top 85%",
+                                toggleActions: "play none none none"
+                            }
+                        });
+                        
+                        tl.from(card, {
+                            y: 30,
+                            opacity: 0,
+                            duration: 0.6,
+                            ease: "power2.out"
+                        });
+                        
+                        const border = card.querySelector(".border-left-accent");
+                        if (border) {
+                            tl.fromTo(border, { height: 0 }, { height: "100%", duration: 0.4, ease: "power1.inOut" }, "-=0.3");
+                        }
+                        
+                        const stars = card.querySelectorAll(".star-icon");
+                        if (stars.length > 0) {
+                            tl.from(stars, {
+                                scale: 0,
+                                opacity: 0,
+                                duration: 0.25,
+                                stagger: 0.06,
+                                ease: "back.out(2)"
+                            }, "-=0.2");
+                        }
+                    });
+
+                    // Scroll Reveal - Simple Steps Sequentials
+                    let stepsTl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".steps-container",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    });
+                    stepsTl.to(".step-number-1", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" })
+                           .to(".step-line-1", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
+                           .to(".step-number-2", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1")
+                           .to(".step-line-2", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
+                           .to(".step-number-3", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1");
+
+                    // Scroll Reveal - FAQ Header and Items
+                    gsap.from(".faq-header, .faq-item", {
+                        scrollTrigger: {
+                            trigger: "#faq",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 20,
+                        opacity: 0,
+                        duration: 0.5,
+                        stagger: 0.08,
+                        ease: "power2.out"
+                    });
+
+                    // Scroll Reveal - Final CTA
+                    gsap.from(".cta-content", {
+                        scrollTrigger: {
+                            trigger: ".cta-section",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: "power2.out"
+                    });
+                } else {
+                    // Fallback for prefers-reduced-motion (fade ins only, no layout/transforms)
+                    gsap.from(".hero-headline-line, .hero-subtext, .hero-cta, .hero-form-card", {
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.1
+                    });
+                    
+                    gsap.from(".feature-card", {
+                        scrollTrigger: {
+                            trigger: "#features-section",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from(".route-card", {
+                        scrollTrigger: {
+                            trigger: "#popular-routes",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from(".testimonial-card", {
+                        scrollTrigger: {
+                            trigger: "#reviews",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.to(".step-number-1, .step-number-2, .step-number-3", {
+                        opacity: 1,
+                        duration: 0.4,
+                        stagger: 0.15
+                    });
+                }
+            }
+        });
+
+        // Mobile menu toggle placeholder
+        document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
+            alert('Mobile navigation would open here with a premium side drawer effect.');
+        });
+
+        // Form Submission Intercept
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const vehicle = document.getElementById('selected-vehicle').value;
+            alert('Thank you for your request. In a real application, you would receive a fixed quote for a ' + vehicle.toUpperCase() + ' vehicle and confirmation via WhatsApp instantly.');
+        });
+    </script>
+</body></html>
