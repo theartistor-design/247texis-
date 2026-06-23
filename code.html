@@ -14,46 +14,46 @@
         theme: {
           extend: {
             "colors": {
-                "on-secondary-fixed": "#261900",
+                "on-secondary-fixed": "#001A3F",
                 "charcoal-text": "#2D2D2D",
                 "surface-container-lowest": "#ffffff",
-                "primary-container": "#0a1d37",
-                "on-secondary-container": "#785a1a",
-                "warm-amber": "#D4AF37",
+                "primary-container": "#001A3F",
+                "on-secondary-container": "#001A3F",
+                "warm-amber": "#0088FF",
                 "on-error-container": "#93000a",
-                "secondary-container": "#fed488",
+                "secondary-container": "#E0EEFF",
                 "on-error": "#ffffff",
                 "on-tertiary-fixed": "#001b3c",
                 "primary-fixed": "#d6e3ff",
                 "on-primary-fixed": "#081c36",
-                "secondary-fixed": "#ffdea5",
+                "secondary-fixed": "#E0EEFF",
                 "on-tertiary": "#ffffff",
                 "inverse-surface": "#2e3132",
                 "tertiary-container": "#011d3e",
                 "on-primary": "#ffffff",
                 "surface-container-highest": "#e1e3e4",
-                "mist-white": "#F8F9FA",
+                "mist-white": "#F0F4F8",
                 "error-container": "#ffdad6",
-                "deep-navy": "#0A1D37",
+                "deep-navy": "#001A3F",
                 "on-primary-container": "#7586a5",
                 "inverse-on-surface": "#f0f1f2",
-                "on-secondary-fixed-variant": "#5d4201",
+                "on-secondary-fixed-variant": "#001A3F",
                 "on-background": "#191c1d",
                 "error": "#ba1a1a",
-                "surface-bright": "#f8f9fa",
+                "surface-bright": "#F0F4F8",
                 "on-surface": "#191c1d",
                 "surface-tint": "#4e5f7c",
                 "on-surface-variant": "#44474d",
                 "on-secondary": "#ffffff",
                 "inverse-primary": "#b6c7e9",
                 "on-tertiary-container": "#6f86ac",
-                "secondary-fixed-dim": "#e9c176",
+                "secondary-fixed-dim": "#E0EEFF",
                 "primary": "#00030a",
                 "tertiary-fixed-dim": "#b0c7f1",
-                "secondary": "#775a19",
+                "secondary": "#005EB8",
                 "surface-dim": "#d9dadb",
                 "surface-variant": "#e1e3e4",
-                "prestige-gold": "#C5A059",
+                "prestige-gold": "#005EB8",
                 "tertiary": "#00030b",
                 "surface-container": "#edeeef",
                 "tertiary-fixed": "#d5e3ff",
@@ -61,11 +61,11 @@
                 "surface-container-high": "#e7e8e9",
                 "on-primary-fixed-variant": "#364763",
                 "on-tertiary-fixed-variant": "#30476a",
-                "background": "#f8f9fa",
+                "background": "#F0F4F8",
                 "primary-fixed-dim": "#b6c7e9",
                 "surface-container-low": "#f3f4f5",
                 "outline-variant": "#c5c6ce",
-                "surface": "#f8f9fa"
+                "surface": "#F0F4F8"
             },
             "borderRadius": {
                 "DEFAULT": "0.125rem",
@@ -111,8 +111,8 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
-        .luxury-shadow { box-shadow: 0 4px 20px rgba(10,29,55,0.05); }
-        .hero-gradient { background: linear-gradient(135deg, rgba(10,29,55,0.88) 0%, rgba(10,29,55,0.5) 55%, rgba(10,29,55,0.78) 100%); }
+        .luxury-shadow { box-shadow: 0 4px 20px rgba(0, 26, 63,0.05); }
+        .hero-gradient { background: linear-gradient(135deg, rgba(0, 26, 63,0.88) 0%, rgba(0, 26, 63,0.5) 55%, rgba(0, 26, 63,0.78) 100%); }
 
         /* Ken Burns */
         @keyframes kenburns { 0%{transform:scale(1)} 100%{transform:scale(1.08)} }
@@ -122,8 +122,8 @@
         /* Scroll progress bar */
         #scroll-progress {
             position:fixed;top:0;left:0;height:3px;z-index:9999;width:0%;
-            background:linear-gradient(90deg,#C5A059,#f0d080,#D4AF37);
-            box-shadow:0 0 10px rgba(197,160,89,0.7);
+            background:linear-gradient(90deg,#005EB8,#f0d080,#0088FF);
+            box-shadow:0 0 10px rgba(0, 94, 184,0.7);
             transition:width 0.08s linear;
         }
 
@@ -132,21 +132,21 @@
             background:rgba(248,249,250,0.88)!important;
             backdrop-filter:blur(24px) saturate(180%);
             -webkit-backdrop-filter:blur(24px) saturate(180%);
-            border-bottom:1px solid rgba(197,160,89,0.12)!important;
+            border-bottom:1px solid rgba(0, 94, 184,0.12)!important;
             transition:all 0.45s cubic-bezier(0.16,1,0.3,1)!important;
         }
         header.scrolled {
-            background:rgba(10,29,55,0.96)!important;
-            border-bottom:1px solid rgba(197,160,89,0.25)!important;
-            box-shadow:0 8px 50px rgba(10,29,55,0.4)!important;
+            background:rgba(0, 26, 63,0.96)!important;
+            border-bottom:1px solid rgba(0, 94, 184,0.25)!important;
+            box-shadow:0 8px 50px rgba(0, 26, 63,0.4)!important;
         }
         header.scrolled nav a { color:rgba(248,249,250,0.85)!important; }
-        header.scrolled nav a:hover { color:#C5A059!important; }
+        header.scrolled nav a:hover { color:#005EB8!important; }
 
         /* Gold shimmer */
         @keyframes goldShimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
         .text-prestige-gold {
-            background:linear-gradient(90deg,#C5A059 0%,#f0d48a 40%,#C5A059 60%,#a07830 100%);
+            background:linear-gradient(90deg,#005EB8 0%,#f0d48a 40%,#005EB8 60%,#a07830 100%);
             background-size:250% auto;
             -webkit-background-clip:text;
             -webkit-text-fill-color:transparent;
@@ -158,7 +158,7 @@
         .nav-link-underline { position:relative; }
         .nav-link-underline::after {
             content:'';position:absolute;width:100%;transform:scaleX(0);
-            height:2px;bottom:-4px;left:0;background-color:#C5A059;
+            height:2px;bottom:-4px;left:0;background-color:#005EB8;
             transform-origin:bottom left;transition:transform 0.25s cubic-bezier(0.16,1,0.3,1);
         }
         .nav-link-underline:hover::after { transform:scaleX(1); }
@@ -167,7 +167,7 @@
         .route-link-underline { position:relative; }
         .route-link-underline::after {
             content:'';position:absolute;width:100%;transform:scaleX(0);
-            height:1px;bottom:-2px;left:0;background-color:#C5A059;
+            height:1px;bottom:-2px;left:0;background-color:#005EB8;
             transform-origin:bottom left;transition:transform 0.25s ease-out;
         }
         .group:hover .route-link-underline::after { transform:scaleX(1); }
@@ -179,19 +179,19 @@
         }
         .hero-orb-1 {
             width:350px;height:350px;
-            background:radial-gradient(circle,rgba(197,160,89,0.22) 0%,transparent 70%);
+            background:radial-gradient(circle,rgba(0, 94, 184,0.22) 0%,transparent 70%);
             top:5%;left:3%;
             animation:floatOrb 9s ease-in-out infinite;
         }
         .hero-orb-2 {
             width:450px;height:450px;
-            background:radial-gradient(circle,rgba(10,29,55,0.35) 0%,transparent 70%);
+            background:radial-gradient(circle,rgba(0, 26, 63,0.35) 0%,transparent 70%);
             bottom:0;right:5%;
             animation:floatOrb 11s ease-in-out infinite;animation-delay:-5s;
         }
         .hero-orb-3 {
             width:220px;height:220px;
-            background:radial-gradient(circle,rgba(212,175,55,0.12) 0%,transparent 70%);
+            background:radial-gradient(circle,rgba(0, 136, 255,0.12) 0%,transparent 70%);
             top:50%;right:30%;
             animation:floatOrb 7s ease-in-out infinite;animation-delay:-3s;
         }
@@ -201,15 +201,15 @@
 
         /* Form glow pulse */
         @keyframes borderGlow {
-            0%,100%{box-shadow:0 0 22px rgba(197,160,89,0.15),0 20px 60px rgba(10,29,55,0.15)}
-            50%{box-shadow:0 0 40px rgba(197,160,89,0.32),0 20px 60px rgba(10,29,55,0.22)}
+            0%,100%{box-shadow:0 0 22px rgba(0, 94, 184,0.15),0 20px 60px rgba(0, 26, 63,0.15)}
+            50%{box-shadow:0 0 40px rgba(0, 94, 184,0.32),0 20px 60px rgba(0, 26, 63,0.22)}
         }
         .hero-form-card { animation:borderGlow 3.5s ease-in-out infinite; border-radius:6px; }
 
         /* Input gold focus */
         input:focus,select:focus {
-            outline:none!important;border-color:#C5A059!important;
-            box-shadow:0 0 0 3px rgba(197,160,89,0.18),inset 0 1px 3px rgba(10,29,55,0.04)!important;
+            outline:none!important;border-color:#005EB8!important;
+            box-shadow:0 0 0 3px rgba(0, 94, 184,0.18),inset 0 1px 3px rgba(0, 26, 63,0.04)!important;
             transition:all 0.25s ease!important;
         }
 
@@ -220,19 +220,19 @@
         }
         .feature-card:hover {
             transform:translateY(-10px);
-            box-shadow:0 28px 60px rgba(10,29,55,0.13),0 0 0 1px rgba(197,160,89,0.22);
-            background:white;border-color:rgba(197,160,89,0.2);
+            box-shadow:0 28px 60px rgba(0, 26, 63,0.13),0 0 0 1px rgba(0, 94, 184,0.22);
+            background:white;border-color:rgba(0, 94, 184,0.2);
         }
         .feature-icon {
             display:inline-flex;align-items:center;justify-content:center;
             width:68px;height:68px;border-radius:50%;
-            background:rgba(197,160,89,0.08);margin-bottom:1.25rem;
+            background:rgba(0, 94, 184,0.08);margin-bottom:1.25rem;
             transition:all 0.35s ease;
         }
         .feature-card:hover .feature-icon {
-            background:rgba(197,160,89,0.18);
+            background:rgba(0, 94, 184,0.18);
             transform:scale(1.12) rotate(6deg);
-            box-shadow:0 8px 28px rgba(197,160,89,0.25);
+            box-shadow:0 8px 28px rgba(0, 94, 184,0.25);
         }
 
         /* Route cards */
@@ -242,7 +242,7 @@
         }
         .route-card:hover {
             transform:translateY(-12px) scale(1.015);
-            box-shadow:0 40px 80px rgba(10,29,55,0.45),0 0 0 1px rgba(197,160,89,0.4);
+            box-shadow:0 40px 80px rgba(0, 26, 63,0.45),0 0 0 1px rgba(0, 94, 184,0.4);
         }
 
         /* Testimonial cards */
@@ -251,16 +251,16 @@
         }
         .testimonial-card:hover {
             transform:translateY(-6px);
-            box-shadow:0 22px 55px rgba(10,29,55,0.14),0 0 0 1px rgba(197,160,89,0.18);
+            box-shadow:0 22px 55px rgba(0, 26, 63,0.14),0 0 0 1px rgba(0, 94, 184,0.18);
         }
 
         /* FAQ premium */
         .faq-item { border:1px solid transparent;transition:border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;border-radius:8px; }
-        .faq-item:hover { border-color:rgba(197,160,89,0.15); }
+        .faq-item:hover { border-color:rgba(0, 94, 184,0.15); }
         .faq-item.faq-open {
             background:white!important;
-            box-shadow:0 10px 40px rgba(10,29,55,0.1),0 0 0 1px rgba(197,160,89,0.2)!important;
-            border-color:rgba(197,160,89,0.2)!important;
+            box-shadow:0 10px 40px rgba(0, 26, 63,0.1),0 0 0 1px rgba(0, 94, 184,0.2)!important;
+            border-color:rgba(0, 94, 184,0.2)!important;
         }
 
         /* CTA button shimmer */
@@ -274,18 +274,18 @@
 
         /* Stats bar */
         .stats-bar {
-            background:linear-gradient(135deg,#0A1D37 0%,#0d2545 50%,#0A1D37 100%);
-            border-top:1px solid rgba(197,160,89,0.2);
-            border-bottom:1px solid rgba(197,160,89,0.2);
+            background:linear-gradient(135deg,#001A3F 0%,#0d2545 50%,#001A3F 100%);
+            border-top:1px solid rgba(0, 94, 184,0.2);
+            border-bottom:1px solid rgba(0, 94, 184,0.2);
         }
 
         /* Pulse dot */
         @keyframes pulseDot {
-            0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.5)}
-            50%{box-shadow:0 0 0 10px rgba(197,160,89,0)}
+            0%,100%{box-shadow:0 0 0 0 rgba(0, 94, 184,0.5)}
+            50%{box-shadow:0 0 0 10px rgba(0, 94, 184,0)}
         }
         .pulse-dot {
-            width:8px;height:8px;background:#C5A059;border-radius:50%;
+            width:8px;height:8px;background:#005EB8;border-radius:50%;
             display:inline-block;animation:pulseDot 2s ease-out infinite;
         }
 
@@ -296,13 +296,13 @@
         }
         .gold-divider-animated {
             height:2px;border:none;
-            background:linear-gradient(90deg,transparent,#C5A059,#D4AF37,#C5A059,transparent);
+            background:linear-gradient(90deg,transparent,#005EB8,#0088FF,#005EB8,transparent);
             background-size:200% auto;
             animation:dividerShimmer 3s linear infinite;
         }
 
         /* Footer premium */
-        footer { background:linear-gradient(180deg,#0A1D37 0%,#06111f 100%)!important; }
+        footer { background:linear-gradient(180deg,#001A3F 0%,#06111f 100%)!important; }
 
         /* Prefers reduced motion */
         @media(prefers-reduced-motion:reduce){
@@ -331,7 +331,7 @@
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
 </nav>
 <div class="flex items-center space-x-4">
-<a class="hidden sm:flex items-center px-4 py-2 bg-deep-navy text-mist-white font-label-sm text-label-sm hover:bg-[#152e52] hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="tel:+447469598219">
+<a class="hidden sm:flex items-center px-4 py-2 bg-deep-navy text-mist-white font-label-sm text-label-sm hover:bg-[#003B75] hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="tel:+447469598219">
                     Call Now
                 </a>
 <a class="flex items-center px-4 py-2 bg-prestige-gold text-deep-navy font-label-sm text-label-sm hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="https://wa.me/447469598219">
@@ -372,44 +372,77 @@
 <div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold hero-form-card" id="quote">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-6">Get Your Fixed Price Quote</h2>
 <form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Journey Type -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Journey Type</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-journey-type">
+<option value="one-way">One Way</option>
+<option value="return">Return</option>
+<option value="hourly">Hourly Hire</option>
+</select>
+</div>
+
+<!-- Full Name -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
+</div>
+
+<!-- Pickup Location -->
 <div class="col-span-2">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Pickup Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
 </div>
-<div class="col-span-2">
+
+<!-- Drop-off Location -->
+<div class="col-span-2" id="drop-off-container">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Drop-off Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
 </div>
+
+<!-- Number of Hours (Hourly Hire Only) -->
+<div class="col-span-2 hidden" id="hours-container">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="number" id="booking-hours" min="2" value="2"/>
+</div>
+
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Date</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" id="booking-date" required/>
 </div>
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Time</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" id="booking-time" required/>
 </div>
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Passengers</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors">
-<option>1-4</option>
-<option>5-8</option>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-passengers">
+<option value="1-4">1-4</option>
+<option value="5-8">5-8</option>
 </select>
 </div>
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Luggage Pieces</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors">
-<option>1-2 Bags</option>
-<option>3-4 Bags</option>
-<option>5+ Bags</option>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-luggage">
+<option value="1-2">1-2 Bags</option>
+<option value="3-4">3-4 Bags</option>
+<option value="5+">5+ Bags</option>
 </select>
 </div>
+
+<!-- Luggage Warning Message (Hidden by Default) -->
+<div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
+    <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
+    <button type="button" id="upgrade-vehicle-btn" class="px-4 py-2 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-label-sm font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
+</div>
+
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Flight Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text"/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text" id="booking-flight"/>
 </div>
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
 </div>
 
 <!-- Vehicle Selection Component -->
@@ -453,7 +486,7 @@
 <input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
 </div>
 
-<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#152e52] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
+<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
                             Get My Fixed Quote
                         </button>
 </form>
@@ -499,6 +532,88 @@
 </div>
 </div>
 </section>
+
+<!-- Our Fleet Section -->
+<section id="fleet-section" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Our Premium Fleet</h2>
+<div class="w-24 h-1 bg-[#005EB8] mx-auto mb-12"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-16">
+    Travel in comfort and style with our carefully selected vehicles, maintained to the highest standards of cleanliness and safety.
+</p>
+
+<!-- Standard Cars Section -->
+<div class="mb-16">
+    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Standard Class</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <!-- Toyota Corolla -->
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-full object-cover"/>
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Toyota Corolla</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">A reliable and smooth hybrid sedan, perfect for everyday airport transfers and city travel.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
+                </div>
+            </div>
+        </div>
+        <!-- Volkswagen Caddy -->
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-full object-cover"/>
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Volkswagen Caddy</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">Spacious multi-purpose vehicle offering extra legroom and excellent luggage capacity.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 4 Large Bags</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Executive Cars Section -->
+<div>
+    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Executive Class</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <!-- Range Rover -->
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="range_rover.png" alt="Range Rover" class="w-full h-full object-cover"/>
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Range Rover</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">A high-end luxury SUV providing unmatched ride comfort, command road presence, and prestige styling.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 3 Large Bags</span>
+                </div>
+            </div>
+        </div>
+        <!-- Audi RS7 -->
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-full object-cover"/>
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Audi RS7</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">Ultimate luxury sportback combining executive refinement with breathtaking performance.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
 <!-- Popular Routes -->
 <section id="popular-routes" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
@@ -748,6 +863,51 @@
 </div>
 </div>
 </section>
+<!-- Contact Us Section -->
+<section id="contact-us" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Contact Us</h2>
+<div class="w-24 h-1 bg-[#005EB8] mx-auto mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+    Have a question, or need a custom booking? Send us a message below or reach out directly.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-12">
+    <div class="space-y-6">
+        <h3 class="font-title-md text-xl text-deep-navy font-bold">Get In Touch</h3>
+        <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">call</span> Phone: 07469 598219</p>
+            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">chat</span> WhatsApp: <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="text-[#005EB8] hover:underline font-semibold">wa.me/447469598219</a></p>
+            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">mail</span> Email: [Email Placeholder]</p>
+            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">location_on</span> Perth Business Centre, Perth, Scotland</p>
+        </div>
+    </div>
+    
+    <form id="contact-form" class="space-y-4">
+        <div>
+            <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
+            <input class="w-full border-outline-variant focus:ring-0 focus:border-[#005EB8] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Your Name" type="text" id="contact-name" required/>
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
+            <input class="w-full border-outline-variant focus:ring-0 focus:border-[#005EB8] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Your WhatsApp Number" type="tel" id="contact-whatsapp" required/>
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
+            <input class="w-full border-outline-variant focus:ring-0 focus:border-[#005EB8] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Your Email" type="email" id="contact-email"/>
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Message</label>
+            <textarea class="w-full border-outline-variant focus:ring-0 focus:border-[#005EB8] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors h-32" placeholder="Write your message here..." id="contact-message" required></textarea>
+        </div>
+        <button class="w-full bg-[#005EB8] text-white py-4 font-headline-lg text-headline-lg hover:bg-[#0088FF] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
+            Send Enquiry
+        </button>
+    </form>
+</div>
+</div>
+</section>
+
 </main>
 <!-- Footer -->
 <footer id="contact" class="bg-deep-navy dark:bg-primary text-mist-white w-full py-stack-lg border-t border-mist-white/10">
@@ -767,8 +927,8 @@
 <h4 class="font-title-md text-title-md text-prestige-gold">Contact</h4>
 <ul class="space-y-2 font-body-md text-body-md opacity-80">
 <li>Phone: 07469 598219</li>
-<li>WhatsApp: 07469 598219</li>
-<li>Email: info@scotland247taxis.co.uk</li>
+<li>WhatsApp: <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="hover:text-warm-amber transition-colors">wa.me/447469598219</a></li>
+<li>Email: [Email Placeholder]</li>
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
@@ -1077,16 +1237,157 @@
             }
         });
 
+        // Journey Type & Hourly Hire Field Toggle
+        const journeyTypeSelect = document.getElementById('booking-journey-type');
+        const dropOffContainer = document.getElementById('drop-off-container');
+        const dropOffInput = document.getElementById('booking-dropoff');
+        const hoursContainer = document.getElementById('hours-container');
+        const hoursInput = document.getElementById('booking-hours');
+
+        if (journeyTypeSelect) {
+            journeyTypeSelect.addEventListener('change', () => {
+                if (journeyTypeSelect.value === 'hourly') {
+                    dropOffContainer.classList.add('hidden');
+                    dropOffInput.required = false;
+                    hoursContainer.classList.remove('hidden');
+                    hoursInput.required = true;
+                } else {
+                    dropOffContainer.classList.remove('hidden');
+                    dropOffInput.required = true;
+                    hoursContainer.classList.add('hidden');
+                    hoursInput.required = false;
+                }
+            });
+        }
+
+        // Luggage Warning & Auto Upgrade Logic
+        const luggageSelect = document.getElementById('booking-luggage');
+        const luggageWarningContainer = document.getElementById('luggage-warning-container');
+        const upgradeVehicleBtn = document.getElementById('upgrade-vehicle-btn');
+
+        function checkLuggageUpgrade() {
+            const selectedVehicle = document.getElementById('selected-vehicle').value;
+            const selectedLuggage = luggageSelect.value;
+            
+            if (selectedVehicle === 'standard' && (selectedLuggage === '3-4' || selectedLuggage === '5+')) {
+                luggageWarningContainer.classList.remove('hidden');
+            } else {
+                luggageWarningContainer.classList.add('hidden');
+            }
+        }
+
+        if (luggageSelect) {
+            luggageSelect.addEventListener('change', checkLuggageUpgrade);
+        }
+
+        if (upgradeVehicleBtn) {
+            upgradeVehicleBtn.addEventListener('click', () => {
+                selectVehicle('van');
+                luggageWarningContainer.classList.add('hidden');
+            });
+        }
+
+        // Intercept standard vehicle selection function to also check upgrade warning
+        const originalSelectVehicle = window.selectVehicle;
+        window.selectVehicle = function(type) {
+            if (originalSelectVehicle) {
+                originalSelectVehicle(type);
+            }
+            checkLuggageUpgrade();
+        };
+
         // Mobile menu toggle placeholder
         document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
             alert('Mobile navigation would open here with a premium side drawer effect.');
         });
 
-        // Form Submission Intercept
+        // Booking Form Submission & WhatsApp Lead Integration
         document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            const vehicle = document.getElementById('selected-vehicle').value;
-            alert('Thank you for your request. In a real application, you would receive a fixed quote for a ' + vehicle.toUpperCase() + ' vehicle and confirmation via WhatsApp instantly.');
+            
+            const journeyTypeVal = document.getElementById('booking-journey-type').value;
+            const nameVal = document.getElementById('booking-name').value;
+            const pickupVal = document.getElementById('booking-pickup').value;
+            const dropoffVal = journeyTypeVal === 'hourly' ? 'N/A (Hourly Hire)' : document.getElementById('booking-dropoff').value;
+            const hoursVal = journeyTypeVal === 'hourly' ? document.getElementById('booking-hours').value : 'N/A';
+            const dateVal = document.getElementById('booking-date').value;
+            const timeVal = document.getElementById('booking-time').value;
+            const passengersVal = document.getElementById('booking-passengers').value;
+            const luggageVal = document.getElementById('booking-luggage').value;
+            const flightVal = document.getElementById('booking-flight').value || 'None';
+            const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
+            const vehicleVal = document.getElementById('selected-vehicle').value;
+
+            const vehicleMap = {
+                'standard': 'Standard Car',
+                'executive': 'Executive Car',
+                'van': '6-Seater Van'
+            };
+            const selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
+
+            // 1. Construct formatted lead message for the company
+            const leadMessage = 
+`New Booking Request
+Name: ${nameVal}
+From: ${pickupVal}
+To: ${dropoffVal}
+Date: ${dateVal}
+Time: ${timeVal}
+Passengers: ${passengersVal}
+Large Bags: ${luggageVal}
+Flight Number: ${flightVal}
+Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
+Hours (if hourly): ${hoursVal}
+Vehicle Class: ${selectedVehicleName}
+Customer WhatsApp: ${customerWhatsappVal}`;
+
+            // 2. Construct automatic confirmation message for the customer
+            const customerConfirmation = 
+`Hi ${nameVal}, thank you for contacting Scotland 247 Taxis.
+We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.`;
+
+            // Open company WhatsApp lead
+            const companyUrl = `https://wa.me/447469598219?text=${encodeURIComponent(leadMessage)}`;
+            window.open(companyUrl, '_blank');
+
+            // Open customer confirmation (clean customer number of spaces/symbols)
+            const cleanCustomerNumber = customerWhatsappVal.replace(/[^0-9+]/g, '');
+            if (cleanCustomerNumber) {
+                setTimeout(() => {
+                    const customerUrl = `https://wa.me/${cleanCustomerNumber}?text=${encodeURIComponent(customerConfirmation)}`;
+                    window.open(customerUrl, '_blank');
+                }, 1000);
+            }
+
+            // Fallback UI modal/alert confirmation
+            alert(`Booking Request Submitted!\n\nConfirmation message sent to you:\n"${customerConfirmation}"`);
         });
+
+        // Contact Us Form Submission
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const nameVal = document.getElementById('contact-name').value;
+                const whatsappVal = document.getElementById('contact-whatsapp').value;
+                const emailVal = document.getElementById('contact-email').value || 'Not provided';
+                const messageVal = document.getElementById('contact-message').value;
+
+                const contactMessage = 
+`New Contact Enquiry
+Name: ${nameVal}
+WhatsApp: ${whatsappVal}
+Email: ${emailVal}
+Message: ${messageVal}`;
+
+                // Notify company on WhatsApp
+                const contactUrl = `https://wa.me/447469598219?text=${encodeURIComponent(contactMessage)}`;
+                window.open(contactUrl, '_blank');
+
+                alert(`Thank you ${nameVal}! Your message has been sent to Scotland 247 Taxis. We will get back to you shortly.`);
+                contactForm.reset();
+            });
+        }
     </script>
 </body></html>
