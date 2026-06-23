@@ -482,8 +482,68 @@
 <span class="text-[11px] text-on-surface-variant block">5-8 Pax</span>
 </div>
 </div>
+
+<!-- Expandable Options Panel for Standard -->
+<div id="options-standard-container" class="col-span-3 mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Standard Vehicle:</p>
+    <div class="grid grid-cols-2 gap-3">
+        <!-- Toyota Corolla Card -->
+        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
+            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-corolla">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+            </div>
+            <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
+            <div class="text-center">
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Toyota Corolla</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
+            </div>
+        </div>
+        <!-- Volkswagen Caddy Card -->
+        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
+            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-caddy">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+            </div>
+            <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
+            <div class="text-center">
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Volkswagen Caddy</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Expandable Options Panel for Executive -->
+<div id="options-executive-container" class="col-span-3 hidden mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Executive Vehicle:</p>
+    <div class="grid grid-cols-2 gap-3">
+        <!-- Range Rover Card -->
+        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Range Rover')">
+            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-rangerover">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+            </div>
+            <img src="range_rover.png" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
+            <div class="text-center">
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Range Rover</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
+            </div>
+        </div>
+        <!-- Audi RS7 Card -->
+        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
+            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-audirs7">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+            </div>
+            <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
+            <div class="text-center">
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Audi RS7</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 <input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
+<input type="hidden" name="specific_vehicle" id="selected-specific-vehicle" value="Toyota Corolla"/>
 </div>
 
 <button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
@@ -982,7 +1042,84 @@
                     check.classList.add('hidden');
                 }
             });
+
+            const optStandard = document.getElementById('options-standard-container');
+            const optExecutive = document.getElementById('options-executive-container');
+
+            if (type === 'standard') {
+                optStandard.classList.remove('hidden');
+                optExecutive.classList.add('hidden');
+                if (window.gsap) {
+                    gsap.fromTo(optStandard, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+                }
+                selectSpecificVehicle('standard', 'Toyota Corolla');
+            } else if (type === 'executive') {
+                optExecutive.classList.remove('hidden');
+                optStandard.classList.add('hidden');
+                if (window.gsap) {
+                    gsap.fromTo(optExecutive, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+                }
+                selectSpecificVehicle('executive', 'Range Rover');
+            } else {
+                optStandard.classList.add('hidden');
+                optExecutive.classList.add('hidden');
+                document.getElementById('selected-specific-vehicle').value = '';
+            }
         }
+
+        // Specific Vehicle Selection Toggle Function
+        function selectSpecificVehicle(category, specificName) {
+            document.getElementById('selected-specific-vehicle').value = specificName;
+            
+            if (category === 'standard') {
+                const subVehicles = [
+                    { id: 'sub-vehicle-corolla', checkId: 'check-sub-corolla', name: 'Toyota Corolla' },
+                    { id: 'sub-vehicle-caddy', checkId: 'check-sub-caddy', name: 'Volkswagen Caddy' }
+                ];
+                subVehicles.forEach(v => {
+                    const card = document.getElementById(v.id);
+                    const check = document.getElementById(v.checkId);
+                    if (v.name === specificName) {
+                        card.classList.remove('border-outline-variant');
+                        card.classList.add('border-prestige-gold');
+                        check.classList.remove('hidden');
+                        check.classList.add('flex');
+                        if (window.gsap) {
+                            gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
+                        }
+                    } else {
+                        card.classList.remove('border-prestige-gold');
+                        card.classList.add('border-outline-variant');
+                        check.classList.remove('flex');
+                        check.classList.add('hidden');
+                    }
+                });
+            } else if (category === 'executive') {
+                const subVehicles = [
+                    { id: 'sub-vehicle-rangerover', checkId: 'check-sub-rangerover', name: 'Range Rover' },
+                    { id: 'sub-vehicle-audirs7', checkId: 'check-sub-audirs7', name: 'Audi RS7' }
+                ];
+                subVehicles.forEach(v => {
+                    const card = document.getElementById(v.id);
+                    const check = document.getElementById(v.checkId);
+                    if (v.name === specificName) {
+                        card.classList.remove('border-outline-variant');
+                        card.classList.add('border-prestige-gold');
+                        check.classList.remove('hidden');
+                        check.classList.add('flex');
+                        if (window.gsap) {
+                            gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
+                        }
+                    } else {
+                        card.classList.remove('border-prestige-gold');
+                        card.classList.add('border-outline-variant');
+                        check.classList.remove('flex');
+                        check.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
 
         // FAQ Accordion Toggle Function
         function toggleFaq(el) {
@@ -1317,13 +1454,17 @@
             const flightVal = document.getElementById('booking-flight').value || 'None';
             const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
             const vehicleVal = document.getElementById('selected-vehicle').value;
+            const specificVehicleVal = document.getElementById('selected-specific-vehicle')?.value || '';
 
             const vehicleMap = {
                 'standard': 'Standard Car',
                 'executive': 'Executive Car',
                 'van': '6-Seater Van'
             };
-            const selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
+            let selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
+            if ((vehicleVal === 'standard' || vehicleVal === 'executive') && specificVehicleVal) {
+                selectedVehicleName += ` (${specificVehicleVal})`;
+            }
 
             // 1. Construct formatted lead message for the company
             const leadMessage = 
