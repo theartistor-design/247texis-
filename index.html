@@ -215,7 +215,7 @@
 
         /* Feature cards */
         .feature-card {
-            transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s ease,background 0.35s ease,border-color 0.35s ease;
+            transition:box-shadow 0.35s ease,background 0.35s ease,border-color 0.35s ease;
             padding:2rem 1.5rem;border-radius:14px;border:1px solid transparent;
         }
         .feature-card:hover {
@@ -238,7 +238,7 @@
         /* Route cards */
         .route-card {
             border-radius:10px;overflow:hidden;
-            transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s ease;
+            transition:box-shadow 0.4s ease;
         }
         .route-card:hover {
             transform:translateY(-12px) scale(1.015);
@@ -247,7 +247,7 @@
 
         /* Testimonial cards */
         .testimonial-card {
-            transition:transform 0.3s ease,box-shadow 0.3s ease;border-radius:8px;
+            transition:box-shadow 0.3s ease;border-radius:8px;
         }
         .testimonial-card:hover {
             transform:translateY(-6px);
@@ -255,7 +255,7 @@
         }
 
         /* FAQ premium */
-        .faq-item { border:1px solid transparent;transition:all 0.3s ease;border-radius:8px; }
+        .faq-item { border:1px solid transparent;transition:border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;border-radius:8px; }
         .faq-item:hover { border-color:rgba(197,160,89,0.15); }
         .faq-item.faq-open {
             background:white!important;
@@ -652,7 +652,7 @@
 <h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-12 faq-header">Frequently Asked Questions</h2>
 <div class="space-y-4">
 <!-- Accordion 1 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you track flights?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -664,7 +664,7 @@
 </div>
 </div>
 <!-- Accordion 2 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Are your prices fixed with no hidden charges?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -676,7 +676,7 @@
 </div>
 </div>
 <!-- Accordion 3 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Can I pre-book in advance?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -688,7 +688,7 @@
 </div>
 </div>
 <!-- Accordion 4 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you cover all of Scotland?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -700,7 +700,7 @@
 </div>
 </div>
 <!-- Accordion 5 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             What payment methods do you accept?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -712,7 +712,7 @@
 </div>
 </div>
 <!-- Accordion 6 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item transition-all duration-300 rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you offer meet and greet service?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
@@ -935,7 +935,8 @@
                         opacity: 0,
                         duration: 0.6,
                         stagger: 0.1,
-                        ease: "power2.out"
+                        ease: "power2.out",
+                        clearProps: "all"
                     });
 
                     // Scroll Reveal - Popular Routes Grid
@@ -949,7 +950,8 @@
                         opacity: 0,
                         duration: 0.6,
                         stagger: 0.1,
-                        ease: "power2.out"
+                        ease: "power2.out",
+                        clearProps: "all"
                     });
 
                     // Scroll Reveal - Testimonial Cards & Elements
@@ -966,7 +968,8 @@
                             y: 30,
                             opacity: 0,
                             duration: 0.6,
-                            ease: "power2.out"
+                            ease: "power2.out",
+                            clearProps: "all"
                         });
                         
                         const border = card.querySelector(".border-left-accent");
@@ -1011,7 +1014,8 @@
                         opacity: 0,
                         duration: 0.5,
                         stagger: 0.08,
-                        ease: "power2.out"
+                        ease: "power2.out",
+                        clearProps: "all"
                     });
 
                     // Scroll Reveal - Final CTA
