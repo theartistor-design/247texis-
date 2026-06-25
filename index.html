@@ -320,8 +320,8 @@
 <!-- TopNavBar -->
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<a href="#home" class="flex items-center">
-                <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
+<a href="#home" class="flex items-center" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;">
+                <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/>
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
 <a class="text-prestige-gold border-b-2 border-prestige-gold pb-1 font-body-md text-body-md" href="#home">Home</a>
@@ -332,12 +332,19 @@
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
 </nav>
 <div class="flex items-center space-x-4">
-<a class="hidden sm:flex items-center px-4 py-2 bg-deep-navy text-mist-white font-label-sm text-label-sm hover:bg-[#003B75] hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="tel:+447469598219">
-                    Call Now
-                </a>
-<a class="flex items-center px-4 py-2 bg-prestige-gold text-deep-navy font-label-sm text-label-sm hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="https://wa.me/447469598219">
-                    WhatsApp
-                </a>
+<a class="flex items-center px-6 py-2.5 font-bold text-white transition-all duration-300 shadow-sm hover:-translate-y-0.5" 
+   href="https://wa.me/447469598219"
+   target="_blank"
+   rel="noopener"
+   style="background-color: #25D366 !important; border-radius: 50px !important; padding: 10px 24px !important; font-size: 14px !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important;"
+   onmouseover="this.style.backgroundColor='#20ba5a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,211,102,0.6)';"
+   onmouseout="this.style.backgroundColor='#25D366'; this.style.transform='none'; this.style.boxShadow='0 4px 15px rgba(37,211,102,0.4)';"
+>
+    <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
+        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+    </svg>
+    WhatsApp Us
+</a>
 <button class="lg:hidden text-deep-navy">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -372,59 +379,58 @@
 <!-- Bento-style Form Container -->
 <div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold hero-form-card" id="quote">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-6">Get Your Fixed Price Quote</h2>
-<form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<!-- Journey Type -->
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+<!-- Row 1: Journey Type (full width) -->
 <div class="col-span-2">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Journey Type</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-journey-type">
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" id="booking-journey-type">
 <option value="one-way">One Way</option>
 <option value="return">Return</option>
 <option value="hourly">Hourly Hire</option>
 </select>
 </div>
 
-<!-- Full Name -->
-<div class="col-span-2">
+<!-- Row 2: Full Name | WhatsApp Number -->
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
 </div>
 
-<!-- Pickup Location -->
-<div class="col-span-2">
+<!-- Row 3: Pickup Location | Drop-off Location -->
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Pickup Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
 </div>
-
-<!-- Drop-off Location -->
-<div class="col-span-2" id="drop-off-container">
+<div class="col-span-2 sm:col-span-1" id="drop-off-container">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Drop-off Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
 </div>
 
-<!-- Number of Hours (Hourly Hire Only) -->
-<div class="col-span-2 hidden" id="hours-container">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="number" id="booking-hours" min="2" value="2"/>
-</div>
-
-<div>
+<!-- Row 4: Date | Time -->
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Date</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" id="booking-date" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" type="date" id="booking-date" required/>
 </div>
-<div>
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Time</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" id="booking-time" required/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" type="time" id="booking-time" required/>
 </div>
-<div>
+
+<!-- Row 5: Passengers | Luggage Pieces -->
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Passengers</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-passengers">
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" id="booking-passengers">
 <option value="1-4">1-4</option>
 <option value="5-8">5-8</option>
 </select>
 </div>
-<div>
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Luggage Pieces</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-luggage">
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" id="booking-luggage">
 <option value="1-2">1-2 Bags</option>
 <option value="3-4">3-4 Bags</option>
 <option value="5+">5+ Bags</option>
@@ -432,124 +438,127 @@
 </div>
 
 <!-- Luggage Warning Message (Hidden by Default) -->
-<div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
-    <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
-    <button type="button" id="upgrade-vehicle-btn" class="px-4 py-2 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-label-sm font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
+<div id="luggage-warning-container" class="hidden col-span-2 p-3 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-sm text-left mt-1">
+    <p class="mb-2 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
+    <button type="button" id="upgrade-vehicle-btn" class="px-3 py-1.5 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-xs font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
 </div>
 
-<div>
+<!-- Row 6: Flight Number | Number of Hours (Hourly Hire Only) -->
+<div class="col-span-2 sm:col-span-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Flight Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text" id="booking-flight"/>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" placeholder="Optional" type="text" id="booking-flight"/>
 </div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
+<div class="col-span-2 sm:col-span-1 hidden" id="hours-container">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border px-3.5 py-2.5 font-body-md text-sm transition-colors" type="number" id="booking-hours" min="2" value="2"/>
 </div>
 
-<!-- Vehicle Selection Component -->
-<div class="col-span-2 mt-2">
+<!-- Row 7: Select Vehicle Type (full width) -->
+<div class="col-span-2 mt-1">
 <label class="font-label-sm text-label-sm text-deep-navy mb-2 block">Select Vehicle Type</label>
 <div class="grid grid-cols-3 gap-3">
 <!-- Standard Card -->
-<div id="vehicle-standard" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('standard')">
+<div id="vehicle-standard" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('standard')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-standard">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="standard_sedan.png" alt="Standard Sedan" class="w-full h-16 object-contain mb-2"/>
+<img src="standard_sedan.png" alt="Standard Sedan" class="w-full h-12 object-contain mb-1"/>
 <div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Standard</span>
-<span class="text-[11px] text-on-surface-variant block">1-4 Pax</span>
+<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Standard</span>
+<span class="text-[10px] text-on-surface-variant block">1-4 Pax</span>
 </div>
 </div>
 <!-- Executive Card -->
-<div id="vehicle-executive" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('executive')">
+<div id="vehicle-executive" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('executive')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-executive">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="executive_sedan.png" alt="Executive Sedan" class="w-full h-16 object-contain mb-2"/>
+<img src="executive_sedan.png" alt="Executive Sedan" class="w-full h-12 object-contain mb-1"/>
 <div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Executive</span>
-<span class="text-[11px] text-on-surface-variant block">1-4 Pax / Luxury</span>
+<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Executive</span>
+<span class="text-[10px] text-on-surface-variant block">1-4 Pax / Luxury</span>
 </div>
 </div>
 <!-- Van Card -->
-<div id="vehicle-van" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('van')">
+<div id="vehicle-van" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('van')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-van">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="premium_van.png" alt="Premium Van" class="w-full h-16 object-contain mb-2"/>
+<img src="premium_van.png" alt="Premium Van" class="w-full h-12 object-contain mb-1"/>
 <div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Van</span>
-<span class="text-[11px] text-on-surface-variant block">5-8 Pax</span>
+<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Van</span>
+<span class="text-[10px] text-on-surface-variant block">5-8 Pax</span>
+</div>
+</div>
 </div>
 </div>
 
+<!-- Row 8: Select Specific Vehicle (full width) -->
 <!-- Expandable Options Panel for Standard -->
-<div id="options-standard-container" class="col-span-3 mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Standard Vehicle:</p>
+<div id="options-standard-container" class="col-span-2 mt-2 bg-white border border-outline-variant rounded-xl p-3 transition-all duration-300">
+    <p class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider mb-2">Select Specific Standard Vehicle:</p>
     <div class="grid grid-cols-2 gap-3">
         <!-- Toyota Corolla Card -->
-        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
+        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-corolla">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
+            <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-12 object-contain mb-1"/>
             <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Toyota Corolla</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
+                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Toyota Corolla</span>
+                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
             </div>
         </div>
         <!-- Volkswagen Caddy Card -->
-        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
+        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-caddy">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
+            <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-12 object-contain mb-1"/>
             <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Volkswagen Caddy</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
+                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Volkswagen Caddy</span>
+                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Expandable Options Panel for Executive -->
-<div id="options-executive-container" class="col-span-3 hidden mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Executive Vehicle:</p>
+<div id="options-executive-container" class="col-span-2 hidden mt-2 bg-white border border-outline-variant rounded-xl p-3 transition-all duration-300">
+    <p class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider mb-2">Select Specific Executive Vehicle:</p>
     <div class="grid grid-cols-2 gap-3">
         <!-- Range Rover Card -->
-        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Range Rover')">
+        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Range Rover')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-rangerover">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="range_rover.png" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
+            <img src="range_rover.png" alt="Range Rover" class="w-full h-12 object-contain mb-1"/>
             <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Range Rover</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
+                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Range Rover</span>
+                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Premium SUV, up to 4 passengers, luxury interior</span>
             </div>
         </div>
         <!-- Audi RS7 Card -->
-        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
+        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-2.5 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-audirs7">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
+            <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-12 object-contain mb-1"/>
             <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Audi RS7</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
+                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Audi RS7</span>
+                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">High performance executive saloon, up to 4 passengers, luxury interior</span>
             </div>
         </div>
     </div>
 </div>
 
-</div>
 <input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
 <input type="hidden" name="specific_vehicle" id="selected-specific-vehicle" value="Toyota Corolla"/>
-</div>
 
-<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
-                            Get My Fixed Quote
-                        </button>
+<!-- Row 9: Get My Fixed Quote button (full width) -->
+<button class="col-span-2 mt-3 bg-deep-navy text-mist-white py-3.5 font-headline-lg text-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
+    Get My Fixed Quote
+</button>
 </form>
 </div>
 </div>
@@ -935,16 +944,20 @@
 <p class="font-body-lg text-body-lg text-mist-white/80 max-w-2xl mx-auto mb-12">
                     Experience the gold standard in Scottish private hire. Get in touch today for a fixed price quote and travel with confidence.
                 </p>
-<div class="flex flex-wrap gap-6 justify-center">
-<a class="px-10 py-5 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
-                        Book Now
-                    </a>
-<a class="px-10 py-5 border border-prestige-gold text-prestige-gold font-title-md text-title-md hover:bg-prestige-gold hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
-                        WhatsApp Us
-                    </a>
-<a class="px-10 py-5 border border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="tel:+447469598219">
-                        Call Us
-                    </a>
+<div class="flex justify-center">
+<a class="inline-flex items-center justify-center font-bold text-white transition-all duration-300 shadow-md hover:-translate-y-0.5" 
+   href="https://wa.me/447469598219" 
+   target="_blank" 
+   rel="noopener"
+   style="background-color: #25D366 !important; border-radius: 50px !important; padding: 20px 50px !important; font-size: 18px !important; box-shadow: 0 10px 25px rgba(37,211,102,0.4) !important;"
+   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 30px rgba(37,211,102,0.6)';"
+   onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 25px rgba(37,211,102,0.4)';"
+>
+    <svg class="w-6 h-6 mr-3 fill-current" viewBox="0 0 24 24">
+        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+    </svg>
+    WhatsApp Us Now
+</a>
 </div>
 </div>
 </section>
@@ -961,18 +974,27 @@
     <div class="space-y-6">
         <h3 class="font-title-md text-xl text-deep-navy font-bold">Get In Touch</h3>
         <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
-            <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <!-- Phone Button -->
-                <a href="tel:07469598219" class="flex items-center justify-center px-5 py-3 bg-[#005EB8] hover:bg-[#0088FF] text-white font-label-sm text-label-sm rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-                    <span class="material-symbols-outlined mr-2 text-white text-[20px]">call</span>
-                    Call Us: 07469 598219
-                </a>
-                <!-- WhatsApp Button -->
-                <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center px-5 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-sm text-label-sm rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
-                    <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
+            <div class="pt-2">
+                <!-- Modernized Full-Width WhatsApp Button -->
+                <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center font-bold text-white transition-all duration-300 shadow-md w-full hover:-translate-y-0.5"
+                   style="background: linear-gradient(135deg, #25D366, #128C7E) !important; border-radius: 50px !important; padding: 18px 30px !important; font-size: 18px !important; box-shadow: 0 8px 25px rgba(37,211,102,0.4) !important;"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(37,211,102,0.6)';"
+                   onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 25px rgba(37,211,102,0.4)';"
+                >
+                    <!-- Animated green pulse dot labeled Online Now -->
+                    <span class="flex items-center mr-4 bg-white/15 px-3 py-1 rounded-full text-xs font-semibold text-white/95">
+                        <span class="relative flex h-2.5 w-2.5 mr-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
+                        </span>
+                        Online Now
+                    </span>
+
+                    <!-- White WhatsApp Icon (24px) -->
+                    <svg class="w-6 h-6 mr-2 fill-current" viewBox="0 0 24 24">
                         <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
                     </svg>
-                    Chat on WhatsApp
+                    <span>Chat on WhatsApp</span>
                 </a>
             </div>
             <div class="space-y-4 font-body-md text-body-md text-on-surface-variant pt-4 border-t border-outline-variant/30">
@@ -1018,8 +1040,8 @@
 <footer id="contact" class="bg-deep-navy dark:bg-primary text-mist-white w-full py-stack-lg border-t border-mist-white/10">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="space-y-4">
-<div class="bg-white p-2 rounded-lg inline-block mb-4 shadow-sm">
-                    <img src="logo.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain"/>
+<div class="inline-block mb-4" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;">
+                    <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/>
                 </div>
 <p class="font-body-md text-body-md opacity-80 italic">Reliable Airport Transfers Across Scotland</p>
 <div class="flex space-x-4 mt-6">
@@ -1246,33 +1268,6 @@
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
                 if (!prefersReducedMotion) {
-                    // Stagger headline lines
-                    gsap.from(".hero-headline-line", {
-                        y: 40,
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: "power3.out"
-                    });
-                    
-                    // Stagger subtext and CTAs
-                    gsap.from(".hero-subtext, .hero-cta", {
-                        y: 20,
-                        opacity: 0,
-                        duration: 0.8,
-                        delay: 0.4,
-                        stagger: 0.1,
-                        ease: "power2.out"
-                    });
-                    
-                    // Slide in booking form card
-                    gsap.from(".hero-form-card", {
-                        x: 50,
-                        opacity: 0,
-                        duration: 0.9,
-                        delay: 0.2,
-                        ease: "power3.out"
-                    });
 
                     // Scroll Reveal - Features Grid
                     gsap.from(".feature-card", {
@@ -1382,11 +1377,6 @@
                     });
                 } else {
                     // Fallback for prefers-reduced-motion (fade ins only, no layout/transforms)
-                    gsap.from(".hero-headline-line, .hero-subtext, .hero-cta, .hero-form-card", {
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.1
-                    });
                     
                     gsap.from(".feature-card", {
                         scrollTrigger: {
