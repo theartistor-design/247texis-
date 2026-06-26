@@ -1222,7 +1222,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Inverness</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fixed price private transfer from Edinburgh Airport to the Highlands capital.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-inverness">Book Now</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="edinburgh-airport-to-inverness/index.html">Book Now</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -1230,7 +1230,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Aberdeen</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Comfortable door-to-door transfer from Edinburgh Airport to the Granite City.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-aberdeen">Book Now</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="edinburgh-airport-to-aberdeen/index.html">Book Now</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -1238,7 +1238,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Fort William</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Scenic fixed price transfer from Edinburgh Airport to the heart of the Highlands.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-fort-william">Book Now</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="edinburgh-airport-to-fort-william/index.html">Book Now</a>
 </div>
 </div>
 </div>
@@ -1745,6 +1745,11 @@
             // GSAP Animations
             if (window.gsap && window.ScrollTrigger) {
                 gsap.registerPlugin(ScrollTrigger);
+                
+                // Refresh ScrollTrigger after layout settles
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 500);
 
                 // Check for prefers-reduced-motion
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1821,9 +1826,9 @@
                     });
 
                     // Scroll Reveal - Day Tours Grid
-                    gsap.from("#day-tours .grid > div", {
+                    gsap.from("#day-tours-grid > div", {
                         scrollTrigger: {
-                            trigger: "#day-tours",
+                            trigger: "#day-tours-grid",
                             start: "top 85%",
                             toggleActions: "play none none none"
                         },
@@ -1836,9 +1841,9 @@
                     });
 
                     // Scroll Reveal - Hire Packages Grid
-                    gsap.from("#hire-packages .grid > div", {
+                    gsap.from("#hire-grid > div", {
                         scrollTrigger: {
-                            trigger: "#hire-packages",
+                            trigger: "#hire-grid",
                             start: "top 85%",
                             toggleActions: "play none none none"
                         },
@@ -1998,9 +2003,9 @@
                         stagger: 0.1
                     });
 
-                    gsap.from("#day-tours .grid > div", {
+                    gsap.from("#day-tours-grid > div", {
                         scrollTrigger: {
-                            trigger: "#day-tours",
+                            trigger: "#day-tours-grid",
                             start: "top 85%"
                         },
                         opacity: 0,
@@ -2008,9 +2013,9 @@
                         stagger: 0.1
                     });
 
-                    gsap.from("#hire-packages .grid > div", {
+                    gsap.from("#hire-grid > div", {
                         scrollTrigger: {
-                            trigger: "#hire-packages",
+                            trigger: "#hire-grid",
                             start: "top 85%"
                         },
                         opacity: 0,
@@ -2240,36 +2245,7 @@
             }
         };
 
-        // GSAP ScrollTrigger Animations for Banners and Cards
-        window.addEventListener('load', () => {
-            if (typeof gsap !== 'undefined') {
-                // Day tours fade up stagger
-                gsap.from("#day-tours-grid > div", {
-                    scrollTrigger: {
-                        trigger: "#day-tours-grid",
-                        start: "top 85%"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-                
-                // Flexible hire fade up stagger
-                gsap.from("#hire-grid > div", {
-                    scrollTrigger: {
-                        trigger: "#hire-grid",
-                        start: "top 85%"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-            }
-        });
+        // GSAP ScrollTrigger Animations are handled in the main animation block
 
         const luggageSelect = document.getElementById('booking-luggage');
         const luggageWarningContainer = document.getElementById('luggage-warning-container');

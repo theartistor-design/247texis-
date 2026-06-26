@@ -331,16 +331,16 @@
 <!-- TopNavBar -->
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<a href="../#home" class="flex items-center">
+<a href="../index.html#home" class="flex items-center">
                 <img src="../logo.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#home">Home</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#services">Services</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#popular-routes">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#day-tours">Day Tours</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#fleet">Fleet</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#reviews">Reviews</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#services">Services</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#popular-routes">Airports</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#day-tours">Day Tours</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#fleet">Fleet</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#route-faq">FAQ</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact-us">Contact</a>
 </nav>
@@ -369,7 +369,7 @@
 <h1 class="font-display-lg text-display-lg text-mist-white leading-tight overflow-hidden">Edinburgh Airport to Aberdeen Transfer — Fixed Price Private Hire</h1>
 <p class="font-body-lg text-body-lg text-mist-white/90 max-w-xl hero-subtext">Guaranteed fixed price door-to-door transfer directly to the Granite City.</p>
 <div class="flex flex-wrap gap-4 justify-center md:justify-start hero-cta">
-<a class="px-8 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber transition-colors" href="../#quote">
+<a class="px-8 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber transition-colors" href="../index.html#quote">
                             Get Instant Quote
                         </a>
 <a class="px-8 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy transition-all" href="#">
@@ -894,11 +894,11 @@
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#popular-routes">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#day-tours">Day Tours</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#services">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#popular-routes">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#day-tours">Day Tours</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#services">Executive Travel</a></li>
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#hire-packages">Vehicle Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#services">Multi-Stop Journeys</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#services">Multi-Stop Journeys</a></li>
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact-us">Contact</a></li>
 </ul>
 </div>
@@ -920,431 +920,10 @@
 </footer>
 <!-- Micro-interaction Scripts & GSAP Animation Code -->
 <script>
-        // Vehicle Selection Toggle Function
-        function selectVehicle(type) {
-            document.getElementById('selected-vehicle').value = type;
-            const vehicles = ['standard', 'executive', 'van'];
-            vehicles.forEach(v => {
-                const card = document.getElementById('vehicle-' + v);
-                const check = document.getElementById('check-' + v);
-                if (v === type) {
-                    card.classList.remove('border-outline-variant');
-                    card.classList.add('border-prestige-gold');
-                    check.classList.remove('hidden');
-                    check.classList.add('flex');
-                    // Scale pop using GSAP
-                    if (window.gsap) {
-                        gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
-                    }
-                } else {
-                    card.classList.remove('border-prestige-gold');
-                    card.classList.add('border-outline-variant');
-                    check.classList.remove('flex');
-                    check.classList.add('hidden');
-                }
-            });
-
-            const optStandard = document.getElementById('options-standard-container');
-            const optExecutive = document.getElementById('options-executive-container');
-
-            if (type === 'standard') {
-                optStandard.classList.remove('hidden');
-                optExecutive.classList.add('hidden');
-                if (window.gsap) {
-                    gsap.fromTo(optStandard, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
-                }
-                selectSpecificVehicle('standard', 'Toyota Corolla');
-            } else if (type === 'executive') {
-                optExecutive.classList.remove('hidden');
-                optStandard.classList.add('hidden');
-                if (window.gsap) {
-                    gsap.fromTo(optExecutive, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
-                }
-                selectSpecificVehicle('executive', 'Range Rover');
-            } else {
-                optStandard.classList.add('hidden');
-                optExecutive.classList.add('hidden');
-                document.getElementById('selected-specific-vehicle').value = '';
-            }
-        }
-
-        // Specific Vehicle Selection Toggle Function
-        function selectSpecificVehicle(category, specificName) {
-            document.getElementById('selected-specific-vehicle').value = specificName;
-            
-            if (category === 'standard') {
-                const subVehicles = [
-                    { id: 'sub-vehicle-corolla', checkId: 'check-sub-corolla', name: 'Toyota Corolla' },
-                    { id: 'sub-vehicle-caddy', checkId: 'check-sub-caddy', name: 'Volkswagen Caddy' }
-                ];
-                subVehicles.forEach(v => {
-                    const card = document.getElementById(v.id);
-                    const check = document.getElementById(v.checkId);
-                    if (v.name === specificName) {
-                        card.classList.remove('border-outline-variant');
-                        card.classList.add('border-prestige-gold');
-                        check.classList.remove('hidden');
-                        check.classList.add('flex');
-                        if (window.gsap) {
-                            gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
-                        }
-                    } else {
-                        card.classList.remove('border-prestige-gold');
-                        card.classList.add('border-outline-variant');
-                        check.classList.remove('flex');
-                        check.classList.add('hidden');
-                    }
-                });
-            } else if (category === 'executive') {
-                const subVehicles = [
-                    { id: 'sub-vehicle-rangerover', checkId: 'check-sub-rangerover', name: 'Range Rover' },
-                    { id: 'sub-vehicle-audirs7', checkId: 'check-sub-audirs7', name: 'Audi RS7' }
-                ];
-                subVehicles.forEach(v => {
-                    const card = document.getElementById(v.id);
-                    const check = document.getElementById(v.checkId);
-                    if (v.name === specificName) {
-                        card.classList.remove('border-outline-variant');
-                        card.classList.add('border-prestige-gold');
-                        check.classList.remove('hidden');
-                        check.classList.add('flex');
-                        if (window.gsap) {
-                            gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
-                        }
-                    } else {
-                        card.classList.remove('border-prestige-gold');
-                        card.classList.add('border-outline-variant');
-                        check.classList.remove('flex');
-                        check.classList.add('hidden');
-                    }
-                });
-            }
-        }
-
-
-        // FAQ Accordion Toggle Function
-        function toggleFaq(el) {
-            const content = el.querySelector('.faq-content');
-            const chevron = el.querySelector('.faq-chevron');
-            
-            // Close other FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== el) {
-                    const c = item.querySelector('.faq-content');
-                    const ch = item.querySelector('.faq-chevron');
-                    c.style.maxHeight = null;
-                    ch.classList.remove('rotate-180');
-                    item.classList.remove('bg-surface-container-low', 'bg-white');
-                    item.classList.add('bg-mist-white');
-                }
-            });
-            
-            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-                content.style.maxHeight = null;
-                chevron.classList.remove('rotate-180');
-                el.classList.remove('bg-surface-container-low', 'bg-white');
-                el.classList.add('bg-mist-white');
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                chevron.classList.add('rotate-180');
-                el.classList.remove('bg-mist-white');
-                el.classList.add('bg-surface-container-low', 'bg-white');
-            }
-        }
-
-        // Initialize animations on window load
-        window.addEventListener('load', () => {
-            // Set scrollHeight for first open FAQ item
-            const firstFaq = document.getElementById('faq-first-item');
-            if (firstFaq) {
-                const content = firstFaq.querySelector('.faq-content');
-                const chevron = firstFaq.querySelector('.faq-chevron');
-                content.style.maxHeight = content.scrollHeight + "px";
-                chevron.classList.add('rotate-180');
-                firstFaq.classList.remove('bg-mist-white');
-                firstFaq.classList.add('bg-surface-container-low', 'bg-white');
-            }
-
-            // Simple parallax effect for hero image
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const heroImage = document.querySelector('.hero-gradient').previousElementSibling;
-                if (heroImage && heroImage.tagName === 'IMG') {
-                    heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-                }
-            });
-
-            // Shrink header padding and shadow on scroll
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.classList.remove('h-20');
-                    header.classList.add('h-16', 'shadow-md');
-                } else {
-                    header.classList.remove('h-16', 'shadow-md');
-                    header.classList.add('h-20');
-                }
-            });
-
-            // GSAP Animations
-            if (window.gsap && window.ScrollTrigger) {
-                gsap.registerPlugin(ScrollTrigger);
-
-                // Check for prefers-reduced-motion
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                if (!prefersReducedMotion) {
-                    // Stagger headline lines
-                    gsap.from(".hero-headline-line", {
-                        y: 40,
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: "power3.out"
-                    });
-                    
-                    // Stagger subtext and CTAs
-                    gsap.from(".hero-subtext, .hero-cta", {
-                        y: 20,
-                        opacity: 0,
-                        duration: 0.8,
-                        delay: 0.4,
-                        stagger: 0.1,
-                        ease: "power2.out"
-                    });
-                    
-                    // Slide in booking form card
-                    gsap.from(".hero-form-card", {
-                        x: 50,
-                        opacity: 0,
-                        duration: 0.9,
-                        delay: 0.2,
-                        ease: "power3.out"
-                    });
-
-                    // Scroll Reveal - Features Grid
-                    gsap.from(".feature-card", {
-                        scrollTrigger: {
-                            trigger: "#features-section",
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        },
-                        y: 30,
-                        opacity: 0,
-                        duration: 0.6,
-                        stagger: 0.1,
-                        ease: "power2.out",
-                        clearProps: "all"
-                    });
-
-                    // Scroll Reveal - Popular Routes Grid
-                    gsap.from(".route-card", {
-                        scrollTrigger: {
-                            trigger: "#popular-routes",
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        },
-                        y: 30,
-                        opacity: 0,
-                        duration: 0.6,
-                        stagger: 0.1,
-                        ease: "power2.out",
-                        clearProps: "all"
-                    });
-
-                    // Scroll Reveal - Testimonial Cards & Elements
-                    gsap.utils.toArray(".testimonial-card").forEach((card) => {
-                        let tl = gsap.timeline({
-                            scrollTrigger: {
-                                trigger: card,
-                                start: "top 85%",
-                                toggleActions: "play none none none"
-                            }
-                        });
-                        
-                        tl.from(card, {
-                            y: 30,
-                            opacity: 0,
-                            duration: 0.6,
-                            ease: "power2.out",
-                            clearProps: "all"
-                        });
-                        
-                        const border = card.querySelector(".border-left-accent");
-                        if (border) {
-                            tl.fromTo(border, { height: 0 }, { height: "100%", duration: 0.4, ease: "power1.inOut" }, "-=0.3");
-                        }
-                        
-                        const stars = card.querySelectorAll(".star-icon");
-                        if (stars.length > 0) {
-                            tl.from(stars, {
-                                scale: 0,
-                                opacity: 0,
-                                duration: 0.25,
-                                stagger: 0.06,
-                                ease: "back.out(2)"
-                            }, "-=0.2");
-                        }
-                    });
-
-                    // Scroll Reveal - Simple Steps Sequentials
-                    let stepsTl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: ".steps-container",
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        }
-                    });
-                    stepsTl.to(".step-number-1", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" })
-                           .to(".step-line-1", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
-                           .to(".step-number-2", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1")
-                           .to(".step-line-2", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
-                           .to(".step-number-3", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1");
-
-                    // Scroll Reveal - FAQ Header and Items
-                    gsap.from(".faq-header, .faq-item", {
-                        scrollTrigger: {
-                            trigger: "#faq",
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        },
-                        y: 20,
-                        opacity: 0,
-                        duration: 0.5,
-                        stagger: 0.08,
-                        ease: "power2.out",
-                        clearProps: "all"
-                    });
-
-                    // Scroll Reveal - Final CTA
-                    gsap.from(".cta-content", {
-                        scrollTrigger: {
-                            trigger: ".cta-section",
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        },
-                        y: 30,
-                        opacity: 0,
-                        duration: 0.7,
-                        ease: "power2.out"
-                    });
-                } else {
-                    // Fallback for prefers-reduced-motion (fade ins only, no layout/transforms)
-                    gsap.from(".hero-headline-line, .hero-subtext, .hero-cta, .hero-form-card", {
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.1
-                    });
-                    
-                    gsap.from(".feature-card", {
-                        scrollTrigger: {
-                            trigger: "#features-section",
-                            start: "top 85%"
-                        },
-                        opacity: 0,
-                        duration: 0.6,
-                        stagger: 0.1
-                    });
-
-                    gsap.from(".route-card", {
-                        scrollTrigger: {
-                            trigger: "#popular-routes",
-                            start: "top 85%"
-                        },
-                        opacity: 0,
-                        duration: 0.6,
-                        stagger: 0.1
-                    });
-
-                    gsap.from(".testimonial-card", {
-                        scrollTrigger: {
-                            trigger: "#reviews",
-                            start: "top 85%"
-                        },
-                        opacity: 0,
-                        duration: 0.6,
-                        stagger: 0.1
-                    });
-
-                    gsap.to(".step-number-1, .step-number-2, .step-number-3", {
-                        opacity: 1,
-                        duration: 0.4,
-                        stagger: 0.15
-                    });
-                }
-            }
-        });
-
-        // Journey Type & Hourly Hire Field Toggle
-        const journeyTypeSelect = document.getElementById('booking-journey-type');
-        const dropOffContainer = document.getElementById('drop-off-container');
-        const dropOffInput = document.getElementById('booking-dropoff');
-        const hoursContainer = document.getElementById('hours-container');
-        const hoursInput = document.getElementById('booking-hours');
-
-        if (journeyTypeSelect) {
-            journeyTypeSelect.addEventListener('change', () => {
-                if (journeyTypeSelect.value === 'hourly') {
-                    dropOffContainer.classList.add('hidden');
-                    dropOffInput.required = false;
-                    hoursContainer.classList.remove('hidden');
-                    hoursInput.required = true;
-                } else {
-                    dropOffContainer.classList.remove('hidden');
-                    dropOffInput.required = true;
-                    hoursContainer.classList.add('hidden');
-                    hoursInput.required = false;
-                }
-            });
-        }
-
-        // Luggage Warning & Auto Upgrade Logic
-        const luggageSelect = document.getElementById('booking-luggage');
-        const luggageWarningContainer = document.getElementById('luggage-warning-container');
-        const upgradeVehicleBtn = document.getElementById('upgrade-vehicle-btn');
-
-        function checkLuggageUpgrade() {
-            const selectedVehicle = document.getElementById('selected-vehicle').value;
-            const selectedLuggage = luggageSelect.value;
-            
-            if (selectedVehicle === 'standard' && (selectedLuggage === '3-4' || selectedLuggage === '5+')) {
-                luggageWarningContainer.classList.remove('hidden');
-            } else {
-                luggageWarningContainer.classList.add('hidden');
-            }
-        }
-
-        if (luggageSelect) {
-            luggageSelect.addEventListener('change', checkLuggageUpgrade);
-        }
-
-        if (upgradeVehicleBtn) {
-            upgradeVehicleBtn.addEventListener('click', () => {
-                selectVehicle('van');
-                luggageWarningContainer.classList.add('hidden');
-            });
-        }
-
-        // Intercept standard vehicle selection function to also check upgrade warning
-        const originalSelectVehicle = window.selectVehicle;
-        window.selectVehicle = function(type) {
-            if (originalSelectVehicle) {
-                originalSelectVehicle(type);
-            }
-            checkLuggageUpgrade();
-        };
-
-        // Mobile menu toggle placeholder
-        document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
-            alert('Mobile navigation would open here with a premium side drawer effect.');
-        });
-
-        // Booking Form Submission & WhatsApp Lead Integration
-        // --- Redesigned Form Step Wizard Logic ---
+        // Form wizard logic
         let currentStep = 1;
         window.goToStep = function(step) {
             if (step > currentStep) {
-                // Validate intermediate steps
                 for (let s = currentStep; s < step; s++) {
                     if (!validateStep(s)) return;
                 }
@@ -1477,13 +1056,8 @@
             selectVehicleType(type);
         };
         
-        // Specific vehicle selection cards override
-        const originalSelectSpecificVehicle = window.selectSpecificVehicle;
+        // Specific vehicle selection cards overrides
         window.selectSpecificVehicle = function(category, name) {
-            if (originalSelectSpecificVehicle) {
-                originalSelectSpecificVehicle(category, name);
-            }
-            
             const corolla = document.getElementById('sub-vehicle-corolla');
             const caddy = document.getElementById('sub-vehicle-caddy');
             const rangerover = document.getElementById('sub-vehicle-rangerover');
@@ -1496,48 +1070,46 @@
                 }
             });
             
+            const checkCorolla = document.getElementById('check-sub-corolla');
+            const checkCaddy = document.getElementById('check-sub-caddy');
+            const checkRangeRover = document.getElementById('check-sub-rangerover');
+            const checkAudiRs7 = document.getElementById('check-sub-audirs7');
+            
+            [checkCorolla, checkCaddy, checkRangeRover, checkAudiRs7].forEach(chk => {
+                if (chk) {
+                    chk.classList.remove('flex');
+                    chk.classList.add('hidden');
+                }
+            });
+            
             let activeCard;
-            if (name === 'Toyota Corolla') activeCard = corolla;
-            else if (name === 'Volkswagen Caddy') activeCard = caddy;
-            else if (name === 'Range Rover') activeCard = rangerover;
-            else if (name === 'Audi RS7') activeCard = audirs7;
+            let activeCheck;
+            if (name === 'Toyota Corolla') {
+                activeCard = corolla;
+                activeCheck = checkCorolla;
+            } else if (name === 'Volkswagen Caddy') {
+                activeCard = caddy;
+                activeCheck = checkCaddy;
+            } else if (name === 'Range Rover') {
+                activeCard = rangerover;
+                activeCheck = checkRangeRover;
+            } else if (name === 'Audi RS7') {
+                activeCard = audirs7;
+                activeCheck = checkAudiRs7;
+            }
             
             if (activeCard) {
                 activeCard.classList.remove('border-[#e0e0e0]');
                 activeCard.classList.add('border-[#c9a84c]');
             }
-        };
-
-        // GSAP ScrollTrigger Animations for Banners and Cards
-        window.addEventListener('load', () => {
-            if (typeof gsap !== 'undefined') {
-                // Day tours fade up stagger
-                gsap.from("#day-tours-grid > div", {
-                    scrollTrigger: {
-                        trigger: "#day-tours-grid",
-                        start: "top 85%"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-                
-                // Flexible hire fade up stagger
-                gsap.from("#hire-grid > div", {
-                    scrollTrigger: {
-                        trigger: "#hire-grid",
-                        start: "top 85%"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
+            if (activeCheck) {
+                activeCheck.classList.remove('hidden');
+                activeCheck.classList.add('flex');
+                if (window.gsap) {
+                    gsap.fromTo(activeCheck, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2)" });
+                }
             }
-        });
+        };
 
         const luggageSelect = document.getElementById('booking-luggage');
         const luggageWarningContainer = document.getElementById('luggage-warning-container');
@@ -1574,6 +1146,56 @@
             checkLuggageUpgrade();
         };
 
+        // FAQ Toggle Function
+        window.toggleFaq = function(element) {
+            const content = element.querySelector('.faq-content');
+            const chevron = element.querySelector('.faq-chevron');
+            const isOpen = element.classList.contains('faq-open');
+            
+            // Close all other FAQs
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('faq-open');
+                    item.querySelector('.faq-content').style.maxHeight = '0px';
+                    item.querySelector('.faq-chevron').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            if (isOpen) {
+                element.classList.remove('faq-open');
+                content.style.maxHeight = '0px';
+                chevron.style.transform = 'rotate(0deg)';
+            } else {
+                element.classList.add('faq-open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        };
+
+        // Scroll progress bar indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progress = document.getElementById("scroll-progress");
+            if (progress) progress.style.width = scrolled + "%";
+            
+            // Header scroll style toggle
+            const header = document.querySelector('header');
+            if (header) {
+                if (winScroll > 50) {
+                    header.classList.add('scrolled');
+                    header.classList.remove('h-20');
+                    header.classList.add('h-16', 'shadow-md');
+                } else {
+                    header.classList.remove('scrolled');
+                    header.classList.remove('h-16', 'shadow-md');
+                    header.classList.add('h-20');
+                }
+            }
+        });
+
         // Mobile menu toggle placeholder
         document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
             alert('Mobile navigation would open here with a premium side drawer effect.');
@@ -1607,48 +1229,43 @@
             };
             let selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
             if ((vehicleVal === 'standard' || vehicleVal === 'executive') && specificVehicleVal) {
-                selectedVehicleName += ` (${specificVehicleVal})`;
+                selectedVehicleName += ' (' + specificVehicleVal + ')';
             }
 
-            // 1. Construct formatted lead message for the company
             const leadMessage = 
-`New Booking Request
-Name: ${nameVal}
-Email: ${emailVal}
-From: ${pickupVal}
-To: ${dropoffVal}
-Date: ${dateVal}
-Time: ${timeVal}
-Passengers: ${passengersVal}
-Large Bags: ${luggageVal}
-Flight Number: ${flightVal}
-Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
-Hours (if hourly): ${hoursVal}
-Service Type: ${serviceTypeVal}
-Vehicle Class: ${selectedVehicleName}
-Special Requirements: ${notesVal}
-Customer WhatsApp: ${customerWhatsappVal}`;
+'New Booking Request\n' +
+'Name: ' + nameVal + '\n' +
+'Email: ' + emailVal + '\n' +
+'From: ' + pickupVal + '\n' +
+'To: ' + dropoffVal + '\n' +
+'Date: ' + dateVal + '\n' +
+'Time: ' + timeVal + '\n' +
+'Passengers: ' + passengersVal + '\n' +
+'Large Bags: ' + luggageVal + '\n' +
+'Flight Number: ' + flightVal + '\n' +
+'Journey Type: ' + (journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire') + '\n' +
+'Hours (if hourly): ' + hoursVal + '\n' +
+'Service Type: ' + serviceTypeVal + '\n' +
+'Vehicle Class: ' + selectedVehicleName + '\n' +
+'Special Requirements: ' + notesVal + '\n' +
+'Customer WhatsApp: ' + customerWhatsappVal;
 
-            // 2. Construct automatic confirmation message for the customer
             const customerConfirmation = 
-`Hi ${nameVal}, thank you for contacting Scotland 247 Taxis.
-We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.`;
+'Hi ' + nameVal + ', thank you for contacting Scotland 247 Taxis.\n' +
+'We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.';
 
-            // Open company WhatsApp lead
-            const companyUrl = `https://wa.me/447469598219?text=${encodeURIComponent(leadMessage)}`;
+            const companyUrl = 'https://wa.me/447469598219?text=' + encodeURIComponent(leadMessage);
             window.open(companyUrl, '_blank');
 
-            // Open customer confirmation (clean customer number of spaces/symbols)
             const cleanCustomerNumber = customerWhatsappVal.replace(/[^0-9+]/g, '');
             if (cleanCustomerNumber) {
                 setTimeout(() => {
-                    const customerUrl = `https://wa.me/${cleanCustomerNumber}?text=${encodeURIComponent(customerConfirmation)}`;
+                    const customerUrl = 'https://wa.me/' + cleanCustomerNumber + '?text=' + encodeURIComponent(customerConfirmation);
                     window.open(customerUrl, '_blank');
                 }, 1000);
             }
 
-            // Fallback UI modal/alert confirmation
-            alert(`Booking Request Submitted!\n\nConfirmation message sent to you:\n"${customerConfirmation}"`);
+            alert('Booking Request Submitted!\n\nConfirmation message sent to you:\n"' + customerConfirmation + '"');
         });
 
         // Contact Us Form Submission
@@ -1663,22 +1280,102 @@ We have received your booking request and will confirm your fixed price shortly.
                 const messageVal = document.getElementById('contact-message').value;
 
                 const contactMessage = 
-`New Contact Enquiry
-Name: ${nameVal}
-WhatsApp: ${whatsappVal}
-Email: ${emailVal}
-Message: ${messageVal}`;
+'New Contact Enquiry\n' +
+'Name: ' + nameVal + '\n' +
+'WhatsApp: ' + whatsappVal + '\n' +
+'Email: ' + emailVal + '\n' +
+'Message: ' + messageVal;
 
-                // Notify company on WhatsApp
-                const contactUrl = `https://wa.me/447469598219?text=${encodeURIComponent(contactMessage)}`;
+                const contactUrl = 'https://wa.me/447469598219?text=' + encodeURIComponent(contactMessage);
                 window.open(contactUrl, '_blank');
 
-                alert(`Thank you ${nameVal}! Your message has been sent to Scotland 247 Taxis. We will get back to you shortly.`);
+                alert('Thank you ' + nameVal + '! Your message has been sent to Scotland 247 Taxis. We will get back to you shortly.');
                 contactForm.reset();
             });
         }
-    </script>
 
+        // GSAP ScrollTrigger Animations
+        if (window.gsap && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Refresh ScrollTrigger after layout settles
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 500);
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                // Fade in subtext and CTAs
+                gsap.from(".hero-subtext, .hero-cta", {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: 0.4,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+                
+                // Slide in booking form card
+                gsap.from(".hero-form-card", {
+                    x: 50,
+                    opacity: 0,
+                    duration: 0.9,
+                    delay: 0.2,
+                    ease: "power3.out"
+                });
+
+                // Scroll Reveal - Why Choose Route Cards
+                gsap.from("#why-choose-route .grid > div", {
+                    scrollTrigger: {
+                        trigger: "#why-choose-route",
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+
+                // Scroll Reveal - Included Section Items
+                gsap.from("#included-section .grid > div, #included-section .bg-white", {
+                    scrollTrigger: {
+                        trigger: "#included-section",
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.08,
+                    ease: "power2.out"
+                });
+
+                // Scroll Reveal - FAQ Items
+                gsap.from("#route-faq .faq-item", {
+                    scrollTrigger: {
+                        trigger: "#route-faq",
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power2.out"
+                });
+            } else {
+                // Fallback for prefers-reduced-motion
+                gsap.from(".hero-subtext, .hero-cta, .hero-form-card", {
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1
+                });
+            }
+        }
+    </script>
 
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#c9a84c] text-white rounded-full shadow-2xl hover:bg-[#b0923d] hover:scale-110 transition-all duration-300 group whatsapp-gold-pulse" aria-label="Chat with us on WhatsApp">
