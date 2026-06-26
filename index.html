@@ -438,10 +438,10 @@
             #home {
                 min-height: auto !important;
                 padding-top: 6rem !important;
-                padding-bottom: 4rem !important;
+                padding-bottom: 0 !important;
                 display: flex !important;
                 flex-direction: column !important;
-                justify-content: center !important;
+                justify-content: flex-start !important;
             }
             #home > div.relative {
                 grid-template-columns: 1fr !important;
@@ -822,12 +822,13 @@
 </header>
 <main class="pt-20">
 <!-- Hero Section -->
-<section id="home" class="relative min-h-[870px] flex items-center justify-center overflow-hidden bg-[#788696]">
+<section id="home" class="relative min-h-[1050px] flex flex-col justify-between overflow-hidden bg-[#788696]">
 <div class="absolute inset-0 z-0 overflow-hidden">
-<img alt="A luxury black executive sedan parked on a winding road in the Scottish Highlands, with rolling green hills and a dramatic misty sky in the background, conveying a sense of premium travel and reliability." class="w-full h-full object-cover ken-burns" data-alt="A luxury black executive sedan parked on a scenic winding road overlooking the Scottish Highlands at twilight. The sky is a palette of deep blues and purples, mirroring the prestige-gold and deep-navy branding. Soft golden light from the setting sun glints off the polished car body, emphasizing premium reliability. The atmosphere is quiet, professional, and tranquil, reflecting a high-end editorial automotive photography style." src="hero-bg.jpg?v=2"/>
+<img alt="Luxury black executive car driving on dramatic empty Scottish Highland road at golden magic hour, winding road stretching into misty mountains, dramatic god rays piercing through dark storm." class="w-full h-full object-cover ken-burns" src="hero-unified-bg.jpg?v=2"/>
 <div class="absolute inset-0 hero-gradient"></div>
 </div>
-<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center w-full flex-grow py-12 md:py-24">
 <div class="space-y-6">
 <h1 class="font-display-lg text-display-lg text-mist-white leading-tight overflow-hidden">
                         <span class="block hero-headline-line">Scotland's Premier</span>
@@ -861,7 +862,7 @@
     </div>
 </div>
 </div>
-<!-- Bento-style Form Container -->
+<!-- Booking Form Card -->
 <div class="bg-white p-10 rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] max-w-[900px] mx-auto hero-form-card relative" id="quote">
     <!-- Form Header -->
     <div class="text-center mb-8">
@@ -1124,12 +1125,9 @@
     </form>
 </div>
 </div>
-</div>
-</section>
 
-<!-- Booking Rules Banner -->
-<section class="relative min-h-[180px] md:h-[180px] py-8 md:py-0 flex items-center overflow-hidden bg-cover bg-center" style="background-image: url('booking_rules_bg.jpg?v=2');">
-    <div class="absolute inset-0 bg-black/55 z-10"></div>
+<!-- Booking Rules Banner (Unified inside hero) -->
+<div class="relative z-10 min-h-[180px] md:h-[180px] py-8 md:py-0 flex items-center border-t border-white/10 bg-black/35 w-full">
     <div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center items-center justify-center">
             <!-- Item 1 -->
@@ -1158,6 +1156,7 @@
             </div>
         </div>
     </div>
+</div>
 </section>
 
 <!-- Services Section -->
