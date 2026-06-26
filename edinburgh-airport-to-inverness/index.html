@@ -378,214 +378,266 @@
 </div>
 </div>
 <!-- Bento-style Form Container -->
-<div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold hero-form-card" id="quote">
-<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-6">Get Your Fixed Price Quote</h2>
-<form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<!-- Journey Type -->
-<div class="col-span-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Journey Type</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-journey-type">
-<option value="one-way">One Way</option>
-<option value="return">Return</option>
-<option value="hourly">Hourly Hire</option>
-</select>
-</div>
+<div class="bg-white p-10 rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] max-w-[900px] mx-auto hero-form-card relative" id="quote">
+    <!-- Form Header -->
+    <div class="text-center mb-8">
+        <h2 class="font-headline-lg text-3xl font-bold text-deep-navy mb-2">Get Your Fixed Price Quote</h2>
+        <div class="w-[60px] h-[3px] bg-[#c9a84c] mx-auto mb-3"></div>
+        <p class="text-gray-500 text-[14px]">Fill in your journey details below. We respond within minutes via WhatsApp.</p>
+    </div>
 
-<!-- Service Type -->
-<div class="col-span-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Service Type</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-service-type">
-<option value="Airport Transfer">Airport Transfer</option>
-<option value="Day Tour">Day Tour</option>
-<option value="Executive Travel">Executive Travel</option>
-<option value="Vehicle Hire">Vehicle Hire</option>
-<option value="Multi-Stop Journey">Multi-Stop Journey</option>
-<option value="Long Distance">Long Distance</option>
-<option value="Package Delivery">Package Delivery</option>
-</select>
-</div>
-
-<!-- Full Name -->
-<div class="col-span-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
-</div>
-
-<!-- Pickup Location -->
-<div class="col-span-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Pickup Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
-</div>
-
-<!-- Drop-off Location -->
-<div class="col-span-2" id="drop-off-container">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Drop-off Location</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
-</div>
-
-<!-- Number of Hours (Hourly Hire Only) -->
-<div class="col-span-2 hidden" id="hours-container">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="number" id="booking-hours" min="2" value="2"/>
-</div>
-
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Date</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" id="booking-date" required/>
-</div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Time</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" id="booking-time" required/>
-</div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Passengers</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-passengers">
-<option value="1-4">1-4</option>
-<option value="5-8">5-8</option>
-</select>
-</div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Luggage Pieces</label>
-<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-luggage">
-<option value="1-2">1-2 Bags</option>
-<option value="3-4">3-4 Bags</option>
-<option value="5+">5+ Bags</option>
-</select>
-</div>
-
-<!-- Special Requirements -->
-<div class="col-span-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Special Requirements or Notes (Optional)</label>
-<textarea class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors h-24" placeholder="Any special requests or instructions..." id="booking-notes"></textarea>
-</div>
-
-<!-- Luggage Warning Message (Hidden by Default) -->
-<div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
-    <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
-    <button type="button" id="upgrade-vehicle-btn" class="px-4 py-2 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-label-sm font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
-</div>
-
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Flight Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text" id="booking-flight"/>
-</div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
-</div>
-<div>
-<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
-<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Email Copy" type="email" id="booking-email"/>
-</div>
-
-<!-- Vehicle Selection Component -->
-<div class="col-span-2 mt-2">
-<label class="font-label-sm text-label-sm text-deep-navy mb-2 block">Select Vehicle Type</label>
-<div class="grid grid-cols-3 gap-3">
-<!-- Standard Card -->
-<div id="vehicle-standard" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('standard')">
-<div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-standard">
-<span class="material-symbols-outlined text-[14px]">check</span>
-</div>
-<img src="../standard_sedan.png" alt="Standard Sedan" class="w-full h-16 object-contain mb-2"/>
-<div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Standard</span>
-<span class="text-[11px] text-on-surface-variant block">1-4 Pax</span>
-</div>
-</div>
-<!-- Executive Card -->
-<div id="vehicle-executive" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('executive')">
-<div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-executive">
-<span class="material-symbols-outlined text-[14px]">check</span>
-</div>
-<img src="../executive_sedan.png" alt="Executive Sedan" class="w-full h-16 object-contain mb-2"/>
-<div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Executive</span>
-<span class="text-[11px] text-on-surface-variant block">1-4 Pax / Luxury</span>
-</div>
-</div>
-<!-- Van Card -->
-<div id="vehicle-van" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('van')">
-<div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-van">
-<span class="material-symbols-outlined text-[14px]">check</span>
-</div>
-<img src="../premium_van.png" alt="Premium Van" class="w-full h-16 object-contain mb-2"/>
-<div class="text-center">
-<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Van</span>
-<span class="text-[11px] text-on-surface-variant block">5-8 Pax</span>
-</div>
-</div>
-
-<!-- Expandable Options Panel for Standard -->
-<div id="options-standard-container" class="col-span-3 mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Standard Vehicle:</p>
-    <div class="grid grid-cols-2 gap-3">
-        <!-- Toyota Corolla Card -->
-        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
-            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-corolla">
-                <span class="material-symbols-outlined text-[14px]">check</span>
-            </div>
-            <img src="../toyota_corolla.png" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
-            <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Toyota Corolla</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
-            </div>
+    <!-- Progress Pills -->
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
+        <div class="step-pill flex-1 py-3 px-4 text-center text-sm font-semibold rounded-lg bg-[#c9a84c] text-white transition-all cursor-pointer" onclick="goToStep(1)">
+            Step 1: Journey Details
         </div>
-        <!-- Volkswagen Caddy Card -->
-        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
-            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-caddy">
-                <span class="material-symbols-outlined text-[14px]">check</span>
-            </div>
-            <img src="../volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
-            <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Volkswagen Caddy</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
-            </div>
+        <div class="step-pill flex-1 py-3 px-4 text-center text-sm font-semibold rounded-lg bg-[#f0f0f0] text-[#666666] transition-all cursor-pointer" onclick="goToStep(2)">
+            Step 2: Vehicle & Extras
+        </div>
+        <div class="step-pill flex-1 py-3 px-4 text-center text-sm font-semibold rounded-lg bg-[#f0f0f0] text-[#666666] transition-all cursor-pointer" onclick="goToStep(3)">
+            Step 3: Your Details
         </div>
     </div>
-</div>
 
-<!-- Expandable Options Panel for Executive -->
-<div id="options-executive-container" class="col-span-3 hidden mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Executive Vehicle:</p>
-    <div class="grid grid-cols-2 gap-3">
-        <!-- Range Rover Card -->
-        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Range Rover')">
-            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-rangerover">
-                <span class="material-symbols-outlined text-[14px]">check</span>
+    <form class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+        <!-- STEP 1: Journey Details -->
+        <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4" data-step="1">
+            <!-- Journey Type -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Journey Type</label>
+                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-journey-type">
+                    <option value="one-way">One Way</option>
+                    <option value="return">Return</option>
+                    <option value="hourly">Hourly Hire</option>
+                </select>
             </div>
-            <img src="../range_rover.png" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
-            <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Range Rover</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
+            <!-- Service Type -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Service Type</label>
+                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-service-type">
+                    <option value="Airport Transfer">Airport Transfer</option>
+                    <option value="Day Tour">Day Tour</option>
+                    <option value="Executive Travel">Executive Travel</option>
+                    <option value="Vehicle Hire">Vehicle Hire</option>
+                    <option value="Multi-Stop Journey">Multi-Stop Journey</option>
+                    <option value="Long Distance">Long Distance</option>
+                    <option value="Package Delivery">Package Delivery</option>
+                </select>
+            </div>
+            <!-- Number of Hours -->
+            <div class="col-span-1 hidden" id="hours-container">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" type="number" id="booking-hours" min="2" value="2"/>
+            </div>
+            
+            <!-- Pickup Location -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Pickup Location</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
+            </div>
+            <!-- Drop-off Location -->
+            <div class="col-span-1" id="drop-off-container">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Drop-off Location</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
+            </div>
+            <!-- Flight Number -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Flight Number</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Optional" type="text" id="booking-flight"/>
+            </div>
+
+            <!-- Navigation -->
+            <div class="col-span-3 flex justify-end mt-4">
+                <button type="button" class="px-6 py-3 bg-[#c9a84c] hover:bg-[#b0923d] text-white font-bold rounded-lg transition-all duration-200 shadow-md" onclick="handleNextStep(1)">
+                    Next Step
+                </button>
             </div>
         </div>
-        <!-- Audi RS7 Card -->
-        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
-            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-audirs7">
-                <span class="material-symbols-outlined text-[14px]">check</span>
+
+        <!-- STEP 2: Vehicle & Extras -->
+        <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 hidden" data-step="2">
+            <!-- Date -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Date</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" type="date" id="booking-date" required/>
             </div>
-            <img src="../audi_rs7.png" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
-            <div class="text-center">
-                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Audi RS7</span>
-                <span class="text-[11px] text-on-surface-variant block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
+            <!-- Time -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Time</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" type="time" id="booking-time" required/>
+            </div>
+            <!-- Passengers -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Passengers</label>
+                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-passengers">
+                    <option value="1-4">1-4</option>
+                    <option value="5-8">5-8</option>
+                </select>
+            </div>
+            
+            <!-- Luggage Pieces -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Luggage Pieces</label>
+                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-luggage">
+                    <option value="1-2">1-2 Bags</option>
+                    <option value="3-4">3-4 Bags</option>
+                    <option value="5+">5+ Bags</option>
+                </select>
+            </div>
+            <!-- Empty Spacer -->
+            <div class="col-span-2"></div>
+
+            <!-- Luggage Warning Message (Hidden by Default) -->
+            <div id="luggage-warning-container" class="hidden col-span-3 p-4 bg-[#fdf9eb] border-l-4 border-[#c9a84c] rounded-r-lg text-[#856404] font-body-md text-sm text-left transition-all duration-300 mt-2">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[20px] text-[#c9a84c] mt-0.5">warning</span>
+                    <div>
+                        <p class="font-semibold mb-2">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
+                        <button type="button" id="upgrade-vehicle-btn" class="px-4 py-2 bg-[#c9a84c] hover:bg-[#b0923d] text-white rounded text-xs font-bold uppercase transition-colors">Upgrade to 6-Seater</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle Type (spans all 3 columns) -->
+            <div class="col-span-3 mt-4">
+                <label class="text-[12px] font-bold text-deep-navy mb-2 block">Select Vehicle Type</label>
+                <div class="grid grid-cols-3 gap-3">
+                    <div id="btn-vehicle-standard" class="py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border bg-[#c9a84c] text-white shadow-sm" onclick="selectVehicleType('standard')">Standard</div>
+                    <div id="btn-vehicle-executive" class="py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border border-[#e0e0e0] bg-[#f0f0f0] text-[#666666] hover:bg-gray-150" onclick="selectVehicleType('executive')">Executive</div>
+                    <div id="btn-vehicle-van" class="py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border border-[#e0e0e0] bg-[#f0f0f0] text-[#666666] hover:bg-gray-150" onclick="selectVehicleType('van')">Van</div>
+                </div>
+            </div>
+
+            <!-- Specific Vehicle Selection (spans all 3 columns) -->
+            <div class="col-span-3">
+                <!-- Standard Suboptions -->
+                <div id="options-standard-container" class="mt-3 bg-[#f8f8f8] border border-[#e0e0e0] rounded-xl p-4 transition-all duration-300">
+                    <p class="font-label-sm text-[11px] text-[#666666] uppercase tracking-wider mb-3">Select Specific Standard Vehicle:</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#c9a84c]" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-corolla">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="../toyota_corolla.png" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Toyota Corolla</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
+                            </div>
+                        </div>
+                        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#e0e0e0]" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-caddy">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="../volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Volkswagen Caddy</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Suboptions -->
+                <div id="options-executive-container" class="hidden mt-3 bg-[#f8f8f8] border border-[#e0e0e0] rounded-xl p-4 transition-all duration-300">
+                    <p class="font-label-sm text-[11px] text-[#666666] uppercase tracking-wider mb-3">Select Specific Executive Vehicle:</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#c9a84c]" onclick="selectSpecificVehicle('executive', 'Range Rover')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-rangerover">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="../range_rover.png" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Range Rover</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
+                            </div>
+                        </div>
+                        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#e0e0e0]" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-audirs7">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="../audi_rs7.png" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Audi RS7</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Inputs -->
+            <input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
+            <input type="hidden" name="specific_vehicle" id="selected-specific-vehicle" value="Toyota Corolla"/>
+
+            <!-- Navigation -->
+            <div class="col-span-3 flex justify-between mt-4">
+                <button type="button" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-200" onclick="goToStep(1)">
+                    Back
+                </button>
+                <button type="button" class="px-6 py-3 bg-[#c9a84c] hover:bg-[#b0923d] text-white font-bold rounded-lg transition-all duration-200 shadow-md" onclick="handleNextStep(2)">
+                    Next Step
+                </button>
             </div>
         </div>
-    </div>
-</div>
 
-</div>
-<input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
-<input type="hidden" name="specific_vehicle" id="selected-specific-vehicle" value="Toyota Corolla"/>
-</div>
+        <!-- STEP 3: Your Details -->
+        <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 hidden" data-step="3">
+            <!-- Full Name -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Full Name</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
+            </div>
+            <!-- WhatsApp Number -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">WhatsApp Number</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
+            </div>
+            <!-- Email Address -->
+            <div class="col-span-1">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Email Address (Optional)</label>
+                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="For Email Copy" type="email" id="booking-email"/>
+            </div>
+            
+            <!-- Special Requirements -->
+            <div class="col-span-3">
+                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Special Requirements or Notes (Optional)</label>
+                <textarea class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200 h-24 resize-none" placeholder="Any special requests or instructions..." id="booking-notes"></textarea>
+            </div>
 
-<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
-                            Get My Fixed Quote
-                        </button>
-<p class="col-span-2 text-center text-xs italic text-[#c9a84c] mt-2">
-    We require a minimum of 12 hours advance notice. Last-minute requests subject to availability.
-</p>
-</form>
+            <!-- Get My Fixed Quote button -->
+            <div class="col-span-3 mt-4">
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-[#c9a84c] to-[#b0923d] hover:translate-y-[-2px] text-white font-bold text-lg rounded-[50px] shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+                    </svg>
+                    <span>Get My Fixed Quote</span>
+                </button>
+            </div>
+
+            <!-- Trust Icons below submit button -->
+            <div class="col-span-3 flex justify-center items-center gap-6 mt-4 text-gray-500 text-xs text-center">
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px] text-gray-400">lock</span>
+                    <span>Secure & Private</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px] text-gray-400">schedule</span>
+                    <span>Response Within Minutes</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px] text-gray-400">verified</span>
+                    <span>Fixed Price Guaranteed</span>
+                </div>
+            </div>
+
+            <!-- Back navigation button -->
+            <div class="col-span-3 flex justify-center mt-2">
+                <button type="button" class="text-gray-400 hover:text-gray-600 text-sm font-semibold underline" onclick="goToStep(2)">
+                    Go back to Step 2
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
 </div>
 </section>
@@ -1247,6 +1299,246 @@
         }
 
         // Luggage Warning & Auto Upgrade Logic
+        const luggageSelect = document.getElementById('booking-luggage');
+        const luggageWarningContainer = document.getElementById('luggage-warning-container');
+        const upgradeVehicleBtn = document.getElementById('upgrade-vehicle-btn');
+
+        function checkLuggageUpgrade() {
+            const selectedVehicle = document.getElementById('selected-vehicle').value;
+            const selectedLuggage = luggageSelect.value;
+            
+            if (selectedVehicle === 'standard' && (selectedLuggage === '3-4' || selectedLuggage === '5+')) {
+                luggageWarningContainer.classList.remove('hidden');
+            } else {
+                luggageWarningContainer.classList.add('hidden');
+            }
+        }
+
+        if (luggageSelect) {
+            luggageSelect.addEventListener('change', checkLuggageUpgrade);
+        }
+
+        if (upgradeVehicleBtn) {
+            upgradeVehicleBtn.addEventListener('click', () => {
+                selectVehicle('van');
+                luggageWarningContainer.classList.add('hidden');
+            });
+        }
+
+        // Intercept standard vehicle selection function to also check upgrade warning
+        const originalSelectVehicle = window.selectVehicle;
+        window.selectVehicle = function(type) {
+            if (originalSelectVehicle) {
+                originalSelectVehicle(type);
+            }
+            checkLuggageUpgrade();
+        };
+
+        // Mobile menu toggle placeholder
+        document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
+            alert('Mobile navigation would open here with a premium side drawer effect.');
+        });
+
+        // Booking Form Submission & WhatsApp Lead Integration
+        // --- Redesigned Form Step Wizard Logic ---
+        let currentStep = 1;
+        window.goToStep = function(step) {
+            if (step > currentStep) {
+                // Validate intermediate steps
+                for (let s = currentStep; s < step; s++) {
+                    if (!validateStep(s)) return;
+                }
+            }
+            currentStep = step;
+            
+            // Update Pills visual state
+            const pills = document.querySelectorAll('.step-pill');
+            pills.forEach((pill, idx) => {
+                if (idx === step - 1) {
+                    pill.classList.remove('bg-[#f0f0f0]', 'text-[#666666]');
+                    pill.classList.add('bg-[#c9a84c]', 'text-white');
+                } else {
+                    pill.classList.remove('bg-[#c9a84c]', 'text-white');
+                    pill.classList.add('bg-[#f0f0f0]', 'text-[#666666]');
+                }
+            });
+            
+            // Toggle step content
+            const contents = document.querySelectorAll('.step-content');
+            contents.forEach((content, idx) => {
+                if (idx === step - 1) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        };
+
+        window.handleNextStep = function(step) {
+            if (validateStep(step)) {
+                goToStep(step + 1);
+            }
+        };
+
+        function validateStep(step) {
+            if (step === 1) {
+                const pickup = document.getElementById('booking-pickup');
+                const journeyType = document.getElementById('booking-journey-type').value;
+                const dropoff = document.getElementById('booking-dropoff');
+                const hours = document.getElementById('booking-hours');
+                
+                if (!pickup.value.trim()) {
+                    pickup.focus();
+                    pickup.classList.add('border-red-500');
+                    setTimeout(() => pickup.classList.remove('border-red-500'), 1500);
+                    return false;
+                }
+                if (journeyType === 'hourly') {
+                    if (!hours.value || parseInt(hours.value) < 2) {
+                        hours.focus();
+                        hours.classList.add('border-red-500');
+                        setTimeout(() => hours.classList.remove('border-red-500'), 1500);
+                        return false;
+                    }
+                } else {
+                    if (!dropoff.value.trim()) {
+                        dropoff.focus();
+                        dropoff.classList.add('border-red-500');
+                        setTimeout(() => dropoff.classList.remove('border-red-500'), 1500);
+                        return false;
+                    }
+                }
+            } else if (step === 2) {
+                const date = document.getElementById('booking-date');
+                const time = document.getElementById('booking-time');
+                
+                if (!date.value) {
+                    date.focus();
+                    date.classList.add('border-red-500');
+                    setTimeout(() => date.classList.remove('border-red-500'), 1500);
+                    return false;
+                }
+                if (!time.value) {
+                    time.focus();
+                    time.classList.add('border-red-500');
+                    setTimeout(() => time.classList.remove('border-red-500'), 1500);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        window.selectVehicleType = function(type) {
+            document.getElementById('selected-vehicle').value = type;
+            
+            // Update pill buttons classes
+            const btnStandard = document.getElementById('btn-vehicle-standard');
+            const btnExecutive = document.getElementById('btn-vehicle-executive');
+            const btnVan = document.getElementById('btn-vehicle-van');
+            
+            if (btnStandard && btnExecutive && btnVan) {
+                [btnStandard, btnExecutive, btnVan].forEach(btn => {
+                    btn.className = "py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border border-[#e0e0e0] bg-[#f0f0f0] text-[#666666]";
+                });
+                
+                const activeBtn = document.getElementById('btn-vehicle-' + type);
+                if (activeBtn) {
+                    activeBtn.className = "py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border bg-[#c9a84c] text-white shadow-sm";
+                }
+            }
+            
+            // Expand suboptions
+            const stdContainer = document.getElementById('options-standard-container');
+            const exeContainer = document.getElementById('options-executive-container');
+            
+            if (stdContainer && exeContainer) {
+                if (type === 'standard') {
+                    stdContainer.classList.remove('hidden');
+                    exeContainer.classList.add('hidden');
+                    selectSpecificVehicle('standard', 'Toyota Corolla');
+                } else if (type === 'executive') {
+                    stdContainer.classList.add('hidden');
+                    exeContainer.classList.remove('hidden');
+                    selectSpecificVehicle('executive', 'Range Rover');
+                } else {
+                    stdContainer.classList.add('hidden');
+                    exeContainer.classList.add('hidden');
+                    document.getElementById('selected-specific-vehicle').value = '';
+                }
+            }
+            
+            if (typeof checkLuggageUpgrade === 'function') {
+                checkLuggageUpgrade();
+            }
+        };
+
+        // Compatibility mapping
+        window.selectVehicle = function(type) {
+            selectVehicleType(type);
+        };
+        
+        // Specific vehicle selection cards override
+        const originalSelectSpecificVehicle = window.selectSpecificVehicle;
+        window.selectSpecificVehicle = function(category, name) {
+            if (originalSelectSpecificVehicle) {
+                originalSelectSpecificVehicle(category, name);
+            }
+            
+            const corolla = document.getElementById('sub-vehicle-corolla');
+            const caddy = document.getElementById('sub-vehicle-caddy');
+            const rangerover = document.getElementById('sub-vehicle-rangerover');
+            const audirs7 = document.getElementById('sub-vehicle-audirs7');
+            
+            [corolla, caddy, rangerover, audirs7].forEach(card => {
+                if (card) {
+                    card.classList.remove('border-[#c9a84c]', 'border-prestige-gold');
+                    card.classList.add('border-[#e0e0e0]');
+                }
+            });
+            
+            let activeCard;
+            if (name === 'Toyota Corolla') activeCard = corolla;
+            else if (name === 'Volkswagen Caddy') activeCard = caddy;
+            else if (name === 'Range Rover') activeCard = rangerover;
+            else if (name === 'Audi RS7') activeCard = audirs7;
+            
+            if (activeCard) {
+                activeCard.classList.remove('border-[#e0e0e0]');
+                activeCard.classList.add('border-[#c9a84c]');
+            }
+        };
+
+        // GSAP ScrollTrigger Animations for Banners and Cards
+        window.addEventListener('load', () => {
+            if (typeof gsap !== 'undefined') {
+                // Day tours fade up stagger
+                gsap.from("#day-tours-grid > div", {
+                    scrollTrigger: {
+                        trigger: "#day-tours-grid",
+                        start: "top 85%"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+                
+                // Flexible hire fade up stagger
+                gsap.from("#hire-grid > div", {
+                    scrollTrigger: {
+                        trigger: "#hire-grid",
+                        start: "top 85%"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+            }
+        });
+
         const luggageSelect = document.getElementById('booking-luggage');
         const luggageWarningContainer = document.getElementById('luggage-warning-container');
         const upgradeVehicleBtn = document.getElementById('upgrade-vehicle-btn');
