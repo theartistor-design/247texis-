@@ -3,8 +3,8 @@
 <html class="scroll-smooth" lang="en-GB"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Scotland 247 Taxis | Reliable Airport Transfers Across Scotland</title>
-<meta name="description" content="Scotland 247 Taxis provides premium, fixed-price airport transfers and private hire services across Scotland. Book online or via WhatsApp today."/>
+<title>Scotland 247 Taxis | Airport Transfers, Day Tours & Private Hire Across Scotland</title>
+<meta name="description" content="Scotland's premier private hire network. Fixed-price airport transfers across 5 Scottish airports, private Highland day tours, executive travel, vehicle hire & more. Book via WhatsApp. Minimum 12 hours advance notice required."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -314,6 +314,16 @@
 
         /* Section overflow for orbs */
         #home { overflow:hidden!important; }
+
+        /* Floating WhatsApp Button Gold Pulsing */
+        @keyframes goldPulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(201, 168, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+        }
+        .whatsapp-gold-pulse {
+            animation: goldPulse 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-mist-white text-charcoal-text font-body-md selection:bg-prestige-gold selection:text-deep-navy">
@@ -324,9 +334,11 @@
                 <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
-<a class="text-prestige-gold border-b-2 border-prestige-gold pb-1 font-body-md text-body-md" href="#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#services">Services</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#popular-routes">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#quote">Executive</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#day-tours">Day Tours</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#fleet">Fleet</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#faq">FAQ</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
@@ -354,19 +366,38 @@
 <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
 <div class="space-y-6">
 <h1 class="font-display-lg text-display-lg text-mist-white leading-tight overflow-hidden">
-                        <span class="block hero-headline-line">Reliable Airport Transfers</span>
-                        <span class="block hero-headline-line text-prestige-gold">Across Scotland</span>
+                        <span class="block hero-headline-line">Scotland's Premier</span>
+                        <span class="block hero-headline-line text-prestige-gold">Private Hire & Travel Network</span>
 </h1>
 <p class="font-body-lg text-body-lg text-mist-white/90 max-w-xl hero-subtext">
-                        Fixed pricing, professional drivers, flight tracking &amp; 24/7 support wherever you need to go, we get you there on time.
+                        Fixed-price airport transfers, private Highland day tours, executive hire, and Scotland-wide transport — all in one place. Trusted by travellers from Edinburgh to the Highlands and beyond.
                     </p>
 <div class="flex flex-wrap gap-4 justify-center md:justify-start hero-cta">
 <a class="px-8 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber transition-colors" href="#quote">
                             Get Instant Quote
                         </a>
-<a class="px-8 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy transition-all" href="#">
+<a class="px-8 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy transition-all" href="https://wa.me/447469598219" target="_blank" rel="noopener">
                             WhatsApp Us
                         </a>
+</div>
+<!-- Trust Badges -->
+<div class="flex flex-wrap gap-3 pt-4 justify-center md:justify-start hero-trust-badges opacity-0">
+    <div class="flex items-center gap-2 px-3.5 py-2 bg-black/40 border border-[#c9a84c] rounded-full text-xs text-white font-semibold">
+        <span class="material-symbols-outlined text-[16px] text-[#c9a84c]">local_airport</span>
+        <span>5 Major Airports</span>
+    </div>
+    <div class="flex items-center gap-2 px-3.5 py-2 bg-black/40 border border-[#c9a84c] rounded-full text-xs text-white font-semibold">
+        <span class="material-symbols-outlined text-[16px] text-[#c9a84c]">map</span>
+        <span>Scotland-Wide</span>
+    </div>
+    <div class="flex items-center gap-2 px-3.5 py-2 bg-black/40 border border-[#c9a84c] rounded-full text-xs text-white font-semibold">
+        <span class="material-symbols-outlined text-[16px] text-[#c9a84c]">schedule</span>
+        <span>12hr Advance Booking</span>
+    </div>
+    <div class="flex items-center gap-2 px-3.5 py-2 bg-black/40 border border-[#c9a84c] rounded-full text-xs text-white font-semibold">
+        <span class="material-symbols-outlined text-[16px] text-[#c9a84c]">chat</span>
+        <span>WhatsApp Response</span>
+    </div>
 </div>
 </div>
 <!-- Bento-style Form Container -->
@@ -380,6 +411,20 @@
 <option value="one-way">One Way</option>
 <option value="return">Return</option>
 <option value="hourly">Hourly Hire</option>
+</select>
+</div>
+
+<!-- Service Type -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Service Type</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-service-type">
+<option value="Airport Transfer">Airport Transfer</option>
+<option value="Day Tour">Day Tour</option>
+<option value="Executive Travel">Executive Travel</option>
+<option value="Vehicle Hire">Vehicle Hire</option>
+<option value="Multi-Stop Journey">Multi-Stop Journey</option>
+<option value="Long Distance">Long Distance</option>
+<option value="Package Delivery">Package Delivery</option>
 </select>
 </div>
 
@@ -431,6 +476,12 @@
 </select>
 </div>
 
+<!-- Special Requirements -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Special Requirements or Notes (Optional)</label>
+<textarea class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors h-24" placeholder="Any special requests or instructions..." id="booking-notes"></textarea>
+</div>
+
 <!-- Luggage Warning Message (Hidden by Default) -->
 <div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
     <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
@@ -444,6 +495,10 @@
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
 <input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Email Copy" type="email" id="booking-email"/>
 </div>
 
 <!-- Vehicle Selection Component -->
@@ -550,10 +605,310 @@
 <button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
                             Get My Fixed Quote
                         </button>
+<p class="col-span-2 text-center text-xs italic text-[#c9a84c] mt-2">
+    We require a minimum of 12 hours advance notice. Last-minute requests subject to availability.
+</p>
 </form>
 </div>
 </div>
 </section>
+
+<!-- Booking Rules Banner -->
+<section class="bg-[#c9a84c] text-[#00030a] py-6 font-bold">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-around items-center gap-6 text-center">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-2xl text-[#00030a]">schedule</span>
+            <span>Minimum 12-Hour Advance Booking Required</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-2xl text-[#00030a]">description</span>
+            <span>Full Journey Details Needed Before Confirmation</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-2xl text-[#00030a]">event_available</span>
+            <span>Last-Minute Requests Subject to Availability</span>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop border-b border-mist-white/10">
+    <div class="max-w-container-max mx-auto text-center">
+        <h2 class="font-headline-lg text-headline-lg text-white mb-4">Everything You Need to Travel Scotland</h2>
+        <p class="font-body-lg text-body-lg text-mist-white/70 max-w-2xl mx-auto mb-16">One trusted network. Eight tailored services. Scotland-wide.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <!-- Card 1 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">flight</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Airport Transfers</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Stress-free, fixed-price transfers to and from all five of Scotland's major airports. Flight tracking included. Meet & greet on arrival. No surge pricing. No hidden fees. Just a professional driver waiting when you land.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">explore</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Private Day Tours</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Discover Scotland's most iconic landscapes with a private driver-guide. From the mystical Isle of Skye to the legendary Loch Ness — fully tailored to your group, your pace, and your interests.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">hail</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Private Driver Hire</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Your own dedicated driver for the day. Perfect for business travel, sightseeing, event transport, or any journey where you need complete flexibility and a professional behind the wheel.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">car_rental</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Flexible Vehicle Hire</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Book by the hour or by the week. Our hire packages — 4 hours to 7 days — give you total control over your schedule. Ideal for events, business stays, or extended Highland exploration.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">workspace_premium</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Executive Travel</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Premium transport for professionals who demand reliability. Immaculate vehicles, punctual drivers, and a discreet service tailored to corporate schedules, conferences, and VIP travel requirements.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">alt_route</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Multi-Stop Journeys</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Planning a journey with multiple destinations? We handle the logistics. From whisky distillery hops to castle routes — one booking, multiple stops, one fixed price.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 7 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">multiple_stop</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Long Distance Transport</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Scotland to England. City to city. Airport to remote Highland estate. Comfortable, reliable long-distance private hire with experienced drivers who know every route.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+            <!-- Card 8 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">local_shipping</span>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Package Delivery</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Need something delivered across Scotland urgently? Our same-day delivery service covers all major routes with tracked, professional handling. Reliable. Fast. Confirmed before dispatch.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Get a Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Airports Section -->
+<section id="airports" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop border-b border-mist-white/10">
+    <div class="max-w-container-max mx-auto text-center">
+        <h2 class="font-headline-lg text-headline-lg text-white mb-4">Five Airports. One Trusted Service.</h2>
+        <p class="font-body-lg text-body-lg text-mist-white/70 max-w-2xl mx-auto mb-16">Fixed-price, flight-tracked transfers to and from every major Scottish airport.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-left">
+            <!-- Card 1 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c]/20 rounded-[12px] p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#c9a84c] hover:bg-white/[0.06]">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="material-symbols-outlined text-3xl text-[#c9a84c]">flight_takeoff</span>
+                        <span class="font-mono text-lg font-bold text-[#c9a84c]">EDI</span>
+                    </div>
+                    <h3 class="font-title-md text-lg text-white font-bold mb-2">EDINBURGH AIRPORT</h3>
+                    <p class="font-body-md text-sm text-mist-white/75 leading-relaxed">Scotland's busiest airport. Fixed fares, flight tracking, and professional meet & greet — every time.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c]/20 rounded-[12px] p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#c9a84c] hover:bg-white/[0.06]">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="material-symbols-outlined text-3xl text-[#c9a84c]">flight_takeoff</span>
+                        <span class="font-mono text-lg font-bold text-[#c9a84c]">GLA</span>
+                    </div>
+                    <h3 class="font-title-md text-lg text-white font-bold mb-2">GLASGOW AIRPORT</h3>
+                    <p class="font-body-md text-sm text-mist-white/75 leading-relaxed">West Scotland's gateway. Punctual pickups and drop-offs across Greater Glasgow and beyond.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c]/20 rounded-[12px] p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#c9a84c] hover:bg-white/[0.06]">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="material-symbols-outlined text-3xl text-[#c9a84c]">flight_takeoff</span>
+                        <span class="font-mono text-lg font-bold text-[#c9a84c]">ABZ</span>
+                    </div>
+                    <h3 class="font-title-md text-lg text-white font-bold mb-2">ABERDEEN AIRPORT</h3>
+                    <p class="font-body-md text-sm text-mist-white/75 leading-relaxed">Serving the north-east. Reliable transfers for business and leisure travellers alike.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c]/20 rounded-[12px] p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#c9a84c] hover:bg-white/[0.06]">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="material-symbols-outlined text-3xl text-[#c9a84c]">flight_takeoff</span>
+                        <span class="font-mono text-lg font-bold text-[#c9a84c]">INV</span>
+                    </div>
+                    <h3 class="font-title-md text-lg text-white font-bold mb-2">INVERNESS AIRPORT</h3>
+                    <p class="font-body-md text-sm text-mist-white/75 leading-relaxed">Gateway to the Highlands. Start your Scottish adventure the moment you land.</p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c]/20 rounded-[12px] p-6 flex flex-col justify-between transition-all duration-300 hover:border-[#c9a84c] hover:bg-white/[0.06]">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="material-symbols-outlined text-3xl text-[#c9a84c]">flight_takeoff</span>
+                        <span class="font-mono text-lg font-bold text-[#c9a84c]">PIK</span>
+                    </div>
+                    <h3 class="font-title-md text-lg text-white font-bold mb-2">GLASGOW PRESTWICK</h3>
+                    <p class="font-body-md text-sm text-mist-white/75 leading-relaxed">Budget and charter flights covered. Transfers to and from Ayrshire and Central Scotland.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Day Tours Section -->
+<section id="day-tours" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop border-b border-mist-white/10">
+    <div class="max-w-container-max mx-auto text-center">
+        <h2 class="font-headline-lg text-headline-lg text-white mb-4">Explore Scotland Like Never Before</h2>
+        <p class="font-body-lg text-body-lg text-mist-white/70 max-w-2xl mx-auto mb-4">Private, fully tailored day tours. No coach. No crowds. Just you, your driver, and Scotland at its finest.</p>
+        <p class="font-body-md text-body-md text-mist-white/50 max-w-[700px] mx-auto mb-16">Scotland welcomed over 4.4 million international visitors in 2024. The fastest-growing segment is private, guide-led touring — and we're here to deliver exactly that experience.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            <!-- Tour 1 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">🏔️</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Scottish Highlands Day Tour</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Drive through ancient glens, past mirror-like lochs, and beneath towering peaks. Experience the raw, untouched beauty of the Highlands — Glencoe, Ben Nevis, and the Great Glen await.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+            <!-- Tour 2 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">🦕</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Loch Ness & Urquhart Castle</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Follow the shores of Scotland's most legendary loch. Visit the dramatic ruins of Urquhart Castle, take in the myth and majesty of Loch Ness, and keep your eyes on the water. You never know what lurks beneath.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+            <!-- Tour 3 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">⛰️</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Isle of Skye Private Tour</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">The Old Man of Storr. The Fairy Pools. The Quiraing Ridge. Scotland's most dramatic island — our private tours handle the winding single-track roads so you can simply take it all in.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+            <!-- Tour 4 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">🥃</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Whisky Distillery Experience</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Scotland is home to over 140 active distilleries. We take you through Speyside, Islay, or the Highlands for private tastings and insider access you won't find on a bus. The water of life, properly discovered.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+            <!-- Tour 5 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">🏰</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Castles & Scottish History</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Eilean Donan. Dunnottar. Stirling. Balmoral. Scotland's castles each hold centuries of drama, clan history, and breathtaking architecture. We craft the perfect castle route around your interests.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+            <!-- Tour 6 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <div class="text-5xl mb-6">⛳</div>
+                    <h3 class="font-title-md text-title-md text-white mb-4">Scottish Golf Tour</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">St Andrews. Royal Dornoch. Castle Stuart. Carnoustie. The birthplace of golf has bucket-list courses for players worldwide. We handle transfers and logistics around your tee times — you just play.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About This Tour</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vehicle Hire Packages Section -->
+<section id="hire-packages" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop border-b border-mist-white/10">
+    <div class="max-w-container-max mx-auto text-center">
+        <h2 class="font-headline-lg text-headline-lg text-white mb-4">Flexible Hire. Your Schedule. Your Terms.</h2>
+        <p class="font-body-lg text-body-lg text-mist-white/70 max-w-2xl mx-auto mb-16">Book a driver by the hour or the week. Total control, fixed pricing.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            <!-- Package 1 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">timer</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">4-Hour Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Perfect for a city transfer, airport run, or short business appointment.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+            <!-- Package 2 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">work</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">8-Hour Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">A full working day with your driver. Ideal for meetings, events, and multi-stop business travel.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+            <!-- Package 3 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">more_time</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">12-Hour Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Extended hire for tours, events, or corporate travel days with maximum flexibility.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+            <!-- Package 4 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">history</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">24-Hour Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Round-the-clock availability. Perfect for international arrivals, events spanning day and night.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#c9a84c] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+            <!-- Package 5 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">date_range</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">48-Hour Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Two full days of private hire. Ideal for multi-city business trips or extended Highland exploration.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+            <!-- Package 6 -->
+            <div class="bg-white/[0.03] border border-[#c9a84c] rounded-[12px] p-7 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-lg">
+                <div>
+                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6 block">calendar_month</span>
+                    <h3 class="font-title-md text-title-md text-[#c9a84c] mb-4">Weekly Package</h3>
+                    <p class="font-body-md text-body-md text-mist-white/75 leading-relaxed">Seven days with a dedicated vehicle and driver. Perfect for extended tours or corporate project travel.</p>
+                </div>
+                <a href="#quote" class="w-full bg-[#c9a84c] text-[#00030a] py-3 rounded-lg font-bold text-center hover:bg-[#b0923d] transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Why Choose Us -->
 <section id="features-section" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto text-center">
@@ -590,12 +945,32 @@
 <h3 class="font-title-md text-title-md text-deep-navy mb-2">No Hidden Charges</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">What we quote is what you pay. We include all airport drop-off and pickup fees in our fixed prices, so there are never any surprises.</p>
 </div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">map</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Scotland-Wide Coverage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">From Edinburgh city centre to the remote Highlands — we cover the entire country with one consistent, professional service.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">travel_explore</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Tour Planning Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Let us help plan your Highland experience. We know every route, distillery, scenic stop, and hidden viewpoint across Scotland.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">handshake</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Trusted Partner Network</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We coordinate with licensed transport providers across Scotland to ensure availability, reliability, and professional service on every route.</p>
+</div>
+<div class="group feature-card">
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">tour</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Tourist-Friendly Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">International visitors are our speciality. We're experienced with flight delays, time zones, and first-time visitors to Scotland.</p>
+</div>
 </div>
 </div>
 </section>
 
 <!-- Our Fleet Section -->
-<section id="fleet-section" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<section id="fleet" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto text-center">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Our Premium Fleet</h2>
 <div class="w-24 h-1 bg-[#005EB8] mx-auto mb-12"></div>
@@ -692,7 +1067,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Perth to Edinburgh Airport</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experience a stress-free transfer directly to the terminal in approx. 1h 15m.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#quote">Get a Quote</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -700,7 +1075,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Perth to Glasgow Airport</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Reliable door-to-door service, ensuring you arrive relaxed for your flight.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#quote">Get a Quote</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -708,7 +1083,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh to St Andrews</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">The premier choice for golfers with plenty of room for clubs and luggage.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#quote">Get a Quote</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -716,7 +1091,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Glasgow to Perth</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Professional private hire service for those travelling between the West Coast and heart of Scotland.</p>
-<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#quote">Get a Quote</a>
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
@@ -762,9 +1137,9 @@
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Incredibly punctual service for my early morning flight to Edinburgh. The driver was professional and the car was immaculate."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Absolutely incredible service. Our Edinburgh airport transfer was waiting even though our flight was 40 minutes late. The driver tracked it and adjusted without us even asking. Will never book any other way."</p>
 </div>
-<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">David M., Perth</p>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">James M., United States</p>
 </div>
 <!-- Review Card 2 -->
 <div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
@@ -777,9 +1152,9 @@
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"The meet and greet was seamless. Our driver was waiting right where he said he’d be and helped us with all four of our large suitcases."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"We booked a full Isle of Skye day tour and it was the highlight of our entire Scotland trip. Our driver knew every perfect viewpoint and every story. Couldn't have done it without 247 Taxis Scotland."</p>
 </div>
-<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Sarah L., St Andrews</p>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Sophie & Laurent D., France</p>
 </div>
 <!-- Review Card 3 -->
 <div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
@@ -792,9 +1167,9 @@
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Fixed pricing is a huge plus for my company expenses. Excellent 24/7 support too. Always discreet and professional."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Used the executive hire for three days during a business conference in Edinburgh. Punctual, professional, and discreet — exactly what corporate travel should be. My PA already has the number saved."</p>
 </div>
-<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">James W., Glasgow</p>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Robert K., Germany</p>
 </div>
 <!-- Review Card 4 -->
 <div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
@@ -807,9 +1182,9 @@
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Brilliant service for a long-distance transfer. The flight tracking gave me such peace of mind knowing they were monitoring my journey."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Booked a whisky distillery tour for my partner's birthday. The driver knew more about Speyside than we could have dreamed of. Fixed price, no stress, no crowds. Just an unforgettable day in Scotland."</p>
 </div>
-<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Emma R., Inverness</p>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Fiona & Alan T., Australia</p>
 </div>
 </div>
 </div>
@@ -818,30 +1193,46 @@
 <section class="py-24 px-margin-mobile md:px-margin-desktop bg-mist-white">
 <div class="max-w-container-max mx-auto">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-16">Booking Your Transfer Is Simple</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative steps-container">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative steps-container">
 <!-- Connection Line -->
-<div class="hidden md:block absolute top-12 left-[16.67%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-1 origin-left scale-x-0"></div>
-<div class="hidden md:block absolute top-12 left-[50%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-2 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[10%] w-[20%] h-0.5 bg-prestige-gold/30 z-0 step-line-1 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[30%] w-[20%] h-0.5 bg-prestige-gold/30 z-0 step-line-2 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[50%] w-[20%] h-0.5 bg-prestige-gold/30 z-0 step-line-3 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[70%] w-[20%] h-0.5 bg-prestige-gold/30 z-0 step-line-4 origin-left scale-x-0"></div>
 <div class="relative z-10 text-center">
 <div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-1 scale-0 opacity-0">
 <span class="font-headline-lg text-3xl">1</span>
 </div>
 <h3 class="font-title-md text-title-md text-deep-navy mb-4">Request a Quote</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Enter your journey details on our website or send us a quick message via WhatsApp to receive your fixed price quote instantly.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Contact us via WhatsApp or our quote form. Tell us your journey — date, pickup, destination, passengers, and service type. We respond fast.</p>
 </div>
 <div class="relative z-10 text-center">
 <div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-2 scale-0 opacity-0">
 <span class="font-headline-lg text-3xl">2</span>
 </div>
-<h3 class="font-title-md text-title-md text-deep-navy mb-4">Confirm Your Booking</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Once you're happy with the price, confirm your booking through our secure system. You'll receive immediate confirmation.</p>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Receive Your Fixed Price</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We send you a transparent, fixed price within minutes. No hidden fees. No surge pricing. What we quote is exactly what you pay.</p>
 </div>
 <div class="relative z-10 text-center">
 <div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-3 scale-0 opacity-0">
 <span class="font-headline-lg text-3xl">3</span>
 </div>
-<h3 class="font-title-md text-title-md text-deep-navy mb-4">Sit Back and Enjoy</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Your driver will arrive promptly. Relax in our premium vehicles and enjoy a smooth, professional journey to your destination.</p>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Confirm Your Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Accept your quote and confirm. We collect your full journey details and assign your driver. Minimum 12 hours advance notice required.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-4 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">4</span>
+</div>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Driver Assigned</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver is confirmed and briefed on your full itinerary. You'll receive driver details and contact information ahead of your journey.</p>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-5 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">5</span>
+</div>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Travel with Confidence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver arrives on time, every time. Sit back, relax, and enjoy Scotland — we handle everything from this point.</p>
 </div>
 </div>
 </div>
@@ -854,72 +1245,60 @@
 <!-- Accordion 1 -->
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            Do you track flights?
+                            How far in advance do I need to book?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            Yes, we monitor all flights in real-time using live tracking data. If your flight is delayed or arrives early, your driver will automatically adjust their arrival time at no extra cost.
+                            We require a minimum of 12 hours advance notice for all bookings. For day tours, multi-stop journeys, and vehicle hire packages, we recommend 24–48 hours ahead. Last-minute requests may be accommodated — contact us via WhatsApp to check.
                         </p>
 </div>
 </div>
 <!-- Accordion 2 -->
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            Are your prices fixed with no hidden charges?
+                            Can I book an airport transfer for an early morning or late-night flight?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            Absolutely. The price we quote you is the final price you pay. This includes all airport fees, tolls, and taxes—there are never any hidden surprises.
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Yes. We operate 24/7 and cover all flight times including early departures and late-night arrivals. We track all flights and adjust pickup times automatically if your flight is delayed. No extra charge for flight delays.
                         </p>
 </div>
 </div>
 <!-- Accordion 3 -->
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            Can I pre-book in advance?
+                            Can I customise a day tour itinerary?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            We highly recommend pre-booking as early as possible to guarantee availability, especially during peak travel seasons. You can book months in advance or at short notice.
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Absolutely. Every tour is fully private and tailored to your group. Tell us your interests — history, whisky, wildlife, golf, or castles — and we'll build the perfect itinerary. We know Scotland, and we love creating experiences.
                         </p>
 </div>
 </div>
 <!-- Accordion 4 -->
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            Do you cover all of Scotland?
+                            Do you cover multi-stop journeys?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            Yes, while we have popular routes, we provide transfers to and from any location in Scotland, including all major cities, airports, and remote Highland destinations.
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Yes. Multi-stop journeys are one of our most popular services. Whether it's distillery hopping, a castle route, or a business day with multiple meetings — we handle the full itinerary from a single booking at one fixed price.
                         </p>
 </div>
 </div>
 <!-- Accordion 5 -->
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            What payment methods do you accept?
+                            How do I book via WhatsApp?
                             <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            We accept all major credit and debit cards, as well as cash. For your convenience, we can also arrange secure payment links or corporate account invoicing.
-                        </p>
-</div>
-</div>
-<!-- Accordion 6 -->
-<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
-                            Do you offer meet and greet service?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
-</div>
-<div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                            Yes, our standard airport service includes a professional meet and greet in the arrivals hall. Your driver will be waiting with a name board to assist you.
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Simply message us on WhatsApp at +44 7469 598219. Tell us your journey details and we'll send your fixed price quote within minutes. It's the fastest way to get a confirmed booking.
                         </p>
 </div>
 </div>
@@ -936,10 +1315,10 @@
                     Experience the gold standard in Scottish private hire. Get in touch today for a fixed price quote and travel with confidence.
                 </p>
 <div class="flex flex-wrap gap-6 justify-center">
-<a class="px-10 py-5 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+<a class="px-10 py-5 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#quote">
                         Book Now
                     </a>
-<a class="px-10 py-5 border border-prestige-gold text-prestige-gold font-title-md text-title-md hover:bg-prestige-gold hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+<a class="px-10 py-5 border border-prestige-gold text-prestige-gold font-title-md text-title-md hover:bg-prestige-gold hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="https://wa.me/447469598219" target="_blank" rel="noopener">
                         WhatsApp Us
                     </a>
 <a class="px-10 py-5 border border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="tel:+447469598219">
@@ -976,7 +1355,7 @@
                 </a>
             </div>
             <div class="space-y-4 font-body-md text-body-md text-on-surface-variant pt-4 border-t border-outline-variant/30">
-                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">mail</span> Email: [Email Placeholder]</p>
+                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">mail</span> Email: info@scotland247taxis.co.uk</p>
                 <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">location_on</span> Perth Business Centre, Perth, Scotland</p>
             </div>
         </div>
@@ -1021,11 +1400,11 @@
 <div class="bg-white p-2 rounded-lg inline-block mb-4 shadow-sm">
                     <img src="logo.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain"/>
                 </div>
-<p class="font-body-md text-body-md opacity-80 italic">Reliable Airport Transfers Across Scotland</p>
+<p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
 <div class="flex space-x-4 mt-6">
 <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">call</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:info@scotland247taxis.co.uk"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
 </div>
 </div>
 <div class="space-y-4">
@@ -1041,17 +1420,19 @@
         Chat on WhatsApp
     </a>
 </li>
-<li>Email: [Email Placeholder]</li>
+<li>Email: info@scotland247taxis.co.uk</li>
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Executive Travel</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Reviews</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#popular-routes">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#day-tours">Day Tours</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#services">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#hire-packages">Vehicle Hire</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#services">Multi-Stop Journeys</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact-us">Contact</a></li>
 </ul>
 </div>
 <div class="space-y-4">
@@ -1264,6 +1645,18 @@
                         stagger: 0.1,
                         ease: "power2.out"
                     });
+
+                    // Stagger or fade in trust badges
+                    gsap.fromTo(".hero-trust-badges", {
+                        opacity: 0,
+                        y: 15
+                    }, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        delay: 0.7,
+                        ease: "power2.out"
+                    });
                     
                     // Slide in booking form card
                     gsap.from(".hero-form-card", {
@@ -1272,6 +1665,66 @@
                         duration: 0.9,
                         delay: 0.2,
                         ease: "power3.out"
+                    });
+
+                    // Scroll Reveal - Services Grid
+                    gsap.from("#services .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#services",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.08,
+                        ease: "power2.out",
+                        clearProps: "all"
+                    });
+
+                    // Scroll Reveal - Airports Grid
+                    gsap.from("#airports .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#airports",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.08,
+                        ease: "power2.out",
+                        clearProps: "all"
+                    });
+
+                    // Scroll Reveal - Day Tours Grid
+                    gsap.from("#day-tours .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#day-tours",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.08,
+                        ease: "power2.out",
+                        clearProps: "all"
+                    });
+
+                    // Scroll Reveal - Hire Packages Grid
+                    gsap.from("#hire-packages .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#hire-packages",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.08,
+                        ease: "power2.out",
+                        clearProps: "all"
                     });
 
                     // Scroll Reveal - Features Grid
@@ -1348,10 +1801,14 @@
                         }
                     });
                     stepsTl.to(".step-number-1", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" })
-                           .to(".step-line-1", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
-                           .to(".step-number-2", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1")
-                           .to(".step-line-2", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
-                           .to(".step-number-3", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1");
+                           .to(".step-line-1", { scaleX: 1, duration: 0.25, ease: "power1.inOut" })
+                           .to(".step-number-2", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.08")
+                           .to(".step-line-2", { scaleX: 1, duration: 0.25, ease: "power1.inOut" })
+                           .to(".step-number-3", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.08")
+                           .to(".step-line-3", { scaleX: 1, duration: 0.25, ease: "power1.inOut" })
+                           .to(".step-number-4", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.08")
+                           .to(".step-line-4", { scaleX: 1, duration: 0.25, ease: "power1.inOut" })
+                           .to(".step-number-5", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.08");
 
                     // Scroll Reveal - FAQ Header and Items
                     gsap.from(".faq-header, .faq-item", {
@@ -1398,6 +1855,46 @@
                         stagger: 0.1
                     });
 
+                    gsap.from("#services .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#services",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from("#airports .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#airports",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from("#day-tours .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#day-tours",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from("#hire-packages .grid > div", {
+                        scrollTrigger: {
+                            trigger: "#hire-packages",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
                     gsap.from(".route-card", {
                         scrollTrigger: {
                             trigger: "#popular-routes",
@@ -1418,7 +1915,7 @@
                         stagger: 0.1
                     });
 
-                    gsap.to(".step-number-1, .step-number-2, .step-number-3", {
+                    gsap.to(".step-number-1, .step-number-2, .step-number-3, .step-number-4, .step-number-5", {
                         opacity: 1,
                         duration: 0.4,
                         stagger: 0.15
@@ -1496,6 +1993,7 @@
             e.preventDefault();
             
             const journeyTypeVal = document.getElementById('booking-journey-type').value;
+            const serviceTypeVal = document.getElementById('booking-service-type').value;
             const nameVal = document.getElementById('booking-name').value;
             const pickupVal = document.getElementById('booking-pickup').value;
             const dropoffVal = journeyTypeVal === 'hourly' ? 'N/A (Hourly Hire)' : document.getElementById('booking-dropoff').value;
@@ -1506,6 +2004,8 @@
             const luggageVal = document.getElementById('booking-luggage').value;
             const flightVal = document.getElementById('booking-flight').value || 'None';
             const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
+            const emailVal = document.getElementById('booking-email').value || 'None';
+            const notesVal = document.getElementById('booking-notes').value || 'None';
             const vehicleVal = document.getElementById('selected-vehicle').value;
             const specificVehicleVal = document.getElementById('selected-specific-vehicle')?.value || '';
 
@@ -1523,6 +2023,7 @@
             const leadMessage = 
 `New Booking Request
 Name: ${nameVal}
+Email: ${emailVal}
 From: ${pickupVal}
 To: ${dropoffVal}
 Date: ${dateVal}
@@ -1532,7 +2033,9 @@ Large Bags: ${luggageVal}
 Flight Number: ${flightVal}
 Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
 Hours (if hourly): ${hoursVal}
+Service Type: ${serviceTypeVal}
 Vehicle Class: ${selectedVehicleName}
+Special Requirements: ${notesVal}
 Customer WhatsApp: ${customerWhatsappVal}`;
 
             // 2. Construct automatic confirmation message for the customer
@@ -1584,4 +2087,14 @@ Message: ${messageVal}`;
             });
         }
     </script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#c9a84c] text-white rounded-full shadow-2xl hover:bg-[#b0923d] hover:scale-110 transition-all duration-300 group whatsapp-gold-pulse" aria-label="Chat with us on WhatsApp">
+    <!-- White WhatsApp Icon -->
+    <svg class="w-7 h-7 fill-white relative z-10" viewBox="0 0 24 24">
+        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+    </svg>
+    <!-- Tooltip Hover Label -->
+    <span class="absolute right-16 scale-0 group-hover:scale-100 bg-[#001A3F] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-xl transition-all duration-300 origin-right whitespace-nowrap border border-[#c9a84c]/20">Chat with us on WhatsApp</span>
+</a>
 </body></html>

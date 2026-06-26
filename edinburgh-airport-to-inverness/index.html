@@ -314,6 +314,17 @@
 
         /* Section overflow for orbs */
         #home { overflow:hidden!important; }
+    
+
+        /* Floating WhatsApp Button Gold Pulsing */
+        @keyframes goldPulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(201, 168, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+        }
+        .whatsapp-gold-pulse {
+            animation: goldPulse 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-mist-white text-charcoal-text font-body-md selection:bg-prestige-gold selection:text-deep-navy">
@@ -324,9 +335,11 @@
                 <img src="../logo.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
-<a class="text-prestige-gold border-b-2 border-prestige-gold pb-1 font-body-md text-body-md" href="../#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#home">Home</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#services">Services</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#popular-routes">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#quote">Executive</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#day-tours">Day Tours</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#fleet">Fleet</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#route-faq">FAQ</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact-us">Contact</a>
@@ -378,6 +391,20 @@
 </select>
 </div>
 
+<!-- Service Type -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Service Type</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-service-type">
+<option value="Airport Transfer">Airport Transfer</option>
+<option value="Day Tour">Day Tour</option>
+<option value="Executive Travel">Executive Travel</option>
+<option value="Vehicle Hire">Vehicle Hire</option>
+<option value="Multi-Stop Journey">Multi-Stop Journey</option>
+<option value="Long Distance">Long Distance</option>
+<option value="Package Delivery">Package Delivery</option>
+</select>
+</div>
+
 <!-- Full Name -->
 <div class="col-span-2">
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
@@ -426,6 +453,12 @@
 </select>
 </div>
 
+<!-- Special Requirements -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Special Requirements or Notes (Optional)</label>
+<textarea class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors h-24" placeholder="Any special requests or instructions..." id="booking-notes"></textarea>
+</div>
+
 <!-- Luggage Warning Message (Hidden by Default) -->
 <div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
     <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
@@ -439,6 +472,10 @@
 <div>
 <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
 <input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Email Copy" type="email" id="booking-email"/>
 </div>
 
 <!-- Vehicle Selection Component -->
@@ -545,6 +582,9 @@
 <button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
                             Get My Fixed Quote
                         </button>
+<p class="col-span-2 text-center text-xs italic text-[#c9a84c] mt-2">
+    We require a minimum of 12 hours advance notice. Last-minute requests subject to availability.
+</p>
 </form>
 </div>
 </div>
@@ -775,11 +815,11 @@
 <div class="bg-white p-2 rounded-lg inline-block mb-4 shadow-sm">
                     <img src="../logo.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain"/>
                 </div>
-<p class="font-body-md text-body-md opacity-80 italic">Reliable Airport Transfers Across Scotland</p>
+<p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
 <div class="flex space-x-4 mt-6">
 <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">call</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:info@scotland247taxis.co.uk"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
 </div>
 </div>
 <div class="space-y-4">
@@ -795,17 +835,19 @@
         Chat on WhatsApp
     </a>
 </li>
-<li>Email: [Email Placeholder]</li>
+<li>Email: info@scotland247taxis.co.uk</li>
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Executive Travel</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Reviews</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">FAQ</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#popular-routes">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#day-tours">Day Tours</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#services">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#hire-packages">Vehicle Hire</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../#services">Multi-Stop Journeys</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact-us">Contact</a></li>
 </ul>
 </div>
 <div class="space-y-4">
@@ -1250,6 +1292,7 @@
             e.preventDefault();
             
             const journeyTypeVal = document.getElementById('booking-journey-type').value;
+            const serviceTypeVal = document.getElementById('booking-service-type').value;
             const nameVal = document.getElementById('booking-name').value;
             const pickupVal = document.getElementById('booking-pickup').value;
             const dropoffVal = journeyTypeVal === 'hourly' ? 'N/A (Hourly Hire)' : document.getElementById('booking-dropoff').value;
@@ -1260,6 +1303,8 @@
             const luggageVal = document.getElementById('booking-luggage').value;
             const flightVal = document.getElementById('booking-flight').value || 'None';
             const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
+            const emailVal = document.getElementById('booking-email').value || 'None';
+            const notesVal = document.getElementById('booking-notes').value || 'None';
             const vehicleVal = document.getElementById('selected-vehicle').value;
             const specificVehicleVal = document.getElementById('selected-specific-vehicle')?.value || '';
 
@@ -1277,6 +1322,7 @@
             const leadMessage = 
 `New Booking Request
 Name: ${nameVal}
+Email: ${emailVal}
 From: ${pickupVal}
 To: ${dropoffVal}
 Date: ${dateVal}
@@ -1286,7 +1332,9 @@ Large Bags: ${luggageVal}
 Flight Number: ${flightVal}
 Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
 Hours (if hourly): ${hoursVal}
+Service Type: ${serviceTypeVal}
 Vehicle Class: ${selectedVehicleName}
+Special Requirements: ${notesVal}
 Customer WhatsApp: ${customerWhatsappVal}`;
 
             // 2. Construct automatic confirmation message for the customer
@@ -1338,4 +1386,15 @@ Message: ${messageVal}`;
             });
         }
     </script>
+
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#c9a84c] text-white rounded-full shadow-2xl hover:bg-[#b0923d] hover:scale-110 transition-all duration-300 group whatsapp-gold-pulse" aria-label="Chat with us on WhatsApp">
+    <!-- White WhatsApp Icon -->
+    <svg class="w-7 h-7 fill-white relative z-10" viewBox="0 0 24 24">
+        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+    </svg>
+    <!-- Tooltip Hover Label -->
+    <span class="absolute right-16 scale-0 group-hover:scale-100 bg-[#001A3F] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-xl transition-all duration-300 origin-right whitespace-nowrap border border-[#c9a84c]/20">Chat with us on WhatsApp</span>
+</a>
 </body></html>
