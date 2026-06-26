@@ -325,7 +325,417 @@
         .whatsapp-gold-pulse {
             animation: goldPulse 2s infinite;
         }
-    </style>
+    
+        /* --- MOBILE RESPONSIVE OVERRIDES --- */
+        @media (max-width: 767.98px) {
+            /* General Mobile Rules */
+            body, html {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            /* Reduce padding proportionally */
+            section, .py-24 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            .px-margin-mobile {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            /* Minimum tap target sizes and font size */
+            button, a, select, input, textarea {
+                min-height: 44px;
+            }
+            /* Ensure text inside elements is not under 14px */
+            .text-xs, .text-[11px], .text-[12px], font-label-sm {
+                font-size: 14px !important;
+            }
+
+            /* Header - Mobile menu links hidden, keep WhatsApp, logo left, hamburger right */
+            header nav {
+                display: none !important;
+            }
+            header .flex.items-center.space-x-4 a[href^="tel:"] {
+                display: none !important;
+            }
+            header .flex.items-center.space-x-4 a[href*="wa.me"] {
+                padding: 10px 16px !important;
+            }
+            header .flex.items-center.space-x-4 a[href*="wa.me"] span {
+                display: inline !important;
+            }
+            header .flex.items-center.space-x-4 {
+                gap: 8px !important;
+                space-x: 0 !important;
+            }
+            header button#mobile-menu-btn {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                color: #0A1F44 !important;
+                padding: 8px !important;
+                margin-left: 8px !important;
+            }
+
+            /* Hero Section Mobile Fix */
+            #home {
+                min-height: auto !important;
+                padding-top: 6rem !important;
+                padding-bottom: 4rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+            }
+            #home > div.relative {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+                gap: 2rem !important;
+            }
+            #home h1 {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+                max-width: 100% !important;
+            }
+            #home p.hero-subtext {
+                font-size: 15px !important;
+                max-width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            #home .hero-cta {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                gap: 12px !important;
+            }
+            #home .hero-cta a {
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 50px !important;
+                padding: 16px 20px !important;
+            }
+            /* Trust badges wrap to 2 per row */
+            .hero-trust-badges {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                width: 100% !important;
+            }
+            .hero-trust-badges > div {
+                justify-content: center !important;
+                text-align: center !important;
+                white-space: nowrap !important;
+            }
+
+            /* Booking Form Mobile Fix */
+            #quote {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 20px !important;
+                margin: 0 !important;
+            }
+            #quote form {
+                grid-template-columns: 1fr !important;
+            }
+            #quote .step-content {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            #quote .step-content > div {
+                grid-column: span 3 / span 3 !important;
+            }
+            #quote input, 
+            #quote select, 
+            #quote textarea {
+                width: 100% !important;
+                min-height: 48px !important;
+                font-size: 16px !important;
+                padding: 12px 16px !important;
+            }
+            /* Vehicle selection cards - single column, full width */
+            #vehicle-selection-grid,
+            #options-standard-container > div,
+            #options-executive-container > div {
+                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            #vehicle-selection-grid > div,
+            #vehicle-selection-grid > button,
+            .sub-vehicle-card,
+            #sub-vehicle-corolla,
+            #sub-vehicle-caddy,
+            #sub-vehicle-rangerover,
+            #sub-vehicle-audirs7 {
+                width: 100% !important;
+                max-width: 100% !important;
+                flex: 1 1 auto !important;
+            }
+            /* Submit button full width, 56px height */
+            #quote button[type="submit"],
+            #quote .submit-btn,
+            #quote button.w-full {
+                height: 56px !important;
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Services Section Mobile Fix */
+            #services .grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            #services .grid > div {
+                margin-bottom: 16px !important;
+                padding: 24px !important;
+                width: 100% !important;
+            }
+            #services h3 {
+                font-size: 18px !important;
+            }
+            #services p {
+                font-size: 14px !important;
+            }
+
+            /* Airports Section Mobile Fix */
+            #airports .grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            #airports .grid > div {
+                width: 100% !important;
+                padding: 24px !important;
+            }
+
+            /* Route Cards Mobile Fix */
+            .route-card {
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+                min-height: 280px !important;
+                background: #0A1D37 !important;
+            }
+            .route-card img {
+                position: static !important;
+                width: 100% !important;
+                height: 160px !important;
+                object-fit: cover !important;
+            }
+            .route-card > div {
+                position: static !important;
+                background: transparent !important;
+                padding: 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                transform: none !important;
+            }
+            .route-card p {
+                opacity: 1 !important;
+                max-height: none !important;
+                margin-bottom: 12px !important;
+                font-size: 14px !important;
+                display: block !important;
+            }
+
+            /* Why Choose Us Mobile Fix */
+            #features-section .grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            #features-section .feature-card {
+                width: 100% !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            #features-section .feature-icon,
+            #features-section .material-symbols-outlined {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* Day Tours Mobile Fix */
+            #day-tours-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            #day-tours-grid > div {
+                height: 380px !important;
+                width: 100% !important;
+            }
+            #day-tours-grid .group p {
+                max-height: none !important;
+                opacity: 1 !important;
+                margin-bottom: 12px !important;
+            }
+            #day-tours-grid .group a {
+                opacity: 1 !important;
+            }
+
+            /* Flexible Hire Mobile Fix */
+            #hire-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            #hire-grid > div {
+                height: 360px !important;
+                width: 100% !important;
+            }
+            #hire-grid .group p {
+                max-height: none !important;
+                opacity: 1 !important;
+                margin-bottom: 12px !important;
+            }
+            #hire-grid .group a {
+                opacity: 1 !important;
+            }
+
+            /* How It Works Mobile Fix */
+            .steps-container {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 32px !important;
+            }
+            .steps-container > div.z-10 {
+                width: 100% !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .steps-container > div.z-10:not(:last-child)::after {
+                content: '';
+                width: 2px;
+                height: 32px;
+                background-color: rgba(201,168,76,0.3);
+                margin: 24px auto 0 auto;
+                display: block;
+            }
+
+            /* Reviews Mobile Fix */
+            #reviews .grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            #reviews .testimonial-card {
+                width: 100% !important;
+            }
+            #reviews .flex.text-prestige-gold {
+                justify-content: center !important;
+            }
+
+            /* Contact Section Mobile Fix */
+            #contact-us > div.grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            #contact-us > div.grid > div {
+                padding: 24px !important;
+                margin: 0 !important;
+                width: 100% !important;
+            }
+            #contact-us button {
+                width: 100% !important;
+            }
+
+            /* Footer Mobile Fix */
+            footer#contact {
+                text-align: center !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            footer#contact .grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+            footer#contact .grid > div:first-child {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            footer#contact .grid > div:first-child .flex {
+                justify-content: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            footer#contact .grid > div:not(:first-child) {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start;
+                text-align: left;
+            }
+            footer#contact .grid h4 {
+                text-align: left !important;
+                align-self: flex-start !important;
+            }
+            footer#contact .grid ul {
+                text-align: left !important;
+                align-self: flex-start !important;
+            }
+            footer#contact .border-t .flex {
+                flex-direction: column !important;
+                gap: 12px !important;
+                text-align: center !important;
+            }
+
+            /* Floating WhatsApp Button Mobile Fix */
+            a.whatsapp-gold-pulse {
+                width: 56px !important;
+                height: 56px !important;
+                bottom: 16px !important;
+                right: 16px !important;
+                z-index: 9999 !important;
+            }
+        }
+
+        /* --- TABLET RESPONSIVE OVERRIDES --- */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #services .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #airports .grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+            #routes-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #day-tours-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #hire-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #features-section .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #reviews .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #quote form {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #quote .step-content {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #quote .step-content > div {
+                grid-column: span 1 / span 1 !important;
+            }
+            #quote .step-content > div.col-span-3,
+            #quote .step-content > div.col-span-2 {
+                grid-column: span 2 / span 2 !important;
+            }
+        }
+</style>
 </head>
 <body class="bg-mist-white text-charcoal-text font-body-md selection:bg-prestige-gold selection:text-deep-navy">
 <!-- TopNavBar -->
@@ -351,7 +761,7 @@
     </svg>
     <span>WhatsApp Us</span>
 </a>
-<button class="lg:hidden text-deep-navy">
+<button id="mobile-menu-btn" class="lg:hidden text-deep-navy">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -1188,10 +1598,37 @@
             }
         });
 
-        // Mobile menu toggle placeholder
-        document.querySelector('button.lg\\:hidden').addEventListener('click', () => {
-            alert('Mobile navigation would open here with a premium side drawer effect.');
+        
+        // Mobile menu toggle logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+            
+            if (mobileMenuBtn && mobileMenuOverlay) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    console.log('MOBILE MENU CLICKED EVENT RUNNING');
+                    mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    mobileMenuOverlay.classList.add('opacity-100');
+                    document.body.style.overflow = 'hidden'; // prevent background scrolling
+                });
+            }
+            
+            if (mobileMenuCloseBtn && mobileMenuOverlay) {
+                const closeMenu = () => {
+                    mobileMenuOverlay.classList.remove('opacity-100');
+                    mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = ''; // restore background scrolling
+                };
+                mobileMenuCloseBtn.addEventListener('click', closeMenu);
+                
+                // Close menu when a link is clicked
+                mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
         });
+
 
         // Booking Form Submission & WhatsApp Lead Integration
         document.querySelector('form').addEventListener('submit', (e) => {
@@ -1368,6 +1805,26 @@
             }
         }
     </script>
+
+
+<!-- Mobile Navigation Overlay Menu -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-[#001A3F]/98 backdrop-blur-lg flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300 ease-in-out">
+    <!-- Close Button -->
+    <button id="mobile-menu-close" class="absolute top-6 right-6 text-white p-2" aria-label="Close menu">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <!-- Menu Links -->
+    <nav class="flex flex-col space-y-6 text-center">
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#home">Home</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#services">Services</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#popular-routes">Airports</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#day-tours">Day Tours</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#fleet">Fleet</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#reviews">Reviews</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#faq">FAQ</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="../#contact">Contact</a>
+    </nav>
+</div>
 
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#c9a84c] text-white rounded-full shadow-2xl hover:bg-[#b0923d] hover:scale-110 transition-all duration-300 group whatsapp-gold-pulse" aria-label="Chat with us on WhatsApp">
