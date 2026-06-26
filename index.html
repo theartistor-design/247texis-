@@ -6,7 +6,7 @@
 <title>Scotland 247 Taxis | Reliable Airport Transfers Across Scotland</title>
 <meta name="description" content="Scotland 247 Taxis provides premium, fixed-price airport transfers and private hire services across Scotland. Book online or via WhatsApp today."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -15,12 +15,12 @@
         theme: {
           extend: {
             "colors": {
-                "on-secondary-fixed": "#0A1D37",
+                "on-secondary-fixed": "#001A3F",
                 "charcoal-text": "#2D2D2D",
                 "surface-container-lowest": "#ffffff",
-                "primary-container": "#0A1D37",
-                "on-secondary-container": "#0A1D37",
-                "warm-amber": "#D4AF37",
+                "primary-container": "#001A3F",
+                "on-secondary-container": "#001A3F",
+                "warm-amber": "#0088FF",
                 "on-error-container": "#93000a",
                 "secondary-container": "#E0EEFF",
                 "on-error": "#ffffff",
@@ -33,15 +33,15 @@
                 "tertiary-container": "#011d3e",
                 "on-primary": "#ffffff",
                 "surface-container-highest": "#e1e3e4",
-                "mist-white": "#F8F9FA",
+                "mist-white": "#F0F4F8",
                 "error-container": "#ffdad6",
-                "deep-navy": "#0A1D37",
+                "deep-navy": "#001A3F",
                 "on-primary-container": "#7586a5",
                 "inverse-on-surface": "#f0f1f2",
-                "on-secondary-fixed-variant": "#0A1D37",
+                "on-secondary-fixed-variant": "#001A3F",
                 "on-background": "#191c1d",
                 "error": "#ba1a1a",
-                "surface-bright": "#F8F9FA",
+                "surface-bright": "#F0F4F8",
                 "on-surface": "#191c1d",
                 "surface-tint": "#4e5f7c",
                 "on-surface-variant": "#44474d",
@@ -54,7 +54,7 @@
                 "secondary": "#005EB8",
                 "surface-dim": "#d9dadb",
                 "surface-variant": "#e1e3e4",
-                "prestige-gold": "#C5A059",
+                "prestige-gold": "#005EB8",
                 "tertiary": "#00030b",
                 "surface-container": "#edeeef",
                 "tertiary-fixed": "#d5e3ff",
@@ -62,11 +62,11 @@
                 "surface-container-high": "#e7e8e9",
                 "on-primary-fixed-variant": "#364763",
                 "on-tertiary-fixed-variant": "#30476a",
-                "background": "#F8F9FA",
+                "background": "#F0F4F8",
                 "primary-fixed-dim": "#b6c7e9",
                 "surface-container-low": "#f3f4f5",
                 "outline-variant": "#c5c6ce",
-                "surface": "#F8F9FA"
+                "surface": "#F0F4F8"
             },
             "borderRadius": {
                 "DEFAULT": "0.125rem",
@@ -84,13 +84,13 @@
                 "stack-sm": "8px"
             },
             "fontFamily": {
-                "headline-lg": ["Playfair Display", "serif"],
-                "label-sm": ["Poppins", "sans-serif"],
-                "body-md": ["Poppins", "sans-serif"],
-                "headline-lg-mobile": ["Playfair Display", "serif"],
-                "title-md": ["Poppins", "sans-serif"],
-                "display-lg": ["Playfair Display", "serif"],
-                "body-lg": ["Poppins", "sans-serif"]
+                "headline-lg": ["Playfair Display"],
+                "label-sm": ["Montserrat"],
+                "body-md": ["Montserrat"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "title-md": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "body-lg": ["Montserrat"]
             },
             "fontSize": {
                 "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
@@ -159,11 +159,10 @@
         .nav-link-underline { position:relative; }
         .nav-link-underline::after {
             content:'';position:absolute;width:100%;transform:scaleX(0);
-            height:2px;bottom:-4px;left:0;background-color:#C5A059;
+            height:2px;bottom:-4px;left:0;background-color:#005EB8;
             transform-origin:bottom left;transition:transform 0.25s cubic-bezier(0.16,1,0.3,1);
         }
         .nav-link-underline:hover::after { transform:scaleX(1); }
-        .nav-link-active::after { transform:scaleX(1) !important; }
 
         /* Route link underline */
         .route-link-underline { position:relative; }
@@ -209,78 +208,60 @@
         .hero-form-card { animation:borderGlow 3.5s ease-in-out infinite; border-radius:6px; }
 
         /* Input gold focus */
-        input:focus,select:focus,textarea:focus {
-            outline:none!important;border-color:#C5A059!important;
-            box-shadow:0 0 0 4px rgba(197,160,89,0.12),inset 0 1px 3px rgba(0, 26, 63,0.04)!important;
+        input:focus,select:focus {
+            outline:none!important;border-color:#005EB8!important;
+            box-shadow:0 0 0 3px rgba(0, 94, 184,0.18),inset 0 1px 3px rgba(0, 26, 63,0.04)!important;
             transition:all 0.25s ease!important;
         }
 
         /* Feature cards */
         .feature-card {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 2.5rem 2rem;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 26, 63, 0.04);
-            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition:box-shadow 0.35s ease,background 0.35s ease,border-color 0.35s ease;
+            padding:2rem 1.5rem;border-radius:14px;border:1px solid transparent;
         }
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 26, 63, 0.08);
-            border-color: rgba(197, 160, 89, 0.3);
+            transform:translateY(-10px);
+            box-shadow:0 28px 60px rgba(0, 26, 63,0.13),0 0 0 1px rgba(0, 94, 184,0.22);
+            background:white;border-color:rgba(0, 94, 184,0.2);
         }
-        .feature-icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: rgba(197, 160, 89, 0.1);
-            color: #C5A059;
-            margin-bottom: 1.5rem;
-            transition: all 0.4s ease;
+        .feature-icon {
+            display:inline-flex;align-items:center;justify-content:center;
+            width:68px;height:68px;border-radius:50%;
+            background:rgba(0, 94, 184,0.08);margin-bottom:1.25rem;
+            transition:all 0.35s ease;
         }
-        .feature-card:hover .feature-icon-wrapper {
-            background: #C5A059;
-            color: white;
-            transform: scale(1.1) rotate(8deg);
-            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+        .feature-card:hover .feature-icon {
+            background:rgba(0, 94, 184,0.18);
+            transform:scale(1.12) rotate(6deg);
+            box-shadow:0 8px 28px rgba(0, 94, 184,0.25);
         }
 
         /* Route cards */
         .route-card {
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius:10px;overflow:hidden;
+            transition:box-shadow 0.4s ease;
         }
         .route-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(0, 26, 63, 0.12);
+            transform:translateY(-12px) scale(1.015);
+            box-shadow:0 40px 80px rgba(0, 26, 63,0.45),0 0 0 1px rgba(0, 94, 184,0.4);
         }
 
         /* Testimonial cards */
         .testimonial-card {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border-radius: 1rem;
-            border: 1px solid rgba(0, 26, 63, 0.05);
+            transition:box-shadow 0.3s ease;border-radius:8px;
         }
         .testimonial-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 26, 63, 0.08);
-            border-color: rgba(197, 160, 89, 0.2);
+            transform:translateY(-6px);
+            box-shadow:0 22px 55px rgba(0, 26, 63,0.14),0 0 0 1px rgba(0, 94, 184,0.18);
         }
 
         /* FAQ premium */
-        .faq-item { border: 1px solid rgba(0, 26, 63, 0.08); transition: all 0.3s ease; }
-        .faq-item:hover { border-color: rgba(197, 160, 89, 0.3); }
+        .faq-item { border:1px solid transparent;transition:border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;border-radius:8px; }
+        .faq-item:hover { border-color:rgba(0, 94, 184,0.15); }
         .faq-item.faq-open {
-            background: white !important;
-            box-shadow: 0 15px 35px rgba(0, 26, 63, 0.06) !important;
-            border-left: 4px solid #C5A059 !important;
-            border-color: rgba(197, 160, 89, 0.2) !important;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+            background:white!important;
+            box-shadow:0 10px 40px rgba(0, 26, 63,0.1),0 0 0 1px rgba(0, 94, 184,0.2)!important;
+            border-color:rgba(0, 94, 184,0.2)!important;
         }
 
         /* CTA button shimmer */
@@ -339,11 +320,11 @@
 <!-- TopNavBar -->
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<a href="#home" class="flex items-center" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;">
-                <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/>
+<a href="#home" class="flex items-center">
+                <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
-<a class="text-prestige-gold nav-link-underline nav-link-active font-body-md text-body-md" href="#home">Home</a>
+<a class="text-prestige-gold border-b-2 border-prestige-gold pb-1 font-body-md text-body-md" href="#home">Home</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#popular-routes">Airports</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#quote">Executive</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#reviews">Reviews</a>
@@ -351,28 +332,12 @@
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
 </nav>
 <div class="flex items-center space-x-4">
-<!-- Call Now Button: dark navy with white text -->
-<a class="hidden sm:flex items-center px-5 py-2.5 bg-deep-navy hover:bg-[#1a2e4c] text-white font-bold text-sm transition-all duration-300 shadow-sm hover:-translate-y-0.5" 
-   href="tel:+447469598219"
-   style="border-radius: 50px !important; padding: 10px 24px !important; font-size: 14px !important;"
->
-    <span class="material-symbols-outlined mr-2 text-[18px]">call</span>
-    Call Now
-</a>
-<!-- WhatsApp Button: #25D366 green with white text -->
-<a class="flex items-center px-6 py-2.5 font-bold text-white transition-all duration-300 shadow-sm hover:-translate-y-0.5" 
-   href="https://wa.me/447469598219"
-   target="_blank"
-   rel="noopener"
-   style="background-color: #25D366 !important; border-radius: 50px !important; padding: 10px 24px !important; font-size: 14px !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important;"
-   onmouseover="this.style.backgroundColor='#20ba5a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,211,102,0.6)';"
-   onmouseout="this.style.backgroundColor='#25D366'; this.style.transform='none'; this.style.boxShadow='0 4px 15px rgba(37,211,102,0.4)';"
->
-    <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
-        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-    </svg>
-    WhatsApp Us
-</a>
+<a class="hidden sm:flex items-center px-4 py-2 bg-deep-navy text-mist-white font-label-sm text-label-sm hover:bg-[#003B75] hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="tel:+447469598219">
+                    Call Now
+                </a>
+<a class="flex items-center px-4 py-2 bg-prestige-gold text-deep-navy font-label-sm text-label-sm hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" href="https://wa.me/447469598219">
+                    WhatsApp
+                </a>
 <button class="lg:hidden text-deep-navy">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -386,222 +351,205 @@
 <img alt="A luxury black executive sedan parked on a winding road in the Scottish Highlands, with rolling green hills and a dramatic misty sky in the background, conveying a sense of premium travel and reliability." class="w-full h-full object-cover ken-burns" data-alt="A luxury black executive sedan parked on a scenic winding road overlooking the Scottish Highlands at twilight. The sky is a palette of deep blues and purples, mirroring the prestige-gold and deep-navy branding. Soft golden light from the setting sun glints off the polished car body, emphasizing premium reliability. The atmosphere is quiet, professional, and tranquil, reflecting a high-end editorial automotive photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuKbHxu5XlQt3abV-eKUlhK7rXgY8HEgkQrlBu1Eqv7sN7Ib-kF4Hqr-xGiaBou6XPAcS6RnD1MK9dky1YSemI9zcK9f-4OOmRQ2QH6oweXSCPKkNgxMIvhzQQw4rC269XzU4J9BvzY5HwTyqT2EGcNCTQCziw499DU7K43to5G9rq3uQ1oQxWQ1s4_1dwzCNhvMFiOsL59_A0lNtuPGK3bDQ160D4IT585Ayi6GLm0KkSTl2AsFVJEEh4V9zyEYVqHApI1g-Pm6-K"/>
 <div class="absolute inset-0 hero-gradient"></div>
 </div>
-<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center py-20">
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
 <div class="space-y-6">
 <h1 class="font-display-lg text-display-lg text-mist-white leading-tight overflow-hidden">
                         <span class="block hero-headline-line">Reliable Airport Transfers</span>
                         <span class="block hero-headline-line text-prestige-gold">Across Scotland</span>
 </h1>
-<div class="w-20 h-1 bg-[#C5A059] my-4 rounded-full hero-divider"></div>
 <p class="font-body-lg text-body-lg text-mist-white/90 max-w-xl hero-subtext">
                         Fixed pricing, professional drivers, flight tracking &amp; 24/7 support wherever you need to go, we get you there on time.
                     </p>
 <div class="flex flex-wrap gap-4 justify-center md:justify-start hero-cta">
-<a class="px-10 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hero-cta-btn" href="#quote">
+<a class="px-8 py-4 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber transition-colors" href="#quote">
                             Get Instant Quote
                         </a>
-<a class="px-10 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hero-cta-btn" href="#">
+<a class="px-8 py-4 border-2 border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy transition-all" href="#">
                             WhatsApp Us
                         </a>
 </div>
-<div class="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-start pt-4 text-mist-white/80 font-body-md text-sm hero-trust-badges">
-    <span class="flex items-center"><span class="material-symbols-outlined text-prestige-gold mr-1.5 text-lg">check</span> Fixed Pricing</span>
-    <span class="flex items-center"><span class="material-symbols-outlined text-prestige-gold mr-1.5 text-lg">check</span> Flight Tracked</span>
-    <span class="flex items-center"><span class="material-symbols-outlined text-prestige-gold mr-1.5 text-lg">check</span> 24/7 Support</span>
-</div>
 </div>
 <!-- Bento-style Form Container -->
-<div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold rounded-2xl hero-form-card" id="quote">
+<div class="bg-white p-8 luxury-shadow border-t-4 border-prestige-gold hero-form-card" id="quote">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-6">Get Your Fixed Price Quote</h2>
-<form class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
-<!-- Row 1: Journey Type (full width) -->
-<div class="relative col-span-2">
-<select class="w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white focus:outline-none appearance-none" id="booking-journey-type">
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Journey Type -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Journey Type</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-journey-type">
 <option value="one-way">One Way</option>
 <option value="return">Return</option>
 <option value="hourly">Hourly Hire</option>
 </select>
-<label for="booking-journey-type" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 pointer-events-none">Journey Type</label>
-<div class="pointer-events-none absolute inset-y-0 right-4 flex items-center pt-4">
-    <span class="material-symbols-outlined text-deep-navy/60">expand_more</span>
-</div>
 </div>
 
-<!-- Row 2: Full Name | WhatsApp Number -->
-<div class="relative col-span-2 sm:col-span-1">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="Full Name" type="text" id="booking-name" required/>
-<label for="booking-name" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">Full Name</label>
-</div>
-<div class="relative col-span-2 sm:col-span-1">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="WhatsApp Number" type="tel" id="booking-whatsapp" required/>
-<label for="booking-whatsapp" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">WhatsApp Number</label>
+<!-- Full Name -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Your Full Name" type="text" id="booking-name" required/>
 </div>
 
-<!-- Row 3: Pickup Location | Drop-off Location -->
-<div class="relative col-span-2 sm:col-span-1">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="Pickup Location" type="text" id="booking-pickup" required/>
-<label for="booking-pickup" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">Pickup Location</label>
-</div>
-<div class="relative col-span-2 sm:col-span-1" id="drop-off-container">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="Drop-off Location" type="text" id="booking-dropoff" required/>
-<label for="booking-dropoff" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">Drop-off Location</label>
+<!-- Pickup Location -->
+<div class="col-span-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Pickup Location</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Pickup Address or Airport" type="text" id="booking-pickup" required/>
 </div>
 
-<!-- Row 4: Date | Time -->
-<div class="relative col-span-2 sm:col-span-1">
-<input class="w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white focus:outline-none" type="date" id="booking-date" required/>
-<label for="booking-date" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 pointer-events-none">Date</label>
-</div>
-<div class="relative col-span-2 sm:col-span-1">
-<input class="w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white focus:outline-none" type="time" id="booking-time" required/>
-<label for="booking-time" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 pointer-events-none">Time</label>
+<!-- Drop-off Location -->
+<div class="col-span-2" id="drop-off-container">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Drop-off Location</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
 </div>
 
-<!-- Row 5: Passengers | Luggage Pieces -->
-<div class="relative col-span-2 sm:col-span-1">
-<select class="w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white focus:outline-none appearance-none" id="booking-passengers">
+<!-- Number of Hours (Hourly Hire Only) -->
+<div class="col-span-2 hidden" id="hours-container">
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="number" id="booking-hours" min="2" value="2"/>
+</div>
+
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Date</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="date" id="booking-date" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Time</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" type="time" id="booking-time" required/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Passengers</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-passengers">
 <option value="1-4">1-4</option>
 <option value="5-8">5-8</option>
 </select>
-<label for="booking-passengers" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 pointer-events-none">Passengers</label>
-<div class="pointer-events-none absolute inset-y-0 right-4 flex items-center pt-4">
-    <span class="material-symbols-outlined text-deep-navy/60">expand_more</span>
 </div>
-</div>
-<div class="relative col-span-2 sm:col-span-1">
-<select class="w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white focus:outline-none appearance-none" id="booking-luggage">
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Luggage Pieces</label>
+<select class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" id="booking-luggage">
 <option value="1-2">1-2 Bags</option>
 <option value="3-4">3-4 Bags</option>
 <option value="5+">5+ Bags</option>
 </select>
-<label for="booking-luggage" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 pointer-events-none">Luggage Pieces</label>
-<div class="pointer-events-none absolute inset-y-0 right-4 flex items-center pt-4">
-    <span class="material-symbols-outlined text-deep-navy/60">expand_more</span>
-</div>
 </div>
 
 <!-- Luggage Warning Message (Hidden by Default) -->
-<div id="luggage-warning-container" class="hidden col-span-2 p-3 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-sm text-left mt-1">
-    <p class="mb-2 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
-    <button type="button" id="upgrade-vehicle-btn" class="px-3 py-1.5 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-xs font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
+<div id="luggage-warning-container" class="hidden col-span-2 p-4 bg-red-50 border border-red-200 rounded text-red-600 font-body-md text-body-md text-left mt-2">
+    <p class="mb-3 font-semibold">For more than 2 large bags we recommend our 6-seater vehicle for a comfortable journey.</p>
+    <button type="button" id="upgrade-vehicle-btn" class="px-4 py-2 bg-[#005EB8] hover:bg-[#0088FF] text-white rounded text-label-sm font-label-sm uppercase font-semibold transition-colors">Upgrade to 6-Seater</button>
 </div>
 
-<!-- Row 6: Flight Number | Number of Hours (Hourly Hire Only) -->
-<div class="relative col-span-2 sm:col-span-1">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="Flight Number" type="text" id="booking-flight"/>
-<label for="booking-flight" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">Flight Number (Optional)</label>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Flight Number</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="Optional" type="text" id="booking-flight"/>
 </div>
-<div class="relative col-span-2 sm:col-span-1 hidden" id="hours-container">
-<input class="peer w-full border border-outline-variant rounded-xl bg-mist-white px-4 pt-6 pb-2 font-body-md text-sm transition-all focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white placeholder-transparent focus:outline-none" placeholder="Number of Hours" type="number" id="booking-hours" min="2" value="2"/>
-<label for="booking-hours" class="absolute left-4 top-1.5 text-[10px] font-semibold text-deep-navy/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-placeholder-shown:text-on-surface-variant peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-prestige-gold peer-focus:font-semibold pointer-events-none">Number of Hours (Min: 2)</label>
+<div>
+<label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
+<input class="w-full border-outline-variant focus:ring-0 focus:border-prestige-gold focus:border-b-2 border p-3 font-body-md text-body-md transition-colors" placeholder="For Confirmation" type="tel" id="booking-whatsapp" required/>
 </div>
 
-<!-- Row 7: Select Vehicle Type (full width) -->
-<div class="col-span-2 mt-1">
-<label class="font-label-sm text-label-sm text-deep-navy mb-2 block font-semibold">Select Vehicle Type</label>
+<!-- Vehicle Selection Component -->
+<div class="col-span-2 mt-2">
+<label class="font-label-sm text-label-sm text-deep-navy mb-2 block">Select Vehicle Type</label>
 <div class="grid grid-cols-3 gap-3">
 <!-- Standard Card -->
-<div id="vehicle-standard" class="relative cursor-pointer border-2 rounded-xl p-4 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1.5 hover:scale-[1.03] hover:shadow-lg" onclick="selectVehicle('standard')">
+<div id="vehicle-standard" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('standard')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-standard">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="standard_sedan.png" alt="Standard Sedan" class="w-full h-12 object-contain mb-1"/>
+<img src="standard_sedan.png" alt="Standard Sedan" class="w-full h-16 object-contain mb-2"/>
 <div class="text-center">
-<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Standard</span>
-<span class="text-[10px] text-on-surface-variant block">1-4 Pax</span>
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Standard</span>
+<span class="text-[11px] text-on-surface-variant block">1-4 Pax</span>
 </div>
 </div>
 <!-- Executive Card -->
-<div id="vehicle-executive" class="relative cursor-pointer border-2 rounded-xl p-4 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1.5 hover:scale-[1.03] hover:shadow-lg" onclick="selectVehicle('executive')">
+<div id="vehicle-executive" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('executive')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-executive">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="executive_sedan.png" alt="Executive Sedan" class="w-full h-12 object-contain mb-1"/>
+<img src="executive_sedan.png" alt="Executive Sedan" class="w-full h-16 object-contain mb-2"/>
 <div class="text-center">
-<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Executive</span>
-<span class="text-[10px] text-on-surface-variant block">1-4 Pax / Luxury</span>
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Executive</span>
+<span class="text-[11px] text-on-surface-variant block">1-4 Pax / Luxury</span>
 </div>
 </div>
 <!-- Van Card -->
-<div id="vehicle-van" class="relative cursor-pointer border-2 rounded-xl p-4 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1.5 hover:scale-[1.03] hover:shadow-lg" onclick="selectVehicle('van')">
+<div id="vehicle-van" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md" onclick="selectVehicle('van')">
 <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-van">
 <span class="material-symbols-outlined text-[14px]">check</span>
 </div>
-<img src="premium_van.png" alt="Premium Van" class="w-full h-12 object-contain mb-1"/>
+<img src="premium_van.png" alt="Premium Van" class="w-full h-16 object-contain mb-2"/>
 <div class="text-center">
-<span class="font-label-sm text-xs text-deep-navy font-semibold block uppercase">Van</span>
-<span class="text-[10px] text-on-surface-variant block">5-8 Pax</span>
-</div>
-</div>
+<span class="font-label-sm text-label-sm text-deep-navy font-semibold block uppercase">Van</span>
+<span class="text-[11px] text-on-surface-variant block">5-8 Pax</span>
 </div>
 </div>
 
-<!-- Row 8: Select Specific Vehicle (full width) -->
 <!-- Expandable Options Panel for Standard -->
-<div id="options-standard-container" class="col-span-2 mt-2 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider mb-2 font-semibold">Select Specific Standard Vehicle:</p>
+<div id="options-standard-container" class="col-span-3 mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Standard Vehicle:</p>
     <div class="grid grid-cols-2 gap-3">
         <!-- Toyota Corolla Card -->
-        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-xl p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
+        <div id="sub-vehicle-corolla" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Toyota Corolla')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-corolla">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-12 object-contain mb-1"/>
+            <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
             <div class="text-center">
-                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Toyota Corolla</span>
-                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Toyota Corolla</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
             </div>
         </div>
         <!-- Volkswagen Caddy Card -->
-        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-xl p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
+        <div id="sub-vehicle-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('standard', 'Volkswagen Caddy')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-caddy">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-12 object-contain mb-1"/>
+            <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
             <div class="text-center">
-                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Volkswagen Caddy</span>
-                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Volkswagen Caddy</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Expandable Options Panel for Executive -->
-<div id="options-executive-container" class="col-span-2 hidden mt-2 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
-    <p class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider mb-2 font-semibold">Select Specific Executive Vehicle:</p>
+<div id="options-executive-container" class="col-span-3 hidden mt-3 bg-white border border-outline-variant rounded-xl p-4 transition-all duration-300">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-3">Select Specific Executive Vehicle:</p>
     <div class="grid grid-cols-2 gap-3">
         <!-- Range Rover Card -->
-        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-xl p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md" onclick="selectSpecificVehicle('executive', 'Range Rover')">
+        <div id="sub-vehicle-rangerover" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-prestige-gold hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Range Rover')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-rangerover">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="range_rover.png" alt="Range Rover" class="w-full h-12 object-contain mb-1"/>
+            <img src="range_rover.png" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
             <div class="text-center">
-                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Range Rover</span>
-                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">Premium SUV, up to 4 passengers, luxury interior</span>
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Range Rover</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
             </div>
         </div>
         <!-- Audi RS7 Card -->
-        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-xl p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
+        <div id="sub-vehicle-audirs7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-mist-white hover:bg-white transition-all duration-300 border-outline-variant hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-sm" onclick="selectSpecificVehicle('executive', 'Audi RS7')">
             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-prestige-gold" id="check-sub-audirs7">
                 <span class="material-symbols-outlined text-[14px]">check</span>
             </div>
-            <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-12 object-contain mb-1"/>
+            <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
             <div class="text-center">
-                <span class="font-label-sm text-xs text-deep-navy font-semibold block">Audi RS7</span>
-                <span class="text-[10px] text-on-surface-variant block mt-0.5 leading-snug">High performance executive saloon, up to 4 passengers, luxury interior</span>
+                <span class="font-label-sm text-label-sm text-deep-navy font-semibold block">Audi RS7</span>
+                <span class="text-[11px] text-on-surface-variant block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
             </div>
         </div>
     </div>
 </div>
 
+</div>
 <input type="hidden" name="vehicle_type" id="selected-vehicle" value="standard"/>
 <input type="hidden" name="specific_vehicle" id="selected-specific-vehicle" value="Toyota Corolla"/>
+</div>
 
-<!-- Row 9: Get My Fixed Quote button (full width) -->
-<button class="col-span-2 mt-4 bg-gradient-to-r from-[#C5A059] to-[#a3803f] text-white py-4 px-8 font-title-md font-bold text-lg rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 uppercase tracking-wider btn-shimmer" type="submit">
-    Get My Fixed Quote
-</button>
+<button class="col-span-2 mt-4 bg-deep-navy text-mist-white py-4 font-headline-lg text-headline-lg hover:bg-[#003B75] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 uppercase tracking-wider" type="submit">
+                            Get My Fixed Quote
+                        </button>
 </form>
 </div>
 </div>
@@ -613,92 +561,77 @@
 <div class="w-24 h-1 bg-prestige-gold mx-auto mb-16"></div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">payments</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Fixed Pricing</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Enjoy peace of mind with a guaranteed price at the time of booking. We never charge extra for traffic or peak times, ensuring full transparency for every journey.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">payments</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Fixed Pricing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enjoy peace of mind with a guaranteed price at the time of booking. We never charge extra for traffic or peak times, ensuring full transparency for every journey.</p>
 </div>
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Flight Tracking</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">We monitor your flight's status in real-time, adjusting pickup times for delays or early arrivals so your driver is always there when you land.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">flight_takeoff</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Flight Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We monitor your flight's status in real-time, adjusting pickup times for delays or early arrivals so your driver is always there when you land.</p>
 </div>
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">verified_user</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Professional Licensed Drivers</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Our team consists of fully vetted, experienced professionals with expert knowledge of Scotland’s roads, committed to your safety and comfort.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">verified_user</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Professional Licensed Drivers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our team consists of fully vetted, experienced professionals with expert knowledge of Scotland’s roads, committed to your safety and comfort.</p>
 </div>
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">support_agent</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">24/7 Support</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Whether it’s an early morning flight or a late-night arrival, our dedicated support team is available around the clock to assist with your booking.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">support_agent</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">24/7 Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Whether it’s an early morning flight or a late-night arrival, our dedicated support team is available around the clock to assist with your booking.</p>
 </div>
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">person_pin_circle</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Meet &amp; Greet Service</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Your driver will meet you in the arrivals hall with a clear name board, assisting with your luggage for a seamless transition from plane to car.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">person_pin_circle</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">Meet &amp; Greet Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver will meet you in the arrivals hall with a clear name board, assisting with your luggage for a seamless transition from plane to car.</p>
 </div>
 <div class="group feature-card">
-<div class="feature-icon-wrapper">
-    <span class="material-symbols-outlined text-3xl">price_check</span>
-</div>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">No Hidden Charges</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">What we quote is what you pay. We include all airport drop-off and pickup fees in our fixed prices, so there are never any surprises.</p>
+<span class="material-symbols-outlined text-4xl text-prestige-gold mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 inline-block">price_check</span>
+<h3 class="font-title-md text-title-md text-deep-navy mb-2">No Hidden Charges</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">What we quote is what you pay. We include all airport drop-off and pickup fees in our fixed prices, so there are never any surprises.</p>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Our Fleet Section -->
-<section id="fleet-section" class="py-24 bg-white px-margin-mobile md:px-margin-desktop">
+<section id="fleet-section" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto text-center">
 <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Our Premium Fleet</h2>
-<div class="w-24 h-1 bg-prestige-gold mx-auto mb-12"></div>
+<div class="w-24 h-1 bg-[#005EB8] mx-auto mb-12"></div>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-16">
     Travel in comfort and style with our carefully selected vehicles, maintained to the highest standards of cleanliness and safety.
 </p>
 
 <!-- Standard Cars Section -->
 <div class="mb-16">
-    <h3 class="font-title-md text-2xl text-deep-navy font-bold text-left mb-8 border-b pb-3 border-outline-variant/30 flex items-center">
-        <span class="w-2.5 h-6 bg-prestige-gold rounded-full mr-3 inline-block"></span>
-        Standard Class
-    </h3>
+    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Standard Class</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
         <!-- Toyota Corolla -->
-        <div class="group bg-white rounded-xl overflow-hidden shadow-md border-t-2 border-prestige-gold hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-            <div class="h-64 overflow-hidden bg-neutral-50/80 flex items-center justify-center p-6 relative">
-                <img src="toyota_corolla.png" alt="Toyota Corolla" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 ease-out"/>
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="toyota_corolla.png" alt="Toyota Corolla" class="w-full h-full object-cover"/>
             </div>
-            <div class="p-8">
-                <h4 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Toyota Corolla</h4>
-                <p class="text-on-surface-variant font-body-md text-sm mb-6 leading-relaxed">A reliable and smooth hybrid saloon, perfect for everyday airport transfers and city travel.</p>
-                <div class="flex items-center space-x-3 text-on-surface-variant text-label-sm font-label-sm">
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">group</span> 4 Pax</span>
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">shopping_bag</span> 2 Large Bags</span>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Toyota Corolla</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">A reliable and smooth hybrid sedan, perfect for everyday airport transfers and city travel.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
                 </div>
             </div>
         </div>
         <!-- Volkswagen Caddy -->
-        <div class="group bg-white rounded-xl overflow-hidden shadow-md border-t-2 border-prestige-gold hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-            <div class="h-64 overflow-hidden bg-neutral-50/80 flex items-center justify-center p-6 relative">
-                <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 ease-out"/>
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="volkswagen_caddy.png" alt="Volkswagen Caddy" class="w-full h-full object-cover"/>
             </div>
-            <div class="p-8">
-                <h4 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Volkswagen Caddy</h4>
-                <p class="text-on-surface-variant font-body-md text-sm mb-6 leading-relaxed">Spacious multi-purpose vehicle offering extra legroom and excellent luggage capacity.</p>
-                <div class="flex items-center space-x-3 text-on-surface-variant text-label-sm font-label-sm">
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">group</span> 4 Pax</span>
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">shopping_bag</span> 4 Large Bags</span>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Volkswagen Caddy</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">Spacious multi-purpose vehicle offering extra legroom and excellent luggage capacity.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 4 Large Bags</span>
                 </div>
             </div>
         </div>
@@ -707,36 +640,33 @@
 
 <!-- Executive Cars Section -->
 <div>
-    <h3 class="font-title-md text-2xl text-deep-navy font-bold text-left mb-8 border-b pb-3 border-outline-variant/30 flex items-center">
-        <span class="w-2.5 h-6 bg-prestige-gold rounded-full mr-3 inline-block"></span>
-        Executive Class
-    </h3>
+    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Executive Class</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
         <!-- Range Rover -->
-        <div class="group bg-white rounded-xl overflow-hidden shadow-md border-t-2 border-prestige-gold hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-            <div class="h-64 overflow-hidden bg-neutral-50/80 flex items-center justify-center p-6 relative">
-                <img src="range_rover.png" alt="Range Rover" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 ease-out"/>
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="range_rover.png" alt="Range Rover" class="w-full h-full object-cover"/>
             </div>
-            <div class="p-8">
-                <h4 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Range Rover</h4>
-                <p class="text-on-surface-variant font-body-md text-sm mb-6 leading-relaxed">A high-end luxury SUV providing unmatched ride comfort, command road presence, and prestige styling.</p>
-                <div class="flex items-center space-x-3 text-on-surface-variant text-label-sm font-label-sm">
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">group</span> 4 Pax</span>
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">shopping_bag</span> 3 Large Bags</span>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Range Rover</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">A high-end luxury SUV providing unmatched ride comfort, command road presence, and prestige styling.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 3 Large Bags</span>
                 </div>
             </div>
         </div>
         <!-- Audi RS7 -->
-        <div class="group bg-white rounded-xl overflow-hidden shadow-md border-t-2 border-prestige-gold hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-            <div class="h-64 overflow-hidden bg-neutral-50/80 flex items-center justify-center p-6 relative">
-                <img src="audi_rs7.png" alt="Audi RS7" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 ease-out"/>
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="audi_rs7.png" alt="Audi RS7" class="w-full h-full object-cover"/>
             </div>
-            <div class="p-8">
-                <h4 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Audi RS7</h4>
-                <p class="text-on-surface-variant font-body-md text-sm mb-6 leading-relaxed">Ultimate luxury sportback combining executive refinement with breathtaking performance.</p>
-                <div class="flex items-center space-x-3 text-on-surface-variant text-label-sm font-label-sm">
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">group</span> 4 Pax</span>
-                    <span class="flex items-center px-3.5 py-1.5 bg-mist-white rounded-full border border-outline-variant/30 text-deep-navy font-semibold"><span class="material-symbols-outlined mr-1.5 text-prestige-gold text-lg">shopping_bag</span> 2 Large Bags</span>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Audi RS7</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">Ultimate luxury sportback combining executive refinement with breathtaking performance.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
                 </div>
             </div>
         </div>
@@ -750,205 +680,136 @@
 <div class="max-w-container-max mx-auto">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
 <div>
-<h2 class="font-display-lg text-display-lg mb-4">Our Most Popular Routes</h2>
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Most Popular Routes</h2>
 <div class="w-24 h-1 bg-prestige-gold"></div>
 </div>
 <p class="font-body-lg text-body-lg text-mist-white/70 max-w-md">Reliable door-to-door service to and from Scotland's major hubs and scenic destinations.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="routes-grid">
-<!-- Route Card 1 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="The historic Edinburgh skyline viewed from a distance during the golden hour, symbolizing the route between Perth and Edinburgh Airport." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic wide shot of the Edinburgh skyline at golden hour..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCugXYvNRR8Jj4ClE8RhHcPSIM21DRMlhmLTujf5LN7VUEuN5B8AAMXNQTt59qos8r8MzKltnxH8Q7W5vo_erFs3eH-8-ORYjYhGkeKKaF27sTAS9AqGukrr4JKnQv15Ca8cN1XUTQqVAYR6xXtXWm_tTR4URQTGe7xKuvc6mG6Zs8KFrGXSbj3RIJIdcK4EkJZxCOJFMGRChSZ6RCrCysN8wBcZd_beHv4AEvo7qBfwcnLbtxlp5WwFOv-fJ47tEgp2RtXkMXDT4pb"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Perth to Edinburgh Airport</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Experience a stress-free transfer directly to the terminal in approx. 1h 15m.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="#">Get a Quote</a>
-    </div>
+<!-- Route Card -->
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="The historic Edinburgh skyline viewed from a distance during the golden hour, symbolizing the route between Perth and Edinburgh Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A cinematic wide shot of the Edinburgh skyline at golden hour, featuring the castle perched on its volcanic rock against a sky of orange and deep blue. The lighting is warm and high-contrast, creating an editorial feel. The image represents the premium nature of the Perth to Edinburgh airport transfer, focusing on luxury and historical beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCugXYvNRR8Jj4ClE8RhHcPSIM21DRMlhmLTujf5LN7VUEuN5B8AAMXNQTt59qos8r8MzKltnxH8Q7W5vo_erFs3eH-8-ORYjYhGkeKKaF27sTAS9AqGukrr4JKnQv15Ca8cN1XUTQqVAYR6xXtXWm_tTR4URQTGe7xKuvc6mG6Zs8KFrGXSbj3RIJIdcK4EkJZxCOJFMGRChSZ6RCrCysN8wBcZd_beHv4AEvo7qBfwcnLbtxlp5WwFOv-fJ47tEgp2RtXkMXDT4pb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Perth to Edinburgh Airport</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experience a stress-free transfer directly to the terminal in approx. 1h 15m.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
 </div>
-
-<!-- Route Card 2 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="Modern architecture of Glasgow city centre reflecting in the Clyde river, representing the transfer to Glasgow Airport." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern, sharp architectural photograph..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfFMbCWqecucttEFiswAETClGPqukTXi-utxx8_c5ivrdnxw5DAqcBRNARZ6Tlzbz8hd8ed2a5ALnuWes4wHWW-cB_wJwmC-mIbJceRQQE5N6_6Y5qViJKHmQBtlOIg7ABDIRahBJX6lEyeMoQKNeXwwom5jEMa04X1Lsh5yKo8bID2-NBNm14s7g9SFZ-ZvjPJZvu12D7B4j0YkvO1gHNa8KHpLLKqQ9wP9gCDklCNgsLAq2PN0l0yH_cz9vSbS7PLbaA9lIFecu"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Perth to Glasgow Airport</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Reliable door-to-door service, ensuring you arrive relaxed for your flight.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="#">Get a Quote</a>
-    </div>
 </div>
-
-<!-- Route Card 3 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="The Old Course in St Andrews with the iconic bridge and historic buildings in the background, representing the route from Edinburgh." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An expansive, lush view..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAEEPcuZTAkVMDCe5bY7fCuMpbZaD_YbIoawW1b0z6iFeIvgKPRQYA1xITRijenoNMy4tOyzsz_WgMlVk1f0TVfV3pV1HH3dbCB23aQ8SRKlYoDOR6wZvoOUqJjrSThAo4mLeWJOXxWZiVPsUMSJ94rY59EGpIdOXv9GPXbq83MQTtrKnRbKFduGlusUHrfhzlkQHgvApfanuprmD98smPo4J2BRK3T69EjgaLSgeTTthcUvmNUM4fwwMu_kShQA-G_wWVHiuNISRn"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Edinburgh to St Andrews</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">The premier choice for golfers with plenty of room for clubs and luggage.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="#">Get a Quote</a>
-    </div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="Modern architecture of Glasgow city centre reflecting in the Clyde river, representing the transfer to Glasgow Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A modern, sharp architectural photograph of the Glasgow Riverside Museum and the surrounding cityscape at night. Vivid artificial lights reflect off the dark river water, creating a vibrant, high-energy atmosphere. The color palette is dominated by deep navy blues and sharp whites, perfectly matching the professional and modern brand identity of Scotland 247 Taxis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfFMbCWqecucttEFiswAETClGPqukTXi-utxx8_c5ivrdnxw5DAqcBRNARZ6Tlzbz8hd8ed2a5ALnuWes4wHWW-cB_wJwmC-mIbJceRQQE5N6_6Y5qViJKHmQBtlOIg7ABDIRahBJX6lEyeMoQKNeXwwom5jEMa04X1Lsh5yKo8bID2-NBNm14s7g9SFZ-ZvjPJZvu12D7B4j0YkvO1gHNa8KHpLLKqQ9wP9gCDklCNgsLAq2PN0l0yH_cz9vSbS7PLbaA9lIFecu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Perth to Glasgow Airport</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Reliable door-to-door service, ensuring you arrive relaxed for your flight.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
 </div>
-
-<!-- Route Card 4 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="A serene view of the River Tay in Perth, Scotland, under a soft morning mist." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene landscape..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2xp8vi8bi2GC8M5U7RKvqNLK3lfh8upu1cQdFMTgjMtRxoBfUc9VBdsDS5D__68ROjMNP4qNK8rQ1_hF8VChg4job5jC1J85uXHH6QTBKXNgFA-ss_33mTanrr1S_EK8hzUezn4gDA8SVUu4hpEw--jsFVaa-ZFYXyN2BOVtBOD5zsxlwumfn-sfJvUEarUZ5gKQZMcg59XgbfzVs6uEZwY9P_LlWKz9dWVx9khVaalnjsyJTgKnvXEhfbF4Mg0s0w8vjwUwVe6"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Glasgow to Perth</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Professional private hire service for those travelling between the West Coast and heart of Scotland.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="#">Get a Quote</a>
-    </div>
 </div>
-
-<!-- Route Card 5 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="Scenic landscape of Inverness Castle and River Ness" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="inverness_transfer.png"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Edinburgh Airport to Inverness</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Fixed price private transfer from Edinburgh Airport to the Highlands capital.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="/edinburgh-airport-to-inverness">Book Now</a>
-    </div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="The Old Course in St Andrews with the iconic bridge and historic buildings in the background, representing the route from Edinburgh." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="An expansive, lush view of the iconic Old Course in St Andrews on a bright, clear day. The vibrant green turf contrasts beautifully with the ancient grey stone architecture of the town in the distance. The lighting is crisp and bright, conveying a sense of prestige and history. Perfect for representing the premier travel route for golfers and high-end visitors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAEEPcuZTAkVMDCe5bY7fCuMpbZaD_YbIoawW1b0z6iFeIvgKPRQYA1xITRijenoNMy4tOyzsz_WgMlVk1f0TVfV3pV1HH3dbCB23aQ8SRKlYoDOR6wZvoOUqJjrSThAo4mLeWJOXxWZiVPsUMSJ94rY59EGpIdOXv9GPXbq83MQTtrKnRbKFduGlusUHrfhzlkQHgvApfanuprmD98smPo4J2BRK3T69EjgaLSgeTTthcUvmNUM4fwwMu_kShQA-G_wWVHiuNISRn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Edinburgh to St Andrews</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">The premier choice for golfers with plenty of room for clubs and luggage.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
 </div>
-
-<!-- Route Card 6 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="Cityscape of Aberdeen featuring Marischal College granite architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="aberdeen_transfer.png"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Edinburgh Airport to Aberdeen</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Comfortable door-to-door transfer from Edinburgh Airport to the Granite City.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="/edinburgh-airport-to-aberdeen">Book Now</a>
-    </div>
 </div>
-
-<!-- Route Card 7 -->
-<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-500 route-card h-[460px] text-left">
-    <div class="h-[55%] relative overflow-hidden bg-black/10">
-        <img alt="Highlands scenery of Fort William with Ben Nevis mountain backdrop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="fort_william_transfer.png"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/30 to-transparent"></div>
-        <h3 class="absolute bottom-4 left-6 right-6 font-title-md text-lg text-white font-bold leading-tight">Edinburgh Airport to Fort William</h3>
-    </div>
-    <div class="h-[45%] p-6 flex flex-col justify-between bg-white border-x border-b border-outline-variant/10 rounded-b-xl">
-        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3">Scenic fixed price transfer from Edinburgh Airport to the heart of the Highlands.</p>
-        <a class="w-full py-3 bg-deep-navy hover:bg-[#1a2e4c] text-white text-center font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all duration-300 btn-shimmer" href="/edinburgh-airport-to-fort-william">Book Now</a>
-    </div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="A serene view of the River Tay in Perth, Scotland, under a soft morning mist." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A serene landscape of the River Tay flowing through the heart of Perth, Scotland. The bridge is illuminated by soft dawn light, casting long shadows and reflections on the calm water. The palette is muted and sophisticated, with hints of grey, navy, and soft gold, evoking the calm and reliable journey offered by Scotland 247 Taxis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn2xp8vi8bi2GC8M5U7RKvqNLK3lfh8upu1cQdFMTgjMtRxoBfUc9VBdsDS5D__68ROjMNP4qNK8rQ1_hF8VChg4job5jC1J85uXHH6QTBKXNgFA-ss_33mTanrr1S_EK8hzUezn4gDA8SVUu4hpEw--jsFVaa-ZFYXyN2BOVtBOD5zsxlwumfn-sfJvUEarUZ5gKQZMcg59XgbfzVs6uEZwY9P_LlWKz9dWVx9khVaalnjsyJTgKnvXEhfbF4Mg0s0w8vjwUwVe6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Glasgow to Perth</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Professional private hire service for those travelling between the West Coast and heart of Scotland.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="#">Get a Quote</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="Scenic landscape of Inverness Castle and River Ness" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="inverness_transfer.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Inverness</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fixed price private transfer from Edinburgh Airport to the Highlands capital.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-inverness">Book Now</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="Cityscape of Aberdeen featuring Marischal College granite architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="aberdeen_transfer.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Aberdeen</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Comfortable door-to-door transfer from Edinburgh Airport to the Granite City.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-aberdeen">Book Now</a>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 luxury-shadow route-card">
+<img alt="Highlands scenery of Fort William with Ben Nevis mountain backdrop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="fort_william_transfer.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
+<h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Fort William</h3>
+<p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Scenic fixed price transfer from Edinburgh Airport to the heart of the Highlands.</p>
+<a class="inline-block py-2 text-prestige-gold font-label-sm text-label-sm route-link-underline w-fit" href="/edinburgh-airport-to-fort-william">Book Now</a>
+</div>
 </div>
 </div>
 </div>
 </section>
 <!-- Reviews -->
-<section id="reviews" class="py-24 bg-[#F8F9FA] px-margin-mobile md:px-margin-desktop">
+<section id="reviews" class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
-<h2 class="font-display-lg text-display-lg text-deep-navy text-center mb-16">What Our Passengers Say</h2>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-16">What Our Passengers Say</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 <!-- Review Card 1 -->
-<div class="relative bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between testimonial-card overflow-hidden border border-outline-variant/10 hover:shadow-lg transition-all duration-300 text-left">
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
-<div class="absolute right-4 -top-2 text-[140px] text-prestige-gold/10 font-serif leading-none select-none pointer-events-none">“</div>
 <div>
-<div class="flex text-[#F5A623] mb-4">
+<div class="flex text-prestige-gold mb-4">
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-sm text-charcoal-text leading-relaxed italic mb-6">"Incredibly punctual service for my early morning flight to Edinburgh. The driver was professional and the car was immaculate."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Incredibly punctual service for my early morning flight to Edinburgh. The driver was professional and the car was immaculate."</p>
 </div>
-<div class="flex items-center space-x-3 mt-4">
-    <div class="w-10 h-10 rounded-full bg-prestige-gold/10 text-prestige-gold font-bold flex items-center justify-center text-sm border border-prestige-gold/20 flex-shrink-0">
-        DM
-    </div>
-    <div>
-        <p class="font-title-md text-sm text-deep-navy font-bold uppercase tracking-wider">David M.</p>
-        <p class="font-body-md text-xs text-on-surface-variant">Perth</p>
-    </div>
-</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">David M., Perth</p>
 </div>
 <!-- Review Card 2 -->
-<div class="relative bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between testimonial-card overflow-hidden border border-outline-variant/10 hover:shadow-lg transition-all duration-300 text-left">
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
-<div class="absolute right-4 -top-2 text-[140px] text-prestige-gold/10 font-serif leading-none select-none pointer-events-none">“</div>
 <div>
-<div class="flex text-[#F5A623] mb-4">
+<div class="flex text-prestige-gold mb-4">
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-sm text-charcoal-text leading-relaxed italic mb-6">"The meet and greet was seamless. Our driver was waiting right where he said he’d be and helped us with all four of our large suitcases."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"The meet and greet was seamless. Our driver was waiting right where he said he’d be and helped us with all four of our large suitcases."</p>
 </div>
-<div class="flex items-center space-x-3 mt-4">
-    <div class="w-10 h-10 rounded-full bg-prestige-gold/10 text-prestige-gold font-bold flex items-center justify-center text-sm border border-prestige-gold/20 flex-shrink-0">
-        SL
-    </div>
-    <div>
-        <p class="font-title-md text-sm text-deep-navy font-bold uppercase tracking-wider">Sarah L.</p>
-        <p class="font-body-md text-xs text-on-surface-variant">St Andrews</p>
-    </div>
-</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Sarah L., St Andrews</p>
 </div>
 <!-- Review Card 3 -->
-<div class="relative bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between testimonial-card overflow-hidden border border-outline-variant/10 hover:shadow-lg transition-all duration-300 text-left">
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
-<div class="absolute right-4 -top-2 text-[140px] text-prestige-gold/10 font-serif leading-none select-none pointer-events-none">“</div>
 <div>
-<div class="flex text-[#F5A623] mb-4">
+<div class="flex text-prestige-gold mb-4">
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-sm text-charcoal-text leading-relaxed italic mb-6">"Fixed pricing is a huge plus for my company expenses. Excellent 24/7 support too. Always discreet and professional."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Fixed pricing is a huge plus for my company expenses. Excellent 24/7 support too. Always discreet and professional."</p>
 </div>
-<div class="flex items-center space-x-3 mt-4">
-    <div class="w-10 h-10 rounded-full bg-prestige-gold/10 text-prestige-gold font-bold flex items-center justify-center text-sm border border-prestige-gold/20 flex-shrink-0">
-        JW
-    </div>
-    <div>
-        <p class="font-title-md text-sm text-deep-navy font-bold uppercase tracking-wider">James W.</p>
-        <p class="font-body-md text-xs text-on-surface-variant">Glasgow</p>
-    </div>
-</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">James W., Glasgow</p>
 </div>
 <!-- Review Card 4 -->
-<div class="relative bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between testimonial-card overflow-hidden border border-outline-variant/10 hover:shadow-lg transition-all duration-300 text-left">
+<div class="relative bg-mist-white p-8 luxury-shadow flex flex-col justify-between testimonial-card overflow-hidden">
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
-<div class="absolute right-4 -top-2 text-[140px] text-prestige-gold/10 font-serif leading-none select-none pointer-events-none">“</div>
 <div>
-<div class="flex text-[#F5A623] mb-4">
+<div class="flex text-prestige-gold mb-4">
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="font-body-md text-sm text-charcoal-text leading-relaxed italic mb-6">"Brilliant service for a long-distance transfer. The flight tracking gave me such peace of mind knowing they were monitoring my journey."</p>
+<p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Brilliant service for a long-distance transfer. The flight tracking gave me such peace of mind knowing they were monitoring my journey."</p>
 </div>
-<div class="flex items-center space-x-3 mt-4">
-    <div class="w-10 h-10 rounded-full bg-prestige-gold/10 text-prestige-gold font-bold flex items-center justify-center text-sm border border-prestige-gold/20 flex-shrink-0">
-        ER
-    </div>
-    <div>
-        <p class="font-title-md text-sm text-deep-navy font-bold uppercase tracking-wider">Emma R.</p>
-        <p class="font-body-md text-xs text-on-surface-variant">Inverness</p>
-    </div>
-</div>
+<p class="font-label-sm text-label-sm text-deep-navy font-bold uppercase tracking-widest">Emma R., Inverness</p>
 </div>
 </div>
 </div>
@@ -956,117 +817,108 @@
 <!-- How It Works -->
 <section class="py-24 px-margin-mobile md:px-margin-desktop bg-mist-white">
 <div class="max-w-container-max mx-auto">
-<h2 class="font-display-lg text-display-lg text-deep-navy text-center mb-16">Booking Your Transfer Is Simple</h2>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-16">Booking Your Transfer Is Simple</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative steps-container">
 <!-- Connection Line -->
-<div class="hidden md:block absolute top-[72px] left-[16.67%] w-[33.33%] h-0.5 border-t-2 border-dashed border-[#C5A059]/40 z-0 step-line-1 origin-left scale-x-0"></div>
-<div class="hidden md:block absolute top-[72px] left-[50%] w-[33.33%] h-0.5 border-t-2 border-dashed border-[#C5A059]/40 z-0 step-line-2 origin-left scale-x-0"></div>
-
-<!-- Step 1 -->
-<div class="relative z-10 text-center bg-white p-8 rounded-2xl shadow-md border border-outline-variant/10 flex flex-col items-center justify-start h-full group hover:-translate-y-1.5 transition-all duration-300">
-<div class="w-16 h-16 bg-[#C5A059] text-white rounded-full flex items-center justify-center mb-6 border-4 border-white shadow-md font-bold step-number-1 scale-0 opacity-0 flex-shrink-0">
-<span class="font-headline-lg text-2xl">1</span>
+<div class="hidden md:block absolute top-12 left-[16.67%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-1 origin-left scale-x-0"></div>
+<div class="hidden md:block absolute top-12 left-[50%] w-[33.33%] h-0.5 bg-prestige-gold/30 z-0 step-line-2 origin-left scale-x-0"></div>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-1 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">1</span>
 </div>
-<span class="material-symbols-outlined text-4xl text-deep-navy mb-4 group-hover:scale-110 transition-transform duration-300">edit_note</span>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Request a Quote</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Enter your journey details on our website or send us a quick message via WhatsApp to receive your fixed price quote instantly.</p>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Request a Quote</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your journey details on our website or send us a quick message via WhatsApp to receive your fixed price quote instantly.</p>
 </div>
-
-<!-- Step 2 -->
-<div class="relative z-10 text-center bg-white p-8 rounded-2xl shadow-md border border-outline-variant/10 flex flex-col items-center justify-start h-full group hover:-translate-y-1.5 transition-all duration-300">
-<div class="w-16 h-16 bg-[#C5A059] text-white rounded-full flex items-center justify-center mb-6 border-4 border-white shadow-md font-bold step-number-2 scale-0 opacity-0 flex-shrink-0">
-<span class="font-headline-lg text-2xl">2</span>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-2 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">2</span>
 </div>
-<span class="material-symbols-outlined text-4xl text-deep-navy mb-4 group-hover:scale-110 transition-transform duration-300">task_alt</span>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Confirm Your Booking</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Once you're happy with the price, confirm your booking through our secure system. You'll receive immediate confirmation.</p>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Confirm Your Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Once you're happy with the price, confirm your booking through our secure system. You'll receive immediate confirmation.</p>
 </div>
-
-<!-- Step 3 -->
-<div class="relative z-10 text-center bg-white p-8 rounded-2xl shadow-md border border-outline-variant/10 flex flex-col items-center justify-start h-full group hover:-translate-y-1.5 transition-all duration-300">
-<div class="w-16 h-16 bg-[#C5A059] text-white rounded-full flex items-center justify-center mb-6 border-4 border-white shadow-md font-bold step-number-3 scale-0 opacity-0 flex-shrink-0">
-<span class="font-headline-lg text-2xl">3</span>
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-deep-navy text-prestige-gold rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-mist-white step-number-3 scale-0 opacity-0">
+<span class="font-headline-lg text-3xl">3</span>
 </div>
-<span class="material-symbols-outlined text-4xl text-deep-navy mb-4 group-hover:scale-110 transition-transform duration-300">directions_car</span>
-<h3 class="font-title-md text-xl text-deep-navy mb-3 font-semibold">Sit Back and Enjoy</h3>
-<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Your driver will arrive promptly. Relax in our premium vehicles and enjoy a smooth, professional journey to your destination.</p>
+<h3 class="font-title-md text-title-md text-deep-navy mb-4">Sit Back and Enjoy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your driver will arrive promptly. Relax in our premium vehicles and enjoy a smooth, professional journey to your destination.</p>
 </div>
 </div>
 </div>
 </section>
 <!-- FAQ -->
-<section id="faq" class="py-24 bg-[#F8F9FA] px-margin-mobile md:px-margin-desktop">
+<section id="faq" class="py-24 bg-surface-container px-margin-mobile md:px-margin-desktop">
 <div class="max-w-3xl mx-auto">
-<h2 class="font-display-lg text-display-lg text-deep-navy text-center mb-16 faq-header">Frequently Asked Questions</h2>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy text-center mb-12 faq-header">Frequently Asked Questions</h2>
 <div class="space-y-4">
 <!-- Accordion 1 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)" id="faq-first-item">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you track flights?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
                             Yes, we monitor all flights in real-time using live tracking data. If your flight is delayed or arrives early, your driver will automatically adjust their arrival time at no extra cost.
                         </p>
 </div>
 </div>
 <!-- Accordion 2 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Are your prices fixed with no hidden charges?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
                             Absolutely. The price we quote you is the final price you pay. This includes all airport fees, tolls, and taxes—there are never any hidden surprises.
                         </p>
 </div>
 </div>
 <!-- Accordion 3 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Can I pre-book in advance?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
                             We highly recommend pre-booking as early as possible to guarantee availability, especially during peak travel seasons. You can book months in advance or at short notice.
                         </p>
 </div>
 </div>
 <!-- Accordion 4 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you cover all of Scotland?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
                             Yes, while we have popular routes, we provide transfers to and from any location in Scotland, including all major cities, airports, and remote Highland destinations.
                         </p>
 </div>
 </div>
 <!-- Accordion 5 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             What payment methods do you accept?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
                             We accept all major credit and debit cards, as well as cash. For your convenience, we can also arrange secure payment links or corporate account invoicing.
                         </p>
 </div>
 </div>
 <!-- Accordion 6 -->
-<div class="bg-white p-6 border border-outline-variant/15 rounded-xl cursor-pointer group faq-item transition-all duration-300 shadow-sm hover:shadow-md" onclick="toggleFaq(this)">
-<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none font-semibold">
+<div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
+<div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you offer meet and greet service?
-                            <span class="material-symbols-outlined faq-toggle-icon text-prestige-gold text-2xl select-none">add</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-<p class="mt-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">
                             Yes, our standard airport service includes a professional meet and greet in the arrivals hall. Your driver will be waiting with a name board to assist you.
                         </p>
 </div>
@@ -1075,110 +927,81 @@
 </div>
 </section>
 <!-- Final CTA -->
-<section class="py-24 text-mist-white relative overflow-hidden cta-section" style="background: linear-gradient(rgba(0,26,63,0.95), rgba(0,10,30,0.9)) !important;">
+<section class="py-24 bg-deep-navy text-mist-white relative overflow-hidden cta-section">
 <div class="absolute top-0 right-0 w-64 h-64 bg-prestige-gold/5 rounded-full -mr-32 -mt-32"></div>
 <div class="absolute bottom-0 left-0 w-96 h-96 bg-prestige-gold/5 rounded-full -ml-48 -mb-48"></div>
 <div class="max-w-container-max mx-auto text-center px-margin-mobile relative z-10 cta-content">
-<h2 class="font-display-lg text-display-lg mb-6 text-white">Ready to Book Your Transfer?</h2>
-<p class="font-body-lg text-body-lg text-mist-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+<h2 class="font-display-lg text-display-lg mb-6">Ready to Book Your Transfer?</h2>
+<p class="font-body-lg text-body-lg text-mist-white/80 max-w-2xl mx-auto mb-12">
                     Experience the gold standard in Scottish private hire. Get in touch today for a fixed price quote and travel with confidence.
                 </p>
-<div class="flex flex-wrap justify-center items-center gap-6 max-w-3xl mx-auto">
-<a class="px-10 py-4 bg-white text-deep-navy font-title-md font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center min-w-[200px]" href="#quote">
-    Book Now
-</a>
-<a class="flex items-center justify-center px-10 py-4 bg-[#25D366] text-white font-title-md font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center min-w-[200px]" href="https://wa.me/447469598219" target="_blank" rel="noopener">
-    <svg class="w-5 h-5 mr-2.5 fill-current" viewBox="0 0 24 24">
-        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-    </svg>
-    WhatsApp Us Now
-</a>
-<a class="flex items-center justify-center px-10 py-4 border-2 border-white text-white font-title-md font-bold rounded-full shadow-lg hover:bg-white hover:text-deep-navy hover:-translate-y-1 transition-all duration-300 text-center min-w-[200px]" href="tel:+447469598219">
-    <span class="material-symbols-outlined mr-2">call</span>
-    Call Us
-</a>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="px-10 py-5 bg-prestige-gold text-deep-navy font-title-md text-title-md hover:bg-warm-amber hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+                        Book Now
+                    </a>
+<a class="px-10 py-5 border border-prestige-gold text-prestige-gold font-title-md text-title-md hover:bg-prestige-gold hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+                        WhatsApp Us
+                    </a>
+<a class="px-10 py-5 border border-mist-white text-mist-white font-title-md text-title-md hover:bg-mist-white hover:text-deep-navy hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="tel:+447469598219">
+                        Call Us
+                    </a>
 </div>
 </div>
 </section>
 <!-- Contact Us Section -->
-<section id="contact-us" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop border-t border-outline-variant/30">
-<div class="max-w-5xl mx-auto text-center">
-<h2 class="font-display-lg text-display-lg text-deep-navy mb-4">Contact Us</h2>
-<div class="w-24 h-1 bg-prestige-gold mx-auto mb-8"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-16 max-w-2xl mx-auto">
+<section id="contact-us" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Contact Us</h2>
+<div class="w-24 h-1 bg-[#005EB8] mx-auto mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
     Have a question, or need a custom booking? Send us a message below or reach out directly.
 </p>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-12 items-stretch">
-    <!-- Left Column (Get in Touch) -->
-    <div class="bg-deep-navy p-8 rounded-2xl shadow-xl border border-prestige-gold/20 flex flex-col justify-between space-y-8 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-prestige-gold/5 rounded-full -mr-16 -mt-16"></div>
-        <div class="space-y-6 relative z-10">
-            <h3 class="font-title-md text-2xl text-white font-bold tracking-wider">Get In Touch</h3>
-            <p class="text-mist-white/80 font-body-md text-sm leading-relaxed">Reach out directly via WhatsApp for instant communication with our team, or call us for immediate booking enquiries.</p>
-            <div class="space-y-4 font-body-md text-sm text-mist-white/90">
-                <div class="pt-2">
-                    <!-- Modernized Full-Width WhatsApp Button -->
-                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center font-bold text-white transition-all duration-300 shadow-md w-full hover:-translate-y-0.5"
-                       style="background: linear-gradient(135deg, #25D366, #128C7E) !important; border-radius: 50px !important; padding: 18px 30px !important; font-size: 16px !important; box-shadow: 0 8px 25px rgba(37,211,102,0.3) !important;"
-                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(37,211,102,0.5)';"
-                       onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 25px rgba(37,211,102,0.3)';"
-                    >
-                        <!-- Animated green pulse dot labeled Online Now -->
-                        <span class="flex items-center mr-4 bg-white/15 px-3 py-1 rounded-full text-xs font-semibold text-white/95">
-                            <span class="relative flex h-2.5 w-2.5 mr-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
-                            </span>
-                            Online Now
-                        </span>
-
-                        <!-- White WhatsApp Icon (24px) -->
-                        <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
-                            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-                        </svg>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
-                <div class="pt-2">
-                    <!-- Full-Width Phone Button -->
-                    <a href="tel:+447469598219" class="flex items-center justify-center font-bold text-white transition-all duration-300 shadow-md w-full bg-white/10 border border-white/20 hover:bg-white hover:text-deep-navy"
-                       style="border-radius: 50px !important; padding: 18px 30px !important; font-size: 16px !important;"
-                       onmouseover="this.style.transform='translateY(-3px)';"
-                       onmouseout="this.style.transform='none';"
-                    >
-                        <span class="material-symbols-outlined mr-3 text-prestige-gold">call</span>
-                        <span>Call Us Now</span>
-                    </a>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-12 items-start">
+    <div class="space-y-6">
+        <h3 class="font-title-md text-xl text-deep-navy font-bold">Get In Touch</h3>
+        <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <!-- Phone Button -->
+                <a href="tel:07469598219" class="flex items-center justify-center px-5 py-3 bg-[#005EB8] hover:bg-[#0088FF] text-white font-label-sm text-label-sm rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
+                    <span class="material-symbols-outlined mr-2 text-white text-[20px]">call</span>
+                    Call Us: 07469 598219
+                </a>
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center px-5 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-sm text-label-sm rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto">
+                    <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
             </div>
-        </div>
-        <div class="space-y-4 font-body-md text-sm text-mist-white/70 pt-6 border-t border-white/10 relative z-10 text-left">
-            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-prestige-gold text-lg">mail</span> Email: [Email Placeholder]</p>
-            <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-prestige-gold text-lg">location_on</span> Perth Business Centre, Perth, Scotland</p>
+            <div class="space-y-4 font-body-md text-body-md text-on-surface-variant pt-4 border-t border-outline-variant/30">
+                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">mail</span> Email: [Email Placeholder]</p>
+                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#005EB8]">location_on</span> Perth Business Centre, Perth, Scotland</p>
+            </div>
         </div>
     </div>
     
     <!-- Styled Form Container -->
-    <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-prestige-gold w-full flex flex-col justify-between">
+    <div class="bg-white p-8 rounded-xl shadow-md border border-outline-variant/30 w-full">
         <form id="contact-form" class="space-y-4">
             <div>
-                <label class="font-label-sm text-label-sm text-deep-navy mb-1.5 block font-semibold">Full Name</label>
-                <input class="w-full border border-outline-variant bg-mist-white rounded-xl p-3.5 font-body-md text-sm focus:outline-none focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white transition-all duration-200" placeholder="Your Name" type="text" id="contact-name" required/>
+                <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
+                <input class="w-full border border-outline-variant rounded-lg p-3 font-body-md text-body-md focus:outline-none focus:border-[#005EB8] focus:ring-2 focus:ring-[#005EB8]/20 transition-all duration-200" placeholder="Your Name" type="text" id="contact-name" required/>
             </div>
             <div>
-                <label class="font-label-sm text-label-sm text-deep-navy mb-1.5 block font-semibold">WhatsApp Number</label>
-                <input class="w-full border border-outline-variant bg-mist-white rounded-xl p-3.5 font-body-md text-sm focus:outline-none focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white transition-all duration-200" placeholder="Your WhatsApp Number" type="tel" id="contact-whatsapp" required/>
+                <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
+                <input class="w-full border border-outline-variant rounded-lg p-3 font-body-md text-body-md focus:outline-none focus:border-[#005EB8] focus:ring-2 focus:ring-[#005EB8]/20 transition-all duration-200" placeholder="Your WhatsApp Number" type="tel" id="contact-whatsapp" required/>
             </div>
             <div>
-                <label class="font-label-sm text-label-sm text-deep-navy mb-1.5 block font-semibold">Email Address (Optional)</label>
-                <input class="w-full border border-outline-variant bg-mist-white rounded-xl p-3.5 font-body-md text-sm focus:outline-none focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white transition-all duration-200" placeholder="Your Email" type="email" id="contact-email"/>
+                <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
+                <input class="w-full border border-outline-variant rounded-lg p-3 font-body-md text-body-md focus:outline-none focus:border-[#005EB8] focus:ring-2 focus:ring-[#005EB8]/20 transition-all duration-200" placeholder="Your Email" type="email" id="contact-email"/>
             </div>
             <div>
-                <label class="font-label-sm text-label-sm text-deep-navy mb-1.5 block font-semibold">Message</label>
-                <textarea class="w-full border border-outline-variant bg-mist-white rounded-xl p-3.5 font-body-md text-sm focus:outline-none focus:border-prestige-gold focus:ring-4 focus:ring-prestige-gold/10 focus:bg-white transition-all duration-200 h-32 resize-none" placeholder="Write your message here..." id="contact-message" required></textarea>
+                <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Message</label>
+                <textarea class="w-full border border-outline-variant rounded-lg p-3 font-body-md text-body-md focus:outline-none focus:border-[#005EB8] focus:ring-2 focus:ring-[#005EB8]/20 transition-all duration-200 h-32" placeholder="Write your message here..." id="contact-message" required></textarea>
             </div>
-            <button class="w-full bg-gradient-to-r from-[#C5A059] to-[#a3803f] text-white py-4 px-8 font-title-md font-bold text-sm rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wider flex items-center justify-center btn-shimmer" type="submit">
+            <button class="w-full bg-[#005EB8] hover:bg-[#0088FF] text-white py-4 font-label-sm text-label-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 uppercase tracking-wider flex items-center justify-center" type="submit">
                 <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                     <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
                 </svg>
@@ -1192,20 +1015,20 @@
 
 </main>
 <!-- Footer -->
-<footer id="contact" class="bg-[#001A3F] dark:bg-[#06111f] text-mist-white w-full py-20 border-t border-[#C5A059]/20">
+<footer id="contact" class="bg-deep-navy dark:bg-primary text-mist-white w-full py-stack-lg border-t border-mist-white/10">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="space-y-4 text-left">
-<div class="inline-block mb-4" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;">
-                    <img src="logo-transparent.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important; filter: brightness(0) invert(1);"/>
+<div class="space-y-4">
+<div class="bg-white p-2 rounded-lg inline-block mb-4 shadow-sm">
+                    <img src="logo.png" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain"/>
                 </div>
 <p class="font-body-md text-body-md opacity-80 italic">Reliable Airport Transfers Across Scotland</p>
-<div class="flex space-x-3 mt-6">
-<a class="w-10 h-10 rounded-full bg-[#C5A059]/10 text-prestige-gold border border-[#C5A059]/20 hover:bg-[#C5A059] hover:text-deep-navy hover:-translate-y-1 transition-all duration-300 flex items-center justify-center" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
-<a class="w-10 h-10 rounded-full bg-[#C5A059]/10 text-prestige-gold border border-[#C5A059]/20 hover:bg-[#C5A059] hover:text-deep-navy hover:-translate-y-1 transition-all duration-300 flex items-center justify-center" href="#"><span class="material-symbols-outlined text-lg">mail</span></a>
-<a class="w-10 h-10 rounded-full bg-[#C5A059]/10 text-prestige-gold border border-[#C5A059]/20 hover:bg-[#C5A059] hover:text-deep-navy hover:-translate-y-1 transition-all duration-300 flex items-center justify-center" href="#"><span class="material-symbols-outlined text-lg">call</span></a>
+<div class="flex space-x-4 mt-6">
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">call</span></a>
 </div>
 </div>
-<div class="space-y-4 text-left">
+<div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Contact</h4>
 <ul class="space-y-2 font-body-md text-body-md opacity-80">
 <li>Phone: 07469 598219</li>
@@ -1222,7 +1045,7 @@
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
-<div class="space-y-4 text-left">
+<div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Airport Transfers</a></li>
@@ -1231,7 +1054,7 @@
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">FAQ</a></li>
 </ul>
 </div>
-<div class="space-y-4 text-left">
+<div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Legal</h4>
 <ul class="space-y-2 font-body-md text-body-md">
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Terms of Service</a></li>
@@ -1241,7 +1064,7 @@
 </ul>
 </div>
 </div>
-<div class="mt-16 pt-8 border-t border-[#C5A059]/20 text-center px-margin-mobile">
+<div class="mt-16 pt-8 border-t border-mist-white/10 text-center px-margin-mobile">
 <p class="font-body-md text-label-sm opacity-60">
                 © 2026 Scotland 247 Taxis. Premium Reliability in Every Mile. All rights reserved.
             </p>
@@ -1354,27 +1177,30 @@
         // FAQ Accordion Toggle Function
         function toggleFaq(el) {
             const content = el.querySelector('.faq-content');
-            const icon = el.querySelector('.faq-toggle-icon');
+            const chevron = el.querySelector('.faq-chevron');
             
             // Close other FAQs
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== el) {
                     const c = item.querySelector('.faq-content');
-                    const ic = item.querySelector('.faq-toggle-icon');
+                    const ch = item.querySelector('.faq-chevron');
                     c.style.maxHeight = null;
-                    if (ic) ic.textContent = 'add';
-                    item.classList.remove('faq-open');
+                    ch.classList.remove('rotate-180');
+                    item.classList.remove('bg-surface-container-low', 'bg-white');
+                    item.classList.add('bg-mist-white');
                 }
             });
             
             if (content.style.maxHeight && content.style.maxHeight !== "0px") {
                 content.style.maxHeight = null;
-                if (icon) icon.textContent = 'add';
-                el.classList.remove('faq-open');
+                chevron.classList.remove('rotate-180');
+                el.classList.remove('bg-surface-container-low', 'bg-white');
+                el.classList.add('bg-mist-white');
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
-                if (icon) icon.textContent = 'remove';
-                el.classList.add('faq-open');
+                chevron.classList.add('rotate-180');
+                el.classList.remove('bg-mist-white');
+                el.classList.add('bg-surface-container-low', 'bg-white');
             }
         }
 
@@ -1384,10 +1210,11 @@
             const firstFaq = document.getElementById('faq-first-item');
             if (firstFaq) {
                 const content = firstFaq.querySelector('.faq-content');
-                const icon = firstFaq.querySelector('.faq-toggle-icon');
+                const chevron = firstFaq.querySelector('.faq-chevron');
                 content.style.maxHeight = content.scrollHeight + "px";
-                if (icon) icon.textContent = 'remove';
-                firstFaq.classList.add('faq-open');
+                chevron.classList.add('rotate-180');
+                firstFaq.classList.remove('bg-mist-white');
+                firstFaq.classList.add('bg-surface-container-low', 'bg-white');
             }
 
             // Simple parallax effect for hero image
@@ -1419,61 +1246,97 @@
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
                 if (!prefersReducedMotion) {
-                    // Hero Load Timeline Animation
-                    const heroTl = gsap.timeline();
-                    heroTl.from(".hero-headline-line", {
+                    // Stagger headline lines
+                    gsap.from(".hero-headline-line", {
                         y: 40,
                         opacity: 0,
                         duration: 0.8,
                         stagger: 0.15,
                         ease: "power3.out"
-                    })
-                    .from(".hero-divider", {
-                        scaleX: 0,
-                        transformOrigin: "left center",
-                        duration: 0.5,
-                        ease: "power2.out"
-                    }, "-=0.4")
-                    .from(".hero-subtext", {
+                    });
+                    
+                    // Stagger subtext and CTAs
+                    gsap.from(".hero-subtext, .hero-cta", {
                         y: 20,
-                        opacity: 0,
-                        duration: 0.6,
-                        ease: "power2.out"
-                    }, "-=0.3")
-                    .from(".hero-cta-btn", {
-                        y: 20,
-                        opacity: 0,
-                        duration: 0.5,
-                        stagger: 0.1,
-                        ease: "power2.out"
-                    }, "-=0.3")
-                    .from(".hero-trust-badges", {
-                        y: 15,
-                        opacity: 0,
-                        duration: 0.5,
-                        ease: "power2.out"
-                    }, "-=0.3")
-                    .from(".hero-form-card", {
-                        y: 40,
                         opacity: 0,
                         duration: 0.8,
+                        delay: 0.4,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                    });
+                    
+                    // Slide in booking form card
+                    gsap.from(".hero-form-card", {
+                        x: 50,
+                        opacity: 0,
+                        duration: 0.9,
+                        delay: 0.2,
                         ease: "power3.out"
-                    }, "-=0.8");
+                    });
 
-                    // Scroll Reveal - Section Fade In
-                    gsap.utils.toArray("section").forEach((sec) => {
-                        if (sec.id === 'home') return;
-                        gsap.from(sec, {
+                    // Scroll Reveal - Features Grid
+                    gsap.from(".feature-card", {
+                        scrollTrigger: {
+                            trigger: "#features-section",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: "power2.out",
+                        clearProps: "all"
+                    });
+
+                    // Scroll Reveal - Popular Routes Grid
+                    gsap.from(".route-card", {
+                        scrollTrigger: {
+                            trigger: "#popular-routes",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: "power2.out",
+                        clearProps: "all"
+                    });
+
+                    // Scroll Reveal - Testimonial Cards & Elements
+                    gsap.utils.toArray(".testimonial-card").forEach((card) => {
+                        let tl = gsap.timeline({
                             scrollTrigger: {
-                                trigger: sec,
+                                trigger: card,
                                 start: "top 85%",
                                 toggleActions: "play none none none"
-                            },
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.8,
-                            ease: "power2.out"
+                            }
                         });
+                        
+                        tl.from(card, {
+                            y: 30,
+                            opacity: 0,
+                            duration: 0.6,
+                            ease: "power2.out",
+                            clearProps: "all"
+                        });
+                        
+                        const border = card.querySelector(".border-left-accent");
+                        if (border) {
+                            tl.fromTo(border, { height: 0 }, { height: "100%", duration: 0.4, ease: "power1.inOut" }, "-=0.3");
+                        }
+                        
+                        const stars = card.querySelectorAll(".star-icon");
+                        if (stars.length > 0) {
+                            tl.from(stars, {
+                                scale: 0,
+                                opacity: 0,
+                                duration: 0.25,
+                                stagger: 0.06,
+                                ease: "back.out(2)"
+                            }, "-=0.2");
+                        }
                     });
 
                     // Scroll Reveal - Simple Steps Sequentials
@@ -1490,36 +1353,75 @@
                            .to(".step-line-2", { scaleX: 1, duration: 0.3, ease: "power1.inOut" })
                            .to(".step-number-3", { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, "-=0.1");
 
-                    // Scroll Reveal - Testimonial Star Animations only
-                    gsap.utils.toArray(".testimonial-card").forEach((card) => {
-                        const stars = card.querySelectorAll(".star-icon");
-                        if (stars.length > 0) {
-                            gsap.from(stars, {
-                                scrollTrigger: {
-                                    trigger: card,
-                                    start: "top 85%"
-                                },
-                                scale: 0,
-                                opacity: 0,
-                                duration: 0.25,
-                                stagger: 0.06,
-                                ease: "back.out(2)"
-                            });
-                        }
+                    // Scroll Reveal - FAQ Header and Items
+                    gsap.from(".faq-header, .faq-item", {
+                        scrollTrigger: {
+                            trigger: "#faq",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 20,
+                        opacity: 0,
+                        duration: 0.5,
+                        stagger: 0.08,
+                        ease: "power2.out",
+                        clearProps: "all"
                     });
 
+                    // Scroll Reveal - Final CTA
+                    gsap.from(".cta-content", {
+                        scrollTrigger: {
+                            trigger: ".cta-section",
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: "power2.out"
+                    });
                 } else {
                     // Fallback for prefers-reduced-motion (fade ins only, no layout/transforms)
-                    gsap.utils.toArray("section").forEach((sec) => {
-                        if (sec.id === 'home') return;
-                        gsap.from(sec, {
-                            scrollTrigger: {
-                                trigger: sec,
-                                start: "top 85%"
-                            },
-                            opacity: 0,
-                            duration: 0.8
-                        });
+                    gsap.from(".hero-headline-line, .hero-subtext, .hero-cta, .hero-form-card", {
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.1
+                    });
+                    
+                    gsap.from(".feature-card", {
+                        scrollTrigger: {
+                            trigger: "#features-section",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from(".route-card", {
+                        scrollTrigger: {
+                            trigger: "#popular-routes",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.from(".testimonial-card", {
+                        scrollTrigger: {
+                            trigger: "#reviews",
+                            start: "top 85%"
+                        },
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1
+                    });
+
+                    gsap.to(".step-number-1, .step-number-2, .step-number-3", {
+                        opacity: 1,
+                        duration: 0.4,
+                        stagger: 0.15
                     });
                 }
             }
@@ -1682,16 +1584,4 @@ Message: ${messageVal}`;
             });
         }
     </script>
-    
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] hover:scale-110 transition-all duration-300 group floating-whatsapp-btn" aria-label="Chat with us on WhatsApp">
-        <!-- Breathing Pulse Effect -->
-        <span class="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping opacity-75"></span>
-        <!-- White WhatsApp Icon -->
-        <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24">
-            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-        </svg>
-        <!-- Tooltip Hover Label -->
-        <span class="absolute right-16 scale-0 group-hover:scale-100 bg-[#001A3F] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-xl transition-all duration-300 origin-right whitespace-nowrap border border-[#C5A059]/20">Chat with us</span>
-    </a>
 </body></html>
