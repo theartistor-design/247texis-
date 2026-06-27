@@ -472,16 +472,15 @@
                 border-radius: 50px !important;
                 padding: 16px 20px !important;
             }
-            /* Trust badges wrap to 2 per row */
+            /* Trust badges wrap naturally on mobile */
             .hero-trust-badges {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 12px !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 10px !important;
                 width: 100% !important;
             }
             .hero-trust-badges > div {
-                justify-content: center !important;
-                text-align: center !important;
                 white-space: nowrap !important;
             }
 
