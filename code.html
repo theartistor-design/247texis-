@@ -799,7 +799,96 @@
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#home">Home</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#services">Services</a>
+<div class="relative group nav-dropdown-trigger">
+    <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="#services">
+        Services <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+    </a>
+    <!-- Dropdown content -->
+    <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-[380px] bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] border-t-[3px] border-[#c9a84c] p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col gap-2">
+        <a href="/services/airport-transfers" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">local_airport</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Airport Transfers</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Fixed price, flight tracked transfers</span>
+            </div>
+        </a>
+        <a href="/services/wedding-hire" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">favorite</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Wedding Hire</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Timeless luxury for your perfect day</span>
+            </div>
+        </a>
+        <a href="/services/private-driver" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">person</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Private Driver Hire</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Dedicated driver, custom schedule</span>
+            </div>
+        </a>
+        <a href="/services/vehicle-hire" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">key</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Flexible Vehicle Hire</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Book from 4 hours to 7 days</span>
+            </div>
+        </a>
+        <a href="/services/executive-travel" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">work</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Executive Travel</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Premium corporate chauffeur service</span>
+            </div>
+        </a>
+        <a href="/services/multi-stop" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">alt_route</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Multi-Stop Journeys</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">One booking, multiple destinations</span>
+            </div>
+        </a>
+        <a href="/services/long-distance" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">directions_car</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Long Distance Transport</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Private hire across every mile</span>
+            </div>
+        </a>
+        <a href="/services/package-delivery" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">local_shipping</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Package Delivery</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Tracked same-day courier service</span>
+            </div>
+        </a>
+        <a href="/services/day-tours" class="flex items-center gap-3.5 p-2 rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200">
+            <div class="w-10 h-10 rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[20px]">explore</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[#0A1F44] font-bold text-[15px]">Private Day Tours</span>
+                <span class="text-[#6B7280] text-[12px] leading-tight">Tailored sightseeing itineraries</span>
+            </div>
+        </a>
+        <a href="/services" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-2.5 rounded-[8px] text-center transition-all duration-300 block mt-2 text-sm uppercase tracking-wider">View All Services →</a>
+    </div>
+</div>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#popular-routes">Airports</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/wedding-hire">Wedding Hire</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#fleet">Fleet</a>
@@ -2910,7 +2999,32 @@ Message: ${messageVal}`;
                 contactForm.reset();
             });
         }
-    </script>
+    
+    // Mobile services submenu toggle
+    const mobileServicesBtn = document.querySelector('#mobile-menu-overlay a[href="#services"]');
+    const mobileServicesSubmenu = document.getElementById('mobile-services-submenu');
+    const backServicesBtn = document.getElementById('back-services-btn');
+    const closeServicesBtn = document.getElementById('close-services-btn');
+    
+    if (mobileServicesBtn && mobileServicesSubmenu) {
+        mobileServicesBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileServicesSubmenu.classList.remove('translate-x-full');
+        });
+    }
+    if (backServicesBtn && mobileServicesSubmenu) {
+        backServicesBtn.addEventListener('click', () => {
+            mobileServicesSubmenu.classList.add('translate-x-full');
+        });
+    }
+    if (closeServicesBtn && mobileServicesSubmenu) {
+        closeServicesBtn.addEventListener('click', () => {
+            mobileServicesSubmenu.classList.add('translate-x-full');
+            document.getElementById('mobile-menu-overlay').classList.add('pointer-events-none');
+            document.getElementById('mobile-menu-overlay').classList.add('opacity-0');
+        });
+    }
+</script>
 
 
 <!-- Mobile Navigation Overlay Menu -->
@@ -2941,4 +3055,99 @@ Message: ${messageVal}`;
     <!-- Tooltip Hover Label -->
     <span class="absolute right-16 scale-0 group-hover:scale-100 bg-[#001A3F] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-xl transition-all duration-300 origin-right whitespace-nowrap border border-[#c9a84c]/20">Chat with us on WhatsApp</span>
 </a>
+<div id="mobile-services-submenu" class="fixed inset-0 bg-[#001A3F] z-[200] transform translate-x-full transition-transform duration-300 flex flex-col p-6 overflow-y-auto">
+    <div class="flex items-center justify-between mb-8">
+        <button id="back-services-btn" class="flex items-center gap-2 text-white font-semibold min-h-[48px] px-2">
+            <span class="material-symbols-outlined">arrow_back</span> Back
+        </button>
+        <button id="close-services-btn" class="text-white p-2 min-h-[48px]" aria-label="Close services menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <h2 class="text-[#c9a84c] text-2xl font-title font-bold mb-6">Our Services</h2>
+    <div class="flex flex-col gap-4">
+        <a href="/services/airport-transfers" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">local_airport</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Airport Transfers</span>
+                <span class="text-white/60 text-[13px]">Fixed price, flight tracked transfers</span>
+            </div>
+        </a>
+        <a href="/services/wedding-hire" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">favorite</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Wedding Hire</span>
+                <span class="text-white/60 text-[13px]">Timeless luxury for your perfect day</span>
+            </div>
+        </a>
+        <a href="/services/private-driver" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">person</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Private Driver Hire</span>
+                <span class="text-white/60 text-[13px]">Dedicated driver, custom schedule</span>
+            </div>
+        </a>
+        <a href="/services/vehicle-hire" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">key</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Flexible Vehicle Hire</span>
+                <span class="text-white/60 text-[13px]">Book from 4 hours to 7 days</span>
+            </div>
+        </a>
+        <a href="/services/executive-travel" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">work</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Executive Travel</span>
+                <span class="text-white/60 text-[13px]">Premium corporate chauffeur service</span>
+            </div>
+        </a>
+        <a href="/services/multi-stop" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">alt_route</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Multi-Stop Journeys</span>
+                <span class="text-white/60 text-[13px]">One booking, multiple destinations</span>
+            </div>
+        </a>
+        <a href="/services/long-distance" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">directions_car</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Long Distance Transport</span>
+                <span class="text-white/60 text-[13px]">Private hire across every mile</span>
+            </div>
+        </a>
+        <a href="/services/package-delivery" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">local_shipping</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Package Delivery</span>
+                <span class="text-white/60 text-[13px]">Tracked same-day courier service</span>
+            </div>
+        </a>
+        <a href="/services/day-tours" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-[12px] hover:bg-white/10 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">explore</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-white font-bold text-[18px]">Private Day Tours</span>
+                <span class="text-white/60 text-[13px]">Tailored sightseeing itineraries</span>
+            </div>
+        </a>
+    </div>
+    <a href="/services" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-4 rounded-[12px] text-center transition-all duration-300 block mt-8 text-md uppercase tracking-wider">View All Services →</a>
+</div>
 </body></html>
