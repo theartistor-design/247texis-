@@ -109,8 +109,8 @@
         },
       }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer defer></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -791,6 +791,33 @@
                 grid-column: span 2 / span 2 !important;
             }
         }
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
 
         /* Performance CSS styles */
         img {
@@ -1949,28 +1976,6 @@
 </div>
 </section>
 
-
-<!-- Prestige Cars Section -->
-<div class="mb-16">
-    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Prestige Class</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-        <!-- Rolls Royce Ghost -->
-        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative">
-            <div class="absolute top-4 right-4 bg-[#c9a84c] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Prestige Class</div>
-            <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-rolls-royce.webp?v=2" alt="Rolls Royce Ghost" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
-            </div>
-            <div class="p-6">
-                <h4 class="font-title-md text-xl text-deep-navy mb-2">Rolls Royce Ghost</h4>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-4">The ultimate statement in luxury travel. Reserved for those who demand nothing but the very finest.</p>
-                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
-                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
-                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Popular Routes -->
 <section id="popular-routes" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop">
@@ -3280,6 +3285,36 @@ Notes: ${notesVal}`;
     </div>
     <a href="/247texis-/services" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-4 rounded-[12px] text-center transition-all duration-300 block mt-8 text-md uppercase tracking-wider">View All Services →</a>
 </div>
+
+    <script>
+    // Add active state to nav links based on current path
+    document.addEventListener('DOMContentLoaded', () => {
+        const pathName = window.location.pathname;
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu-overlay nav a');
+        
+        // Add nav-link class to header and mobile links if not present
+        document.querySelectorAll('nav a:not(.nav-link), #mobile-menu-overlay nav a:not(.nav-link)').forEach(el => {
+            el.classList.add('nav-link');
+        });
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                const linkPath = href.split('#')[0].split('?')[0];
+                const normalizedPathName = pathName.replace(/\/g, '/');
+                if (linkPath && normalizedPathName.endsWith(linkPath)) {
+                    link.classList.add('active');
+                } else if ((normalizedPathName === '/247texis-/' || normalizedPathName === '/247texis-/index.html' || normalizedPathName.endsWith('/stitch_ui_design_replicator/') || normalizedPathName.endsWith('/stitch_ui_design_replicator/index.html')) && (linkPath === '#home' || linkPath === '#services' || linkPath.endsWith('index.html'))) {
+                    // Highlight home on root
+                    if (link.textContent.trim() === 'Home') {
+                        link.classList.add('active');
+                    }
+                }
+            }
+        });
+    });
+    </script>
+    
 
     <script>
     // Add active state to nav links based on current path

@@ -113,8 +113,8 @@
         },
       }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer defer></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -795,6 +795,33 @@
                 grid-column: span 2 / span 2 !important;
             }
         }
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
 
         /* Performance CSS styles */
         img {
