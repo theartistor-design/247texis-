@@ -845,6 +845,30 @@
     }
 </style>
 
+    <style>
+        @keyframes fadeInUpHero {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-hero-heading {
+            opacity: 0;
+            animation: fadeInUpHero 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-hero-subheading {
+            opacity: 0;
+            animation: fadeInUpHero 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-hero-button {
+            opacity: 0;
+            animation: fadeInUpHero 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
 </head>
 <body class="bg-white font-body text-charcoal-text antialiased">
 
@@ -952,9 +976,9 @@
 </header>
 
     <!-- 1. Cinematic Hero Banner -->
-    <section class="relative min-h-[500px] flex items-center justify-center overflow-hidden py-24">
-        <img src="../../svc-exec-hero.webp" class="absolute inset-0 w-full h-full object-cover object-center z-0" alt="Executive Travel Hero"/>
-        <div class="absolute inset-0 bg-[#001A3F]/80 backdrop-blur-[2px] z-0"></div>
+    <section class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden py-24">
+        <img src="../../hero-svc-exec.webp" class="absolute inset-0 w-full h-full object-cover object-center z-0" alt="Executive Travel Hero"/>
+        <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.78) 100%);"></div>
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
             <!-- Breadcrumbs -->
             <div class="flex flex-wrap items-center justify-center gap-2 text-white/60 text-sm mb-6 font-semibold uppercase tracking-wider">
@@ -964,16 +988,10 @@
                 <span class="material-symbols-outlined text-[14px]">chevron_right</span>
                 <span class="text-[#c9a84c]">Executive Travel</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-title font-bold mb-6 leading-tight">Executive Travel Scotland — Premium Corporate Chauffeur Service</h1>
-            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed font-body">For business professionals who understand that how you arrive is as important as where you are going. Immaculate vehicles, punctual drivers, and complete discretion — every time.</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="../../index.html#quote" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-8 py-4 rounded-[8px] transition-all duration-300 text-center uppercase tracking-wider text-sm font-label-sm shadow-lg w-full sm:w-auto">Get Instant Quote</a>
-                <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold px-8 py-4 rounded-[8px] transition-all duration-300 text-center uppercase tracking-wider text-sm font-label-sm w-full sm:w-auto flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-                    </svg>
-                    WhatsApp Us
-                </a>
+            <h1 class="text-[30px] md:text-[52px] font-title font-bold text-white mb-6 leading-tight max-w-[800px] mx-auto text-center animate-hero-heading">Executive Travel Scotland<br>Premium Corporate Chauffeur Service</h1>
+            <p class="text-[15px] md:text-[18px] text-white/88 max-w-[650px] mx-auto mb-10 leading-relaxed font-body text-center animate-hero-subheading">For business professionals who understand that how you arrive is as important as where you are going. Immaculate vehicles, punctual drivers, and complete discretion — every time.</p>
+            <div class="flex items-center justify-center animate-hero-button">
+                <a href="../../index.html#quote" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-[50px] py-[18px] rounded-[50px] text-center text-[16px] shadow-2xl hover:shadow-[0_20px_40px_rgba(201,168,76,0.3)] hover:-translate-y-[3px] transition-all duration-300 ease-in-out inline-block">Get Instant Quote</a>
             </div>
         </div>
     </section>
