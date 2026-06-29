@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en-GB"><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Scotland 247 Taxis | Airport Transfers, Day Tours & Private Hire Across Scotland</title>
@@ -106,8 +109,8 @@
         },
       }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -788,24 +791,192 @@
                 grid-column: span 2 / span 2 !important;
             }
         }
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://theartistor-design.github.io/247texis-/",
+  "name": "Scotland 247 Taxis",
+  "description": "Scotland's premier private hire network. Fixed-price airport transfers, private Highland day tours, executive travel, vehicle hire and more across Scotland.",
+  "url": "https://theartistor-design.github.io/247texis-/",
+  "telephone": "+447469598219",
+  "email": "&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Perth Business Centre",
+    "addressLocality": "Perth",
+    "addressRegion": "Scotland",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "56.3950",
+    "longitude": "-3.4312"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday","Tuesday","Wednesday",
+      "Thursday","Friday","Saturday","Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Scotland"
+  },
+  "serviceType": [
+    "Airport Transfer",
+    "Private Driver Hire",
+    "Executive Travel",
+    "Wedding Hire",
+    "Day Tours",
+    "Long Distance Transport",
+    "Package Delivery"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "4",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "James M."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Absolutely incredible service. Our Edinburgh airport transfer was waiting even though our flight was 40 minutes late."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Sophie & Laurent D."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "We booked a full Isle of Skye day tour and it was the highlight of our entire Scotland trip."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Robert K."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Used the executive hire for three days during a business conference in Edinburgh. Punctual, professional, and discreet."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Fiona & Alan T."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Booked a whisky distillery tour for my partner's birthday. Fixed price, no stress, no crowds."
+    }
+  ]
+}
+</script>
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theartistor-design.github.io/247texis-/">
+<meta property="og:title" content="Scotland 247 Taxis | Airport Transfers, Day Tours & Private Hire Across Scotland">
+<meta property="og:description" content="Scotland's premier private hire network. Fixed-price airport transfers, private Highland day tours, executive travel and vehicle hire. Book via WhatsApp. Available 24/7.">
+<meta property="og:image" content="https://theartistor-design.github.io/247texis-/hero-unified-bg.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Scotland 247 Taxis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scotland 247 Taxis | Airport Transfers & Private Hire Across Scotland">
+<meta name="twitter:description" content="Fixed-price airport transfers, private Highland day tours, executive travel and vehicle hire across Scotland. Book via WhatsApp.">
+<meta name="twitter:image" content="https://theartistor-design.github.io/247texis-/hero-unified-bg.jpg">
+
 </head>
 <body class="bg-mist-white text-charcoal-text font-body-md selection:bg-prestige-gold selection:text-deep-navy">
 <!-- TopNavBar -->
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a href="#home" class="flex items-center">
-                <img src="logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
+                <img src="logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/ loading="lazy" decoding="async" width="256" height="256">
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#home">Home</a>
 <div class="relative group nav-dropdown-trigger">
     <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="index.html#services">
-        Services <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+        Services <span class="text-[12px] transition-transform duration-300 group-hover:rotate-180 inline-block">⌄</span>
     </a>
     <!-- Dropdown content -->
     <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] border-t-[3px] border-[#c9a84c] p-[12px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col gap-[4px]">
-        <a href="services/airport-transfers/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/airport-transfers" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_airport</span>
             </div>
@@ -814,7 +985,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Fixed price, flight tracked transfers</span>
             </div>
         </a>
-        <a href="services/wedding-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/wedding-hire" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">favorite</span>
             </div>
@@ -823,7 +994,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Timeless luxury for your perfect day</span>
             </div>
         </a>
-        <a href="services/private-driver/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/private-driver" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">person</span>
             </div>
@@ -832,7 +1003,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Dedicated driver, custom schedule</span>
             </div>
         </a>
-        <a href="services/vehicle-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/vehicle-hire" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">key</span>
             </div>
@@ -841,7 +1012,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Book from 4 hours to 7 days</span>
             </div>
         </a>
-        <a href="services/executive-travel/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/executive-travel" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">work</span>
             </div>
@@ -850,7 +1021,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Premium corporate chauffeur service</span>
             </div>
         </a>
-        <a href="services/multi-stop/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/multi-stop" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">alt_route</span>
             </div>
@@ -859,7 +1030,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">One booking, multiple destinations</span>
             </div>
         </a>
-        <a href="services/long-distance/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/long-distance" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">directions_car</span>
             </div>
@@ -868,7 +1039,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Private hire across every mile</span>
             </div>
         </a>
-        <a href="services/package-delivery/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/package-delivery" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_shipping</span>
             </div>
@@ -879,8 +1050,8 @@
         </a>
     </div>
 </div>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#popular-routes">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/wedding-hire">Wedding Hire</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#airports">Airports</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/services/wedding-hire">Wedding Hire</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#fleet">Fleet</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#faq">FAQ</a>
@@ -898,7 +1069,7 @@
 <!-- Hero Section -->
 <section id="home" class="relative min-h-[870px] flex items-center justify-center overflow-hidden bg-[#788696]">
 <div class="absolute inset-0 z-0 overflow-hidden">
-<img alt="Luxury black executive car driving on dramatic empty Scottish Highland road at golden magic hour, winding road stretching into misty mountains, dramatic god rays piercing through dark storm." class="w-full h-full object-cover ken-burns" src="hero-unified-bg.jpg?v=2"/>
+<img alt="Luxury black executive car driving on dramatic empty Scottish Highland road at golden magic hour, winding road stretching into misty mountains, dramatic god rays piercing through dark storm." class="w-full h-full object-cover ken-burns" src="hero-unified-bg.jpg?v=2"/ loading="eager" width="1600" height="1600">
 <div class="absolute inset-0 hero-gradient"></div>
 </div>
 
@@ -1004,7 +1175,7 @@
                 <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Destination" type="text" id="booking-dropoff" required/>
             </div>
             <!-- Flight Number -->
-            <div class="col-span-1">
+            <div class="col-span-1 hidden" id="flight-container">
                 <label class="text-[12px] font-bold text-deep-navy mb-1 block">Flight Number</label>
                 <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Optional" type="text" id="booking-flight"/>
             </div>
@@ -1033,19 +1204,30 @@
             <div class="col-span-1">
                 <label class="text-[12px] font-bold text-deep-navy mb-1 block">Passengers</label>
                 <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-passengers">
-                    <option value="1-4">1-4</option>
-                    <option value="5-8">5-8</option>
-                </select>
+                    <option value="">Select Passengers</option>
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                    <option value="5">5 Passengers</option>
+                    <option value="6">6 Passengers</option>
+                    <option value="7">7 Passengers</option>
+                    <option value="8">8 Passengers</option></select>
             </div>
             
             <!-- Luggage Pieces -->
             <div class="col-span-1">
                 <label class="text-[12px] font-bold text-deep-navy mb-1 block">Luggage Pieces</label>
                 <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="booking-luggage">
-                    <option value="1-2">1-2 Bags</option>
-                    <option value="3-4">3-4 Bags</option>
-                    <option value="5+">5+ Bags</option>
-                </select>
+                    <option value="0">0 Bags</option>
+                    <option value="1">1 Bag</option>
+                    <option value="2">2 Bags</option>
+                    <option value="3">3 Bags</option>
+                    <option value="4">4 Bags</option>
+                    <option value="5">5 Bags</option>
+                    <option value="6">6 Bags</option>
+                    <option value="7">7 Bags</option>
+                    <option value="8">8+ Bags</option></select>
             </div>
             <!-- Empty Spacer -->
             <div class="col-span-2"></div>
@@ -1081,7 +1263,7 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-corolla">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="toyota_corolla.jpg?v=2" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/>
+                            <img src="toyota_corolla.jpg?v=2" alt="Toyota Corolla" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Toyota Corolla</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">Comfortable saloon, up to 4 passengers, up to 2 large bags</span>
@@ -1091,7 +1273,7 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-caddy">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="volkswagen_caddy.jpg?v=2" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/>
+                            <img src="volkswagen_caddy.jpg?v=2" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Volkswagen Caddy</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">Spacious hatchback, up to 4 passengers, up to 2 large bags</span>
@@ -1108,7 +1290,7 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-rangerover">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="range_rover.jpg?v=2" alt="Range Rover" class="w-full h-16 object-contain mb-2"/>
+                            <img src="range_rover.jpg?v=2" alt="Range Rover" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Range Rover</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
@@ -1118,7 +1300,7 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-audirs7">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="audi_rs7.jpg?v=2" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/>
+                            <img src="audi_rs7.jpg?v=2" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Audi RS7</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
@@ -1145,6 +1327,12 @@
 
         <!-- STEP 3: Your Details -->
         <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 hidden" data-step="3">
+            <!-- Top Back Button -->
+            <div class="col-span-3 mb-2 flex justify-start">
+                <button type="button" class="px-6 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-200 text-sm flex items-center gap-1.5" onclick="goToStep(2)">
+                    ← Back to Step 2
+                </button>
+            </div>
             <!-- Full Name -->
             <div class="col-span-1">
                 <label class="text-[12px] font-bold text-deep-navy mb-1 block">Full Name</label>
@@ -1216,7 +1404,7 @@
             <!-- Card 1 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-airport-transfers.jpg?v=2" loading="lazy" alt="Airport Transfers" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-airport-transfers.jpg?v=2" alt="Airport Transfers" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1233,7 +1421,7 @@
                         <!-- Card 2 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-wedding.webp?v=2" loading="lazy" decoding="async" alt="Wedding Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-wedding.webp?v=2" alt="Wedding Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1244,13 +1432,13 @@
                         <h3 class="font-title-md text-[20px] text-[#0A1F44] font-bold mb-4">Wedding Hire</h3>
                         <p class="font-body-md text-[14px] text-[#6B7280] leading-[1.7]">Make your special day truly unforgettable. Arrive in style with our luxury wedding car service. Immaculate vehicles, professional chauffeurs, and a seamless experience tailored entirely around your perfect day.</p>
                     </div>
-                    <a href="/wedding-hire" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-3 rounded-[8px] text-center hover:-translate-y-0.5 transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About Wedding Hire</a>
+                    <a href="/247texis-/services/wedding-hire" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-3 rounded-[8px] text-center hover:-translate-y-0.5 transition-all duration-300 block mt-8 uppercase tracking-wider font-label-sm text-sm">Enquire About Wedding Hire</a>
                 </div>
             </div>
             <!-- Card 3 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-private-driver.jpg?v=2" loading="lazy" alt="Private Driver Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-private-driver.jpg?v=2" alt="Private Driver Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1267,7 +1455,7 @@
             <!-- Card 4 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-vehicle-hire.jpg?v=2" loading="lazy" alt="Flexible Vehicle Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-vehicle-hire.jpg?v=2" alt="Flexible Vehicle Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1284,7 +1472,7 @@
             <!-- Card 5 -->
             <div class="bg-white rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-t-4 border-[#c9a84c] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] scale-[1.04] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-executive.jpg?v=2" loading="lazy" alt="Executive Travel" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-executive.jpg?v=2" alt="Executive Travel" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1301,7 +1489,7 @@
             <!-- Card 6 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-multistop.jpg?v=2" loading="lazy" alt="Multi-Stop Journeys" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-multistop.jpg?v=2" alt="Multi-Stop Journeys" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1318,7 +1506,7 @@
             <!-- Card 7 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-long-distance.jpg?v=2" loading="lazy" alt="Long Distance Transport" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-long-distance.jpg?v=2" alt="Long Distance Transport" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1335,7 +1523,7 @@
             <!-- Card 8 -->
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] group overflow-hidden">
                 <div class="h-[200px] w-full relative overflow-hidden">
-                    <img src="service-delivery.webp?v=2" loading="lazy" decoding="async" alt="Package Delivery" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+                    <img src="service-delivery.webp?v=2" alt="Package Delivery" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="600" height="600">
                     <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
                 </div>
                 <div class="p-8 flex-grow flex flex-col justify-between">
@@ -1444,7 +1632,7 @@
         <div id="day-tours-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
             <!-- Tour 1 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="tour-highlands.jpg?v=2" loading="lazy" alt="Scottish Highlands Day Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="tour-highlands.jpg?v=2" alt="Scottish Highlands Day Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Scottish Highlands Day Tour</h3>
@@ -1454,7 +1642,7 @@
             </div>
             <!-- Tour 2 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="loch_ness_tour.jpg?v=2" loading="lazy" alt="Loch Ness & Urquhart Castle" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="loch_ness_tour.jpg?v=2" alt="Loch Ness & Urquhart Castle" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Loch Ness & Urquhart Castle</h3>
@@ -1464,7 +1652,7 @@
             </div>
             <!-- Tour 3 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="fairy_pools_tour.jpg?v=2" loading="lazy" alt="Isle of Skye Private Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="fairy_pools_tour.jpg?v=2" alt="Isle of Skye Private Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Isle of Skye Private Tour</h3>
@@ -1474,7 +1662,7 @@
             </div>
             <!-- Tour 4 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="whisky_distillery_tour.jpg?v=2" loading="lazy" alt="Whisky Distillery Experience" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="whisky_distillery_tour.jpg?v=2" alt="Whisky Distillery Experience" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Whisky Distillery Experience</h3>
@@ -1484,7 +1672,7 @@
             </div>
             <!-- Tour 5 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="eilean_donan_tour.jpg?v=2" loading="lazy" alt="Castles & Scottish History" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="eilean_donan_tour.jpg?v=2" alt="Castles & Scottish History" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Castles & Scottish History</h3>
@@ -1494,7 +1682,7 @@
             </div>
             <!-- Tour 6 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="st_andrews_tour.jpg?v=2" loading="lazy" alt="Scottish Golf Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="st_andrews_tour.jpg?v=2" alt="Scottish Golf Tour" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-white font-bold text-[22px] mb-2">Scottish Golf Tour</h3>
@@ -1522,7 +1710,7 @@
         <div id="hire-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
             <!-- Package 1 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_4h.jpg?v=2" loading="lazy" alt="4-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_4h.jpg?v=2" alt="4-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">4-Hour Package</h3>
@@ -1533,7 +1721,7 @@
             </div>
             <!-- Package 2 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_8h.jpg?v=2" loading="lazy" alt="8-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_8h.jpg?v=2" alt="8-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">8-Hour Package</h3>
@@ -1544,7 +1732,7 @@
             </div>
             <!-- Package 3 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_12h.jpg?v=2" loading="lazy" alt="12-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_12h.jpg?v=2" alt="12-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">12-Hour Package</h3>
@@ -1555,7 +1743,7 @@
             </div>
             <!-- Package 4 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_24h.jpg?v=2" loading="lazy" alt="24-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_24h.jpg?v=2" alt="24-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">24-Hour Package</h3>
@@ -1566,7 +1754,7 @@
             </div>
             <!-- Package 5 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_48h.jpg?v=2" loading="lazy" alt="48-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_48h.jpg?v=2" alt="48-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">48-Hour Package</h3>
@@ -1577,7 +1765,7 @@
             </div>
             <!-- Package 6 -->
             <div class="relative min-h-[480px] rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                <img src="hire_weekly.jpg?v=2" loading="lazy" alt="Weekly Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/>
+                <img src="hire_weekly.jpg?v=2" alt="Weekly Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0"/ loading="lazy" decoding="async" width="1024" height="1024">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 z-10"></div>
                 <div class="relative z-20 flex flex-col h-full justify-end">
                     <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">Weekly Package</h3>
@@ -1666,7 +1854,7 @@
         <!-- Toyota Corolla -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-corolla.jpg?v=2" loading="lazy" alt="Toyota Corolla" class="w-full h-full object-cover"/>
+                <img src="fleet-corolla.jpg?v=2" alt="Toyota Corolla" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Toyota Corolla</h4>
@@ -1680,7 +1868,7 @@
         <!-- Volkswagen Caddy -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-caddy.jpg?v=2" loading="lazy" alt="Volkswagen Caddy" class="w-full h-full object-cover"/>
+                <img src="fleet-caddy.jpg?v=2" alt="Volkswagen Caddy" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Volkswagen Caddy</h4>
@@ -1701,7 +1889,7 @@
         <!-- Range Rover -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-range-rover.jpg?v=2" loading="lazy" alt="Range Rover" class="w-full h-full object-cover"/>
+                <img src="fleet-range-rover.jpg?v=2" alt="Range Rover" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Range Rover</h4>
@@ -1715,7 +1903,7 @@
         <!-- Audi RS7 -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-audi-rs7.jpg?v=2" loading="lazy" alt="Audi RS7" class="w-full h-full object-cover"/>
+                <img src="fleet-audi-rs7.jpg?v=2" alt="Audi RS7" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Audi RS7</h4>
@@ -1729,7 +1917,7 @@
         <!-- Range Rover 7-Seater -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-range-rover-7.jpg?v=2" loading="lazy" alt="Range Rover 7-Seater" class="w-full h-full object-cover"/>
+                <img src="fleet-range-rover-7.jpg?v=2" alt="Range Rover 7-Seater" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Range Rover 7-Seater</h4>
@@ -1743,7 +1931,7 @@
         <!-- Mercedes S-Class -->
         <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
             <div class="h-64 overflow-hidden bg-black/5 relative">
-                <img src="fleet-mercedes-s.jpg?v=2" loading="lazy" alt="Mercedes S-Class" class="w-full h-full object-cover"/>
+                <img src="fleet-mercedes-s.jpg?v=2" alt="Mercedes S-Class" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
             </div>
             <div class="p-6">
                 <h4 class="font-title-md text-xl text-deep-navy mb-2">Mercedes S-Class</h4>
@@ -1761,6 +1949,29 @@
 </div>
 </section>
 
+
+<!-- Prestige Cars Section -->
+<div class="mb-16">
+    <h3 class="font-title-md text-2xl text-[#005EB8] font-bold text-left mb-8 border-b pb-2 border-outline-variant">Prestige Class</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <!-- Rolls Royce Ghost -->
+        <div class="bg-white rounded-xl overflow-hidden luxury-shadow border border-outline-variant hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative">
+            <div class="absolute top-4 right-4 bg-[#c9a84c] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Prestige Class</div>
+            <div class="h-64 overflow-hidden bg-black/5 relative">
+                <img src="fleet-rolls-royce.webp?v=2" alt="Rolls Royce Ghost" class="w-full h-full object-cover"/ loading="lazy" decoding="async" width="800" height="800">
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-md text-xl text-deep-navy mb-2">Rolls Royce Ghost</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md mb-4">The ultimate statement in luxury travel. Reserved for those who demand nothing but the very finest.</p>
+                <div class="flex items-center space-x-6 text-on-surface-variant text-label-sm font-label-sm">
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">group</span> 4 Pax</span>
+                    <span class="flex items-center"><span class="material-symbols-outlined mr-1 text-[#005EB8]">shopping_bag</span> 2 Large Bags</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Popular Routes -->
 <section id="popular-routes" class="py-24 bg-deep-navy text-mist-white px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
@@ -1774,7 +1985,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="routes-grid">
 <!-- Route Card -->
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="The historic Edinburgh skyline viewed from a distance during the golden hour, symbolizing the route between Perth and Edinburgh Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A cinematic wide shot of the Edinburgh skyline at golden hour, featuring the castle perched on its volcanic rock against a sky of orange and deep blue. The lighting is warm and high-contrast, creating an editorial feel. The image represents the premium nature of the Perth to Edinburgh airport transfer, focusing on luxury and historical beauty." src="route-perth-edinburgh.jpg?v=2" loading="lazy"/>
+<img alt="The historic Edinburgh skyline viewed from a distance during the golden hour, symbolizing the route between Perth and Edinburgh Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A cinematic wide shot of the Edinburgh skyline at golden hour, featuring the castle perched on its volcanic rock against a sky of orange and deep blue. The lighting is warm and high-contrast, creating an editorial feel. The image represents the premium nature of the Perth to Edinburgh airport transfer, focusing on luxury and historical beauty." src="route-perth-edinburgh.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Perth to Edinburgh Airport</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Experience a stress-free transfer directly to the terminal in approx. 1h 15m.</p>
@@ -1782,7 +1993,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="Modern architecture of Glasgow city centre reflecting in the Clyde river, representing the transfer to Glasgow Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A modern, sharp architectural photograph of the Glasgow Riverside Museum and the surrounding cityscape at night. Vivid artificial lights reflect off the dark river water, creating a vibrant, high-energy atmosphere. The color palette is dominated by deep navy blues and sharp whites, perfectly matching the professional and modern brand identity of Scotland 247 Taxis." src="route-perth-glasgow.jpg?v=2" loading="lazy"/>
+<img alt="Modern architecture of Glasgow city centre reflecting in the Clyde river, representing the transfer to Glasgow Airport." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A modern, sharp architectural photograph of the Glasgow Riverside Museum and the surrounding cityscape at night. Vivid artificial lights reflect off the dark river water, creating a vibrant, high-energy atmosphere. The color palette is dominated by deep navy blues and sharp whites, perfectly matching the professional and modern brand identity of Scotland 247 Taxis." src="route-perth-glasgow.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Perth to Glasgow Airport</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Reliable door-to-door service, ensuring you arrive relaxed for your flight.</p>
@@ -1790,7 +2001,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="The Old Course in St Andrews with the iconic bridge and historic buildings in the background, representing the route from Edinburgh." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="An expansive, lush view of the iconic Old Course in St Andrews on a bright, clear day. The vibrant green turf contrasts beautifully with the ancient grey stone architecture of the town in the distance. The lighting is crisp and bright, conveying a sense of prestige and history. Perfect for representing the premier travel route for golfers and high-end visitors." src="route-edinburgh-standrews.jpg?v=2" loading="lazy"/>
+<img alt="The Old Course in St Andrews with the iconic bridge and historic buildings in the background, representing the route from Edinburgh." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="An expansive, lush view of the iconic Old Course in St Andrews on a bright, clear day. The vibrant green turf contrasts beautifully with the ancient grey stone architecture of the town in the distance. The lighting is crisp and bright, conveying a sense of prestige and history. Perfect for representing the premier travel route for golfers and high-end visitors." src="route-edinburgh-standrews.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh to St Andrews</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">The premier choice for golfers with plenty of room for clubs and luggage.</p>
@@ -1798,7 +2009,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="A serene view of the River Tay in Perth, Scotland, under a soft morning mist." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A serene landscape of the River Tay flowing through the heart of Perth, Scotland. The bridge is illuminated by soft dawn light, casting long shadows and reflections on the calm water. The palette is muted and sophisticated, with hints of grey, navy, and soft gold, evoking the calm and reliable journey offered by Scotland 247 Taxis." src="route-glasgow-perth.jpg?v=2" loading="lazy"/>
+<img alt="A serene view of the River Tay in Perth, Scotland, under a soft morning mist." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" data-alt="A serene landscape of the River Tay flowing through the heart of Perth, Scotland. The bridge is illuminated by soft dawn light, casting long shadows and reflections on the calm water. The palette is muted and sophisticated, with hints of grey, navy, and soft gold, evoking the calm and reliable journey offered by Scotland 247 Taxis." src="route-glasgow-perth.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Glasgow to Perth</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Professional private hire service for those travelling between the West Coast and heart of Scotland.</p>
@@ -1806,7 +2017,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="Scenic landscape of Inverness Castle and River Ness" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-inverness.jpg?v=2" loading="lazy"/>
+<img alt="Scenic landscape of Inverness Castle and River Ness" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-inverness.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Inverness</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fixed price private transfer from Edinburgh Airport to the Highlands capital.</p>
@@ -1814,7 +2025,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="Cityscape of Aberdeen featuring Marischal College granite architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-aberdeen.jpg?v=2" loading="lazy"/>
+<img alt="Cityscape of Aberdeen featuring Marischal College granite architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-aberdeen.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Aberdeen</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Comfortable door-to-door transfer from Edinburgh Airport to the Granite City.</p>
@@ -1822,7 +2033,7 @@
 </div>
 </div>
 <div class="group relative overflow-hidden h-96 luxury-shadow route-card">
-<img alt="Highlands scenery of Fort William with Ben Nevis mountain backdrop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-fort-william.jpg?v=2" loading="lazy"/>
+<img alt="Highlands scenery of Fort William with Ben Nevis mountain backdrop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108 ease-out" src="route-fort-william.jpg?v=2"/ loading="lazy" decoding="async" width="1024" height="1024">
 <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent p-6 flex flex-col justify-end transition-transform duration-300 group-hover:-translate-y-1">
 <h3 class="font-title-md text-title-md mb-2">Edinburgh Airport to Fort William</h3>
 <p class="font-body-md text-body-md text-mist-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Scenic fixed price transfer from Edinburgh Airport to the heart of the Highlands.</p>
@@ -1957,7 +2168,7 @@
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)" id="faq-first-item">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             How far in advance do I need to book?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+                            <span class="faq-chevron transition-transform duration-300 inline-block font-bold">▼</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -1969,7 +2180,7 @@
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Can I book an airport transfer for an early morning or late-night flight?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+                            <span class="faq-chevron transition-transform duration-300 inline-block font-bold">▼</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -1981,7 +2192,7 @@
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Can I customise a day tour itinerary?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+                            <span class="faq-chevron transition-transform duration-300 inline-block font-bold">▼</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -1993,7 +2204,7 @@
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             Do you cover multi-stop journeys?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+                            <span class="faq-chevron transition-transform duration-300 inline-block font-bold">▼</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -2005,7 +2216,7 @@
 <div class="bg-mist-white p-6 luxury-shadow cursor-pointer group faq-item rounded-lg hover:bg-white" onclick="toggleFaq(this)">
 <div class="font-title-md text-title-md text-deep-navy flex justify-between items-center select-none">
                             How do I book via WhatsApp?
-                            <span class="material-symbols-outlined transition-transform duration-300 faq-chevron">expand_more</span>
+                            <span class="faq-chevron transition-transform duration-300 inline-block font-bold">▼</span>
 </div>
 <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
 <p class="mt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -2046,16 +2257,22 @@
         <h3 class="font-title-md text-xl text-[#c9a84c] font-bold">Get In Touch</h3>
         <div class="space-y-4 font-body-md text-body-md text-mist-white/90">
             <div class="pt-2">
-                <!-- WhatsApp Button Only -->
-                <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-[50px] w-full shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 transition-all duration-300">
-                    <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-                    </svg>
-                    <span>Chat on WhatsApp</span>
-                </a>
+                <!-- Click to Call & WhatsApp Buttons -->
+                <div class="space-y-3">
+                    <a href="tel:+447469598219" class="flex items-center justify-center gap-2 px-6 py-4 bg-[#0A1F44] hover:bg-[#081836] text-white font-bold rounded-[50px] w-full border border-white/20 hover:-translate-y-0.5 transition-all duration-300 shadow-md">
+                        <span class="material-symbols-outlined text-white">call</span>
+                        <span>Call Us: 07469 598219</span>
+                    </a>
+                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-[50px] w-full shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 transition-all duration-300">
+                        <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+                        </svg>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
             </div>
             <div class="space-y-4 font-body-md text-body-md text-mist-white/80 pt-4 border-t border-white/10">
-                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#c9a84c]">mail</span> Email: info@scotland247taxis.co.uk</p>
+                <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#c9a84c]">mail</span> Email: &#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</p>
                 <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#c9a84c]">location_on</span> Perth Business Centre, Perth, Scotland</p>
             </div>
         </div>
@@ -2098,12 +2315,11 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="space-y-4">
 <div style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;" class="inline-block mb-4">
-                    <img src="logo.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/>
+                    <img src="logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/ loading="lazy" decoding="async" width="256" height="256">
                 </div>
 <p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
 <div class="flex space-x-4 mt-6">
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:info@scotland247taxis.co.uk"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;"><span class="material-symbols-outlined">mail</span></a>
 <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
 </div>
 </div>
@@ -2120,28 +2336,28 @@
         Chat on WhatsApp
     </a>
 </li>
-<li>Email: info@scotland247taxis.co.uk</li>
+<li>Email: &#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</li>
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#popular-routes">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/wedding-hire">Wedding Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#services">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#airports">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/wedding-hire">Wedding Hire</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/executive-travel">Executive Travel</a></li>
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#hire-packages">Vehicle Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#services">Multi-Stop Journeys</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact-us">Contact</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/multi-stop">Multi-Stop Journeys</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact">Contact</a></li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Legal</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Cookie Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Accessibility</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/terms">Terms of Service</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/privacy">Privacy Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/cookies">Cookie Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/accessibility">Accessibility</a></li>
 </ul>
 </div>
 </div>
@@ -2654,18 +2870,46 @@
 
         // Luggage Warning & Auto Upgrade Logic
         
-        // --- Redesigned Form Step Wizard Logic ---
+        
+        // --- Redesigned Form Step Wizard Logic & Validation ---
         let currentStep = 1;
+        
+        // Error display helpers
+        function showError(field, msg) {
+            clearError(field);
+            field.classList.add('border-red-500');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-msg text-red-500 text-xs font-bold mt-1';
+            errorDiv.textContent = msg;
+            field.parentNode.appendChild(errorDiv);
+        }
+
+        function clearError(field) {
+            if (!field) return;
+            field.classList.remove('border-red-500');
+            const parent = field.parentNode;
+            if (parent) {
+                const existingError = parent.querySelector('.error-msg');
+                if (existingError) {
+                    parent.removeChild(existingError);
+                }
+            }
+        }
+        
+        // Real-time error clearing
+        document.querySelectorAll('form input, form select, form textarea').forEach(el => {
+            el.addEventListener('input', () => clearError(el));
+            el.addEventListener('change', () => clearError(el));
+        });
+
         window.goToStep = function(step) {
             if (step > currentStep) {
-                // Validate intermediate steps
                 for (let s = currentStep; s < step; s++) {
                     if (!validateStep(s)) return;
                 }
             }
             currentStep = step;
             
-            // Update Pills visual state
             const pills = document.querySelectorAll('.step-pill');
             pills.forEach((pill, idx) => {
                 if (idx === step - 1) {
@@ -2677,7 +2921,6 @@
                 }
             });
             
-            // Toggle step content
             const contents = document.querySelectorAll('.step-content');
             contents.forEach((content, idx) => {
                 if (idx === step - 1) {
@@ -2686,6 +2929,9 @@
                     content.classList.add('hidden');
                 }
             });
+            
+            // Scroll to form top when step changes
+            document.getElementById('quote').scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
 
         window.handleNextStep = function(step) {
@@ -2695,135 +2941,183 @@
         };
 
         function validateStep(step) {
-            if (step === 1) {
-                const pickup = document.getElementById('booking-pickup');
-                const journeyType = document.getElementById('booking-journey-type').value;
-                const dropoff = document.getElementById('booking-dropoff');
-                const hours = document.getElementById('booking-hours');
+            let isValid = true;
+            let firstErrorField = null;
+            
+            const checkRequired = (fieldId, customRule = null, errorText = "This field is required") => {
+                const field = document.getElementById(fieldId);
+                if (!field) return;
                 
-                if (!pickup.value.trim()) {
-                    pickup.focus();
-                    pickup.classList.add('border-red-500');
-                    setTimeout(() => pickup.classList.remove('border-red-500'), 1500);
-                    return false;
-                }
-                if (journeyType === 'hourly') {
-                    if (!hours.value || parseInt(hours.value) < 2) {
-                        hours.focus();
-                        hours.classList.add('border-red-500');
-                        setTimeout(() => hours.classList.remove('border-red-500'), 1500);
-                        return false;
-                    }
+                clearError(field);
+                
+                let hasError = false;
+                if (customRule) {
+                    hasError = customRule(field);
                 } else {
-                    if (!dropoff.value.trim()) {
-                        dropoff.focus();
-                        dropoff.classList.add('border-red-500');
-                        setTimeout(() => dropoff.classList.remove('border-red-500'), 1500);
-                        return false;
+                    hasError = !field.value.trim();
+                }
+                
+                if (hasError) {
+                    showError(field, errorText);
+                    isValid = false;
+                    if (!firstErrorField) {
+                        firstErrorField = field;
                     }
+                }
+            };
+            
+            if (step === 1) {
+                checkRequired('booking-journey-type');
+                checkRequired('booking-service-type');
+                checkRequired('booking-pickup');
+                
+                const journeyType = document.getElementById('booking-journey-type').value;
+                if (journeyType === 'hourly') {
+                    checkRequired('booking-hours', (f) => !f.value || parseInt(f.value) < 2, "Minimum hire period is 2 hours");
+                } else {
+                    checkRequired('booking-dropoff');
                 }
             } else if (step === 2) {
-                const date = document.getElementById('booking-date');
-                const time = document.getElementById('booking-time');
+                checkRequired('booking-date');
+                checkRequired('booking-time');
+                checkRequired('booking-passengers', (f) => !f.value, "This field is required");
                 
-                if (!date.value) {
-                    date.focus();
-                    date.classList.add('border-red-500');
-                    setTimeout(() => date.classList.remove('border-red-500'), 1500);
-                    return false;
+                const selectedVehicle = document.getElementById('selected-vehicle');
+                clearError(selectedVehicle);
+                if (!selectedVehicle.value) {
+                    showError(selectedVehicle, "This field is required");
+                    isValid = false;
+                    if (!firstErrorField) {
+                        firstErrorField = selectedVehicle;
+                    }
                 }
-                if (!time.value) {
-                    time.focus();
-                    time.classList.add('border-red-500');
-                    setTimeout(() => time.classList.remove('border-red-500'), 1500);
-                    return false;
-                }
+            } else if (step === 3) {
+                checkRequired('booking-name');
+                
+                const phoneRegex = /^[0-9\+\-\s()]{10,20}$/;
+                checkRequired('booking-whatsapp', (f) => {
+                    const cleanPhone = f.value.replace(/[^0-9]/g, '');
+                    return cleanPhone.length < 10 || !phoneRegex.test(f.value);
+                }, "WhatsApp number must be valid phone format, minimum 10 digits");
             }
-            return true;
+            
+            if (!isValid && firstErrorField) {
+                firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstErrorField.focus();
+            }
+            
+            return isValid;
         }
 
-        window.selectVehicleType = function(type) {
-            document.getElementById('selected-vehicle').value = type;
+        // WhatsApp pre-filled messaging integration
+        const bookingForm = document.querySelector('form');
+        if (bookingForm) {
+            // Replace submit listener
+            const newForm = bookingForm.cloneNode(true);
+            bookingForm.parentNode.replaceChild(newForm, bookingForm);
             
-            // Update pill buttons classes
-            const btnStandard = document.getElementById('btn-vehicle-standard');
-            const btnExecutive = document.getElementById('btn-vehicle-executive');
-            const btnVan = document.getElementById('btn-vehicle-van');
-            
-            if (btnStandard && btnExecutive && btnVan) {
-                [btnStandard, btnExecutive, btnVan].forEach(btn => {
-                    btn.className = "py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border border-[#e0e0e0] bg-[#f0f0f0] text-[#666666]";
-                });
+            newForm.addEventListener('submit', (e) => {
+                e.preventDefault();
                 
-                const activeBtn = document.getElementById('btn-vehicle-' + type);
-                if (activeBtn) {
-                    activeBtn.className = "py-3 px-4 text-center rounded-lg font-bold cursor-pointer transition-all border bg-[#c9a84c] text-white shadow-sm";
+                if (!validateStep(1) || !validateStep(2) || !validateStep(3)) {
+                    return;
                 }
-            }
-            
-            // Expand suboptions
-            const stdContainer = document.getElementById('options-standard-container');
-            const exeContainer = document.getElementById('options-executive-container');
-            
-            if (stdContainer && exeContainer) {
-                if (type === 'standard') {
-                    stdContainer.classList.remove('hidden');
-                    exeContainer.classList.add('hidden');
-                    selectSpecificVehicle('standard', 'Toyota Corolla');
-                } else if (type === 'executive') {
-                    stdContainer.classList.add('hidden');
-                    exeContainer.classList.remove('hidden');
-                    selectSpecificVehicle('executive', 'Range Rover');
-                } else {
-                    stdContainer.classList.add('hidden');
-                    exeContainer.classList.add('hidden');
-                    document.getElementById('selected-specific-vehicle').value = '';
-                }
-            }
-            
-            if (typeof checkLuggageUpgrade === 'function') {
-                checkLuggageUpgrade();
-            }
-        };
+                
+                const journeyTypeVal = document.getElementById('booking-journey-type').value;
+                const serviceTypeVal = document.getElementById('booking-service-type').value;
+                const nameVal = document.getElementById('booking-name').value;
+                const pickupVal = document.getElementById('booking-pickup').value;
+                const dropoffVal = journeyTypeVal === 'hourly' ? 'N/A (Hourly Hire)' : document.getElementById('booking-dropoff').value;
+                const hoursVal = journeyTypeVal === 'hourly' ? document.getElementById('booking-hours').value : 'N/A';
+                const dateVal = document.getElementById('booking-date').value;
+                const timeVal = document.getElementById('booking-time').value;
+                const passengersVal = document.getElementById('booking-passengers').value;
+                const luggageVal = document.getElementById('booking-luggage').value;
+                const flightVal = document.getElementById('booking-flight').value || 'None';
+                const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
+                const emailVal = document.getElementById('booking-email').value || 'None';
+                const notesVal = document.getElementById('booking-notes').value || 'None';
+                const vehicleVal = document.getElementById('selected-vehicle').value;
+                const specificVehicleVal = document.getElementById('selected-specific-vehicle')?.value || '';
 
-        // Compatibility mapping
-        window.selectVehicle = function(type) {
-            selectVehicleType(type);
-        };
-        
-        // Specific vehicle selection cards override
-        const originalSelectSpecificVehicle = window.selectSpecificVehicle;
-        window.selectSpecificVehicle = function(category, name) {
-            if (originalSelectSpecificVehicle) {
-                originalSelectSpecificVehicle(category, name);
-            }
-            
-            const corolla = document.getElementById('sub-vehicle-corolla');
-            const caddy = document.getElementById('sub-vehicle-caddy');
-            const rangerover = document.getElementById('sub-vehicle-rangerover');
-            const audirs7 = document.getElementById('sub-vehicle-audirs7');
-            
-            [corolla, caddy, rangerover, audirs7].forEach(card => {
-                if (card) {
-                    card.classList.remove('border-[#c9a84c]', 'border-prestige-gold');
-                    card.classList.add('border-[#e0e0e0]');
+                const vehicleMap = {
+                    'standard': 'Standard Car',
+                    'executive': 'Executive Car',
+                    'van': '6-Seater Van'
+                };
+                let selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
+                if ((vehicleVal === 'standard' || vehicleVal === 'executive') && specificVehicleVal) {
+                    selectedVehicleName += ` (${specificVehicleVal})`;
+                }
+
+                // 1. Pre-filled WhatsApp message format
+                const leadMessage = `New Booking Request
+Name: ${nameVal}
+Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
+Service Type: ${serviceTypeVal}
+From: ${pickupVal}
+To: ${dropoffVal}
+Date: ${dateVal}
+Time: ${timeVal}
+Passengers: ${passengersVal}
+Luggage: ${luggageVal}
+Vehicle: ${vehicleVal}
+Specific Vehicle: ${specificVehicleVal || 'None'}
+Flight Number: ${flightVal}
+Hours: ${hoursVal}
+WhatsApp: ${customerWhatsappVal}
+Email: ${emailVal}
+Notes: ${notesVal}`;
+
+                // 2. Pre-filled Customer Confirmation format
+                const customerConfirmation = `Hi ${nameVal}, thank you for contacting Scotland 247 Taxis. We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.`;
+
+                // Open lead message for company
+                const companyUrl = `https://wa.me/447469598219?text=${encodeURIComponent(leadMessage)}`;
+                window.open(companyUrl, '_blank');
+
+                // Open customer confirmation after 2 seconds
+                const cleanCustomerNumber = customerWhatsappVal.replace(/[^0-9]/g, '');
+                if (cleanCustomerNumber) {
+                    setTimeout(() => {
+                        const customerUrl = `https://wa.me/${cleanCustomerNumber}?text=${encodeURIComponent(customerConfirmation)}`;
+                        window.open(customerUrl, '_blank');
+                    }, 2000);
                 }
             });
+        }
+        
+        // Hide/Show Flight Number conditionally
+        const serviceTypeSelect = document.getElementById('booking-service-type');
+        const pickupInput = document.getElementById('booking-pickup');
+        const dropoffInput = document.getElementById('booking-dropoff');
+        const flightContainer = document.getElementById('flight-container');
+        const flightInput = document.getElementById('booking-flight');
+
+        function updateFlightNumberVisibility() {
+            const serviceType = serviceTypeSelect.value;
+            const pickupVal = pickupInput.value.toLowerCase();
+            const dropoffVal = dropoffInput.value.toLowerCase();
             
-            let activeCard;
-            if (name === 'Toyota Corolla') activeCard = corolla;
-            else if (name === 'Volkswagen Caddy') activeCard = caddy;
-            else if (name === 'Range Rover') activeCard = rangerover;
-            else if (name === 'Audi RS7') activeCard = audirs7;
+            const isAirportService = serviceType === 'Airport Transfer';
+            const isAirportPickup = pickupVal.includes('airport');
+            const isAirportDropoff = dropoffVal.includes('airport');
             
-            if (activeCard) {
-                activeCard.classList.remove('border-[#e0e0e0]');
-                activeCard.classList.add('border-[#c9a84c]');
+            if (isAirportService || isAirportPickup || isAirportDropoff) {
+                flightContainer.classList.remove('hidden');
+            } else {
+                flightContainer.classList.add('hidden');
+                flightInput.value = '';
             }
-        };
+        }
 
-        // GSAP ScrollTrigger Animations are handled in the main animation block
-
+        if (serviceTypeSelect && pickupInput && dropoffInput && flightContainer) {
+            serviceTypeSelect.addEventListener('change', updateFlightNumberVisibility);
+            pickupInput.addEventListener('input', updateFlightNumberVisibility);
+            dropoffInput.addEventListener('input', updateFlightNumberVisibility);
+        }
+        
+        // Update luggage warning logic (Standard and luggage >= 3)
         const luggageSelect = document.getElementById('booking-luggage');
         const luggageWarningContainer = document.getElementById('luggage-warning-container');
         const upgradeVehicleBtn = document.getElementById('upgrade-vehicle-btn');
@@ -2831,8 +3125,9 @@
         function checkLuggageUpgrade() {
             const selectedVehicle = document.getElementById('selected-vehicle').value;
             const selectedLuggage = luggageSelect.value;
+            const luggageNum = parseInt(selectedLuggage);
             
-            if (selectedVehicle === 'standard' && (selectedLuggage === '3-4' || selectedLuggage === '5+')) {
+            if (selectedVehicle === 'standard' && luggageNum >= 3) {
                 luggageWarningContainer.classList.remove('hidden');
             } else {
                 luggageWarningContainer.classList.add('hidden');
@@ -2842,179 +3137,24 @@
         if (luggageSelect) {
             luggageSelect.addEventListener('change', checkLuggageUpgrade);
         }
-
+        
+        // Compatibility check
         if (upgradeVehicleBtn) {
             upgradeVehicleBtn.addEventListener('click', () => {
-                selectVehicle('van');
+                selectVehicleType('van');
                 luggageWarningContainer.classList.add('hidden');
             });
         }
-
-        // Intercept standard vehicle selection function to also check upgrade warning
-        const originalSelectVehicle = window.selectVehicle;
-        window.selectVehicle = function(type) {
-            if (originalSelectVehicle) {
-                originalSelectVehicle(type);
+        
+        // Intercept standard vehicle selection to check luggage warning
+        const originalSelectVehicleType = window.selectVehicleType;
+        window.selectVehicleType = function(type) {
+            if (originalSelectVehicleType) {
+                originalSelectVehicleType(type);
             }
             checkLuggageUpgrade();
         };
-
-        
-        // Mobile menu toggle logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-            const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
-            
-            if (mobileMenuBtn && mobileMenuOverlay) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    console.log('MOBILE MENU CLICKED EVENT RUNNING');
-                    mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                    mobileMenuOverlay.classList.add('opacity-100');
-                    document.body.style.overflow = 'hidden'; // prevent background scrolling
-                });
-            }
-            
-            if (mobileMenuCloseBtn && mobileMenuOverlay) {
-                const closeMenu = () => {
-                    mobileMenuOverlay.classList.remove('opacity-100');
-                    mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
-                    document.body.style.overflow = ''; // restore background scrolling
-                };
-                mobileMenuCloseBtn.addEventListener('click', closeMenu);
-                
-                // Close menu when a link is clicked
-                mobileMenuOverlay.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
-        });
-
-
-        // Booking Form Submission & WhatsApp Lead Integration
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const journeyTypeVal = document.getElementById('booking-journey-type').value;
-            const serviceTypeVal = document.getElementById('booking-service-type').value;
-            const nameVal = document.getElementById('booking-name').value;
-            const pickupVal = document.getElementById('booking-pickup').value;
-            const dropoffVal = journeyTypeVal === 'hourly' ? 'N/A (Hourly Hire)' : document.getElementById('booking-dropoff').value;
-            const hoursVal = journeyTypeVal === 'hourly' ? document.getElementById('booking-hours').value : 'N/A';
-            const dateVal = document.getElementById('booking-date').value;
-            const timeVal = document.getElementById('booking-time').value;
-            const passengersVal = document.getElementById('booking-passengers').value;
-            const luggageVal = document.getElementById('booking-luggage').value;
-            const flightVal = document.getElementById('booking-flight').value || 'None';
-            const customerWhatsappVal = document.getElementById('booking-whatsapp').value;
-            const emailVal = document.getElementById('booking-email').value || 'None';
-            const notesVal = document.getElementById('booking-notes').value || 'None';
-            const vehicleVal = document.getElementById('selected-vehicle').value;
-            const specificVehicleVal = document.getElementById('selected-specific-vehicle')?.value || '';
-
-            const vehicleMap = {
-                'standard': 'Standard Car',
-                'executive': 'Executive Car',
-                'van': '6-Seater Van'
-            };
-            let selectedVehicleName = vehicleMap[vehicleVal] || vehicleVal.toUpperCase();
-            if ((vehicleVal === 'standard' || vehicleVal === 'executive') && specificVehicleVal) {
-                selectedVehicleName += ` (${specificVehicleVal})`;
-            }
-
-            // 1. Construct formatted lead message for the company
-            const leadMessage = 
-`New Booking Request
-Name: ${nameVal}
-Email: ${emailVal}
-From: ${pickupVal}
-To: ${dropoffVal}
-Date: ${dateVal}
-Time: ${timeVal}
-Passengers: ${passengersVal}
-Large Bags: ${luggageVal}
-Flight Number: ${flightVal}
-Journey Type: ${journeyTypeVal === 'one-way' ? 'One Way' : journeyTypeVal === 'return' ? 'Return' : 'Hourly Hire'}
-Hours (if hourly): ${hoursVal}
-Service Type: ${serviceTypeVal}
-Vehicle Class: ${selectedVehicleName}
-Special Requirements: ${notesVal}
-Customer WhatsApp: ${customerWhatsappVal}`;
-
-            // 2. Construct automatic confirmation message for the customer
-            const customerConfirmation = 
-`Hi ${nameVal}, thank you for contacting Scotland 247 Taxis.
-We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.`;
-
-            // Open company WhatsApp lead
-            const companyUrl = `https://wa.me/447469598219?text=${encodeURIComponent(leadMessage)}`;
-            window.open(companyUrl, '_blank');
-
-            // Open customer confirmation (clean customer number of spaces/symbols)
-            const cleanCustomerNumber = customerWhatsappVal.replace(/[^0-9+]/g, '');
-            if (cleanCustomerNumber) {
-                setTimeout(() => {
-                    const customerUrl = `https://wa.me/${cleanCustomerNumber}?text=${encodeURIComponent(customerConfirmation)}`;
-                    window.open(customerUrl, '_blank');
-                }, 1000);
-            }
-
-            // Fallback UI modal/alert confirmation
-            alert(`Booking Request Submitted!\n\nConfirmation message sent to you:\n"${customerConfirmation}"`);
-        });
-
-        // Contact Us Form Submission
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const nameVal = document.getElementById('contact-name').value;
-                const whatsappVal = document.getElementById('contact-whatsapp').value;
-                const emailVal = document.getElementById('contact-email').value || 'Not provided';
-                const messageVal = document.getElementById('contact-message').value;
-
-                const contactMessage = 
-`New Contact Enquiry
-Name: ${nameVal}
-WhatsApp: ${whatsappVal}
-Email: ${emailVal}
-Message: ${messageVal}`;
-
-                // Notify company on WhatsApp
-                const contactUrl = `https://wa.me/447469598219?text=${encodeURIComponent(contactMessage)}`;
-                window.open(contactUrl, '_blank');
-
-                alert(`Thank you ${nameVal}! Your message has been sent to Scotland 247 Taxis. We will get back to you shortly.`);
-                contactForm.reset();
-            });
-        }
-    
-    // Mobile services submenu toggle
-    const mobileServicesBtn = document.querySelector('#mobile-menu-overlay a[href="#services"]');
-    const mobileServicesSubmenu = document.getElementById('mobile-services-submenu');
-    const backServicesBtn = document.getElementById('back-services-btn');
-    const closeServicesBtn = document.getElementById('close-services-btn');
-    
-    if (mobileServicesBtn && mobileServicesSubmenu) {
-        mobileServicesBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileServicesSubmenu.classList.remove('translate-x-full');
-        });
-    }
-    if (backServicesBtn && mobileServicesSubmenu) {
-        backServicesBtn.addEventListener('click', () => {
-            mobileServicesSubmenu.classList.add('translate-x-full');
-        });
-    }
-    if (closeServicesBtn && mobileServicesSubmenu) {
-        closeServicesBtn.addEventListener('click', () => {
-            mobileServicesSubmenu.classList.add('translate-x-full');
-            document.getElementById('mobile-menu-overlay').classList.add('pointer-events-none');
-            document.getElementById('mobile-menu-overlay').classList.add('opacity-0');
-        });
-    }
-</script>
+    </script>
 
 
 <!-- Mobile Navigation Overlay Menu -->
@@ -3027,8 +3167,8 @@ Message: ${messageVal}`;
     <nav class="flex flex-col space-y-6 text-center">
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#home">Home</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#services">Services</a>
-        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#popular-routes">Airports</a>
-        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/wedding-hire">Wedding Hire</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#airports">Airports</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/services/wedding-hire">Wedding Hire</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#fleet">Fleet</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#reviews">Reviews</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#faq">FAQ</a>
@@ -3138,6 +3278,66 @@ Message: ${messageVal}`;
             </div>
         </a>
     </div>
-    <a href="/services" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-4 rounded-[12px] text-center transition-all duration-300 block mt-8 text-md uppercase tracking-wider">View All Services →</a>
+    <a href="/247texis-/services" class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold py-4 rounded-[12px] text-center transition-all duration-300 block mt-8 text-md uppercase tracking-wider">View All Services →</a>
 </div>
+
+    <script>
+    // Add active state to nav links based on current path
+    document.addEventListener('DOMContentLoaded', () => {
+        const pathName = window.location.pathname;
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu-overlay nav a');
+        
+        // Add nav-link class to header and mobile links if not present
+        document.querySelectorAll('nav a:not(.nav-link), #mobile-menu-overlay nav a:not(.nav-link)').forEach(el => {
+            el.classList.add('nav-link');
+        });
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                const linkPath = href.split('#')[0].split('?')[0];
+                const normalizedPathName = pathName.replace(/\/g, '/');
+                if (linkPath && normalizedPathName.endsWith(linkPath)) {
+                    link.classList.add('active');
+                } else if ((normalizedPathName === '/247texis-/' || normalizedPathName === '/247texis-/index.html' || normalizedPathName.endsWith('/stitch_ui_design_replicator/') || normalizedPathName.endsWith('/stitch_ui_design_replicator/index.html')) && (linkPath === '#home' || linkPath === '#services' || linkPath.endsWith('index.html'))) {
+                    // Highlight home on root
+                    if (link.textContent.trim() === 'Home') {
+                        link.classList.add('active');
+                    }
+                }
+            }
+        });
+    });
+    </script>
+    
+
+    <script>
+    // Add active state to nav links based on current path
+    document.addEventListener('DOMContentLoaded', () => {
+        const pathName = window.location.pathname;
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu-overlay nav a');
+        
+        // Add nav-link class to header and mobile links if not present
+        document.querySelectorAll('nav a:not(.nav-link), #mobile-menu-overlay nav a:not(.nav-link)').forEach(el => {
+            el.classList.add('nav-link');
+        });
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                const linkPath = href.split('#')[0].split('?')[0];
+                const normalizedPathName = pathName.replace(/\/g, '/');
+                if (linkPath && normalizedPathName.endsWith(linkPath)) {
+                    link.classList.add('active');
+                } else if ((normalizedPathName === '/247texis-/' || normalizedPathName === '/247texis-/index.html' || normalizedPathName.endsWith('/stitch_ui_design_replicator/') || normalizedPathName.endsWith('/stitch_ui_design_replicator/index.html')) && (linkPath === '#home' || linkPath === '#services' || linkPath.endsWith('index.html'))) {
+                    // Highlight home on root
+                    if (link.textContent.trim() === 'Home') {
+                        link.classList.add('active');
+                    }
+                }
+            }
+        });
+    });
+    </script>
+    
 </body></html>

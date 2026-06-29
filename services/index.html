@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Scotland 247 Taxis</title>
-    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Scotland 247 Taxis | Airport Transfers, Day Tours & Private Hire Across Scotland</title>
@@ -110,8 +113,8 @@
         },
       }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -792,7 +795,175 @@
                 grid-column: span 2 / span 2 !important;
             }
         }
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
+
+        /* Performance CSS styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        .hero-section, section#home {
+            content-visibility: visible;
+        }
+        
+        /* Active nav link style */
+        .nav-link.active {
+            color: #c9a84c !important;
+            border-bottom: 2px solid #c9a84c;
+        }
+        
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://theartistor-design.github.io/247texis-/",
+  "name": "Scotland 247 Taxis",
+  "description": "Scotland's premier private hire network. Fixed-price airport transfers, private Highland day tours, executive travel, vehicle hire and more across Scotland.",
+  "url": "https://theartistor-design.github.io/247texis-/",
+  "telephone": "+447469598219",
+  "email": "&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Perth Business Centre",
+    "addressLocality": "Perth",
+    "addressRegion": "Scotland",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "56.3950",
+    "longitude": "-3.4312"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday","Tuesday","Wednesday",
+      "Thursday","Friday","Saturday","Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Scotland"
+  },
+  "serviceType": [
+    "Airport Transfer",
+    "Private Driver Hire",
+    "Executive Travel",
+    "Wedding Hire",
+    "Day Tours",
+    "Long Distance Transport",
+    "Package Delivery"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "4",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "James M."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Absolutely incredible service. Our Edinburgh airport transfer was waiting even though our flight was 40 minutes late."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Sophie & Laurent D."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "We booked a full Isle of Skye day tour and it was the highlight of our entire Scotland trip."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Robert K."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Used the executive hire for three days during a business conference in Edinburgh. Punctual, professional, and discreet."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Fiona & Alan T."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Booked a whisky distillery tour for my partner's birthday. Fixed price, no stress, no crowds."
+    }
+  ]
+}
+</script>
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theartistor-design.github.io/247texis-/">
+<meta property="og:title" content="Scotland 247 Taxis | Airport Transfers, Day Tours & Private Hire Across Scotland">
+<meta property="og:description" content="Scotland's premier private hire network. Fixed-price airport transfers, private Highland day tours, executive travel and vehicle hire. Book via WhatsApp. Available 24/7.">
+<meta property="og:image" content="https://theartistor-design.github.io/247texis-/hero-unified-bg.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Scotland 247 Taxis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scotland 247 Taxis | Airport Transfers & Private Hire Across Scotland">
+<meta name="twitter:description" content="Fixed-price airport transfers, private Highland day tours, executive travel and vehicle hire across Scotland. Book via WhatsApp.">
+<meta name="twitter:image" content="https://theartistor-design.github.io/247texis-/hero-unified-bg.jpg">
+
 
 <style>
     /* Floating Overlap Gallery Styles */
@@ -851,17 +1022,17 @@
     <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a href="../index.html#home" class="flex items-center">
-                <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/>
+                <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/ loading="lazy" decoding="async" width="256" height="256">
             </a>
 <nav class="hidden lg:flex items-center space-x-8">
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#home">Home</a>
 <div class="relative group nav-dropdown-trigger">
     <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="index.html#services">
-        Services <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+        Services <span class="text-[12px] transition-transform duration-300 group-hover:rotate-180 inline-block">⌄</span>
     </a>
     <!-- Dropdown content -->
     <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] border-t-[3px] border-[#c9a84c] p-[12px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col gap-[4px]">
-        <a href="../services/airport-transfers/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/airport-transfers" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_airport</span>
             </div>
@@ -870,7 +1041,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Fixed price, flight tracked transfers</span>
             </div>
         </a>
-        <a href="../services/wedding-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/wedding-hire" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">favorite</span>
             </div>
@@ -879,7 +1050,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Timeless luxury for your perfect day</span>
             </div>
         </a>
-        <a href="../services/private-driver/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/private-driver" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">person</span>
             </div>
@@ -888,7 +1059,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Dedicated driver, custom schedule</span>
             </div>
         </a>
-        <a href="../services/vehicle-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/vehicle-hire" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">key</span>
             </div>
@@ -897,7 +1068,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Book from 4 hours to 7 days</span>
             </div>
         </a>
-        <a href="../services/executive-travel/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/executive-travel" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">work</span>
             </div>
@@ -906,7 +1077,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Premium corporate chauffeur service</span>
             </div>
         </a>
-        <a href="../services/multi-stop/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/multi-stop" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">alt_route</span>
             </div>
@@ -915,7 +1086,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">One booking, multiple destinations</span>
             </div>
         </a>
-        <a href="../services/long-distance/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/long-distance" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">directions_car</span>
             </div>
@@ -924,7 +1095,7 @@
                 <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Private hire across every mile</span>
             </div>
         </a>
-        <a href="../services/package-delivery/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+        <a href="/247texis-/services/package-delivery" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
                 <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_shipping</span>
             </div>
@@ -935,8 +1106,8 @@
         </a>
     </div>
 </div>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#popular-routes">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/wedding-hire">Wedding Hire</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#airports">Airports</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/services/wedding-hire">Wedding Hire</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#fleet">Fleet</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="../index.html#faq">FAQ</a>
@@ -953,7 +1124,7 @@
 
     <!-- Hero Banner -->
     <section class="relative min-h-[400px] flex items-center justify-center overflow-hidden py-20 text-white">
-        <img src="../hero-unified-bg.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0" alt="Scotland 247 Taxis Services Hero"/>
+        <img src="../hero-unified-bg.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0" alt="Scotland 247 Taxis Services Hero"/ loading="eager" width="1600" height="1600">
         <div class="absolute inset-0 bg-[#001A3F]/85 backdrop-blur-[2px] z-0"></div>
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
             <!-- Breadcrumbs -->
@@ -975,7 +1146,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-airport-hero.webp" loading="lazy" alt="Airport Transfers" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-airport-hero.webp" alt="Airport Transfers" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -995,7 +1166,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-wedding-hero.webp" loading="lazy" alt="Wedding Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-wedding-hero.webp" alt="Wedding Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1015,7 +1186,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-driver-hero.webp" loading="lazy" alt="Private Driver Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-driver-hero.webp" alt="Private Driver Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1035,7 +1206,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-hire-hero.webp" loading="lazy" alt="Flexible Vehicle Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-hire-hero.webp" alt="Flexible Vehicle Hire" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1055,7 +1226,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-exec-hero.webp" loading="lazy" alt="Executive Travel" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-exec-hero.webp" alt="Executive Travel" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1075,7 +1246,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-multistop-hero.webp" loading="lazy" alt="Multi-Stop Journeys" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-multistop-hero.webp" alt="Multi-Stop Journeys" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1095,7 +1266,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-longdist-hero.webp" loading="lazy" alt="Long Distance Transport" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-longdist-hero.webp" alt="Long Distance Transport" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1115,7 +1286,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-delivery-hero.webp" loading="lazy" alt="Package Delivery" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-delivery-hero.webp" alt="Package Delivery" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1135,7 +1306,7 @@
             <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] group overflow-hidden">
                 
         <div class="h-[200px] w-full relative overflow-hidden">
-            <img src="../svc-tours-hero.webp" loading="lazy" alt="Private Day Tours" class="w-full h-full object-cover object-center rounded-t-[12px]"/>
+            <img src="../svc-tours-hero.webp" alt="Private Day Tours" class="w-full h-full object-cover object-center rounded-t-[12px]"/ loading="lazy" decoding="async" width="1600" height="1600">
             <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));"></div>
         </div>
         
@@ -1159,12 +1330,11 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="space-y-4">
 <div style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;" class="inline-block mb-4">
-                    <img src="../logo.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/>
+                    <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/ loading="lazy" decoding="async" width="256" height="256">
                 </div>
 <p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
 <div class="flex space-x-4 mt-6">
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:info@scotland247taxis.co.uk"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;"><span class="material-symbols-outlined">mail</span></a>
 <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
 </div>
 </div>
@@ -1181,28 +1351,28 @@
         Chat on WhatsApp
     </a>
 </li>
-<li>Email: info@scotland247taxis.co.uk</li>
+<li>Email: &#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</li>
 <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#popular-routes">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/wedding-hire">Wedding Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#services">Executive Travel</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#airports">Airport Transfers</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/wedding-hire">Wedding Hire</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/executive-travel">Executive Travel</a></li>
 <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#hire-packages">Vehicle Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#services">Multi-Stop Journeys</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#contact-us">Contact</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/multi-stop">Multi-Stop Journeys</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../index.html#contact">Contact</a></li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-title-md text-title-md text-prestige-gold">Legal</h4>
 <ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Cookie Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="#">Accessibility</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/terms">Terms of Service</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/privacy">Privacy Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/cookies">Cookie Policy</a></li>
+<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/accessibility">Accessibility</a></li>
 </ul>
 </div>
 </div>
@@ -1213,5 +1383,35 @@
 </div>
 </footer>
 
+
+    <script>
+    // Add active state to nav links based on current path
+    document.addEventListener('DOMContentLoaded', () => {
+        const pathName = window.location.pathname;
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu-overlay nav a');
+        
+        // Add nav-link class to header and mobile links if not present
+        document.querySelectorAll('nav a:not(.nav-link), #mobile-menu-overlay nav a:not(.nav-link)').forEach(el => {
+            el.classList.add('nav-link');
+        });
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                const linkPath = href.split('#')[0].split('?')[0];
+                const normalizedPathName = pathName.replace(/\/g, '/');
+                if (linkPath && normalizedPathName.endsWith(linkPath)) {
+                    link.classList.add('active');
+                } else if ((normalizedPathName === '/247texis-/' || normalizedPathName === '/247texis-/index.html' || normalizedPathName.endsWith('/stitch_ui_design_replicator/') || normalizedPathName.endsWith('/stitch_ui_design_replicator/index.html')) && (linkPath === '#home' || linkPath === '#services' || linkPath.endsWith('index.html'))) {
+                    // Highlight home on root
+                    if (link.textContent.trim() === 'Home') {
+                        link.classList.add('active');
+                    }
+                }
+            }
+        });
+    });
+    </script>
+    
 </body>
 </html>

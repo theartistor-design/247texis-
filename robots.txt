@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://scotland247taxis.co.uk/sitemap.xml
+Sitemap: https://theartistor-design.github.io/247texis-/sitemap.xml
