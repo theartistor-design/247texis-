@@ -2255,44 +2255,158 @@
     </script>
     
 
-<script>
-/* ── Scotland 247 Taxis – Booking Form Logic ── */
-(function() {
 
-    // ── Validation helpers ──────────────────────────────
-    function showFieldError(field, msg) {
-        if (!field) return;
-        field.style.borderColor = '#ef4444';
-        let err = field.parentNode.querySelector('.field-error');
-        if (!err) {
-            err = document.createElement('p');
-            err.className = 'field-error';
-            err.style.cssText = 'color:#ef4444;font-size:12px;font-weight:600;margin-top:4px;';
-            field.parentNode.appendChild(err);
+
+
+<script id="s247-master">
+/* ═══════════════════════════════════════════════════════
+   Scotland 247 Taxis — Master Interactive Script
+   Handles: mobile menu, form steps, vehicle selection,
+            flight visibility, validation, WhatsApp submit.
+   ═══════════════════════════════════════════════════════ */
+(function() {
+    'use strict';
+
+    /* ── 1. MOBILE MENU ───────────────────────────────── */
+    function initMobileMenu() {
+        var menuBtn   = document.getElementById('mobile-menu-btn');
+        var overlay   = document.getElementById('mobile-menu-overlay');
+        var closeBtn  = document.getElementById('mobile-menu-close');
+        var submenu   = document.getElementById('mobile-services-submenu');
+        var servLink  = document.querySelector('#mobile-menu-overlay a[href="#services"], #mobile-menu-overlay a[href*="index.html#services"]');
+        var backBtn   = document.getElementById('back-services-btn');
+        var closeSvcBtn = document.getElementById('close-services-btn');
+
+        if (!menuBtn || !overlay) return;
+
+        function openMenu() {
+            overlay.classList.remove('opacity-0','pointer-events-none');
+            overlay.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
         }
-        err.textContent = msg;
+        function closeMenu() {
+            overlay.classList.add('opacity-0','pointer-events-none');
+            overlay.classList.remove('opacity-100');
+            document.body.style.overflow = '';
+            if (submenu) closeSubmenu();
+        }
+        function openSubmenu() {
+            if (submenu) {
+                submenu.classList.remove('translate-x-full');
+                submenu.classList.add('translate-x-0');
+            }
+        }
+        function closeSubmenu() {
+            if (submenu) {
+                submenu.classList.add('translate-x-full');
+                submenu.classList.remove('translate-x-0');
+            }
+        }
+
+        menuBtn.addEventListener('click',  openMenu);
+        menuBtn.addEventListener('touchend', function(e){ e.preventDefault(); openMenu(); });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click',    closeMenu);
+            closeBtn.addEventListener('touchend', function(e){ e.preventDefault(); closeMenu(); });
+        }
+        if (servLink) {
+            servLink.addEventListener('click', function(e){ e.preventDefault(); openSubmenu(); });
+        }
+        if (backBtn)     backBtn.addEventListener('click',    closeSubmenu);
+        if (closeSvcBtn) closeSvcBtn.addEventListener('click', closeMenu);
+
+        // Close when clicking backdrop
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeMenu();
+        });
+        // Close menu links that navigate away
+        overlay.querySelectorAll('a:not([href="#services"]):not([href*="index.html#services"])').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
     }
 
-    function clearFieldError(field) {
+    /* ── 2. FORM STEP NAVIGATION ──────────────────────── */
+    var currentStep = 1;
+
+    function goToStep(step) {
+        // Validate all steps before the target
+        if (step > currentStep) {
+            for (var s = currentStep; s < step; s++) {
+                if (!validateStep(s)) return;
+            }
+        }
+        currentStep = step;
+
+        // Update pills
+        document.querySelectorAll('.step-pill').forEach(function(pill, idx) {
+            if (idx === step - 1) {
+                pill.classList.remove('bg-[#f0f0f0]','text-[#666666]');
+                pill.classList.add('bg-[#c9a84c]','text-white');
+            } else {
+                pill.classList.remove('bg-[#c9a84c]','text-white');
+                pill.classList.add('bg-[#f0f0f0]','text-[#666666]');
+            }
+        });
+
+        // Show/hide step content panels
+        document.querySelectorAll('.step-content').forEach(function(panel, idx) {
+            if (idx === step - 1) {
+                panel.classList.remove('hidden');
+            } else {
+                panel.classList.add('hidden');
+            }
+        });
+
+        // Scroll to form
+        var q = document.getElementById('quote');
+        if (q) q.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function handleNextStep(step) {
+        if (validateStep(step)) goToStep(step + 1);
+    }
+
+    // Expose globally (override any previous definitions)
+    window.goToStep      = goToStep;
+    window.handleNextStep = handleNextStep;
+
+    /* ── 3. VALIDATION ────────────────────────────────── */
+    function showErr(field, msg) {
+        if (!field) return;
+        field.style.borderColor = '#ef4444';
+        var p = field.parentNode;
+        if (!p) return;
+        var e = p.querySelector('.field-error');
+        if (!e) {
+            e = document.createElement('p');
+            e.className = 'field-error';
+            e.style.cssText = 'color:#ef4444;font-size:12px;font-weight:600;margin-top:4px;';
+            p.appendChild(e);
+        }
+        e.textContent = msg;
+    }
+
+    function clearErr(field) {
         if (!field) return;
         field.style.borderColor = '';
-        const err = field.parentNode ? field.parentNode.querySelector('.field-error') : null;
-        if (err) err.remove();
+        var p = field.parentNode;
+        if (p) { var e = p.querySelector('.field-error'); if (e) e.remove(); }
     }
 
     function validateStep(step) {
-        let valid = true;
-        let firstBad = null;
+        var ok = true;
+        var bad = null;
 
-        function req(id, customMsg) {
-            const el = document.getElementById(id);
+        function req(id, msg, rule) {
+            var el = document.getElementById(id);
             if (!el) return;
-            clearFieldError(el);
-            const val = el.value ? el.value.trim() : '';
-            if (!val) {
-                showFieldError(el, customMsg || 'This field is required');
-                valid = false;
-                if (!firstBad) firstBad = el;
+            clearErr(el);
+            var fail = rule ? rule(el) : !el.value.trim();
+            if (fail) {
+                showErr(el, msg || 'This field is required');
+                ok = false;
+                if (!bad) bad = el;
             }
         }
 
@@ -2300,184 +2414,307 @@
             req('booking-journey-type');
             req('booking-service-type');
             req('booking-pickup');
-            const jt = document.getElementById('booking-journey-type');
-            if (!jt || jt.value !== 'hourly') req('booking-dropoff');
+            var jt = document.getElementById('booking-journey-type');
+            if (!jt || jt.value !== 'hourly') {
+                req('booking-dropoff');
+            } else {
+                req('booking-hours', 'Minimum 2 hours', function(f){ return !f.value || parseInt(f.value) < 2; });
+            }
         } else if (step === 2) {
             req('booking-date');
             req('booking-time');
             req('booking-passengers');
-            // Vehicle type check
-            const vt = document.getElementById('selected-vehicle');
-            if (vt) {
-                clearFieldError(vt);
-                if (!vt.value) {
-                    showFieldError(vt, 'Please select a vehicle type');
-                    valid = false;
-                    if (!firstBad) firstBad = vt;
-                }
+            var sv = document.getElementById('selected-vehicle');
+            if (sv) {
+                clearErr(sv);
+                if (!sv.value) { showErr(sv, 'Please select a vehicle type'); ok = false; if (!bad) bad = sv; }
             }
         } else if (step === 3) {
             req('booking-name');
-            const wp = document.getElementById('booking-whatsapp');
+            var wp = document.getElementById('booking-whatsapp');
             if (wp) {
-                clearFieldError(wp);
-                const digits = wp.value.replace(/[^0-9]/g, '');
+                clearErr(wp);
+                var digits = wp.value.replace(/[^0-9]/g, '');
                 if (digits.length < 10) {
-                    showFieldError(wp, 'Enter a valid phone number (min 10 digits)');
-                    valid = false;
-                    if (!firstBad) firstBad = wp;
+                    showErr(wp, 'Enter a valid phone number (min 10 digits)');
+                    ok = false; if (!bad) bad = wp;
                 }
             }
         }
 
-        if (firstBad) {
-            firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            firstBad.focus();
-        }
-        return valid;
+        if (bad) { bad.scrollIntoView({ behavior: 'smooth', block: 'center' }); bad.focus(); }
+        return ok;
     }
 
-    // ── Step navigation ──────────────────────────────────
-    const origGoToStep = window.goToStep;
-    window.goToStep = function(step) {
-        const cur = window._currentStep || 1;
-        if (step > cur) {
-            for (let s = cur; s < step; s++) {
-                if (!validateStep(s)) return;
+    // Clear errors live
+    document.querySelectorAll('form input, form select, form textarea').forEach(function(el) {
+        el.addEventListener('input',  function(){ clearErr(el); });
+        el.addEventListener('change', function(){ clearErr(el); });
+    });
+
+    /* ── 4. VEHICLE SELECTION ─────────────────────────── */
+    function setVehicleTypeBtn(type) {
+        ['standard','executive','van'].forEach(function(t) {
+            var btn = document.getElementById('btn-vehicle-' + t);
+            if (!btn) return;
+            if (t === type) {
+                btn.style.background    = '#c9a84c';
+                btn.style.color         = '#000';
+                btn.style.borderColor   = '#c9a84c';
+            } else {
+                btn.style.background    = '';
+                btn.style.color         = '';
+                btn.style.borderColor   = '';
             }
-        }
-        window._currentStep = step;
-        // Delegate to existing wizard logic
-        if (origGoToStep && typeof origGoToStep === 'function') {
-            origGoToStep(step);
-        } else {
-            // Fallback: show/hide step-content divs
-            document.querySelectorAll('.step-content').forEach((el, idx) => {
-                el.classList.toggle('hidden', idx !== step - 1);
-            });
-            document.querySelectorAll('.step-pill').forEach((el, idx) => {
-                if (idx === step - 1) {
-                    el.classList.remove('bg-[#f0f0f0]', 'text-[#666666]');
-                    el.classList.add('bg-[#c9a84c]', 'text-white');
-                } else {
-                    el.classList.remove('bg-[#c9a84c]', 'text-white');
-                    el.classList.add('bg-[#f0f0f0]', 'text-[#666666]');
+        });
+    }
+
+    function selectVehicleType(type) {
+        // Update hidden input
+        var sv = document.getElementById('selected-vehicle');
+        if (sv) sv.value = type;
+
+        // Highlight the selected button
+        setVehicleTypeBtn(type);
+
+        // Show/hide sub-option containers
+        var containers = {
+            standard:  document.getElementById('options-standard-container'),
+            executive: document.getElementById('options-executive-container'),
+            van:       document.getElementById('options-van-container')
+        };
+
+        Object.keys(containers).forEach(function(t) {
+            var c = containers[t];
+            if (!c) return;
+            if (t === type) {
+                c.classList.remove('hidden');
+                if (window.gsap) {
+                    gsap.fromTo(c, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
                 }
-            });
+            } else {
+                c.classList.add('hidden');
+            }
+        });
+
+        // Default specific vehicle selection
+        if (type === 'standard')  selectSpecificVehicle('standard',  'Toyota Corolla');
+        if (type === 'executive') selectSpecificVehicle('executive', 'Range Rover');
+        if (type === 'van')       selectSpecificVehicle('van',       'Volkswagen Caddy');
+
+        // Luggage warning check
+        checkLuggageUpgrade();
+    }
+
+    function selectSpecificVehicle(category, name) {
+        var specInput = document.getElementById('selected-specific-vehicle');
+        if (specInput) specInput.value = name;
+
+        var allSubs = {
+            standard:  [
+                { id: 'sub-vehicle-corolla',  checkId: 'check-sub-corolla',  name: 'Toyota Corolla'    },
+                { id: 'sub-vehicle-caddy',    checkId: 'check-sub-caddy',    name: 'Volkswagen Caddy'  }
+            ],
+            executive: [
+                { id: 'sub-vehicle-rangerover',       checkId: 'check-sub-rangerover',       name: 'Range Rover'         },
+                { id: 'sub-vehicle-audirs7',           checkId: 'check-sub-audirs7',           name: 'Audi RS7'             },
+                { id: 'sub-vehicle-rangerover7',       checkId: 'check-sub-rangerover7',       name: 'Range Rover 7-Seater' },
+                { id: 'sub-vehicle-mercedes',          checkId: 'check-sub-mercedes',          name: 'Mercedes S-Class'     }
+            ],
+            van:       [
+                { id: 'sub-vehicle-vw-caddy', checkId: 'check-sub-vw-caddy', name: 'Volkswagen Caddy' }
+            ]
+        };
+
+        var list = allSubs[category] || [];
+        list.forEach(function(v) {
+            var card  = document.getElementById(v.id);
+            var check = document.getElementById(v.checkId);
+            if (!card || !check) return;
+            if (v.name === name) {
+                card.style.borderColor = '#c9a84c';
+                check.classList.remove('hidden');
+                check.classList.add('flex');
+                if (window.gsap) gsap.fromTo(check, { scale: 0.7 }, { scale: 1, duration: 0.3, ease: 'back.out(2)' });
+            } else {
+                card.style.borderColor = '';
+                check.classList.add('hidden');
+                check.classList.remove('flex');
+            }
+        });
+    }
+
+    // Expose globally
+    window.selectVehicleType    = selectVehicleType;
+    window.selectSpecificVehicle = selectSpecificVehicle;
+    // Legacy alias used in some onclick attributes
+    window.selectVehicle = selectVehicleType;
+
+    // Attach click handlers to the 3 vehicle-type buttons
+    ['standard','executive','van'].forEach(function(type) {
+        var btn = document.getElementById('btn-vehicle-' + type);
+        if (btn) {
+            btn.addEventListener('click',    function(){ selectVehicleType(type); });
+            btn.addEventListener('touchend', function(e){ e.preventDefault(); selectVehicleType(type); });
         }
-        const quoteEl = document.getElementById('quote');
-        if (quoteEl) quoteEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
+    });
 
-    window.handleNextStep = function(step) {
-        if (validateStep(step)) window.goToStep(step + 1);
-    };
+    // Init: select standard by default
+    (function initVehicle() {
+        var sv = document.getElementById('selected-vehicle');
+        var initType = sv ? (sv.value || 'standard') : 'standard';
+        setVehicleTypeBtn(initType);
+        // Make sure the default sub-options container is visible
+        var initContainer = document.getElementById('options-' + initType + '-container');
+        if (initContainer) initContainer.classList.remove('hidden');
+        if (initType === 'standard') selectSpecificVehicle('standard', 'Toyota Corolla');
+    })();
 
-    // ── Flight number conditional show/hide ──────────────
+    /* ── 5. FLIGHT NUMBER VISIBILITY ─────────────────── */
     function updateFlightVisibility() {
-        const container = document.getElementById('flight-container');
+        var container = document.getElementById('flight-container');
         if (!container) return;
-        const svc = (document.getElementById('booking-service-type') || {}).value || '';
-        const pickup = (document.getElementById('booking-pickup') || {}).value || '';
-        const dropoff = (document.getElementById('booking-dropoff') || {}).value || '';
-        const show = svc.toLowerCase().includes('airport') ||
-                     pickup.toLowerCase().includes('airport') ||
-                     dropoff.toLowerCase().includes('airport');
+        var svc    = (document.getElementById('booking-service-type') || {}).value || '';
+        var pickup = (document.getElementById('booking-pickup')       || {}).value || '';
+        var dropoff = (document.getElementById('booking-dropoff')     || {}).value || '';
+        var show = svc.toLowerCase().includes('airport') ||
+                   pickup.toLowerCase().includes('airport') ||
+                   dropoff.toLowerCase().includes('airport');
         container.style.display = show ? '' : 'none';
         if (!show) {
-            const fi = document.getElementById('booking-flight');
+            var fi = document.getElementById('booking-flight');
             if (fi) fi.value = '';
         }
     }
 
-    ['booking-service-type', 'booking-pickup', 'booking-dropoff'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', updateFlightVisibility);
-        if (el) el.addEventListener('change', updateFlightVisibility);
+    ['booking-service-type','booking-pickup','booking-dropoff'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) { el.addEventListener('input', updateFlightVisibility); el.addEventListener('change', updateFlightVisibility); }
     });
-    updateFlightVisibility(); // run once on load
+    updateFlightVisibility();
 
-    // ── Clear errors on input ────────────────────────────
-    document.querySelectorAll('#booking-journey-type, #booking-service-type, #booking-pickup, #booking-dropoff, #booking-date, #booking-time, #booking-passengers, #booking-name, #booking-whatsapp').forEach(el => {
-        el.addEventListener('input', () => clearFieldError(el));
-        el.addEventListener('change', () => clearFieldError(el));
-    });
-
-    // ── WhatsApp form submission ─────────────────────────
-    const form = document.querySelector('form');
-    if (!form) return;
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (!validateStep(1) || !validateStep(2) || !validateStep(3)) return;
-
-        const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
-
-        const name         = g('booking-name');
-        const journeyType  = g('booking-journey-type');
-        const serviceType  = g('booking-service-type');
-        const pickup       = g('booking-pickup');
-        const dropoff      = journeyType === 'hourly' ? 'N/A (Hourly)' : g('booking-dropoff');
-        const date         = g('booking-date');
-        const time         = g('booking-time');
-        const passengers   = g('booking-passengers');
-        const luggage      = g('booking-luggage');
-        const hours        = journeyType === 'hourly' ? g('booking-hours') : 'N/A';
-        const flight       = g('booking-flight') || 'None';
-        const wpNum        = g('booking-whatsapp');
-        const email        = g('booking-email') || 'None';
-        const notes        = g('booking-notes') || 'None';
-        const vehicleEl    = document.getElementById('selected-vehicle');
-        const vehicle      = vehicleEl ? vehicleEl.value : '';
-        const specVehicleEl = document.getElementById('selected-specific-vehicle');
-        const specVehicle  = specVehicleEl ? specVehicleEl.value : 'None';
-
-        const vehicleNames = { standard: 'Standard Car', executive: 'Executive Car', van: '6-Seater Van' };
-        const vehicleLabel = (vehicleNames[vehicle] || vehicle) + (specVehicle && specVehicle !== 'None' ? ' (' + specVehicle + ')' : '');
-
-        const leadMsg = [
-            'New Booking Request',
-            'Name: ' + name,
-            'Journey Type: ' + journeyType,
-            'Service Type: ' + serviceType,
-            'From: ' + pickup,
-            'To: ' + dropoff,
-            'Date: ' + date,
-            'Time: ' + time,
-            'Passengers: ' + passengers,
-            'Luggage: ' + luggage,
-            'Vehicle: ' + vehicleLabel,
-            'Specific Vehicle: ' + specVehicle,
-            'Flight Number: ' + flight,
-            'Hours: ' + hours,
-            'WhatsApp: ' + wpNum,
-            'Email: ' + email,
-            'Notes: ' + notes,
-        ].join('\n');
-
-        const confirmMsg = 'Hi ' + name + ', thank you for contacting Scotland 247 Taxis. We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.';
-
-        // 1. Open lead message window
-        window.open('https://wa.me/447469598219?text=' + encodeURIComponent(leadMsg), '_blank');
-
-        // 2. After 2s, open customer confirmation
-        const cleanWp = wpNum.replace(/[^0-9+]/g, '').replace(/^\+/, '');
-        if (cleanWp.length >= 10) {
-            setTimeout(function() {
-                window.open('https://wa.me/' + cleanWp + '?text=' + encodeURIComponent(confirmMsg), '_blank');
-            }, 2000);
+    /* ── 6. HOURLY/DROPOFF TOGGLE ─────────────────────── */
+    function updateJourneyType() {
+        var jt = document.getElementById('booking-journey-type');
+        var dropRow = document.getElementById('dropoff-row');
+        var hoursRow = document.getElementById('hours-row');
+        if (!jt) return;
+        if (jt.value === 'hourly') {
+            if (dropRow)  dropRow.style.display  = 'none';
+            if (hoursRow) hoursRow.style.display = '';
+        } else {
+            if (dropRow)  dropRow.style.display  = '';
+            if (hoursRow) hoursRow.style.display = 'none';
         }
+    }
+    var jtSel = document.getElementById('booking-journey-type');
+    if (jtSel) { jtSel.addEventListener('change', updateJourneyType); updateJourneyType(); }
 
-        // 3. Show on-screen thank you message
-        const formParent = form.closest('#quote') || form.parentElement;
-        if (formParent) {
-            formParent.innerHTML = '<div style="text-align:center;padding:60px 20px;">' +
-                '<div style="font-size:48px;margin-bottom:16px;">✅</div>' +
-                '<h3 style="font-size:24px;font-weight:700;color:#0A1F44;margin-bottom:12px;">Thank you! Your request has been sent.</h3>' +
-                '<p style="color:#666;font-size:16px;max-width:400px;margin:0 auto;">We will respond on WhatsApp shortly. If you have urgent queries, message us directly at <strong>+44 7469 598219</strong>.</p>' +
-                '</div>';
+    /* ── 7. LUGGAGE UPGRADE WARNING ───────────────────── */
+    function checkLuggageUpgrade() {
+        var sv = document.getElementById('selected-vehicle');
+        var ls = document.getElementById('booking-luggage');
+        var wc = document.getElementById('luggage-warning-container');
+        if (!sv || !ls || !wc) return;
+        if (sv.value === 'standard' && parseInt(ls.value) >= 3) {
+            wc.classList.remove('hidden');
+        } else {
+            wc.classList.add('hidden');
         }
-    }, { once: true });
+    }
+    var lugSel = document.getElementById('booking-luggage');
+    if (lugSel) lugSel.addEventListener('change', checkLuggageUpgrade);
+
+    var upgrBtn = document.getElementById('upgrade-vehicle-btn');
+    if (upgrBtn) {
+        upgrBtn.addEventListener('click', function() {
+            selectVehicleType('van');
+            var wc = document.getElementById('luggage-warning-container');
+            if (wc) wc.classList.add('hidden');
+        });
+    }
+
+    /* ── 8. WHATSAPP FORM SUBMISSION ──────────────────── */
+    // Remove any previously cloned form to avoid duplicate handlers
+    var form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function handleSubmit(e) {
+            e.preventDefault();
+            form.removeEventListener('submit', handleSubmit);
+            if (!validateStep(1) || !validateStep(2) || !validateStep(3)) return;
+
+            var g = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+            var name         = g('booking-name');
+            var journeyType  = g('booking-journey-type');
+            var serviceType  = g('booking-service-type');
+            var pickup       = g('booking-pickup');
+            var dropoff      = journeyType === 'hourly' ? 'N/A (Hourly)' : g('booking-dropoff');
+            var date         = g('booking-date');
+            var time         = g('booking-time');
+            var passengers   = g('booking-passengers');
+            var luggage      = g('booking-luggage');
+            var hours        = journeyType === 'hourly' ? g('booking-hours') : 'N/A';
+            var flight       = g('booking-flight') || 'None';
+            var wpNum        = g('booking-whatsapp');
+            var email        = g('booking-email') || 'None';
+            var notes        = g('booking-notes') || 'None';
+            var vehicleEl    = document.getElementById('selected-vehicle');
+            var vehicle      = vehicleEl ? vehicleEl.value : '';
+            var specVehicleEl = document.getElementById('selected-specific-vehicle');
+            var specVehicle  = specVehicleEl ? specVehicleEl.value : 'None';
+            var vehicleNames = { standard: 'Standard Car', executive: 'Executive Car', van: '6-Seater Van' };
+            var vehicleLabel = (vehicleNames[vehicle] || vehicle) + (specVehicle && specVehicle !== 'None' ? ' (' + specVehicle + ')' : '');
+
+            var leadMsg = [
+                'New Booking Request',
+                'Name: ' + name,
+                'Journey Type: ' + journeyType,
+                'Service Type: ' + serviceType,
+                'From: ' + pickup,
+                'To: ' + dropoff,
+                'Date: ' + date,
+                'Time: ' + time,
+                'Passengers: ' + passengers,
+                'Luggage: ' + luggage,
+                'Vehicle: ' + vehicleLabel,
+                'Specific Vehicle: ' + specVehicle,
+                'Flight Number: ' + flight,
+                'Hours: ' + hours,
+                'WhatsApp: ' + wpNum,
+                'Email: ' + email,
+                'Notes: ' + notes
+            ].join('\n');
+
+            var confirmMsg = 'Hi ' + name + ', thank you for contacting Scotland 247 Taxis. We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.';
+
+            window.open('https://wa.me/447469598219?text=' + encodeURIComponent(leadMsg), '_blank');
+
+            var cleanWp = wpNum.replace(/[^0-9]/g, '');
+            if (cleanWp.length >= 10) {
+                setTimeout(function() {
+                    window.open('https://wa.me/' + cleanWp + '?text=' + encodeURIComponent(confirmMsg), '_blank');
+                }, 2000);
+            }
+
+            // Show thank-you
+            var parent = form.closest('#quote') || form.parentElement;
+            if (parent) {
+                parent.innerHTML = '<div style="text-align:center;padding:60px 20px;">' +
+                    '<div style="font-size:48px;margin-bottom:16px;">&#x2705;</div>' +
+                    '<h3 style="font-size:24px;font-weight:700;color:#0A1F44;margin-bottom:12px;">Thank you! Your request has been sent.</h3>' +
+                    '<p style="color:#555;font-size:16px;max-width:420px;margin:0 auto;">We will respond on WhatsApp shortly. For urgent queries message us at <strong>+44 7469 598219</strong>.</p>' +
+                    '</div>';
+            }
+        });
+    }
+
+    /* ── 9. INIT on DOM ready ─────────────────────────── */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
 
 })();
 </script>

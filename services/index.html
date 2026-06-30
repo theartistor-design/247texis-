@@ -1461,5 +1461,36 @@
     });
     </script>
     
+
+<script id="s247-master-nav">
+/* Scotland 247 Taxis — Mobile Menu */
+(function(){
+    'use strict';
+    function initMobileMenu(){
+        var menuBtn=document.getElementById('mobile-menu-btn'),
+            overlay=document.getElementById('mobile-menu-overlay'),
+            closeBtn=document.getElementById('mobile-menu-close'),
+            submenu=document.getElementById('mobile-services-submenu'),
+            backBtn=document.getElementById('back-services-btn'),
+            closeSvcBtn=document.getElementById('close-services-btn');
+        if(!menuBtn||!overlay)return;
+        function openMenu(){overlay.classList.remove('opacity-0','pointer-events-none');overlay.classList.add('opacity-100');document.body.style.overflow='hidden';}
+        function closeMenu(){overlay.classList.add('opacity-0','pointer-events-none');overlay.classList.remove('opacity-100');document.body.style.overflow='';closeSubmenu();}
+        function openSubmenu(){if(submenu){submenu.classList.remove('translate-x-full');submenu.classList.add('translate-x-0');}}
+        function closeSubmenu(){if(submenu){submenu.classList.add('translate-x-full');submenu.classList.remove('translate-x-0');}}
+        menuBtn.addEventListener('click',openMenu);
+        menuBtn.addEventListener('touchend',function(e){e.preventDefault();openMenu();});
+        if(closeBtn){closeBtn.addEventListener('click',closeMenu);closeBtn.addEventListener('touchend',function(e){e.preventDefault();closeMenu();});}
+        var svcLink=overlay.querySelector('a[href="#services"],a[href*="index.html#services"]');
+        if(svcLink)svcLink.addEventListener('click',function(e){e.preventDefault();openSubmenu();});
+        if(backBtn)backBtn.addEventListener('click',closeSubmenu);
+        if(closeSvcBtn)closeSvcBtn.addEventListener('click',closeMenu);
+        overlay.addEventListener('click',function(e){if(e.target===overlay)closeMenu();});
+        overlay.querySelectorAll('a').forEach(function(a){if(!a.href.includes('#services'))a.addEventListener('click',closeMenu);});
+    }
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
 </body>
 </html>
