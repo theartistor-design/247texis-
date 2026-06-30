@@ -1,83 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://theartistor-design.github.io/247texis-/</loc>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/airport-transfers</loc>
-<changefreq>monthly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/wedding-hire</loc>
-<changefreq>monthly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/private-driver</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/vehicle-hire</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/executive-travel</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/multi-stop</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/long-distance</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/package-delivery</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/services/day-tours</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-inverness/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-aberdeen/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-fort-william/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/terms</loc>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/privacy</loc>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-<url>
-<loc>https://theartistor-design.github.io/247texis-/cookies</loc>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/airport-transfers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/wedding-hire/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/private-driver/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/vehicle-hire/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/executive-travel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/multi-stop/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/long-distance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/package-delivery/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/services/day-tours/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-inverness/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-aberdeen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/edinburgh-airport-to-fort-william/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/cookies/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://theartistor-design.github.io/247texis-/accessibility/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

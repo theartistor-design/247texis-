@@ -2079,11 +2079,7 @@
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
 <div>
 <div class="flex text-prestige-gold mb-4">
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span style="color:#c9a84c;font-size:1.2em;letter-spacing:2px;line-height:1;font-family:serif;">★★★★★</span>
 </div>
 <p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Absolutely incredible service. Our Edinburgh airport transfer was waiting even though our flight was 40 minutes late. The driver tracked it and adjusted without us even asking. Will never book any other way."</p>
 </div>
@@ -2094,11 +2090,7 @@
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
 <div>
 <div class="flex text-prestige-gold mb-4">
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span style="color:#c9a84c;font-size:1.2em;letter-spacing:2px;line-height:1;font-family:serif;">★★★★★</span>
 </div>
 <p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"We booked a full Isle of Skye day tour and it was the highlight of our entire Scotland trip. Our driver knew every perfect viewpoint and every story. Couldn't have done it without 247 Taxis Scotland."</p>
 </div>
@@ -2109,11 +2101,7 @@
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
 <div>
 <div class="flex text-prestige-gold mb-4">
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span style="color:#c9a84c;font-size:1.2em;letter-spacing:2px;line-height:1;font-family:serif;">★★★★★</span>
 </div>
 <p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Used the executive hire for three days during a business conference in Edinburgh. Punctual, professional, and discreet — exactly what corporate travel should be. My PA already has the number saved."</p>
 </div>
@@ -2124,11 +2112,7 @@
 <div class="absolute left-0 top-0 w-1 bg-prestige-gold border-left-accent h-0"></div>
 <div>
 <div class="flex text-prestige-gold mb-4">
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined star-icon inline-block" style="font-variation-settings: 'FILL' 1;">star</span>
+<span style="color:#c9a84c;font-size:1.2em;letter-spacing:2px;line-height:1;font-family:serif;">★★★★★</span>
 </div>
 <p class="font-headline-lg italic text-body-lg text-charcoal-text mb-6">"Booked a whisky distillery tour for my partner's birthday. The driver knew more about Speyside than we could have dreamed of. Fixed price, no stress, no crowds. Just an unforgettable day in Scotland."</p>
 </div>
@@ -3396,4 +3380,232 @@ Notes: ${notesVal}`;
     });
     </script>
     
+
+<script>
+/* ── Scotland 247 Taxis – Booking Form Logic ── */
+(function() {
+
+    // ── Validation helpers ──────────────────────────────
+    function showFieldError(field, msg) {
+        if (!field) return;
+        field.style.borderColor = '#ef4444';
+        let err = field.parentNode.querySelector('.field-error');
+        if (!err) {
+            err = document.createElement('p');
+            err.className = 'field-error';
+            err.style.cssText = 'color:#ef4444;font-size:12px;font-weight:600;margin-top:4px;';
+            field.parentNode.appendChild(err);
+        }
+        err.textContent = msg;
+    }
+
+    function clearFieldError(field) {
+        if (!field) return;
+        field.style.borderColor = '';
+        const err = field.parentNode ? field.parentNode.querySelector('.field-error') : null;
+        if (err) err.remove();
+    }
+
+    function validateStep(step) {
+        let valid = true;
+        let firstBad = null;
+
+        function req(id, customMsg) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            clearFieldError(el);
+            const val = el.value ? el.value.trim() : '';
+            if (!val) {
+                showFieldError(el, customMsg || 'This field is required');
+                valid = false;
+                if (!firstBad) firstBad = el;
+            }
+        }
+
+        if (step === 1) {
+            req('booking-journey-type');
+            req('booking-service-type');
+            req('booking-pickup');
+            const jt = document.getElementById('booking-journey-type');
+            if (!jt || jt.value !== 'hourly') req('booking-dropoff');
+        } else if (step === 2) {
+            req('booking-date');
+            req('booking-time');
+            req('booking-passengers');
+            // Vehicle type check
+            const vt = document.getElementById('selected-vehicle');
+            if (vt) {
+                clearFieldError(vt);
+                if (!vt.value) {
+                    showFieldError(vt, 'Please select a vehicle type');
+                    valid = false;
+                    if (!firstBad) firstBad = vt;
+                }
+            }
+        } else if (step === 3) {
+            req('booking-name');
+            const wp = document.getElementById('booking-whatsapp');
+            if (wp) {
+                clearFieldError(wp);
+                const digits = wp.value.replace(/[^0-9]/g, '');
+                if (digits.length < 10) {
+                    showFieldError(wp, 'Enter a valid phone number (min 10 digits)');
+                    valid = false;
+                    if (!firstBad) firstBad = wp;
+                }
+            }
+        }
+
+        if (firstBad) {
+            firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            firstBad.focus();
+        }
+        return valid;
+    }
+
+    // ── Step navigation ──────────────────────────────────
+    const origGoToStep = window.goToStep;
+    window.goToStep = function(step) {
+        const cur = window._currentStep || 1;
+        if (step > cur) {
+            for (let s = cur; s < step; s++) {
+                if (!validateStep(s)) return;
+            }
+        }
+        window._currentStep = step;
+        // Delegate to existing wizard logic
+        if (origGoToStep && typeof origGoToStep === 'function') {
+            origGoToStep(step);
+        } else {
+            // Fallback: show/hide step-content divs
+            document.querySelectorAll('.step-content').forEach((el, idx) => {
+                el.classList.toggle('hidden', idx !== step - 1);
+            });
+            document.querySelectorAll('.step-pill').forEach((el, idx) => {
+                if (idx === step - 1) {
+                    el.classList.remove('bg-[#f0f0f0]', 'text-[#666666]');
+                    el.classList.add('bg-[#c9a84c]', 'text-white');
+                } else {
+                    el.classList.remove('bg-[#c9a84c]', 'text-white');
+                    el.classList.add('bg-[#f0f0f0]', 'text-[#666666]');
+                }
+            });
+        }
+        const quoteEl = document.getElementById('quote');
+        if (quoteEl) quoteEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    window.handleNextStep = function(step) {
+        if (validateStep(step)) window.goToStep(step + 1);
+    };
+
+    // ── Flight number conditional show/hide ──────────────
+    function updateFlightVisibility() {
+        const container = document.getElementById('flight-container');
+        if (!container) return;
+        const svc = (document.getElementById('booking-service-type') || {}).value || '';
+        const pickup = (document.getElementById('booking-pickup') || {}).value || '';
+        const dropoff = (document.getElementById('booking-dropoff') || {}).value || '';
+        const show = svc.toLowerCase().includes('airport') ||
+                     pickup.toLowerCase().includes('airport') ||
+                     dropoff.toLowerCase().includes('airport');
+        container.style.display = show ? '' : 'none';
+        if (!show) {
+            const fi = document.getElementById('booking-flight');
+            if (fi) fi.value = '';
+        }
+    }
+
+    ['booking-service-type', 'booking-pickup', 'booking-dropoff'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateFlightVisibility);
+        if (el) el.addEventListener('change', updateFlightVisibility);
+    });
+    updateFlightVisibility(); // run once on load
+
+    // ── Clear errors on input ────────────────────────────
+    document.querySelectorAll('#booking-journey-type, #booking-service-type, #booking-pickup, #booking-dropoff, #booking-date, #booking-time, #booking-passengers, #booking-name, #booking-whatsapp').forEach(el => {
+        el.addEventListener('input', () => clearFieldError(el));
+        el.addEventListener('change', () => clearFieldError(el));
+    });
+
+    // ── WhatsApp form submission ─────────────────────────
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validateStep(1) || !validateStep(2) || !validateStep(3)) return;
+
+        const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+        const name         = g('booking-name');
+        const journeyType  = g('booking-journey-type');
+        const serviceType  = g('booking-service-type');
+        const pickup       = g('booking-pickup');
+        const dropoff      = journeyType === 'hourly' ? 'N/A (Hourly)' : g('booking-dropoff');
+        const date         = g('booking-date');
+        const time         = g('booking-time');
+        const passengers   = g('booking-passengers');
+        const luggage      = g('booking-luggage');
+        const hours        = journeyType === 'hourly' ? g('booking-hours') : 'N/A';
+        const flight       = g('booking-flight') || 'None';
+        const wpNum        = g('booking-whatsapp');
+        const email        = g('booking-email') || 'None';
+        const notes        = g('booking-notes') || 'None';
+        const vehicleEl    = document.getElementById('selected-vehicle');
+        const vehicle      = vehicleEl ? vehicleEl.value : '';
+        const specVehicleEl = document.getElementById('selected-specific-vehicle');
+        const specVehicle  = specVehicleEl ? specVehicleEl.value : 'None';
+
+        const vehicleNames = { standard: 'Standard Car', executive: 'Executive Car', van: '6-Seater Van' };
+        const vehicleLabel = (vehicleNames[vehicle] || vehicle) + (specVehicle && specVehicle !== 'None' ? ' (' + specVehicle + ')' : '');
+
+        const leadMsg = [
+            'New Booking Request',
+            'Name: ' + name,
+            'Journey Type: ' + journeyType,
+            'Service Type: ' + serviceType,
+            'From: ' + pickup,
+            'To: ' + dropoff,
+            'Date: ' + date,
+            'Time: ' + time,
+            'Passengers: ' + passengers,
+            'Luggage: ' + luggage,
+            'Vehicle: ' + vehicleLabel,
+            'Specific Vehicle: ' + specVehicle,
+            'Flight Number: ' + flight,
+            'Hours: ' + hours,
+            'WhatsApp: ' + wpNum,
+            'Email: ' + email,
+            'Notes: ' + notes,
+        ].join('\n');
+
+        const confirmMsg = 'Hi ' + name + ', thank you for contacting Scotland 247 Taxis. We have received your booking request and will confirm your fixed price shortly. For urgent enquiries please WhatsApp us directly on +44 7469 598219.';
+
+        // 1. Open lead message window
+        window.open('https://wa.me/447469598219?text=' + encodeURIComponent(leadMsg), '_blank');
+
+        // 2. After 2s, open customer confirmation
+        const cleanWp = wpNum.replace(/[^0-9+]/g, '').replace(/^\+/, '');
+        if (cleanWp.length >= 10) {
+            setTimeout(function() {
+                window.open('https://wa.me/' + cleanWp + '?text=' + encodeURIComponent(confirmMsg), '_blank');
+            }, 2000);
+        }
+
+        // 3. Show on-screen thank you message
+        const formParent = form.closest('#quote') || form.parentElement;
+        if (formParent) {
+            formParent.innerHTML = '<div style="text-align:center;padding:60px 20px;">' +
+                '<div style="font-size:48px;margin-bottom:16px;">✅</div>' +
+                '<h3 style="font-size:24px;font-weight:700;color:#0A1F44;margin-bottom:12px;">Thank you! Your request has been sent.</h3>' +
+                '<p style="color:#666;font-size:16px;max-width:400px;margin:0 auto;">We will respond on WhatsApp shortly. If you have urgent queries, message us directly at <strong>+44 7469 598219</strong>.</p>' +
+                '</div>';
+        }
+    }, { once: true });
+
+})();
+</script>
+
 </body></html>
