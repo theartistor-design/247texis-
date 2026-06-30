@@ -1341,7 +1341,7 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-rangerover">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="range_rover.jpg?v=2" alt="Range Rover" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
+                            <img src="fleet-range-rover.jpg?v=2" alt="Range Rover" class="w-full h-16 object-contain mb-2" loading="lazy" decoding="async" width="120" height="64">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Range Rover</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">Premium SUV, up to 4 passengers, luxury interior</span>
@@ -1351,11 +1351,48 @@
                             <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-audirs7">
                                 <span class="material-symbols-outlined text-[14px] text-white">check</span>
                             </div>
-                            <img src="audi_rs7.jpg?v=2" alt="Audi RS7" class="w-full h-16 object-contain mb-2"/ loading="lazy" decoding="async" width="400" height="400">
+                            <img src="fleet-audi-rs7.jpg?v=2" alt="Audi RS7" class="w-full h-16 object-contain mb-2" loading="lazy" decoding="async" width="120" height="64">
                             <div class="text-center">
                                 <span class="font-bold text-[14px] text-deep-navy block">Audi RS7</span>
                                 <span class="text-[11px] text-gray-500 block mt-1">High performance executive saloon, up to 4 passengers, luxury interior</span>
                             </div>
+                        </div>
+                        <div id="sub-vehicle-rangerover7" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#e0e0e0]" onclick="selectSpecificVehicle('executive', 'Range Rover 7-Seater')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-rangerover7">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="fleet-range-rover-7.jpg?v=2" alt="Range Rover 7-Seater" class="w-full h-16 object-contain mb-2" loading="lazy" decoding="async" width="120" height="64">
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Range Rover 7-Seater</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">Premium SUV, up to 7 passengers, luxury interior</span>
+                            </div>
+                        </div>
+                        <div id="sub-vehicle-mercedes" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#e0e0e0]" onclick="selectSpecificVehicle('executive', 'Mercedes S-Class')">
+                            <div class="absolute top-2 right-2 text-deep-navy font-bold hidden items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-mercedes">
+                                <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                            </div>
+                            <img src="fleet-mercedes-s.jpg?v=2" alt="Mercedes S-Class" class="w-full h-16 object-contain mb-2" loading="lazy" decoding="async" width="120" height="64">
+                            <div class="text-center">
+                                <span class="font-bold text-[14px] text-deep-navy block">Mercedes S-Class</span>
+                                <span class="text-[11px] text-gray-500 block mt-1">Ultra-premium saloon, up to 4 passengers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Van Suboptions -->
+            <div id="options-van-container" class="hidden mt-3 bg-[#f8f8f8] border border-[#e0e0e0] rounded-xl p-4 transition-all duration-300">
+                <p class="font-label-sm text-[11px] text-[#666666] uppercase tracking-wider mb-3">Select Specific Van Vehicle:</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div id="sub-vehicle-vw-caddy" class="relative cursor-pointer border rounded-lg p-3 flex flex-col items-center justify-between bg-white hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 border-[#c9a84c]" onclick="selectSpecificVehicle('van', 'Volkswagen Caddy')">
+                        <div class="absolute top-2 right-2 text-deep-navy font-bold flex items-center justify-center w-5 h-5 rounded-full border border-deep-navy bg-[#c9a84c]" id="check-sub-vw-caddy">
+                            <span class="material-symbols-outlined text-[14px] text-white">check</span>
+                        </div>
+                        <img src="fleet-caddy.jpg?v=2" alt="Volkswagen Caddy" class="w-full h-16 object-contain mb-2" loading="lazy" decoding="async" width="120" height="64">
+                        <div class="text-center">
+                            <span class="font-bold text-[14px] text-deep-navy block">Volkswagen Caddy</span>
+                            <span class="text-[11px] text-gray-500 block mt-1">Spacious van, up to 6 passengers, large luggage capacity</span>
                         </div>
                     </div>
                 </div>
