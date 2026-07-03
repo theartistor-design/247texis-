@@ -130,18 +130,18 @@
 
         /* Glassmorphism Navbar */
         header {
-            background:rgba(248,249,250,0.88)!important;
+            background:rgba(248,249,250,1.0)!important;
             backdrop-filter:blur(24px) saturate(180%);
             -webkit-backdrop-filter:blur(24px) saturate(180%);
             border-bottom:1px solid rgba(201, 168, 76,0.12)!important;
             transition:all 0.45s cubic-bezier(0.16,1,0.3,1)!important;
         }
         header.scrolled {
-            background:rgba(0, 26, 63,0.96)!important;
+            background:rgba(248,249,250,1.0)!important;
             border-bottom:1px solid rgba(201, 168, 76,0.25)!important;
-            box-shadow:0 8px 50px rgba(0, 26, 63,0.4)!important;
+            box-shadow:0 8px 50px rgba(0, 26, 63,0.15)!important;
         }
-        header.scrolled nav a { color:rgba(248,249,250,0.85)!important; }
+        header.scrolled nav a { color:#2D2D2D!important; }
         header.scrolled nav a:hover { color:#c9a84c!important; }
 
         /* Nav underline */
@@ -285,15 +285,15 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md antialiased flex flex-col min-h-screen" style="background-color: #080F1E;">
 
-<header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
+<header class="fixed w-full top-0 z-50 bg-mist-white shadow-sm border-b border-surface-container-highest transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a href="/247texis-/index.html#home" class="flex items-center">
     <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1" loading="lazy" decoding="async" width="256" height="256">
 </a>
 <nav class="hidden lg:flex items-center space-x-8">
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#home">Home</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#home">Home</a>
 <div class="relative group nav-dropdown-trigger">
-    <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="/247texis-/index.html#services">
+    <a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="/247texis-/index.html#services">
         Services <span class="text-[12px] transition-transform duration-300 group-hover:rotate-180 inline-block">⌄</span>
     </a>
     <!-- Dropdown content -->
@@ -372,12 +372,12 @@
         </a>
     </div>
 </div>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/airports/">Airports</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/services/wedding-hire/">Wedding Hire</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/fleet/">Fleet</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#reviews">Reviews</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#faq">FAQ</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#contact">Contact</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/airports/">Airports</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/services/wedding-hire/">Wedding Hire</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/fleet/">Fleet</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#reviews">Reviews</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#faq">FAQ</a>
+<a class="text-charcoal-text hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#contact">Contact</a>
 </nav>
 <div class="flex items-center space-x-4">
 <button id="mobile-menu-btn" class="lg:hidden text-deep-navy">
