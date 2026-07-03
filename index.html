@@ -4087,11 +4087,94 @@ Notes: ${notesVal}`;
         });
     }
 
+    /* ── Autocomplete Address functions ── */
+    function setupAutocomplete(inputId) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+
+        const parent = input.parentElement;
+        if (parent) {
+            parent.classList.add('relative');
+        }
+
+        const list = document.createElement('div');
+        list.id = inputId + '-autocomplete-list';
+        list.className = 'absolute left-0 right-0 z-[100] bg-white border border-[#e0e0e0] rounded-[10px] shadow-lg mt-1 max-h-60 overflow-y-auto hidden';
+        parent.appendChild(list);
+
+        let debounceTimer;
+
+        input.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            const query = input.value.trim();
+            if (query.length < 3) {
+                list.innerHTML = '';
+                list.classList.add('hidden');
+                return;
+            }
+
+            debounceTimer = setTimeout(function() {
+                fetchSuggestions(query, list, input);
+            }, 400);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target !== input && e.target !== list && !list.contains(e.target)) {
+                list.innerHTML = '';
+                list.classList.add('hidden');
+            }
+        });
+    }
+
+    function fetchSuggestions(query, listContainer, inputElement) {
+        const url = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(query) + '&format=json&addressdetails=1&countrycodes=gb&limit=5';
+        
+        fetch(url, {
+            headers: {
+                'User-Agent': 'Scotland247TaxisBookingForm/1.0 (contact@scotland247taxis.co.uk)'
+            }
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            listContainer.innerHTML = '';
+            if (data && data.length > 0) {
+                data.forEach(function(item) {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'p-3 hover:bg-[#f4f4f4] cursor-pointer text-[13px] text-deep-navy border-b border-[#f0f0f0] last:border-0 font-body-md transition-colors duration-150';
+                    itemDiv.textContent = item.display_name;
+                    itemDiv.addEventListener('click', function() {
+                        inputElement.value = item.display_name;
+                        inputElement.dispatchEvent(new Event('input'));
+                        listContainer.innerHTML = '';
+                        listContainer.classList.add('hidden');
+                    });
+                    listContainer.appendChild(itemDiv);
+                });
+                listContainer.classList.remove('hidden');
+            } else {
+                listContainer.classList.add('hidden');
+            }
+        })
+        .catch(function(err) {
+            console.error('Autocomplete fetch error:', err);
+            listContainer.classList.add('hidden');
+        });
+    }
+
+    function initAutocomplete() {
+        setupAutocomplete('booking-pickup');
+        setupAutocomplete('booking-dropoff');
+    }
+
     /* ── 9. INIT on DOM ready ─────────────────────────── */
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+            initAutocomplete();
+        });
     } else {
         initMobileMenu();
+        initAutocomplete();
     }
 
 })();
