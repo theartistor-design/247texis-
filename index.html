@@ -352,6 +352,21 @@
             transition: opacity 0.3s ease;
         }
 
+        /* Desktop & Tablet Booking Form Columns Override */
+        @media (min-width: 768px) {
+            #quote .step-content {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            #quote .step-content > div {
+                grid-column: span 1 / span 1 !important;
+            }
+            #quote .step-content > div.col-span-3,
+            #quote .step-content > div.col-span-2,
+            #quote .step-content > div.col-span-full {
+                grid-column: span 2 / span 2 !important;
+            }
+        }
+
     
         /* --- MOBILE RESPONSIVE OVERRIDES --- */
         @media (max-width: 767.98px) {
@@ -1232,7 +1247,7 @@
             </div>
 
             <!-- Navigation -->
-            <div class="col-span-3 flex justify-end mt-4">
+            <div class="col-span-full flex justify-end mt-4">
                 <button type="button" class="px-6 py-3 bg-[#c9a84c] hover:bg-[#b0923d] text-white font-bold rounded-lg transition-all duration-200 shadow-md" onclick="handleNextStep(1)">
                     Next Step
                 </button>
