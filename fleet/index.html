@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Premium Fleet | Scotland 247 Taxis</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="preload" as="image" href="../fleet-hero.jpg"/>
+    <meta name="description" content="Explore our premium fleet of luxury vehicles. Six world-class vehicles across three tiers of luxury: standard, executive, and van class. Fully licensed and immaculate."/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed": "#001A3F",
+                "charcoal-text": "#2D2D2D",
+                "surface-container-lowest": "#ffffff",
+                "primary-container": "#001A3F",
+                "on-secondary-container": "#001A3F",
+                "warm-amber": "#0088FF",
+                "on-error-container": "#93000a",
+                "secondary-container": "#E0EEFF",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#001b3c",
+                "primary-fixed": "#d6e3ff",
+                "on-primary-fixed": "#081c36",
+                "secondary-fixed": "#E0EEFF",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#2e3132",
+                "tertiary-container": "#011d3e",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "mist-white": "#F0F4F8",
+                "error-container": "#ffdad6",
+                "deep-navy": "#001A3F",
+                "on-primary-container": "#7586a5",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-fixed-variant": "#001A3F",
+                "on-background": "#191c1d",
+                "error": "#ba1a1a",
+                "surface-bright": "#F0F4F8",
+                "on-surface": "#191c1d",
+                "surface-tint": "#4e5f7c",
+                "on-surface-variant": "#44474d",
+                "on-secondary": "#ffffff",
+                "inverse-primary": "#b6c7e9",
+                "on-tertiary-container": "#6f86ac",
+                "secondary-fixed-dim": "#E0EEFF",
+                "primary": "#00030a",
+                "tertiary-fixed-dim": "#b0c7f1",
+                "secondary": "#005EB8",
+                "surface-dim": "#d9dadb",
+                "surface-variant": "#e1e3e4",
+                "prestige-gold": "#c9a84c",
+                "tertiary": "#00030b",
+                "surface-container": "#edeeef",
+                "tertiary-fixed": "#d5e3ff",
+                "outline": "#75777e",
+                "surface-container-high": "#e7e8e9",
+                "on-primary-fixed-variant": "#364763",
+                "on-tertiary-fixed-variant": "#30476a",
+                "background": "#F0F4F8",
+                "primary-fixed-dim": "#b6c7e9",
+                "surface-container-low": "#f3f4f5",
+                "outline-variant": "#c5c6ce",
+                "surface": "#F0F4F8"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-desktop": "48px",
+                "stack-lg": "32px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "stack-md": "16px",
+                "stack-sm": "8px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Playfair Display"],
+                "label-sm": ["Montserrat"],
+                "body-md": ["Montserrat"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "title-md": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .luxury-shadow { box-shadow: 0 4px 20px rgba(0, 26, 63,0.05); }
+        .hero-gradient { background: linear-gradient(135deg, rgba(0, 26, 63,0.88) 0%, rgba(0, 26, 63,0.5) 55%, rgba(0, 26, 63,0.78) 100%); }
+
+        /* Ken Burns */
+        @keyframes kenburns { 0%{transform:scale(1)} 100%{transform:scale(1.08)} }
+        .ken-burns { animation: kenburns 20s linear infinite alternate; }
+        @media(max-width:768px){.ken-burns{animation:none!important}}
+
+        /* Glassmorphism Navbar */
+        header {
+            background:rgba(248,249,250,0.88)!important;
+            backdrop-filter:blur(24px) saturate(180%);
+            -webkit-backdrop-filter:blur(24px) saturate(180%);
+            border-bottom:1px solid rgba(201, 168, 76,0.12)!important;
+            transition:all 0.45s cubic-bezier(0.16,1,0.3,1)!important;
+        }
+        header.scrolled {
+            background:rgba(0, 26, 63,0.96)!important;
+            border-bottom:1px solid rgba(201, 168, 76,0.25)!important;
+            box-shadow:0 8px 50px rgba(0, 26, 63,0.4)!important;
+        }
+        header.scrolled nav a { color:rgba(248,249,250,0.85)!important; }
+        header.scrolled nav a:hover { color:#c9a84c!important; }
+
+        /* Nav underline */
+        .nav-link-underline { position:relative; }
+        .nav-link-underline::after {
+            content:'';position:absolute;width:100%;transform:scaleX(0);
+            height:2px;bottom:-4px;left:0;background-color:#c9a84c;
+            transform-origin:bottom left;transition:transform 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .nav-link-underline:hover::after { transform:scaleX(1); }
+
+        /* Fleet redesign styles */
+        .fleet-card {
+            background: linear-gradient(135deg, #0A1F44, #061018) !important;
+            border: 1px solid rgba(201,168,76,0.3) !important;
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+            transition: all 0.4s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
+            height: 100% !important;
+        }
+        .fleet-card:hover {
+            border-color: rgba(201, 168, 76, 0.8) !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.6) !important;
+        }
+        .fleet-photo-area {
+            height: 280px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        .fleet-photo-area img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+        }
+        .fleet-photo-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            background: linear-gradient(to bottom, transparent, rgba(6, 16, 24, 0.6)) !important;
+            pointer-events: none !important;
+        }
+        .fleet-badge {
+            position: absolute !important;
+            top: 16px !important;
+            right: 16px !important;
+            font-size: 11px !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            border-radius: 50px !important;
+            padding: 4px 12px !important;
+            z-index: 10 !important;
+        }
+        .fleet-badge-standard {
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+        }
+        .fleet-badge-executive {
+            background: rgba(201, 168, 76, 0.9) !important;
+            color: #000000 !important;
+        }
+        .fleet-badge-van {
+            background: rgba(201, 168, 76, 0.9) !important;
+            color: #000000 !important;
+        }
+        .fleet-info {
+            padding: 24px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            flex-grow: 1 !important;
+        }
+        .fleet-title {
+            color: #c9a84c !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            margin-bottom: 0 !important;
+            text-align: left !important;
+        }
+        .fleet-divider {
+            width: 40px !important;
+            height: 2px !important;
+            background: #c9a84c !important;
+            margin: 10px 0 !important;
+        }
+        .fleet-desc {
+            color: #ffffff !important;
+            font-size: 13px !important;
+            opacity: 0.75 !important;
+            line-height: 1.6 !important;
+            text-align: left !important;
+            margin-bottom: auto !important;
+        }
+        .fleet-specs {
+            margin-top: 16px !important;
+            display: flex !important;
+            gap: 12px !important;
+            flex-wrap: wrap !important;
+        }
+        .fleet-spec-pill {
+            background: rgba(201, 168, 76, 0.12) !important;
+            border: 1px solid rgba(201, 168, 76, 0.3) !important;
+            border-radius: 50px !important;
+            padding: 6px 14px !important;
+            font-size: 12px !important;
+            color: #ffffff !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        .fleet-spec-pill .material-symbols-outlined {
+            color: #c9a84c !important;
+            margin-right: 6px !important;
+            font-size: 16px !important;
+        }
+        .fleet-book-btn {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            background: transparent !important;
+            border: 1px solid #c9a84c !important;
+            color: #c9a84c !important;
+            border-radius: 50px !important;
+            height: 44px !important;
+            font-size: 13px !important;
+            font-weight: bold !important;
+            margin-top: 16px !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            cursor: pointer !important;
+        }
+        .fleet-book-btn:hover {
+            background: #c9a84c !important;
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased flex flex-col min-h-screen" style="background-color: #080F1E;">
+
+<header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="/247texis-/index.html#home" class="flex items-center">
+    <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1" loading="lazy" decoding="async" width="256" height="256">
+</a>
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#home">Home</a>
+<div class="relative group nav-dropdown-trigger">
+    <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="/247texis-/index.html#services">
+        Services <span class="text-[12px] transition-transform duration-300 group-hover:rotate-180 inline-block">⌄</span>
+    </a>
+    <!-- Dropdown content -->
+    <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] border-t-[3px] border-[#c9a84c] p-[12px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col gap-[4px]">
+        <a href="/247texis-/services/airport-transfers/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_airport</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Airport Transfers</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Fixed price, flight tracked transfers</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/wedding-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">favorite</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Wedding Hire</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Timeless luxury for your perfect day</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/private-driver/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">person</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Private Driver Hire</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Dedicated driver, custom schedule</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/vehicle-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">key</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Flexible Vehicle Hire</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Book from 4 hours to 7 days</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/executive-travel/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">work</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Executive Travel</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Premium corporate chauffeur service</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/multi-stop/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">alt_route</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Multi-Stop Journeys</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">One booking, multiple destinations</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/long-distance/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">directions_car</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Long Distance Transport</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Private hire across every mile</span>
+            </div>
+        </a>
+        <a href="/247texis-/services/package-delivery/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
+            <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_shipping</span>
+            </div>
+            <div class="flex flex-col justify-center min-w-0">
+                <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Package Delivery</span>
+                <span class="text-[#6B7280] truncate" style="font-size: 11px; line-height: 1.2;">Tracked same-day courier service</span>
+            </div>
+        </a>
+    </div>
+</div>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#airports">Airports</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/services/wedding-hire/">Wedding Hire</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/fleet/">Fleet</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#reviews">Reviews</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#faq">FAQ</a>
+<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/247texis-/index.html#contact">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button id="mobile-menu-btn" class="lg:hidden text-deep-navy">
+    <span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Fleet Hero Banner -->
+<section class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden py-24" style="margin-top: 80px;">
+    <img src="../fleet-hero.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0 ken-burns" alt="Our Premium Fleet Hero" loading="eager" width="1920" height="1200">
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/30 via-black/55 to-black/85" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <h1 class="text-[32px] md:text-[56px] font-headline-lg font-bold text-white mb-4 leading-tight">Our Premium Fleet</h1>
+        <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-6"></div>
+        <p class="text-[15px] md:text-[18px] text-white/90 max-w-[650px] mx-auto mb-10 leading-relaxed font-body-md">Six world-class vehicles across three tiers of luxury. Every journey deserves the perfect vehicle.</p>
+        <div class="flex items-center justify-center">
+            <a href="/247texis-/index.html#quote" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-[50px] py-[18px] rounded-[50px] text-center text-[16px] shadow-2xl hover:shadow-[0_20px_40px_rgba(201,168,76,0.3)] hover:-translate-y-[3px] transition-all duration-300 ease-in-out inline-block">Book Your Vehicle</a>
+        </div>
+    </div>
+</section>
+
+<!-- Fleet Sections -->
+<main class="flex-grow">
+    <section class="py-24 px-margin-mobile md:px-margin-desktop text-white" style="background-color: #080F1E;">
+        <div class="max-w-container-max mx-auto">
+            
+            <!-- Standard Class Section -->
+            <div class="mb-20">
+                <h2 class="font-title-md text-2xl text-white font-bold text-left mb-8 border-b pb-2 border-[#c9a84c]/30">Standard Class</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
+                    <!-- Toyota Corolla -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-standard">Standard Class</span>
+                            <img src="../fleet-corolla.jpg" alt="Toyota Corolla" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Toyota Corolla</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">A reliable and smooth hybrid sedan, perfect for everyday airport transfers and city travel.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 4 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 2 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                    <!-- Volkswagen Caddy -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-standard">Standard Class</span>
+                            <img src="../fleet-caddy.jpg" alt="Volkswagen Caddy" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Volkswagen Caddy</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">Spacious multi-purpose vehicle offering extra legroom and excellent luggage capacity.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 4 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 4 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Class Section -->
+            <div class="mb-20">
+                <h2 class="font-title-md text-2xl text-white font-bold text-left mb-8 border-b pb-2 border-[#c9a84c]/30">Executive Class</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
+                    <!-- Range Rover -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-executive">Executive Class</span>
+                            <img src="../fleet-range-rover.jpg" alt="Range Rover" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Range Rover</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">A high-end luxury SUV providing unmatched ride comfort, command road presence, and prestige styling.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 4 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 3 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                    <!-- Audi RS7 -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-executive">Executive Class</span>
+                            <img src="../fleet-audi-rs7.jpg" alt="Audi RS7" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Audi RS7</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">Ultimate luxury sportback combining executive refinement with breathtaking performance.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 4 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 2 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                    <!-- Range Rover 7-Seater -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-executive">Executive Class</span>
+                            <img src="../fleet-range-rover-7.jpg" alt="Range Rover 7-Seater" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Range Rover 7-Seater</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">The ultimate luxury people carrier. Perfect for families and groups requiring premium comfort and space.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 7 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 5 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                    <!-- Mercedes S-Class -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-executive">Executive Class</span>
+                            <img src="../fleet-mercedes-s.jpg" alt="Mercedes S-Class" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Mercedes S-Class</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">The pinnacle of chauffeur travel. Unrivalled comfort, whisper-quiet cabin and commanding road presence.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 4 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 3 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Van Class Section -->
+            <div class="mb-20">
+                <h2 class="font-title-md text-2xl text-white font-bold text-left mb-8 border-b pb-2 border-[#c9a84c]/30">Van Class</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
+                    <!-- Premium Van -->
+                    <div class="fleet-card">
+                        <div class="fleet-photo-area">
+                            <span class="fleet-badge fleet-badge-van">Van Class</span>
+                            <img src="../fleet-van.jpg" alt="Premium Van" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="fleet-photo-overlay"></div>
+                        </div>
+                        <div class="fleet-info">
+                            <h4 class="fleet-title">Premium Van</h4>
+                            <div class="fleet-divider"></div>
+                            <p class="fleet-desc">Spacious luxury van perfect for larger groups, airport transfers with heavy luggage, and corporate group travel.</p>
+                            <div class="fleet-specs">
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">group</span> 8 Pax</span>
+                                <span class="fleet-spec-pill"><span class="material-symbols-outlined">shopping_bag</span> 6 Large Bags</span>
+                            </div>
+                            <a href="/247texis-/index.html#quote" class="fleet-book-btn">Book This Vehicle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Our Fleet Section -->
+            <div class="mt-32">
+                <h2 class="font-headline-lg text-headline-lg text-white mb-4 text-center">Why Choose Our Fleet</h2>
+                <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-16"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="fleet-card p-8">
+                        <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">shield</span>
+                        <h4 class="text-xl font-bold text-[#c9a84c] mb-4">Immaculate Standards</h4>
+                        <p class="text-white/70 text-sm leading-relaxed">Every vehicle is cleaned and inspected before every single journey. You will never travel in anything less than showroom condition.</p>
+                    </div>
+                    <div class="fleet-card p-8">
+                        <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">key</span>
+                        <h4 class="text-xl font-bold text-[#c9a84c] mb-4">Fully Licensed and Insured</h4>
+                        <p class="text-white/70 text-sm leading-relaxed">Every vehicle in our fleet holds full private hire licensing and comprehensive insurance. Complete peace of mind on every journey.</p>
+                    </div>
+                    <div class="fleet-card p-8">
+                        <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">star</span>
+                        <h4 class="text-xl font-bold text-[#c9a84c] mb-4">Maintained to Perfection</h4>
+                        <p class="text-white/70 text-sm leading-relaxed">Regular professional servicing, safety inspections, and detailing ensure every vehicle performs and presents at the highest level.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- Fleet Page Closing CTA Banner -->
+<section class="relative py-24 text-center overflow-hidden border-t border-[#c9a84c]/20">
+    <img src="../fleet-cta.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0 ken-burns" alt="Scotland 247 Taxis CTA" loading="lazy" decoding="async" width="1920" height="1200">
+    <div class="absolute inset-0 z-0 bg-gradient-to-t from-black/80 to-black/35" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-headline-lg font-bold text-white mb-4">Ready to Travel in Style?</h2>
+        <p class="text-white/80 max-w-xl mx-auto mb-8 text-sm md:text-base">Choose your vehicle and book your transfer today.</p>
+        <a href="/247texis-/index.html#quote" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-10 py-4 rounded-full text-center text-sm uppercase tracking-wider transition-all duration-300 inline-block shadow-lg">Book Now</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="bg-deep-navy dark:bg-primary text-mist-white w-full py-stack-lg border-t border-mist-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;" class="inline-block mb-4">
+    <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;" loading="lazy" decoding="async" width="256" height="256">
+</div>
+<p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
+<div class="flex space-x-4 mt-6">
+    <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;"><span class="material-symbols-outlined">mail</span></a>
+    <a class="text-mist-white hover:text-prestige-gold hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Contact</h4>
+<ul class="space-y-2 font-body-md text-body-md opacity-80">
+    <li>Phone: 07469 598219</li>
+    <li class="flex flex-col sm:flex-row sm:items-center gap-2">
+        <span>WhatsApp:</span>
+        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="inline-flex items-center px-3 py-1 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-sm text-xs rounded shadow-sm hover:shadow transition-all duration-300 w-fit">
+            <svg class="w-3.5 h-3.5 mr-1.5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+            </svg>
+            Chat on WhatsApp
+        </a>
+    </li>
+    <li>Email: info@scotland247taxis.co.uk</li>
+    <li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Quick Links</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/index.html#airports">Airport Transfers</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/wedding-hire/">Wedding Hire</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/executive-travel/">Executive Travel</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/vehicle-hire/">Vehicle Hire</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/multi-stop/">Multi-Stop Journeys</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/index.html#contact">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-prestige-gold">Legal</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/terms/">Terms of Service</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/privacy/">Privacy Policy</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/cookies/">Cookie Policy</a></li>
+    <li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/accessibility/">Accessibility</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-mist-white/10 text-center px-margin-mobile">
+<p class="font-body-md text-label-sm opacity-60">
+    © 2026 Scotland 247 Taxis. Premium Reliability in Every Mile. All rights reserved.
+</p>
+</div>
+</footer>
+
+<!-- Mobile Navigation Overlay Menu -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-[#001A3F]/98 backdrop-blur-lg flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300 ease-in-out">
+    <!-- Close Button -->
+    <button id="mobile-menu-close" class="absolute top-6 right-6 text-white p-2" aria-label="Close menu">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <!-- Menu Links -->
+    <nav class="flex flex-col space-y-6 text-center">
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#home">Home</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#services">Services</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#airports">Airports</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/services/wedding-hire/">Wedding Hire</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/fleet/">Fleet</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#reviews">Reviews</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#faq">FAQ</a>
+        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/247texis-/index.html#contact">Contact</a>
+    </nav>
+</div>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#c9a84c] text-white rounded-full shadow-2xl hover:bg-[#b0923d] hover:scale-110 transition-all duration-300 group whatsapp-gold-pulse" aria-label="Chat with us on WhatsApp">
+    <svg class="w-7 h-7 fill-white relative z-10" viewBox="0 0 24 24">
+        <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
+    </svg>
+    <span class="absolute right-16 scale-0 group-hover:scale-100 bg-[#001A3F] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-xl transition-all duration-300 origin-right whitespace-nowrap border border-[#c9a84c]/20">Chat with us on WhatsApp</span>
+</a>
+
+<script id="s247-master-nav">
+/* Scotland 247 Taxis — Mobile Menu */
+(function(){
+    'use strict';
+    function initMobileMenu(){
+        var menuBtn=document.getElementById('mobile-menu-btn'),
+            overlay=document.getElementById('mobile-menu-overlay'),
+            closeBtn=document.getElementById('mobile-menu-close');
+        if(!menuBtn||!overlay)return;
+        function openMenu(){overlay.classList.remove('opacity-0','pointer-events-none');overlay.classList.add('opacity-100');document.body.style.overflow='hidden';}
+        function closeMenu(){overlay.classList.add('opacity-0','pointer-events-none');overlay.classList.remove('opacity-100');document.body.style.overflow='';}
+        menuBtn.addEventListener('click',openMenu);
+        menuBtn.addEventListener('touchend',function(e){e.preventDefault();openMenu();});
+        if(closeBtn){closeBtn.addEventListener('click',closeMenu);closeBtn.addEventListener('touchend',function(e){e.preventDefault();closeMenu();});}
+        overlay.addEventListener('click',function(e){if(e.target===overlay)closeMenu();});
+        overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+    }
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMobileMenu);}else{initMobileMenu();}
+})();
+</script>
+
+<script>
+    // Shrink header padding and shadow on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>
