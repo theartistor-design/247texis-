@@ -1090,6 +1090,7 @@
 
         /* 3D Flip Card Styles */
         .flip-card-container {
+            -webkit-perspective: 1200px;
             perspective: 1200px;
             width: 100%;
             height: 490px; /* Standard height for cards to fit content comfortably */
@@ -1098,15 +1099,19 @@
             position: relative;
             width: 100%;
             height: 100%;
+            -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
         }
         @media (min-width: 768px) {
             .flip-card-container:hover .flip-card {
+                -webkit-transform: rotateY(180deg);
                 transform: rotateY(180deg);
             }
         }
         .flip-card.flipped {
+            -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
         }
         .flip-card-front, .flip-card-back {
@@ -1115,15 +1120,18 @@
             left: 0;
             width: 100%;
             height: 100%;
+            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 16px;
             overflow: hidden;
         }
         .flip-card-front {
             z-index: 2;
+            -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
         }
         .flip-card-back {
+            -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
             z-index: 1;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
@@ -2374,15 +2382,19 @@
     <!-- JS Click-to-Flip Handler for Mobile Package Cards -->
     <script id="hire-flip-cards-handler">
     document.addEventListener('DOMContentLoaded', function() {
+        // Detect touch support (mobile, tablets, touch screens)
+        var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
+        
         document.querySelectorAll('.flip-card-container').forEach(function(cardContainer) {
             cardContainer.addEventListener('click', function(e) {
-                // Only trigger tap-to-flip on mobile viewports (< 768px)
-                if (window.innerWidth < 768) {
-                    // If the tap was on a link or button, don't toggle the flip (allow click to propagate)
-                    if (e.target.closest('a') || e.target.closest('button')) {
-                        return;
-                    }
-                    const card = this.querySelector('.flip-card');
+                // If the tap was on a link or button, don't toggle the flip (allow click to propagate)
+                if (e.target.closest('a') || e.target.closest('button')) {
+                    return;
+                }
+                
+                // Trigger flip on touch devices, small viewports (< 1024px), or if hover is not supported
+                if (isTouch || window.innerWidth < 1024) {
+                    var card = this.querySelector('.flip-card');
                     card.classList.toggle('flipped');
                 }
             });
