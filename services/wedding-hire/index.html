@@ -1087,6 +1087,145 @@
     font-feature-settings: 'liga';
     user-select: none;
 }
+
+        /* Custom card styling */
+        .premium-card {
+            background: linear-gradient(135deg, #0A1F44, #061018) !important;
+            border: 1px solid rgba(201,168,76,0.3) !important;
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+            transition: all 0.4s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
+            height: 100% !important;
+        }
+        .premium-card:hover {
+            border-color: rgba(201, 168, 76, 0.8) !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.6) !important;
+        }
+        .premium-photo-area {
+            height: 280px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        .premium-photo-area img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+        }
+        .premium-photo-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            background: linear-gradient(to bottom, transparent, rgba(6, 16, 24, 0.6)) !important;
+            pointer-events: none !important;
+        }
+        .premium-badge {
+            position: absolute !important;
+            top: 16px !important;
+            right: 16px !important;
+            font-size: 11px !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            border-radius: 50px !important;
+            padding: 4px 12px !important;
+            z-index: 10 !important;
+            background: rgba(201, 168, 76, 0.9) !important;
+            color: #000000 !important;
+        }
+        .premium-info {
+            padding: 24px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            flex-grow: 1 !important;
+        }
+        .premium-title {
+            color: #ffffff !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            margin-bottom: 0 !important;
+            text-align: left !important;
+        }
+        .premium-divider {
+            width: 40px !important;
+            height: 2px !important;
+            background: #c9a84c !important;
+            margin: 10px 0 !important;
+        }
+        .premium-desc {
+            color: #ffffff !important;
+            font-size: 13px !important;
+            opacity: 1.0 !important;
+            line-height: 1.6 !important;
+            text-align: left !important;
+            margin-bottom: auto !important;
+        }
+        .premium-book-btn {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            background: transparent !important;
+            border: 1px solid #c9a84c !important;
+            color: #c9a84c !important;
+            border-radius: 50px !important;
+            height: 44px !important;
+            font-size: 13px !important;
+            font-weight: bold !important;
+            margin-top: 16px !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            cursor: pointer !important;
+        }
+        .premium-book-btn:hover {
+            background: #c9a84c !important;
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+        /* Overlap gallery styling */
+        .gallery-container {
+            position: relative;
+            height: 380px;
+        }
+        .gallery-photo {
+            position: absolute;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+        .gallery-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .gallery-photo:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.32);
+            z-index: 10 !important;
+        }
+        @media (max-width: 768px) {
+            .gallery-container {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .gallery-photo {
+                position: relative;
+                width: 100% !important;
+                height: 180px !important;
+                top: auto !important;
+                left: auto !important;
+                z-index: 1 !important;
+                border: none !important;
+            }
+        }
 </style>
 </head>
 <body class="bg-white font-body text-charcoal-text antialiased">
@@ -1249,10 +1388,10 @@
                         
                         <!-- Pills -->
                         <div class="flex flex-wrap gap-2 my-4">
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">group</span> Up to 4 Passengers
                             </span>
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">work</span> 3 Large Bags
                             </span>
                         </div>
@@ -1262,7 +1401,7 @@
                             <span class="bg-[#c9a84c] text-black font-bold text-center py-2.5 px-4 rounded-full text-sm tracking-wide block my-4">
                                 From £600 for 3 Hours
                             </span>
-                            <span class="text-white/80 text-xs text-center block mb-4">
+                            <span class="text-white text-xs text-center block mb-4">
                                 Extra hours: £75 — £100 per hour
                             </span>
                             <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book This Vehicle</a>
@@ -1284,10 +1423,10 @@
                         
                         <!-- Pills -->
                         <div class="flex flex-wrap gap-2 my-4">
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">group</span> Up to 4 Passengers
                             </span>
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">work</span> 3 Large Bags
                             </span>
                         </div>
@@ -1297,7 +1436,7 @@
                             <span class="bg-[#c9a84c] text-black font-bold text-center py-2.5 px-4 rounded-full text-sm tracking-wide block my-4">
                                 From £550 for 3 Hours
                             </span>
-                            <span class="text-white/80 text-xs text-center block mb-4">
+                            <span class="text-white text-xs text-center block mb-4">
                                 Extra hours: £75 — £100 per hour
                             </span>
                             <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book This Vehicle</a>
@@ -1319,10 +1458,10 @@
                         
                         <!-- Pills -->
                         <div class="flex flex-wrap gap-2 my-4">
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">group</span> Up to 7 Passengers
                             </span>
-                            <span class="border border-[#c9a84c]/40 text-[#c9a84c] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <span class="border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">work</span> 5 Large Bags
                             </span>
                         </div>
@@ -1332,7 +1471,7 @@
                             <span class="bg-[#c9a84c] text-black font-bold text-center py-2.5 px-4 rounded-full text-sm tracking-wide block my-4">
                                 From £650 for 3 Hours
                             </span>
-                            <span class="text-white/80 text-xs text-center block mb-4">
+                            <span class="text-white text-xs text-center block mb-4">
                                 Extra hours: £100 — £125 per hour
                             </span>
                             <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book This Vehicle</a>
@@ -1349,36 +1488,36 @@
             <h2 class="text-3xl md:text-4xl font-title font-bold text-center text-white mb-3">Wedding Hire Pricing</h2>
             <p class="text-center text-white/70 font-body mb-16 max-w-xl mx-auto">Fixed prices confirmed at booking. No hidden charges. No surprises.</p>
             
-            <div class="max-w-4xl mx-auto bg-[#0A1F44]/40 border border-[#c9a84c]/20 rounded-2xl p-6 md:p-10 shadow-2xl overflow-hidden">
+            <div class="max-w-4xl mx-auto bg-white border border-[#c9a84c]/30 rounded-2xl p-6 md:p-10 shadow-xl overflow-hidden">
                 <div class="overflow-x-auto w-full">
-                    <table class="w-full text-left text-white border-collapse min-w-[500px]">
+                    <table class="w-full text-left border-collapse min-w-[500px]">
                         <thead>
-                            <tr class="bg-[#c9a84c]/15 border-b border-[#c9a84c]/20">
+                            <tr class="bg-[#0A1F44] border-b-2 border-[#c9a84c]/20">
                                 <th class="p-4 font-title text-[#c9a84c] font-bold tracking-wider">Vehicle</th>
                                 <th class="p-4 font-title text-[#c9a84c] font-bold tracking-wider text-center">3 Hour Package</th>
                                 <th class="p-4 font-title text-[#c9a84c] font-bold tracking-wider text-right">Extra Per Hour</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-[#c9a84c]/10">
-                            <tr class="bg-white/[0.03]">
-                                <td class="p-4 font-body font-semibold">Audi RS7</td>
-                                <td class="p-4 font-body text-center font-bold">£600</td>
-                                <td class="p-4 font-body text-right">£75 — £100</td>
+                        <tbody class="divide-y divide-[#c9a84c]/15">
+                            <tr class="bg-[#F8F9FA] border-b border-[#c9a84c]/10">
+                                <td class="p-4 font-body font-semibold text-[#0A1F44]">Audi RS7</td>
+                                <td class="p-4 font-body text-center font-bold text-[#b0923d] text-lg">£600</td>
+                                <td class="p-4 font-body text-right text-charcoal-text font-medium">£75 — £100</td>
                             </tr>
-                            <tr>
-                                <td class="p-4 font-body font-semibold">Range Rover</td>
-                                <td class="p-4 font-body text-center font-bold">£550</td>
-                                <td class="p-4 font-body text-right">£75 — £100</td>
+                            <tr class="bg-white border-b border-[#c9a84c]/10">
+                                <td class="p-4 font-body font-semibold text-[#0A1F44]">Range Rover</td>
+                                <td class="p-4 font-body text-center font-bold text-[#b0923d] text-lg">£550</td>
+                                <td class="p-4 font-body text-right text-charcoal-text font-medium">£75 — £100</td>
                             </tr>
-                            <tr class="bg-white/[0.03]">
-                                <td class="p-4 font-body font-semibold">Range Rover 7-Seater</td>
-                                <td class="p-4 font-body text-center font-bold">£650</td>
-                                <td class="p-4 font-body text-right">£100 — £125</td>
+                            <tr class="bg-[#F8F9FA] border-b border-[#c9a84c]/10">
+                                <td class="p-4 font-body font-semibold text-[#0A1F44]">Range Rover 7-Seater</td>
+                                <td class="p-4 font-body text-center font-bold text-[#b0923d] text-lg">£650</td>
+                                <td class="p-4 font-body text-right text-charcoal-text font-medium">£100 — £125</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="mt-6 text-[#c9a84c]/80 text-xs italic text-center font-body">
+                <p class="mt-6 text-[#b0923d] text-xs italic text-center font-body font-semibold">
                     * All prices are for bookings within a reasonable distance of Perth. Additional mileage charges may apply for longer journeys. All prices confirmed at time of booking via WhatsApp.
                 </p>
             </div>
