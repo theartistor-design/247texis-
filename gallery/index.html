@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scottish Airport Transfers | Scotland 247 Taxis</title>
+    <title>Scotland Photo Gallery | Scotland 247 Taxis</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link rel="preload" as="image" href="../airports-hero.jpg"/>
-    <meta name="description" content="Professional, fixed-price airport transfers at all five major Scottish airports. Real-time flight tracking and meet & greet service included."/>
+    <link rel="preload" as="image" href="../gallery-hero.jpg"/>
+    <meta name="description" content="View stunning cinematic photographs of the Scottish Highlands, Edinburgh Castle, Glencoe, Loch Ness, and other breathtaking locations driven by Scotland 247 Taxis."/>
     
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
@@ -261,7 +261,39 @@
         }
         .faq-chevron { transition: transform 0.3s ease; }
         .faq-open .faq-chevron { transform: rotate(180deg); }
-    </style>
+    
+        /* Custom photo strip gallery styles */
+        .gallery-strip {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #080F1E;
+        }
+        @media (max-width: 767.98px) {
+            .gallery-strip {
+                height: 300px;
+            }
+        }
+        .gallery-strip img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        
+        /* Scroll animation styling */
+        .gallery-strip-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition-delay: 0s;
+        }
+        .gallery-strip-animate.scrolled-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+  </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md antialiased flex flex-col min-h-screen" style="background-color: #080F1E;">
 
@@ -368,260 +400,224 @@
 </div>
 </header>
 
-<!-- Airports Hero Banner -->
-<section class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden py-24" style="margin-top: 80px;">
-    <img src="../airports-hero.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0 ken-burns" alt="Scottish Airport Transfers Hero" loading="eager" width="1920" height="1200">
-    <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/30 via-black/55 to-black/85" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-        <h1 class="text-[32px] md:text-[56px] font-headline-lg font-bold text-white mb-4 leading-tight">Scottish Airport Transfers</h1>
-        <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-6"></div>
-        <p class="text-[15px] md:text-[18px] text-white/90 max-w-[650px] mx-auto mb-10 leading-relaxed font-body-md">Fixed price. Flight tracked. Professional meet and greet at every major Scottish airport.</p>
-        <div class="flex items-center justify-center">
-            <a href="https://wa.me/447469598219" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-[50px] py-[18px] rounded-[50px] text-center text-[16px] shadow-2xl hover:shadow-[0_20px_40px_rgba(201,168,76,0.3)] hover:-translate-y-[3px] transition-all duration-300 ease-in-out inline-block">Book Your Airport Transfer</a>
-        </div>
-    </div>
-</section>
-
-<main class="flex-grow">
-    <!-- Intro Section -->
-    <section class="py-20 bg-mist-white text-center text-charcoal-text">
-        <div class="max-w-4xl mx-auto px-6 space-y-6 text-left font-body-md text-base leading-relaxed">
-            <p>Scotland's airports are the gateway to one of the world's most breathtaking destinations. Whether you are arriving for business, embarking on a Highland adventure, or beginning a whisky tour across Speyside, Scotland 247 Taxis ensures your journey from the aircraft to your destination is as seamless and comfortable as possible. We cover every major Scottish airport with the same professional standard of service — fixed pricing, real-time flight tracking, and professional meet and greet in the arrivals hall.</p>
-            <p>Every airport transfer we complete includes real-time flight monitoring from the moment your flight departs. If your flight is delayed, diverted, or arrives early, your driver already knows and adjusts automatically. You will never need to call us or send a message. We watch every flight, every time, at no extra charge. Our fixed pricing means the fare you are quoted is the fare you pay — regardless of traffic, time of day, or how long the airport drop-off queue takes.</p>
-            <p>Scotland 247 Taxis serves all five major Scottish airports — Edinburgh, Glasgow, Aberdeen, Inverness, and Glasgow Prestwick — with professional licensed drivers who hold full private hire licensing and are background checked to the highest standard. Whether your journey takes you to the heart of Edinburgh, the remote Scottish Highlands, or anywhere in between, we will get you there safely, comfortably, and on time.</p>
+<main class="pt-20">
+    <!-- Hero Banner -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-deep-navy">
+        <img src="../gallery-hero.jpg" alt="Scottish Highlands Aerial view" class="absolute inset-0 w-full h-full object-cover ken-burns" />
+        <div class="absolute inset-0 hero-gradient opacity-90 z-10"></div>
+        <div class="relative z-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center space-y-4">
+            <h1 class="font-display text-4xl md:text-6xl font-bold text-white tracking-tight animate-fadeInUp">
+                Scotland Through Our Eyes
+            </h1>
+            <p class="font-body text-base md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-fadeInUp" style="animation-delay: 0.2s;">
+                From the misty Highlands to the streets of Edinburgh — the Scotland we drive through every single day.
+            </p>
         </div>
     </section>
 
-    <!-- Five Airports Section -->
-    <section class="py-24 px-margin-mobile md:px-margin-desktop text-white" style="background-color: #080F1E;">
-        <div class="max-w-container-max mx-auto text-center">
-            <h2 class="font-headline-lg text-headline-lg text-white mb-4">Every Major Scottish Airport. One Trusted Service.</h2>
-            <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-4"></div>
-            <p class="font-body-lg text-body-lg text-white/65 max-w-2xl mx-auto mb-16">Click your airport to find out more.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <!-- Edinburgh Airport -->
-                <div class="premium-card">
-                    <div class="premium-photo-area">
-                        <span class="premium-badge">EDI</span>
-                        <img src="../airport-edinburgh-page.jpg" alt="Edinburgh Airport" loading="lazy" decoding="async">
-                        <div class="premium-photo-overlay"></div>
-                    </div>
-                    <div class="premium-info">
-                        <h4 class="premium-title">Edinburgh Airport</h4>
-                        <div class="premium-divider"></div>
-                        <p class="premium-desc">Scotland's busiest international airport serving over 14 million passengers annually. Fixed price transfers to Edinburgh city centre, Perth, St Andrews, Dundee, and all Scottish destinations.</p>
-                        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book Transfer</a>
-                    </div>
-                </div>
+    <!-- Intro Text Section -->
+    <section class="bg-white py-16 px-margin-mobile md:px-margin-desktop text-center">
+        <div class="max-w-[700px] mx-auto">
+            <p class="font-body-lg text-body-lg text-charcoal-text leading-relaxed font-semibold">
+                Every journey we make takes us through some of the most breathtaking scenery in the world. This is Scotland as we see it — raw, dramatic, and endlessly beautiful. We hope it inspires you to experience it for yourself.
+            </p>
+        </div>
+    </section>
 
-                <!-- Glasgow Airport -->
-                <div class="premium-card">
-                    <div class="premium-photo-area">
-                        <span class="premium-badge">GLA</span>
-                        <img src="../airport-glasgow-page.jpg" alt="Glasgow Airport" loading="lazy" decoding="async">
-                        <div class="premium-photo-overlay"></div>
-                    </div>
-                    <div class="premium-info">
-                        <h4 class="premium-title">Glasgow Airport</h4>
-                        <div class="premium-divider"></div>
-                        <p class="premium-desc">West Scotland's primary international gateway. Direct transfers to Glasgow city centre, Perth, Stirling, and across the west of Scotland.</p>
-                        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book Transfer</a>
-                    </div>
-                </div>
-
-                <!-- Aberdeen Airport -->
-                <div class="premium-card">
-                    <div class="premium-photo-area">
-                        <span class="premium-badge">ABZ</span>
-                        <img src="../airport-aberdeen-page.jpg" alt="Aberdeen Airport" loading="lazy" decoding="async">
-                        <div class="premium-photo-overlay"></div>
-                    </div>
-                    <div class="premium-info">
-                        <h4 class="premium-title">Aberdeen Airport</h4>
-                        <div class="premium-divider"></div>
-                        <p class="premium-desc">Serving the north-east of Scotland including the energy sector and leisure travellers. Transfers to Aberdeen city, Inverness, Perth, and beyond.</p>
-                        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book Transfer</a>
-                    </div>
-                </div>
-
-                <!-- Inverness Airport -->
-                <div class="premium-card">
-                    <div class="premium-photo-area">
-                        <span class="premium-badge">INV</span>
-                        <img src="../airport-inverness-page.jpg" alt="Inverness Airport" loading="lazy" decoding="async">
-                        <div class="premium-photo-overlay"></div>
-                    </div>
-                    <div class="premium-info">
-                        <h4 class="premium-title">Inverness Airport</h4>
-                        <div class="premium-divider"></div>
-                        <p class="premium-desc">Gateway to the Scottish Highlands. Transfers to Inverness city, Loch Ness, Isle of Skye, Fort William, and all Highland destinations.</p>
-                        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book Transfer</a>
-                    </div>
-                </div>
-
-                <!-- Glasgow Prestwick Airport -->
-                <div class="premium-card">
-                    <div class="premium-photo-area">
-                        <span class="premium-badge">PIK</span>
-                        <img src="../airport-prestwick-page.jpg" alt="Glasgow Prestwick Airport" loading="lazy" decoding="async">
-                        <div class="premium-photo-overlay"></div>
-                    </div>
-                    <div class="premium-info">
-                        <h4 class="premium-title">Glasgow Prestwick</h4>
-                        <div class="premium-divider"></div>
-                        <p class="premium-desc">Serving budget and charter flights to Ayrshire and Central Scotland. Transfers to Glasgow, Edinburgh, Kilmarnock, and all surrounding areas.</p>
-                        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="premium-book-btn">Book Transfer</a>
+    <!-- Gallery Section (12 Alternating Strips) -->
+    <section class="bg-[#080F1E] py-0 overflow-hidden">
+        
+        <!-- Strip 1 — Edinburgh Castle -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-edinburgh-castle.webp" alt="Edinburgh Castle floodlit at night" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Edinburgh Castle</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Ancient fortress above the city that has stood for over 900 years</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- What is Included Section -->
-    <section class="py-24 bg-[#F0F2F5] px-margin-mobile md:px-margin-desktop text-charcoal-text">
-        <div class="max-w-container-max mx-auto text-center">
-            <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">What Is Included</h2>
-            <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-16"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">flight_takeoff</span>
-                    <h4 class="text-lg font-bold text-deep-navy mb-3">Real-Time Flight Tracking</h4>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">We monitor every flight automatically from departure. Delays, early arrivals, or diversions — your driver knows before you land.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">person_pin_circle</span>
-                    <h4 class="text-lg font-bold text-deep-navy mb-3">Meet and Greet in Arrivals</h4>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Your driver enters the arrivals terminal with a personalised name board. You see them the moment you walk through customs.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">price_check</span>
-                    <h4 class="text-lg font-bold text-deep-navy mb-3">Fixed Price Guaranteed</h4>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Your fare is confirmed at booking and never changes. No surge pricing, no airport supplements, no hidden charges of any kind.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">work</span>
-                    <h4 class="text-lg font-bold text-deep-navy mb-3">Full Luggage Assistance</h4>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Your driver assists with all luggage from the arrivals hall to the vehicle as standard on every airport transfer.</p>
-                </div>
-                <!-- Card 5 -->
-                <div class="bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-[#c9a84c] mb-6">verified_user</span>
-                    <h4 class="text-lg font-bold text-deep-navy mb-3">Licensed Professional Drivers</h4>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Every driver holds a full private hire licence, enhanced DBS check, and comprehensive insurance. Complete peace of mind every journey.</p>
+        <!-- Strip 2 — Isle of Skye Fairy Pools -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-fairy-pools.webp" alt="Isle of Skye Fairy Pools" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Isle of Skye</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Scotland's most dramatic island — wild, remote and breathtaking</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- How It Works Section -->
-    <section class="py-24 bg-white px-margin-mobile md:px-margin-desktop text-charcoal-text">
-        <div class="max-w-container-max mx-auto text-center">
-            <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">How It Works</h2>
-            <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-16"></div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-xl font-bold text-[#c9a84c]">1</div>
-                        <h4 class="text-lg font-bold text-deep-navy">Share Your Flight Details</h4>
+        <!-- Strip 3 — Glencoe -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-glencoe.webp" alt="Glencoe valley landscape" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Glencoe</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Scotland's most dramatic glen — hauntingly beautiful in every season</p>
                     </div>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Contact us via WhatsApp or email with your flight number, arrival date, time, number of passengers, and destination.</p>
-                </div>
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-xl font-bold text-[#c9a84c]">2</div>
-                        <h4 class="text-lg font-bold text-deep-navy">We Track Your Flight</h4>
-                    </div>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">On the day of travel we begin monitoring your flight automatically. Your driver is dispatched to arrive before you land.</p>
-                </div>
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-xl font-bold text-[#c9a84c]">3</div>
-                        <h4 class="text-lg font-bold text-deep-navy">Your Driver Meets You</h4>
-                    </div>
-                    <p class="text-[#6B7280] text-sm leading-relaxed">Walk through arrivals and see your driver with your name board immediately. Luggage loaded, destination confirmed, on your way.</p>
                 </div>
             </div>
         </div>
+
+        <!-- Strip 4 — Loch Ness -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-loch-ness.webp" alt="Loch Ness at sunrise" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Loch Ness</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Scotland's most legendary loch — dark, mysterious and unforgettable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 5 — Eilean Donan Castle -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-eilean-donan.webp" alt="Eilean Donan Castle reflected in still water" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Eilean Donan Castle</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">The most photographed castle in Scotland — and the most breathtaking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 6 — St Andrews -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-st-andrews.webp" alt="St Andrews Old Course 18th hole" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">St Andrews</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">The home of golf — where the game began over 600 years ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 7 — Scottish Highlands -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-highlands.webp" alt="Vast Scottish Highland landscape panorama" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">The Scottish Highlands</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Raw, untouched wilderness covering half of Scotland's entire landmass</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 8 — Stirling Castle -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-stirling.webp" alt="Stirling Castle at golden sunset" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Stirling Castle</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">The gateway to the Highlands — where Scotland's history was decided</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 9 — Whisky Distillery -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-whisky.webp" alt="Interior of ancient Speyside distillery" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Speyside Distillery</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Scotland is home to over 140 active whisky distilleries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 10 — Highland Road -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-highland-road.webp" alt="Winding single track Highland road" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">The Highland Roads</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Every road in Scotland tells a story — we drive them all</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 11 — Edinburgh Old Town -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-edinburgh-oldtown.webp" alt="Edinburgh Old Town cobblestone close at night" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-left">
+                    <div class="max-w-xl space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Edinburgh Old Town</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">A UNESCO World Heritage site and one of Europe's finest medieval cities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strip 12 — Ben Nevis -->
+        <div class="gallery-strip gallery-strip-animate">
+            <img src="../gallery-ben-nevis.webp" alt="Ben Nevis towering over Fort William" loading="lazy" decoding="async">
+            <div class="absolute inset-0 z-10 bg-gradient-to-l from-black/85 via-black/50 to-transparent flex items-center">
+                <div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-right">
+                    <div class="max-w-xl ml-auto space-y-2">
+                        <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 ml-auto"></div>
+                        <h2 class="font-display text-2xl md:text-[32px] font-bold text-white leading-tight">Ben Nevis</h2>
+                        <p class="font-body text-sm md:text-[16px] text-white/80 leading-relaxed">Britain's highest mountain — 1,345 metres of raw Highland power</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-24 text-white" style="background-color: #080F1E;">
-        <div class="max-w-4xl mx-auto px-margin-mobile">
-            <h2 class="font-headline-lg text-headline-lg text-center mb-4">Frequently Asked Questions</h2>
-            <div class="w-24 h-1 bg-[#c9a84c] mx-auto mb-16"></div>
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-[#c9a84c]">Do you track flights automatically?</h4>
-                        <span class="material-symbols-outlined text-[#c9a84c] faq-chevron">expand_more</span>
-                    </div>
-                    <div class="mt-4 text-white/70 text-sm leading-relaxed hidden">
-                        Yes — we monitor every inbound flight in real time from departure. If your flight is delayed, early, or diverted, your driver adjusts automatically. You never need to contact us about flight changes.
-                    </div>
-                </div>
-                <!-- FAQ 2 -->
-                <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-[#c9a84c]">Is meet and greet included?</h4>
-                        <span class="material-symbols-outlined text-[#c9a84c] faq-chevron">expand_more</span>
-                    </div>
-                    <div class="mt-4 text-white/70 text-sm leading-relaxed hidden">
-                        Yes — meet and greet inside the arrivals hall with a personalised name board is included in every airport transfer at no extra charge.
-                    </div>
-                </div>
-                <!-- FAQ 3 -->
-                <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-[#c9a84c]">What if my flight is cancelled?</h4>
-                        <span class="material-symbols-outlined text-[#c9a84c] faq-chevron">expand_more</span>
-                    </div>
-                    <div class="mt-4 text-white/70 text-sm leading-relaxed hidden">
-                        Contact us via WhatsApp or email as soon as you know about a cancellation and we will rearrange your transfer. We understand flight disruptions are outside your control.
-                    </div>
-                </div>
-                <!-- FAQ 4 -->
-                <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-[#c9a84c]">Do you cover all Scottish airports?</h4>
-                        <span class="material-symbols-outlined text-[#c9a84c] faq-chevron">expand_more</span>
-                    </div>
-                    <div class="mt-4 text-white/70 text-sm leading-relaxed hidden">
-                        Yes — Edinburgh (EDI), Glasgow (GLA), Aberdeen (ABZ), Inverness (INV), and Glasgow Prestwick (PIK). Contact us for transfers to or from any of these airports.
-                    </div>
-                </div>
-                <!-- FAQ 5 -->
-                <div class="faq-item p-6 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-[#c9a84c]">How far in advance should I book?</h4>
-                        <span class="material-symbols-outlined text-[#c9a84c] faq-chevron">expand_more</span>
-                    </div>
-                    <div class="mt-4 text-white/70 text-sm leading-relaxed hidden">
-                        We require a minimum of 12 hours advance notice for all bookings. For busy travel periods we recommend booking as early as possible to guarantee availability.
-                    </div>
-                </div>
+    <!-- Closing CTA Section -->
+    <section class="py-20 px-8 text-center" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 100%); border-top: 1px solid rgba(201,168,76,0.2);">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
+                Experience Scotland with Scotland 247 Taxis
+            </h2>
+            <p class="font-body text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+                Private transfers, Highland day tours, and chauffeur hire across every corner of Scotland. Let us take you there.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                <a href="/247texis-/services/day-tours/" class="w-full sm:w-auto bg-[#c9a84c] hover:bg-[#b0923d] text-[#001A3F] font-bold px-9 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg text-center">
+                    Book a Day Tour
+                </a>
+                <a href="/247texis-/index.html#quote" class="w-full sm:w-auto border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#001A3F] font-bold px-9 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg text-center">
+                    Get Instant Quote
+                </a>
             </div>
         </div>
     </section>
 </main>
 
-<!-- Closing CTA Banner -->
-<section class="relative py-24 text-center overflow-hidden border-t border-[#c9a84c]/20">
-    <img src="../airports-cta.jpg" class="absolute inset-0 w-full h-full object-cover object-center z-0 ken-burns" alt="Ready to Book Your Airport Transfer?" loading="lazy" decoding="async" width="1920" height="1200">
-    <div class="absolute inset-0 z-0 bg-gradient-to-t from-black/80 to-black/35" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-headline-lg font-bold text-white mb-4">Ready to Book Your Airport Transfer?</h2>
-        <p class="text-white/80 max-w-xl mx-auto mb-8 text-sm md:text-base">Fixed price confirmed. Flight tracked from departure. Driver waiting in arrivals.</p>
-        <a href="https://wa.me/447469598219" class="bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold px-10 py-4 rounded-full text-center text-sm uppercase tracking-wider transition-all duration-300 inline-block shadow-lg">Book Your Airport Transfer</a>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer id="contact" class="text-mist-white w-full py-stack-lg" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 60%, #0d1a2b 100%) !important; border-top: 1px solid rgba(201,168,76,0.15) !important;">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="space-y-4">
@@ -749,7 +745,28 @@
             header.classList.remove('scrolled');
         }
     });
-</script>
+
+    // Intersection Observer for gallery strip animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scrolled-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.gallery-strip-animate').forEach((strip, index) => {
+            // Stagger animations slightly
+            strip.style.transitionDelay = `${(index % 2) * 0.1}s`;
+            observer.observe(strip);
+        });
+    });
+  </script>
 
 </body>
 </html>
