@@ -1096,9 +1096,39 @@
             width: 100%;
             height: 490px; /* Standard height for cards to fit content comfortably */
         }
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             .flip-card-container {
                 height: 520px !important;
+                min-height: 520px !important;
+            }
+            .flip-card-back {
+                padding: 16px 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            /* Package title: 15px (from 18px) */
+            .flip-card-back h3 {
+                font-size: 15px !important;
+            }
+            /* Vehicle name: 12px (from 13px) */
+            .flip-card-back .price-row span {
+                font-size: 12px !important;
+            }
+            /* Price: 14px (from 15px) */
+            .flip-card-back .price-row div.font-bold {
+                font-size: 14px !important;
+            }
+            /* Hourly rate: 9px (from 9px) */
+            .flip-card-back .price-row div.text-gray-500 {
+                font-size: 9px !important;
+            }
+            /* Row padding: 7px 0 (from py-2) */
+            .flip-card-back .price-row {
+                padding-top: 7px !important;
+                padding-bottom: 7px !important;
             }
         }
         .flip-card {

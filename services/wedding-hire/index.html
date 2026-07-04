@@ -1488,8 +1488,7 @@
             <h2 class="text-3xl md:text-4xl font-title font-bold text-center text-white mb-3">Wedding Hire Pricing</h2>
             <p class="text-center text-white/70 font-body mb-16 max-w-xl mx-auto">Fixed prices confirmed at booking. No hidden charges. No surprises.</p>
             
-            <div class="max-w-4xl mx-auto bg-white border border-[#c9a84c]/30 rounded-2xl p-6 md:p-10 shadow-xl overflow-hidden">
-                <div class="overflow-x-auto w-full">
+            <div class="max-w-4xl mx-auto bg-white border border-[#c9a84c]/30 rounded-2xl p-6 md:p-10 shadow-xl overflow-hidden hidden md:block"><div class="overflow-x-auto w-full">
                     <table class="w-full text-left border-collapse min-w-[500px]">
                         <thead>
                             <tr class="bg-[#0A1F44] border-b-2 border-[#c9a84c]/20">
@@ -1521,6 +1520,42 @@
                     * All prices are for bookings within a reasonable distance of Perth. Additional mileage charges may apply for longer journeys. All prices confirmed at time of booking via WhatsApp.
                 </p>
             </div>
+
+
+            <!-- Mobile Stacked Price Cards (under 768px) -->
+            <div class="block md:hidden space-y-[10px] w-full text-left">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-[12px] border border-[rgba(201,168,76,0.2)] p-4 flex flex-col gap-1 w-full shadow-sm">
+                    <div class="flex justify-between items-center w-full">
+                        <span class="text-[#0A1F44] font-bold text-[16px] font-title-md">Audi RS7</span>
+                        <span class="text-[#c9a84c] font-bold text-[20px] font-body">£600</span>
+                    </div>
+                    <div class="text-gray-500 text-[12px] font-body">
+                        Extra: £75-£100/hr
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-[12px] border border-[rgba(201,168,76,0.2)] p-4 flex flex-col gap-1 w-full shadow-sm">
+                    <div class="flex justify-between items-center w-full">
+                        <span class="text-[#0A1F44] font-bold text-[16px] font-title-md">Range Rover</span>
+                        <span class="text-[#c9a84c] font-bold text-[20px] font-body">£550</span>
+                    </div>
+                    <div class="text-gray-500 text-[12px] font-body">
+                        Extra: £75-£100/hr
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-[12px] border border-[rgba(201,168,76,0.2)] p-4 flex flex-col gap-1 w-full shadow-sm">
+                    <div class="flex justify-between items-center w-full">
+                        <span class="text-[#0A1F44] font-bold text-[16px] font-title-md">Range Rover 7-Seater</span>
+                        <span class="text-[#c9a84c] font-bold text-[20px] font-body">£650</span>
+                    </div>
+                    <div class="text-gray-500 text-[12px] font-body">
+                        Extra: £100-£125/hr
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

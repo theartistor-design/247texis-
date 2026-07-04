@@ -1032,9 +1032,39 @@
             width: 100%;
             height: 490px; /* Standard height for cards to fit content comfortably */
         }
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             .flip-card-container {
                 height: 520px !important;
+                min-height: 520px !important;
+            }
+            .flip-card-back {
+                padding: 16px 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            /* Package title: 15px (from 18px) */
+            .flip-card-back h3 {
+                font-size: 15px !important;
+            }
+            /* Vehicle name: 12px (from 13px) */
+            .flip-card-back .price-row span {
+                font-size: 12px !important;
+            }
+            /* Price: 14px (from 15px) */
+            .flip-card-back .price-row div.font-bold {
+                font-size: 14px !important;
+            }
+            /* Hourly rate: 9px (from 9px) */
+            .flip-card-back .price-row div.text-gray-500 {
+                font-size: 9px !important;
+            }
+            /* Row padding: 7px 0 (from py-2) */
+            .flip-card-back .price-row {
+                padding-top: 7px !important;
+                padding-bottom: 7px !important;
             }
         }
         .flip-card {
@@ -3224,16 +3254,15 @@
                         <span class="material-symbols-outlined text-white"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
                         <span>Call Us: 07469 598219</span>
                     </a>
-                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-[50px] w-full shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 transition-all duration-300">
-                        <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-                        </svg>
-                        <span>Chat on WhatsApp</span>
-                    </a>
+                    
                 </div>
             </div>
             <div class="space-y-4 font-body-md text-body-md text-mist-white/80 pt-4 border-t border-white/10">
                 <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#c9a84c]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span> Email: &#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</p>
+                <p class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[#c9a84c]"><svg class="w-4 h-4 fill-current text-[#c9a84c]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/></svg></span>
+                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="hover:text-[#c9a84c] transition-colors">+44 7469 598219</a>
+                </p>
                 <p class="flex items-center"><span class="material-symbols-outlined mr-3 text-[#c9a84c]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span> Perth Business Centre, Perth, Scotland</p>
             </div>
         </div>
