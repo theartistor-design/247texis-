@@ -62,7 +62,7 @@
                 "secondary": "#005EB8",
                 "surface-dim": "#d9dadb",
                 "surface-variant": "#e1e3e4",
-                "prestige-gold": "#005EB8",
+                "prestige-gold": "#c9a84c",
                 "tertiary": "#00030b",
                 "surface-container": "#edeeef",
                 "tertiary-fixed": "#d5e3ff",
@@ -141,7 +141,7 @@
             background:rgba(248,249,250,0.88)!important;
             backdrop-filter:blur(24px) saturate(180%);
             -webkit-backdrop-filter:blur(24px) saturate(180%);
-            border-bottom:1px solid rgba(0, 94, 184,0.12)!important;
+            border-bottom:1px solid rgba(201, 168, 76,0.12)!important;
             transition:all 0.45s cubic-bezier(0.16,1,0.3,1)!important;
         }
         header.scrolled {
@@ -1089,11 +1089,17 @@
 }
 
         /* 3D Flip Card Styles */
+/* 3D Flip Card Styles */
         .flip-card-container {
             -webkit-perspective: 1200px;
             perspective: 1200px;
             width: 100%;
             height: 490px; /* Standard height for cards to fit content comfortably */
+        }
+        @media (max-width: 480px) {
+            .flip-card-container {
+                height: 520px !important;
+            }
         }
         .flip-card {
             position: relative;
@@ -1104,7 +1110,8 @@
             -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
         }
-        @media (min-width: 768px) {
+        /* Hover flip only on devices that support true hover */
+        @media (hover: hover) and (pointer: fine) {
             .flip-card-container:hover .flip-card {
                 -webkit-transform: rotateY(180deg);
                 transform: rotateY(180deg);
@@ -1120,10 +1127,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden !important;
+            backface-visibility: hidden !important;
             border-radius: 16px;
             overflow: hidden;
+            /* Force hardware acceleration on iOS WebKit */
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
         }
         .flip-card-front {
             z-index: 2;
@@ -1136,65 +1146,26 @@
             z-index: 1;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
-        
-        /* Staggered Row Animation on back face */
+        @keyframes slideInRow {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
         .price-row {
             opacity: 0;
             transform: translateX(20px);
             transition: background-color 0.2s ease;
         }
-        .flip-card-container:hover .price-row,
+        .flip-card-container:hover .flip-card .price-row,
         .flip-card.flipped .price-row {
             animation: slideInRow 0.3s ease forwards;
         }
-        .price-row:hover {
-            background-color: rgba(201, 168, 76, 0.06) !important;
-        }
-        
-        .price-row:nth-child(1) { animation-delay: 0.1s; }
-        .price-row:nth-child(2) { animation-delay: 0.2s; }
-        .price-row:nth-child(3) { animation-delay: 0.3s; }
-        .price-row:nth-child(4) { animation-delay: 0.4s; }
-        .price-row:nth-child(5) { animation-delay: 0.5s; }
-        
-        @keyframes slideInRow {
-            from {
-                transform: translateX(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* WhatsApp Button styling */
-        .whatsapp-cta-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background-color: #25D366;
-            color: #ffffff !important;
-            font-weight: bold;
-            border-radius: 50px;
-            height: 46px;
-            font-size: 13px;
-            margin-top: 16px;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-transform: none;
-        }
-        .whatsapp-cta-btn:hover {
-            background-color: #128c7e;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
-            color: #ffffff !important;
-            text-decoration: none;
-        }
-</style>
+        </style>
 </head>
 <body class="bg-white font-body text-charcoal-text antialiased">
 
@@ -1213,7 +1184,7 @@
     <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] border-t-[3px] border-[#c9a84c] p-[12px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col gap-[4px]">
         <a href="/247texis-/services/airport-transfers/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_airport</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l8 2.5z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Airport Transfers</span>
@@ -1222,7 +1193,7 @@
         </a>
         <a href="/247texis-/services/wedding-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">favorite</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Wedding Hire</span>
@@ -1231,7 +1202,7 @@
         </a>
         <a href="/247texis-/services/private-driver/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">person</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Private Driver Hire</span>
@@ -1240,7 +1211,7 @@
         </a>
         <a href="/247texis-/services/vehicle-hire/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">key</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Flexible Vehicle Hire</span>
@@ -1249,7 +1220,7 @@
         </a>
         <a href="/247texis-/services/executive-travel/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">work</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v6H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.1 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Executive Travel</span>
@@ -1258,7 +1229,7 @@
         </a>
         <a href="/247texis-/services/multi-stop/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">alt_route</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M17 17h-2.5c-1.38 0-2.5-1.12-2.5-2.5V8.5c0-.83-.67-1.5-1.5-1.5H8.5c-.83 0-1.5.67-1.5 1.5V10l-4-4 4-4v2.5H9c2.48 0 4.5 2.02 4.5 4.5v6c0 .83.67 1.5 1.5 1.5H17V14l4 4-4 4v-3z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Multi-Stop Journeys</span>
@@ -1267,7 +1238,7 @@
         </a>
         <a href="/247texis-/services/long-distance/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">directions_car</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42.99L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5 0 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 1.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Long Distance Transport</span>
@@ -1276,7 +1247,7 @@
         </a>
         <a href="/247texis-/services/package-delivery/" class="flex items-center rounded-[8px] hover:bg-[rgba(201,168,76,0.08)] transition-all duration-200" style="height: 48px; padding: 6px 10px; gap: 10px;">
             <div class="rounded-full bg-[rgba(201,168,76,0.12)] flex items-center justify-center shrink-0" style="width: 36px; height: 36px;">
-                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;">local_shipping</span>
+                <span class="material-symbols-outlined text-[#c9a84c]" style="font-size: 18px;"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M20 8h-3V4H4c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 1.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 1.67 1.5 1.5-.67 1.5-1.5 1.5zM17 12V9.5h2.5l1.97 2.5H17z"/></svg></span>
             </div>
             <div class="flex flex-col justify-center min-w-0">
                 <span class="text-[#0A1F44] font-bold truncate" style="font-size: 13px; line-height: 1.2;">Package Delivery</span>
@@ -1296,7 +1267,7 @@
 <div class="flex items-center space-x-4">
 
 <button id="mobile-menu-btn" class="lg:hidden text-deep-navy">
-<span class="material-symbols-outlined">menu</span>
+<span class="material-symbols-outlined"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
 </button>
 </div>
 </div>
@@ -1310,9 +1281,9 @@
             <!-- Breadcrumbs -->
             <div class="flex flex-wrap items-center justify-center gap-2 text-white/60 text-sm mb-6 font-semibold uppercase tracking-wider">
                 <a href="/247texis-/index.html#home" class="hover:text-[#c9a84c] transition-colors">Home</a>
-                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="material-symbols-outlined text-[14px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
                 <a href="/247texis-/services/" class="hover:text-[#c9a84c] transition-colors">Services</a>
-                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="material-symbols-outlined text-[14px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
                 <span class="text-[#c9a84c]">Flexible Vehicle Hire</span>
             </div>
             <h1 class="text-[30px] md:text-[52px] font-title font-bold text-white mb-6 leading-tight max-w-[800px] mx-auto text-center animate-hero-heading">Flexible Vehicle Hire Scotland<br>Book by the Hour or by the Week</h1>
@@ -1344,7 +1315,7 @@
                 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Your Choice of Vehicle</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">Select any vehicle from our full fleet — Standard, Executive, or Prestige class. Your driver comes with the vehicle as part of every hire package.</p>
@@ -1353,7 +1324,7 @@
 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Fixed Hourly Rate</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">Our hire rate is fixed at booking. No meter, no surge, no overtime penalties for running slightly long. What we quote is what you pay.</p>
@@ -1362,7 +1333,7 @@
 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Minimum 4 Hours</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">All flexible hire packages start from a minimum of 4 hours. Perfect for half-day city exploration, airport plus meetings, or a short Highland excursion.</p>
@@ -1371,7 +1342,7 @@
 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Multi-Stop Flexibility</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">Stop wherever you choose, for however long you need. Your driver waits at every stop. Perfect for business days with multiple meetings or tourism with no fixed schedule.</p>
@@ -1380,7 +1351,7 @@
 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Corporate Packages Available</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">Regular corporate clients can arrange account-based hire with centralised booking, monthly invoicing, and priority vehicle availability.</p>
@@ -1389,7 +1360,7 @@
 
             <div class="bg-white rounded-[16px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-mist-white flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.1)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">verified</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7 3.1 5.51.34 9.2 2.78 12l-2.44 2.79.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.82.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-[#0A1F44] font-bold">Complimentary Refreshments</h3>
                 <p class="font-body text-[#6B7280] text-[14px] leading-relaxed">Still and sparkling water provided as standard in every vehicle. Champagne, soft drinks, and specific refreshments available on advance request.</p>
@@ -1434,652 +1405,668 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Package Card 1 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_4h.jpg?v=2" alt="4-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+            <!-- Package Card 1 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_4h.jpg?v=2" alt="4-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">4-Hour Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">Half Day Private Driver</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Perfect for city tours, short business runs, or targeted shopping trips in Edinburgh, Glasgow or Aberdeen.</p>
                                 
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">4-Hour Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">Half Day Private Driver</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Perfect for a city transfer, airport run, or short business appointment.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">4-Hour Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£180</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£240</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£300</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£300</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£400</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%204-Hour%20Flexible%20Hire%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-                
-                
-                <!-- Package Card 2 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_8h.jpg?v=2" alt="8-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
-                                <span class="bg-[#c9a84c] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider absolute top-4 left-4 z-20">Most Popular</span>
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">8-Hour Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">Full Working Day Driver</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">A full working day with your driver. Ideal for meetings, events, and multi-stop business travel.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">8-Hour Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£360</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£480</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£800</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%208-Hour%20Flexible%20Hire%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-                
-                
-                <!-- Package Card 3 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_12h.jpg?v=2" alt="12-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
-                                
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">12-Hour Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">Extended Day Private Driver</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Extended hire for tours, events, or corporate travel days with maximum flexibility.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">12-Hour Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£540</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£720</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£900</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£900</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£1,200</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%2012-Hour%20Flexible%20Hire%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-                
-                
-                <!-- Package Card 4 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_24h.jpg?v=2" alt="24-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
-                                
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">24-Hour Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">Round-the-Clock Chauffeur</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Round-the-clock availability. Perfect for international arrivals, events spanning day and night.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">24-Hour Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£1,080</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£1,440</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£1,800</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£1,800</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£2,400</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%2024-Hour%20Flexible%20Hire%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-                
-                
-                <!-- Package Card 5 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_48h.jpg?v=2" alt="48-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
-                                
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">48-Hour Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">Two-Day Executive Driver</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Two full days of private hire. Ideal for multi-city business trips or extended Highland exploration.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">48-Hour Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£2,160</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£2,880</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£3,600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£3,600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£4,800</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%2048-Hour%20Flexible%20Hire%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-                
-                
-                <!-- Package Card 6 -->
-                <div class="flip-card-container">
-                    <div class="flip-card">
-                        <!-- Front Face -->
-                        <div class="flip-card-front">
-                            <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
-                                <img src="../../hire_weekly.jpg?v=2" alt="Weekly Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
-                                
-                                <div class="relative z-20 flex flex-col h-full justify-end">
-                                    <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">Weekly Package</h3>
-                                    <p class="text-white font-semibold text-[15px] mb-2">7-Day Dedicated Chauffeur</p>
-                                    <p class="text-white/85 text-[13px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Seven days with a dedicated vehicle and driver. Perfect for extended tours or corporate project travel.</p>
-                                    <!-- Tap to see prices pill -->
-                                    <div class="flex justify-center mb-3">
-                                        <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
-                                            <span class="material-symbols-outlined text-[12px]">touch_app</span> Tap to see prices
-                                        </span>
-                                    </div>
-                                    <a href="#quote" class="w-full py-3 bg-[#c9a84c] text-black font-bold text-center rounded-lg uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity duration-300 text-sm">ENQUIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Back Face -->
-                        <div class="flip-card-back" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 50%, #0d1a2b 100%); border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <!-- Top Section -->
-                            <div>
-                                <!-- Tap to flip back (mobile only) -->
-                                <div class="md:hidden text-white/40 text-[10px] text-center mb-2 font-medium tracking-wide">
-                                    Tap card to flip back
-                                </div>
-                                <h3 class="text-[#c9a84c] font-bold text-[18px] tracking-wider uppercase">Weekly Package</h3>
-                                <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
-                            </div>
-                            
-                            <!-- Price Table Rows -->
-                            <div class="flex flex-col gap-1 my-auto">
-                                
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Toyota Corolla / VW Caddy</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£7,560</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £45/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Mercedes E-Class</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£10,080</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £60/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£12,600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Audi RS7</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£12,600</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £75/hr</div>
-                            </div>
-                        </div>
-                        <div class="price-row flex justify-between items-center py-2.5 border-b border-[#c9a84c]/10 px-2 rounded">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-[#c9a84c] text-[8px] shrink-0">●</span>
-                                <span class="text-white text-[13px] font-medium truncate">Range Rover 7-Seater</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <div class="text-[#c9a84c] font-bold text-[15px] font-mono leading-none">£16,800</div>
-                                <div class="text-white/45 text-[9px] mt-1 leading-none">@ £100/hr</div>
-                            </div>
-                        </div>
-                            </div>
-                            
-                            <!-- Bottom Section -->
-                            <div>
-                                <a href="https://wa.me/447469598219?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20the%20Weekly%20Flexible%20Chauffeur%20Package." target="_blank" rel="noopener" class="whatsapp-cta-btn">
-                                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.975 4.47-9.975 9.977 0 1.76.457 3.475 1.328 4.988L2 22l5.176-1.357c1.464.798 3.11 1.22 4.825 1.22 5.507 0 9.976-4.47 9.976-9.977C21.988 6.47 17.52 2 12.012 2zm6.657 14.28c-.27.76-1.36 1.48-2.2 1.62-.77.13-1.78.23-4.75-.99-3.79-1.56-6.19-5.4-6.38-5.65-.18-.25-1.52-2.02-1.52-3.85 0-1.83.95-2.73 1.29-3.09.28-.29.74-.43 1.18-.43.14 0 .27.01.39.01.35.01.52.04.75.59.27.65.91 2.23.99 2.39.08.16.13.35.03.54-.1.2-.15.33-.3.5-.15.17-.32.39-.46.52-.16.15-.33.32-.14.65.19.32.84 1.39 1.8 2.25.96.86 1.77 1.13 2.1 1.3.33.16.52.13.72-.09.2-.23.86-.99 1.09-1.33.23-.33.45-.28.76-.16.31.12 1.97.93 2.31 1.1.34.17.57.25.65.39.08.14.08.82-.19 1.58z"/></svg>
-                                    Enquire Now on WhatsApp
-                                </a>
-                                <p class="mt-3 text-white/45 text-[10px] text-center font-medium">
-                                    Prices confirmed at booking via WhatsApp
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-            </div>
-        </div>
-    </section>
-        
 
-    <!-- 5. Why Choose Us -->
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">4-Hour Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£180</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£240</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£300</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£300</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£400</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%204-Hour%20Package%20(Half%20Day%20Private%20Driver)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 2 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_8h.jpg?v=2" alt="8-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">8-Hour Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">Full Working Day Driver</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Ideal for a full day of meetings, a local private tour, or regional travel across central Scotland.</p>
+                                
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
+                                </div>
+
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">8-Hour Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£360</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£480</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£800</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%208-Hour%20Package%20(Full%20Working%20Day%20Driver)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 3 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_12h.jpg?v=2" alt="12-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">12-Hour Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">Extended Day Private Driver</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Perfect for extended day tours, long-distance round trips, or full-day event transportation.</p>
+                                
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
+                                </div>
+
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">12-Hour Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£540</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£720</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£900</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£900</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£1,200</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%2012-Hour%20Package%20(Extended%20Day%20Private%20Driver)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 4 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_24h.jpg?v=2" alt="24-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">24-Hour Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">Round-the-Clock Chauffeur</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Round-the-clock availability. Perfect for weddings, VIP events, or multi-day journeys starting in Scotland.</p>
+                                
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
+                                </div>
+
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">24-Hour Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£1,080</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£1,440</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£1,800</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£1,800</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£2,400</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%2024-Hour%20Package%20(Round-the-Clock%20Chauffeur)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 5 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_48h.jpg?v=2" alt="48-Hour Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">48-Hour Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">Two-Day Executive Driver</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">Two full days of private hire. Ideal for multi-city business trips or extended Highland exploration.</p>
+                                
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
+                                </div>
+
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">48-Hour Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£2,160</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£2,880</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£3,600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£3,600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£4,800</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%2048-Hour%20Package%20(Two-Day%20Executive%20Driver)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 6 -->
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <!-- Front Face -->
+                    <div class="flip-card-front">
+                        <div class="relative w-full h-full rounded-[16px] overflow-hidden group flex flex-col justify-end p-6 border border-transparent hover:border-[#c9a84c] transition-all duration-500 shadow-md">
+                            <img src="../../hire_weekly.jpg?v=2" alt="Weekly Package" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-in-out group-hover:scale-108 z-0" loading="lazy" decoding="async" width="800" height="800">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 z-10"></div>
+                            
+                            <div class="relative z-20 flex flex-col h-full justify-end">
+                                <h3 class="text-[#c9a84c] font-bold text-[20px] mb-1">Weekly Package</h3>
+                                <p class="text-white font-semibold text-[15px] mb-2">7-Day Dedicated Chauffeur</p>
+                                <p class="text-white/85 text-[14px] leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[100px] group-hover:opacity-100 transition-all duration-500 ease-in-out">A dedicated chauffeur and vehicle for 7 full days. The ultimate solution for corporate travel or complete Scotland tours.</p>
+                                
+                                <!-- Gold pill badge for prices -->
+                                <div class="flex justify-center mb-3">
+                                    <span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-semibold text-[#c9a84c] bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.5)] tracking-wide gap-1">
+                                        <span class="material-symbols-outlined text-[12px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74C16 4.47 13.53 2 10.5 2S5 4.47 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.64l-4.2-2.1c-.38-.19-.84-.15-1.18.12L12 15.2l-3.23-2.13a1 1 0 0 0-1.44.3c-.3.45-.19 1.05.25 1.37l4.16 2.78c.84.56 1.34 1.5 1.34 2.5V22h5v-3.5c0-1.05-.44-2.02-1.24-2.62z"/></svg></span> Tap to see prices
+                                    </span>
+                                </div>
+
+                                <button class="w-full bg-[#c9a84c]/20 hover:bg-[#c9a84c] text-white hover:text-black font-bold py-3 rounded-[8px] text-center transition-all duration-300 block uppercase tracking-wider font-label-sm text-xs border border-[#c9a84c]/50">Enquire</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Face (Premium White Design) -->
+                    <div class="flip-card-back" style="background: #FFFFFF; border: 1px solid rgba(201,168,76,0.4); padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Mobile instruction to flip back -->
+                        <div class="text-center md:hidden text-gray-400 text-[9px] uppercase tracking-wider mb-1 cursor-pointer hover:text-[#c9a84c]">
+                            ← Tap card to flip back
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[#0A1F44] font-bold text-[18px] tracking-wider uppercase">Weekly Package</h3>
+                            <!-- Thin gold line -->
+                            <div class="w-full h-[1px] my-2" style="background: linear-gradient(to right, #c9a84c, transparent);"></div>
+                            
+                            <!-- Table rows -->
+                            <div class="space-y-1.5 mt-4 font-body-md">
+                                
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.1s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Toyota Corolla / VW Caddy</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£7,560</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £45/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.2s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Mercedes E-Class</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£10,080</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £60/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.30000000000000004s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£12,600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.4s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Audi RS7</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£12,600</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@  £75/hr</div>
+                                </div>
+                            </div>
+                            <div class="price-row flex justify-between items-center py-2 border-b border-[#c9a84c]/15 px-2 rounded" style="animation-delay: 0.5s;">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[#b0923d] text-[10px] shrink-0">●</span>
+                                    <span class="text-[#0A1F44] text-[13px] font-semibold truncate">Range Rover 7-Seater</span>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <div class="text-[#b0923d] font-bold text-[15px] font-mono leading-none">£16,800</div>
+                                    <div class="text-gray-500 text-[9px] mt-0.5 leading-none">@ £100/hr</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium CTA Button & footnote -->
+                        <div class="mt-4">
+                            <a href="https://wa.me/447469598219?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20the%20Weekly%20Package%20(7-Day%20Dedicated%20Chauffeur)%20for%20private%20hire." target="_blank" rel="noopener" class="w-full bg-[#0A1F44] hover:bg-[#c9a84c] text-white hover:text-[#0A1F44] border border-[#c9a84c] font-bold h-[46px] rounded-[50px] flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(201,168,76,0.25)] hover:-translate-y-0.5 group gap-2 text-sm uppercase tracking-wider font-label-sm">
+                                <svg class="w-4 h-4 fill-current text-[#c9a84c] group-hover:text-[#0A1F44] transition-colors duration-300" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                                </svg>
+                                Enquire Now on WhatsApp
+                            </a>
+                            <div class="text-[10px] text-gray-500 mt-2 text-center font-body-md">
+                                Prices confirmed at booking via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- 5. Why Choose Us -->
     <section class="py-20 bg-[#0A1F44] text-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-title font-bold text-center text-white mb-4">Why Choose Us</h2>
@@ -2088,7 +2075,7 @@
                 
             <div class="bg-white/5 border border-white/10 rounded-[16px] p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">star</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-white font-bold">Experienced Local Drivers</h3>
                 <p class="font-body text-white/70 text-[14px] leading-relaxed">Our drivers know every road in Scotland — Highland single tracks, city one-ways, and everything in between. You navigate Scotland with confidence.</p>
@@ -2097,7 +2084,7 @@
 
             <div class="bg-white/5 border border-white/10 rounded-[16px] p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">star</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-white font-bold">No Self-Drive Risk</h3>
                 <p class="font-body text-white/70 text-[14px] leading-relaxed">Scotland's roads can be challenging for visitors. Our professional drivers handle all the driving so you experience Scotland without the stress.</p>
@@ -2106,7 +2093,7 @@
 
             <div class="bg-white/5 border border-white/10 rounded-[16px] p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 rounded-full bg-[rgba(201,168,76,0.15)] flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]">star</span>
+                    <span class="material-symbols-outlined text-[#c9a84c] text-[24px]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
                 </div>
                 <h3 class="font-title text-[20px] text-white font-bold">Fully Flexible Itinerary</h3>
                 <p class="font-body text-white/70 text-[14px] leading-relaxed">No fixed schedule required. Tell us roughly what you want to do and we will make it happen — adapting throughout the day as your plans evolve.</p>
@@ -2157,7 +2144,7 @@
     <section class="py-20 bg-mist-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-white rounded-[16px] p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.06)] text-center relative border border-white/20">
-                <span class="material-symbols-outlined text-[64px] text-[#c9a84c]/20 absolute top-4 left-4">format_quote</span>
+                <span class="material-symbols-outlined text-[64px] text-[#c9a84c]/20 absolute top-4 left-4"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg></span>
                 <p class="font-title italic text-lg md:text-xl text-[#0A1F44] leading-relaxed mb-6 z-10 relative">"We hired a vehicle for 8 hours to explore Perthshire and the Trossachs with no fixed plan. Our driver was brilliant — suggesting stops we never would have found, waiting patiently at every location, and getting us back to our hotel exactly on time. Perfect day."</p>
                 <div class="font-body font-bold text-[#c9a84c] text-md">Sarah L., Tourist from Australia</div>
             </div>
@@ -2239,63 +2226,68 @@
         </div>
     </section>
 
-    <footer id="contact" class="text-mist-white w-full py-stack-lg" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 60%, #0d1a2b 100%) !important; border-top: 1px solid rgba(201,168,76,0.15) !important;">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="space-y-4">
-<div style="background: #FFFFFF !important; background-color: #FFFFFF !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; border: none !important; padding: 8px 16px !important; border-radius: 8px !important;" class="inline-block mb-4">
-                    <img src="../../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" style="background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; padding: 0 !important; border-radius: 0 !important;"/ loading="lazy" decoding="async" width="256" height="256">
-                </div>
-<p class="font-body-md text-body-md opacity-80 italic">Scotland's Premier Private Hire & Travel Network</p>
-<div class="flex space-x-4 mt-6">
-<a class="text-mist-white hover:text-[#c9a84c] hover:scale-[1.15] transition-all duration-300 inline-block" href="mailto:&#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-mist-white hover:text-[#c9a84c] hover:scale-[1.15] transition-all duration-300 inline-block" href="tel:+447469598219"><span class="material-symbols-outlined">call</span></a>
-</div>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-md text-title-md text-prestige-gold" style="color: #c9a84c !important;" style="color: #c9a84c !important;">Contact</h4>
-<ul class="space-y-2 font-body-md text-body-md opacity-80">
-<li>Phone: 07469 598219</li>
-<li class="flex flex-col sm:flex-row sm:items-center gap-2">
-    <span>WhatsApp:</span>
-    
-        <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="text-white hover:text-[#c9a84c] transition-colors inline-flex items-center gap-1.5" style="background: none !important; border: none !important; padding: 0 !important; font-size: inherit !important; font-weight: inherit !important; box-shadow: none !important;">
-            <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle;">
-                <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/>
-            </svg>
-            +44 7469 598219
-        </a>
-    
-</li>
-<li>Email: &#105;&#110;&#102;&#111;&#64;&#115;&#99;&#111;&#116;&#108;&#97;&#110;&#100;&#50;&#52;&#55;&#116;&#97;&#120;&#105;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</li>
-<li class="mt-4">Perth Business Centre,<br/>Perth, Scotland</li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-md text-title-md text-prestige-gold" style="color: #c9a84c !important;" style="color: #c9a84c !important;">Quick Links</h4>
-<ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/index.html#airports">Airport Transfers</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/wedding-hire/">Wedding Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/executive-travel/">Executive Travel</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/vehicle-hire/">Vehicle Hire</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/services/multi-stop/">Multi-Stop Journeys</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="../../index.html#contact">Contact</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-title-md text-title-md text-prestige-gold" style="color: #c9a84c !important;" style="color: #c9a84c !important;">Legal</h4>
-<ul class="space-y-2 font-body-md text-body-md">
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/terms/">Terms of Service</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/privacy/">Privacy Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/cookies/">Cookie Policy</a></li>
-<li><a class="text-on-primary-container hover:text-mist-white transition-colors" href="/247texis-/accessibility/">Accessibility</a></li>
-</ul>
-</div>
-</div>
-<div class="mt-16 pt-8 border-t border-mist-white/10 text-center px-margin-mobile">
-<p class="font-body-md text-label-sm opacity-60">
-                © 2026 Scotland 247 Taxis. Premium Reliability in Every Mile. All rights reserved.
-            </p>
-</div>
+    <footer id="contact" style="background: linear-gradient(135deg, #0A1F44 0%, #061018 60%, #0d1a2b 100%); border-top: 1px solid rgba(201,168,76,0.15); padding: 64px 0 32px 0;">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-16">
+            <!-- Col 1: Logo & Tagline -->
+            <div class="space-y-4">
+                <div class="bg-white p-2.5 rounded-lg shadow-md inline-block mb-4 max-w-[200px]">
+                    <img src="/247texis-/logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-14 w-auto object-contain" loading="lazy" decoding="async" width="256" height="256">
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed">Your premium travel and chauffeur partner across Scotland. Reliability, comfort, and professional services guaranteed.</p>
+            </div>
+            <!-- Col 2: Services -->
+            <div>
+                <h4 class="font-title text-sm font-bold uppercase tracking-wider mb-6 text-[#c9a84c]">Services</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/247texis-/services/airport-transfers/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Airport Transfers</a></li>
+                    <li><a href="/247texis-/services/wedding-hire/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Wedding Hire</a></li>
+                    <li><a href="/247texis-/services/private-driver/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Private Chauffeur Hire</a></li>
+                    <li><a href="/247texis-/services/vehicle-hire/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Flexible Vehicle Hire</a></li>
+                </ul>
+            </div>
+            <!-- Col 3: Quick Links -->
+            <div>
+                <h4 class="font-title text-sm font-bold uppercase tracking-wider mb-6 text-[#c9a84c]">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/247texis-/airports/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Airports</a></li>
+                    <li><a href="/247texis-/fleet/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Our Fleet</a></li>
+                    <li><a href="/247texis-/gallery/" class="text-white/80 hover:text-[#c9a84c] transition-colors">Gallery</a></li>
+                    <li><a href="/247texis-/index.html#faq" class="text-white/80 hover:text-[#c9a84c] transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Col 4: Contact Info -->
+            <div class="space-y-3">
+                <h4 class="font-title text-sm font-bold uppercase tracking-wider mb-6 text-[#c9a84c]">Contact Info</h4>
+                <p class="text-white/85 text-sm">Scotland 247 Taxis Ltd<br>Edinburgh & Aberdeen</p>
+                <div class="space-y-2 pt-2 text-sm">
+                    <a href="tel:+447469598219" class="flex items-center gap-2 text-white hover:text-[#c9a84c] transition-colors">
+                        <span class="material-symbols-outlined text-xs"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span> +44 7469 598219
+                    </a>
+                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center gap-2 text-white hover:text-[#c9a84c] transition-colors">
+                        <svg class="w-4 h-4 fill-current text-white inline-block align-middle mr-2" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/>
+                        </svg>
+                        +44 7469 598219
+                    </a>
+                    <a href="mailto:bookings@scotland247taxis.co.uk" class="flex items-center gap-2 text-white hover:text-[#c9a84c] transition-colors">
+                        <span class="material-symbols-outlined text-xs"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span> bookings@scotland247taxis.co.uk
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 space-y-4 md:space-y-0">
+            <p>&copy; 2026 Scotland 247 Taxis. All rights reserved.</p>
+            <div class="flex space-x-6 font-body-md">
+                <a href="/247texis-/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="/247texis-/terms/" class="hover:text-white transition-colors">Terms & Conditions</a>
+                <a href="/247texis-/cookies/" class="hover:text-white transition-colors">Cookies Policy</a>
+                <a href="/247texis-/accessibility/" class="hover:text-white transition-colors">Accessibility Statement</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
     <script>
@@ -2382,19 +2374,15 @@
     <!-- JS Click-to-Flip Handler for Mobile Package Cards -->
     <script id="hire-flip-cards-handler">
     document.addEventListener('DOMContentLoaded', function() {
-        // Detect touch support (mobile, tablets, touch screens)
-        var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
-        
         document.querySelectorAll('.flip-card-container').forEach(function(cardContainer) {
             cardContainer.addEventListener('click', function(e) {
-                // If the tap was on a link or button, don't toggle the flip (allow click to propagate)
+                // If user clicked link/button inside card back, let click event proceed to CTA
                 if (e.target.closest('a') || e.target.closest('button')) {
                     return;
                 }
                 
-                // Trigger flip on touch devices, small viewports (< 1024px), or if hover is not supported
-                if (isTouch || window.innerWidth < 1024) {
-                    var card = this.querySelector('.flip-card');
+                var card = this.querySelector('.flip-card');
+                if (card) {
                     card.classList.toggle('flipped');
                 }
             });
