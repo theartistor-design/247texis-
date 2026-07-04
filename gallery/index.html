@@ -294,7 +294,86 @@
             transform: translateY(0);
         }
   </style>
-</head>
+
+    <style id="unified-mobile-menu-styles">
+        /* Unified Mobile Menu Overlay Styles */
+        #mobile-menu-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100vh !important;
+            background: rgba(10, 31, 68, 0.98) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            backdrop-filter: blur(10px) !important;
+            z-index: 9999 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+        #mobile-menu-overlay button#mobile-menu-close {
+            position: absolute !important;
+            top: 24px !important;
+            right: 24px !important;
+            color: #ffffff !important;
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            width: auto !important;
+            height: auto !important;
+            border-radius: 0 !important;
+        }
+        #mobile-menu-overlay button#mobile-menu-close svg {
+            width: 28px !important;
+            height: 28px !important;
+            fill: #ffffff !important;
+        }
+        #mobile-menu-overlay nav {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 320px !important;
+            gap: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        #mobile-menu-overlay nav a {
+            color: #ffffff !important;
+            opacity: 1 !important;
+            font-size: 22px !important;
+            font-weight: 500 !important;
+            text-align: center !important;
+            display: block !important;
+            padding: 18px 0 !important;
+            width: 100% !important;
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            transition: color 0.2s ease !important;
+        }
+        #mobile-menu-overlay nav a:hover,
+        #mobile-menu-overlay nav a:focus,
+        #mobile-menu-overlay nav a:active {
+            color: #c9a84c !important;
+            background: transparent !important;
+            opacity: 1 !important;
+        }
+    </style>
+
+    </head>
 <body class="bg-surface text-on-surface font-body-md antialiased flex flex-col min-h-screen" style="background-color: #080F1E;">
 
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
@@ -717,8 +796,21 @@
             overlay=document.getElementById('mobile-menu-overlay'),
             closeBtn=document.getElementById('mobile-menu-close');
         if(!menuBtn||!overlay)return;
-        function openMenu(){overlay.classList.remove('opacity-0','pointer-events-none');overlay.classList.add('opacity-100');document.body.style.overflow='hidden';}
-        function closeMenu(){overlay.classList.add('opacity-0','pointer-events-none');overlay.classList.remove('opacity-100');document.body.style.overflow='';}
+        function openMenu() {
+            overlay.classList.remove('opacity-0','pointer-events-none');
+            overlay.classList.add('opacity-100', 'open');
+            document.body.style.overflow = 'hidden';
+            var waFloat = document.querySelector('a[href*="wa.me/447469598219"].fixed, a[aria-label*="WhatsApp"].fixed, a[href*="wa.me"].fixed');
+            if (waFloat) waFloat.style.setProperty('display', 'none', 'important');
+        }
+        function closeMenu() {
+            overlay.classList.add('opacity-0','pointer-events-none');
+            overlay.classList.remove('opacity-100', 'open');
+            document.body.style.overflow = '';
+            if (submenu) closeSubmenu();
+            var waFloat = document.querySelector('a[href*="wa.me/447469598219"].fixed, a[aria-label*="WhatsApp"].fixed, a[href*="wa.me"].fixed');
+            if (waFloat) waFloat.style.setProperty('display', 'flex', 'important');
+        }
         menuBtn.addEventListener('click',openMenu);
         menuBtn.addEventListener('touchend',function(e){e.preventDefault();openMenu();});
         if(closeBtn){closeBtn.addEventListener('click',closeMenu);closeBtn.addEventListener('touchend',function(e){e.preventDefault();closeMenu();});}
