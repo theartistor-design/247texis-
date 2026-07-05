@@ -5522,18 +5522,16 @@ Message: ${message}`;
                         overlay.classList.add('opacity-0', 'pointer-events-none');
                         overlay.classList.remove('opacity-100', 'open');
                         document.body.style.overflow = '';
-                        
-                        // Show WhatsApp button
-                        var waFloat = document.querySelector('a[href*="wa.me/447469598219"].fixed, a[aria-label*="WhatsApp"].fixed, a[href*="wa.me"].fixed');
-                        if (waFloat) waFloat.style.setProperty('display', 'flex', 'important');
                     }
                     
                     setTimeout(function() {
                         if (window.ScrollTrigger) {
                             ScrollTrigger.refresh();
                         }
-                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 50);
+                        const yOffset = -100;
+                        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                    }, 100);
                 }
             });
         });
@@ -5548,7 +5546,13 @@ Message: ${message}`;
                 }
                 var targetEl = document.querySelector(window.location.hash);
                 if (targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const yOffset = -100;
+                    const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                }
+            }, 500); // 500ms delay to allow layout shift and GSAP to settle
+        }
+    });
                 }
             }, 350);
         }
