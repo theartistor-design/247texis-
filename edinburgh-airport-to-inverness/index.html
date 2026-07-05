@@ -1231,7 +1231,7 @@
 </div>
 </div>
 <!-- Bento-style Form Container -->
-<div class="bg-white p-10 rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] max-w-[900px] mx-auto hero-form-card relative" id="quote">
+<div class="bg-white p-10 rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] max-w-[600px] mx-auto hero-form-card relative p-4 md:p-[28px]" id="quote">
     <!-- Form Header -->
     <div class="text-center mb-8">
         <h2 class="font-headline-lg text-3xl font-bold text-deep-navy mb-2">Get Your Fixed Price Quote</h2>
@@ -1254,20 +1254,20 @@
 
     <form class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
         <!-- STEP 1: Journey Details -->
-        <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4" data-step="1">
+        <div class="step-content col-span-3 flex flex-col gap-[12px]" data-step="1">
             <!-- Journey Type -->
-            <div class="col-span-1">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Journey Type</label>
-                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="journeyType">
+            <div>
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Journey Type</label>
+                <select style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="journeyType">
                     <option value="one-way">One Way</option>
                     <option value="return">Return</option>
                     <option value="hourly">Hourly Hire</option>
                 </select>
             </div>
             <!-- Service Type -->
-            <div class="col-span-1">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Service Type</label>
-                <select class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="serviceType">
+            <div>
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Service Type</label>
+                <select style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" id="serviceType">
                     <option value="">Select Service Type</option>
                     <option value="Airport Transfer">Airport Transfer</option>
                     <option value="Wedding Hire">Wedding Hire</option>
@@ -1281,27 +1281,27 @@
                 </select>
             </div>
             <!-- Number of Hours -->
-            <div class="col-span-1 hidden" id="hours-container">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Number of Hours (Minimum: 2)</label>
-                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" type="number" id="numberOfHours" min="2" value="2"/>
+            <div class="hidden" id="hours-container">
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Number of Hours (Minimum: 2)</label>
+                <input style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" type="number" id="numberOfHours" min="2" value="2"/>
             </div>
             
             <!-- Pickup Location -->
-            <div class="col-span-1">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Pickup Location</label>
-                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Pickup Address or Airport" type="text" id="pickupLocation" required/>
+            <div>
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Pickup Location</label>
+                <input style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Pickup Address or Airport" type="text" id="pickupLocation" required/>
             </div>
             <!-- Extra Stops Field -->
-            <div class="col-span-1" id="extra-stops-container">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Extra Stops (Optional)</label>
-                <p class="text-gray-500 text-[12px] mb-2">Add as many stops as you need along your route</p>
-                <div class="space-y-2 p-3 bg-[#f8f8f8] border border-[#e0e0e0] rounded-[10px] w-full" id="extra-stops-wrapper">
+            <div id="extra-stops-container">
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Extra Stops (Optional)</label>
+                <p style="font-size: 11px; color: #9CA3AF; margin-bottom: 6px;" class="font-body-md">Add as many stops as you need</p>
+                <div style="padding: 10px; border-radius: 10px; border: 1px solid #e0e0e0; background: #f8f8f8;" class="space-y-2 w-full" id="extra-stops-wrapper">
                     <!-- Stop Row -->
-                    <div class="flex items-center gap-2 extra-stop-row" style="animation: slideDown 0.2s ease;">
-                        <input type="text" class="extra-stop-input flex-1 bg-transparent border-none outline-none text-[14px] p-2 text-deep-navy" placeholder="Stop 1 — Enter location" />
+                    <div class="flex items-center gap-2 extra-stop-row" style="animation: slideDown 0.2s ease; height: 44px;">
+                        <input type="text" style="font-size: 13px; padding: 8px 12px;" class="extra-stop-input flex-1 bg-transparent border-none outline-none text-deep-navy" placeholder="Stop 1 — Enter location" />
                         <div class="flex items-center gap-2 shrink-0">
-                            <button type="button" class="remove-stop-btn flex items-center justify-center text-[16px] text-[#999999] hover:bg-red-50 hover:text-red-600 border border-[#e0e0e0] rounded-lg transition-colors duration-150 cursor-pointer hidden" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px;">✕</button>
-                            <button type="button" class="add-stop-btn flex items-center justify-center text-[20px] font-bold text-white bg-[#c9a84c] hover:bg-[#b0923d] rounded-lg transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px;">+</button>
+                            <button type="button" class="remove-stop-btn flex items-center justify-center text-[#999999] hover:bg-red-50 hover:text-red-600 border border-[#e0e0e0] transition-colors duration-150 cursor-pointer hidden" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px; border-radius: 6px; font-size: 14px;">✕</button>
+                            <button type="button" class="add-stop-btn flex items-center justify-center text-white bg-[#c9a84c] hover:bg-[#b0923d] transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px; border-radius: 6px; font-size: 18px; border: none;">+</button>
                         </div>
                     </div>
                 </div>
@@ -1309,25 +1309,24 @@
             </div>
 
             <!-- Drop-off Location -->
-            <div class="col-span-1" id="drop-off-container">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Drop-off Location</label>
-                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Destination" type="text" id="dropoffLocation" required/>
+            <div id="drop-off-container">
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Drop-off Location</label>
+                <input style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Enter Destination" type="text" id="dropoffLocation" required/>
             </div>
             <!-- Flight Number -->
-            <div id="flight-container" style="display:none"><div class="col-span-1">
-                <label class="text-[12px] font-bold text-deep-navy mb-1 block">Flight Number</label>
-                <input class="w-full border border-[#e0e0e0] bg-[#f8f8f8] rounded-[10px] p-[12px_16px] text-[14px] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Optional" type="text" id="flightNumber"/>
-            </div></div>
+            <div class="hidden" id="flight-container">
+                <label style="font-size: 12px; font-weight: 600; margin-bottom: 4px;" class="text-deep-navy block">Flight Number</label>
+                <input style="height: 44px; padding: 8px 14px; font-size: 13px; border-radius: 8px;" class="w-full border border-[#e0e0e0] bg-[#f8f8f8] font-body-md text-deep-navy focus:bg-white focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none transition-all duration-200" placeholder="Optional" type="text" id="flightNumber"/>
+            </div>
 
             <!-- Navigation -->
-            <div class="col-span-3 flex justify-end mt-4">
+            <div class="flex justify-end mt-4">
                 <button type="button" class="px-6 py-3 bg-[#c9a84c] hover:bg-[#b0923d] text-white font-bold rounded-lg transition-all duration-200 shadow-md" onclick="handleNextStep(1)">
                     Next Step
                 </button>
             </div>
         </div>
-
-        <!-- STEP 2: Vehicle & Extras -->
+            <!-- STEP 2: Vehicle & Extras -->
         <div class="step-content col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4 hidden" data-step="2">
             <!-- Date -->
             <div class="col-span-1">
@@ -3002,11 +3001,12 @@ Message: ${message}`;
                     var newRow = document.createElement('div');
                     newRow.className = 'flex items-center gap-2 extra-stop-row';
                     newRow.style.animation = 'slideDown 0.2s ease';
+                    newRow.style.height = '44px';
                     newRow.innerHTML = [
-                        '<input type="text" class="extra-stop-input flex-1 bg-transparent border-none outline-none text-[14px] p-2 text-deep-navy" />',
+                        '<input type="text" style="font-size: 13px; padding: 8px 12px;" class="extra-stop-input flex-1 bg-transparent border-none outline-none text-deep-navy" />',
                         '<div class="flex items-center gap-2 shrink-0">',
-                            '<button type="button" class="remove-stop-btn flex items-center justify-center text-[16px] text-[#999999] hover:bg-red-50 hover:text-red-600 border border-[#e0e0e0] rounded-lg transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px;">✕</button>',
-                            '<button type="button" class="add-stop-btn flex items-center justify-center text-[20px] font-bold text-white bg-[#c9a84c] hover:bg-[#b0923d] rounded-lg transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px;">+</button>',
+                            '<button type="button" class="remove-stop-btn flex items-center justify-center text-[#999999] hover:bg-red-50 hover:text-red-600 border border-[#e0e0e0] transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px; border-radius: 6px; font-size: 14px;">✕</button>',
+                            '<button type="button" class="add-stop-btn flex items-center justify-center text-white bg-[#c9a84c] hover:bg-[#b0923d] transition-colors duration-150 cursor-pointer" style="width: 36px; height: 36px; min-width: 44px; min-height: 44px; border-radius: 6px; font-size: 18px; border: none;">+</button>',
                         '</div>'
                     ].join('');
 
