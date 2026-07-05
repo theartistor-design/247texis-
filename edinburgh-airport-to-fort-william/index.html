@@ -112,6 +112,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer defer></script>
 <style>
+        /* Scroll offset fix for fixed header */
+        #services, #reviews, #faq, #contact, #fleet, #quote {
+            scroll-margin-top: 100px !important;
+        }
+
         @keyframes slideDown {
             from { height: 0; opacity: 0; transform: translateY(-10px); }
             to { height: auto; opacity: 1; transform: translateY(0); }
