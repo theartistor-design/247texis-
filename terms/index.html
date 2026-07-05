@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<meta name="robots" content="index, follow">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Terms of Service | Scotland 247 Taxis</title>
 <link rel="preload" as="image" href="../hero-unified-bg.jpg?v=2"/>
 <meta name="description" content="Scotland's premier private hire network. Fixed-price airport transfers across 5 Scottish airports, private Highland day tours, executive travel, vehicle hire & more. Book via WhatsApp. Minimum 12 hours advance notice required."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;600;700&amp;display=swap"></noscript>
 
 
 <script id="tailwind-config">
@@ -110,9 +113,15 @@
         },
       }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 <style>
+        /* Prevent font blocking */
+        @font-face {
+            font-family: 'Material Symbols Outlined';
+            font-display: optional;
+        }
+        
         /* Scroll offset fix for fixed header */
         #services, #reviews, #faq, #contact, #fleet, #quote {
             scroll-margin-top: 100px !important;
@@ -1278,8 +1287,19 @@ footer#contact .social-icon-wrapper:hover svg,
         }
     </style>
 
-    </head>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+    <link rel="canonical" href="https://scotland247taxi.co.uk/terms/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scotland247taxi.co.uk/terms/">
+<meta property="og:image" content="https://scotland247taxi.co.uk/hero-unified-bg.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms of Service | Scotland 247 Taxis">
+<meta name="twitter:description" content="Scotland's premier private hire network. Fixed-price airport transfers across 5 Scottish airports, private Highland day tours, executive travel, vehicle hire & more. Book via WhatsApp. Minimum 12 hours advance notice required.">
+<meta name="twitter:image" content="https://scotland247taxi.co.uk/hero-unified-bg.jpg">
+</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"></noscript>
 <style>
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined', sans-serif !important;
@@ -1298,9 +1318,9 @@ footer#contact .social-icon-wrapper:hover svg,
 <header class="fixed w-full top-0 z-50 bg-mist-white dark:bg-deep-navy shadow-sm dark:shadow-none border-b border-surface-container-highest dark:border-primary-container transition-all duration-200 ease-in-out">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a href="/index.html#home" class="flex items-center">
-                <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1"/ loading="lazy" decoding="async" width="256" height="256">
+                <img src="../logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" class="h-16 w-auto object-contain py-1" loading="lazy" decoding="async" width="256" height="256">
             </a>
-<nav class="hidden lg:flex items-center space-x-8">
+<nav class="hidden lg:flex items-center space-x-8" aria-label="Main navigation">
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/index.html#home">Home</a>
 <div class="relative group nav-dropdown-trigger">
     <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md flex items-center gap-1 cursor-pointer" href="index.html#services">
@@ -1392,7 +1412,7 @@ footer#contact .social-icon-wrapper:hover svg,
 </nav>
 <div class="flex items-center space-x-4">
 
-<button id="mobile-menu-btn" class="lg:hidden text-deep-navy">
+<button id="mobile-menu-btn" class="lg:hidden text-deep-navy" aria-label="Open navigation menu" aria-expanded="false">
 <span class="material-symbols-outlined"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
 </button>
 </div>
@@ -1445,7 +1465,10 @@ footer#contact .social-icon-wrapper:hover svg,
             <!-- Left Column: Company Info -->
             <div class="space-y-6">
                 <div class="inline-block">
-                    <img src="/logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" style="width: 120px; height: auto; mix-blend-mode: multiply;">
+                    <picture>
+<source srcset="/logo-transparent.webp?v=2" type="image/webp">
+<img src="/logo-transparent.png?v=2" alt="Scotland 247 Taxis Logo" style="width: 120px; height: auto; mix-blend-mode: multiply;" loading="eager" decoding="async">
+</picture>
                 </div>
                 <p style="color: #6B7280; font-size: 14px; margin-top: 12px; line-height: 1.5;">Scotland's Premier Private Hire & Travel Network</p>
                 <div class="space-y-3 pt-2 text-sm text-[#0A1F44]">
@@ -1651,11 +1674,14 @@ footer#contact .social-icon-wrapper:hover svg,
     });
     </script>
 
-<script src="/nav.js"></script>
+<script src="/nav.js" defer></script>
 
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-[56px] h-[56px] rounded-[13px] shadow-2xl hover:scale-110 transition-all duration-300 group overflow-hidden" aria-label="Chat with us on WhatsApp">
-    <img src="/whatsapp-logo.jpg" alt="WhatsApp" class="w-full h-full object-cover scale-[1.38] transition-transform duration-300">
+    <picture>
+<source srcset="/whatsapp-logo.webp" type="image/webp">
+<img src="/whatsapp-logo.jpg" alt="WhatsApp" class="w-full h-full object-cover scale-[1.38] transition-transform duration-300" loading="lazy" decoding="async">
+</picture>
 </a>
 </body>
 </html>
