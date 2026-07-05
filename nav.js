@@ -37,36 +37,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close mobile menu when any link is tapped
-  document.querySelectorAll('.mobile-menu a, #mobile-menu-overlay a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (mobileMenu) {
-        mobileMenu.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-        mobileMenu.classList.remove('opacity-100');
-        document.body.style.overflow = '';
-      }
+  // Reviews and FAQ links redirect and auto-close logic
+  const isHome = 
+    window.location.pathname === '/' ||
+    window.location.pathname === '/index.html' ||
+    window.location.pathname.endsWith('/') ||
+    window.location.pathname.endsWith('/index.html');
+  
+  const base = 'https://scotland247taxi.co.uk';
+  
+  if (!isHome) {
+    const reviewLinks = document.querySelectorAll(
+      '.mobile-menu a[href="#reviews"], .nav-overlay a[href="#reviews"], #mobile-menu-overlay a[href="#reviews"]'
+    );
+    reviewLinks.forEach(function(a) {
+      a.href = base + '/#reviews';
     });
-  });
-
-  // Inner pages base path anchor link replacement
-  const path = window.location.pathname;
-  const isHomepage = path === '/' || path === '/index.html' || path.endsWith('/') || path.endsWith('/index.html');
-
-  if (!isHomepage) {
-    const baseUrl = 'https://scotland247taxi.co.uk';
-    document.querySelectorAll('.mobile-menu a[href="#fleet"], #mobile-menu-overlay a[href="#fleet"]').forEach(function(a) {
-      a.href = baseUrl + '/#fleet';
-    });
-    document.querySelectorAll('.mobile-menu a[href="#reviews"], #mobile-menu-overlay a[href="#reviews"]').forEach(function(a) {
-      a.href = baseUrl + '/#reviews';
-    });
-    document.querySelectorAll('.mobile-menu a[href="#faq"], #mobile-menu-overlay a[href="#faq"]').forEach(function(a) {
-      a.href = baseUrl + '/#faq';
-    });
-    document.querySelectorAll('.mobile-menu a[href="#contact"], #mobile-menu-overlay a[href="#contact"]').forEach(function(a) {
-      a.href = baseUrl + '/#contact';
+    
+    const faqLinks = document.querySelectorAll(
+      '.mobile-menu a[href="#faq"], .nav-overlay a[href="#faq"], #mobile-menu-overlay a[href="#faq"]'
+    );
+    faqLinks.forEach(function(a) {
+      a.href = base + '/#faq';
     });
   }
+  
+  document.querySelectorAll(
+    '.mobile-menu a, .nav-overlay a, #mobile-menu-overlay a, #mobile-services-submenu a'
+  ).forEach(function(link) {
+    link.addEventListener('click', function() {
+      const menu = document.querySelector(
+        '.mobile-menu, .nav-overlay, #mobile-menu, #nav-overlay, #mobile-menu-overlay'
+      );
+      if (menu) {
+        menu.classList.remove('active','open');
+        menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.classList.remove('opacity-100');
+      }
+      const submenu = document.getElementById('mobile-services-submenu');
+      if (submenu) {
+        submenu.classList.add('translate-x-full');
+        submenu.classList.remove('translate-x-0');
+      }
+      document.body.style.overflow = '';
+    });
+  });
 });
