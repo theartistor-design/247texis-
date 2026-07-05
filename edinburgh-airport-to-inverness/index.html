@@ -112,6 +112,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer defer defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer defer defer></script>
 <style>
+        /* Mobile responsive adjustments */
+        @media (max-width: 767.98px) {
+            /* Hero padding top fix for mobile */
+            section.relative {
+                padding-top: 80px !important;
+            }
+            /* Breadcrumbs mobile styling */
+            .hero-breadcrumbs {
+                color: rgba(255,255,255,0.7) !important;
+                font-size: 11px !important;
+                letter-spacing: 0.08em !important;
+                margin-bottom: 12px !important;
+                display: block !important;
+            }
+            .hero-breadcrumbs a,
+            .hero-breadcrumbs span {
+                display: inline-block !important;
+                vertical-align: middle !important;
+                font-size: 11px !important;
+                color: rgba(255,255,255,0.7) !important;
+            }
+        }
+        
+        /* Hero subheading color white fix */
+        section.relative h2 {
+            color: #ffffff !important;
+            opacity: 0.88 !important;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
@@ -2974,4 +3003,5 @@ Message: ${message}`;
     });
     </script>
 
+<script src="/nav.js"></script>
 </body></html>
