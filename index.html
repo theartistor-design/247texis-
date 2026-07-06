@@ -897,6 +897,36 @@
             border-bottom: 2px solid #c9a84c;
         }
         
+
+        /* Book Now Nav Button Override */
+        a.book-now-nav-btn {
+            color: #ffffff !important;
+            background-color: #005EB8 !important;
+            border-bottom: none !important;
+            padding: 8px 18px !important;
+            border-radius: 9999px !important;
+            font-weight: 700 !important;
+            font-size: 13px !important;
+            display: inline-block !important;
+            line-height: 1.5 !important;
+        }
+        a.book-now-nav-btn::after {
+            display: none !important;
+        }
+        a.book-now-nav-btn:hover {
+            color: #ffffff !important;
+            background-color: #004B93 !important;
+            transform: translateY(-1px);
+        }
+        header.scrolled nav a.book-now-nav-btn {
+            color: #ffffff !important;
+            background-color: #005EB8 !important;
+        }
+        header.scrolled nav a.book-now-nav-btn:hover {
+            color: #ffffff !important;
+            background-color: #004B93 !important;
+        }
+
 </style>
 
 <script type="application/ld+json">
@@ -1557,7 +1587,7 @@
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#faq">FAQ</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/gallery/">Gallery</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="#contact">Contact</a>
+<a href="/index.html#quote" class="book-now-nav-btn">Book Now</a>
 </nav>
 <div class="flex items-center space-x-4">
 
@@ -3661,70 +3691,7 @@
             </div>
 </div>
 </section>
-<!-- Contact Us Section -->
-<section id="contact-us" class="py-24 bg-mist-white px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Contact Us</h2>
-<div class="w-24 h-1 bg-[#005EB8] mx-auto mb-8"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
-    Have a question, or need a custom booking? Send us a message below or reach out directly.
-</p>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-12 items-start">
-    <div class="space-y-6 bg-deep-navy border border-[#c9a84c]/40 rounded-[16px] p-10 text-white shadow-xl">
-        <h3 class="font-title-md text-xl text-[#c9a84c] font-bold">Get In Touch</h3>
-        <div class="space-y-4 font-body-md text-body-md text-mist-white/90">
-            <div class="pt-2">
-                <!-- WhatsApp Button -->
-                <div class="space-y-3">
-                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-[50px] w-full border border-white/20 hover:-translate-y-0.5 transition-all duration-300 shadow-md">
-                        <span class="material-symbols-outlined text-white"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current text-white" viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/></svg></span>
-                        <span>WhatsApp Us: +44 7469 598219</span>
-                    </a>
-                </div>
-            </div>
-            <div class="space-y-4 font-body-md text-body-md text-mist-white/80 pt-4 border-t border-white/10">
-                <p class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-[#c9a84c] mt-1"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
-                    <span>14 St Giles Street, Edinburgh, EH1 1PT</span>
-                </p>
-                <p class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-[#c9a84c]"><svg class="w-4 h-4 fill-current text-[#c9a84c]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.507 8.49-.006 6.66-5.343 11.997-11.957 11.997-2.005-.001-3.973-.5-5.813-1.455L0 24zm6.59-4.846c1.785 1.058 3.549 1.613 5.408 1.614 5.387 0 9.773-4.386 9.778-9.775.002-2.612-1.013-5.068-2.859-6.915C17.135 2.23 14.686 1.21 12.008 1.21c-5.392 0-9.78 4.387-9.784 9.777-.001 1.897.498 3.738 1.442 5.361l-.974 3.559 3.652-.958zm12.385-6.52c-.27-.135-1.602-.79-1.85-.88-.248-.09-.43-.135-.61.135-.18.27-.7 1.077-.857 1.258-.158.18-.317.203-.588.068-.27-.135-1.14-.42-2.17-1.341-.803-.715-1.344-1.6-1.503-1.87-.159-.27-.017-.417.118-.552.122-.121.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.61-1.467-.834-2.01-.22-.53-.443-.459-.61-.468l-.513-.009c-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.904 4.608 4.07 1.493.647 2.463.87 3.324.966.865.096 1.652.072 2.274-.02.693-.102 1.602-.656 1.83-1.287.228-.63.228-1.173.159-1.287-.068-.112-.248-.18-.518-.315z"/></svg></span>
-                    <a href="https://wa.me/447469598219" target="_blank" rel="noopener" class="hover:text-[#c9a84c] transition-colors">+44 7469 598219</a>
-                </p>
-                <p class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-[#c9a84c]"><svg class="w-[1.2em] h-[1.2em] inline-block align-middle fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
-                    <a href="mailto:info@scotland247taxis.co.uk" class="hover:text-[#c9a84c] transition-colors">info@scotland247taxis.co.uk</a>
-                </p>
-            </div></div>
-    </div>
-
-       <!-- Contact Form Column -->
-       <form id="contact-form" class="space-y-4 bg-white rounded-[16px] p-8 w-full md:max-w-md" style="box-shadow: 0 4px 24px rgba(0,0,0,0.08); border: 1px solid rgba(201,168,76,0.15);">
-           <div>
-               <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Full Name</label>
-               <input class="w-full border-[#c9a84c]/20 focus:ring-0 focus:border-[#c9a84c] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors rounded-lg" placeholder="Your Name" type="text" id="fullName" name="fullName" required/>
-           </div>
-           <div>
-               <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">WhatsApp Number</label>
-               <input class="w-full border-[#c9a84c]/20 focus:ring-0 focus:border-[#c9a84c] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors rounded-lg" placeholder="Your WhatsApp Number" type="text" id="whatsappNumber" name="whatsappNumber" required/>
-           </div>
-           <div>
-               <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Email Address (Optional)</label>
-               <input class="w-full border-[#c9a84c]/20 focus:ring-0 focus:border-[#c9a84c] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors rounded-lg" placeholder="Your Email" type="email" id="emailAddress" name="emailAddress"/>
-           </div>
-           <div>
-               <label class="font-label-sm text-label-sm text-deep-navy mb-1 block">Message</label>
-               <textarea class="w-full border-[#c9a84c]/20 focus:ring-0 focus:border-[#c9a84c] focus:border-b-2 border p-3 font-body-md text-body-md transition-colors rounded-lg" style="height: 140px;" placeholder="Write your message here..." id="message" name="message" required></textarea>
-           </div>
-           <button class="w-full bg-[#c9a84c] hover:bg-[#b0923d] text-black font-bold h-[52px] rounded-[50px] shadow-md hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2" type="submit">
-               <svg class="w-5 h-5 fill-current text-black" viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.908.533 3.69 1.46 5.215l-1.46 4.326 4.43-1.425a9.92 9.92 0 004.574 1.118c5.524 0 10.004-4.48 10.004-10.004C22.008 6.48 17.528 2 12.004 2zm0 1.662c4.6 0 8.342 3.743 8.342 8.342 0 4.6-3.742 8.342-8.342 8.342-1.637 0-3.155-.47-4.444-1.282l-.318-.2-.25.08-2.61.84.858-2.54-.158-.255a8.28 8.28 0 01-1.076-4.032c.005-4.598 3.747-8.34 8.342-8.34zm-1.895 2.505c-.256 0-.555.074-.793.3-.238.225-.908.887-.908 2.162s.927 2.506 1.056 2.68c.13.172 1.796 2.744 4.35 3.847.607.263 1.08.42 1.45.538.61.194 1.164.167 1.603.102.49-.074 1.507-.617 1.718-1.212.21-.595.21-1.105.148-1.21-.06-.107-.225-.172-.47-.294-.246-.123-1.453-.717-1.678-.8-.225-.082-.39-.123-.553.123-.164.246-.634.8-.776.963-.142.164-.284.184-.53.06-.246-.122-1.037-.382-1.975-1.22-.73-.65-1.222-1.455-1.365-1.7-.142-.246-.015-.378.108-.5.11-.11.246-.287.37-.43.122-.144.163-.246.245-.41.083-.165.042-.308-.02-.43-.063-.124-.555-1.338-.76-1.835-.2-.487-.404-.42-.555-.427-.142-.007-.306-.007-.47-.007z"/></svg>
-               <span>Send Message</span>
-           </button>
-       </form>
-    </div>
-</div>
-</section>
 </main>
 <footer id="contact" style="background: #ffffff; border-top: 2px solid #c9a84c;" class="w-full p-[48px_24px_40px] md:p-[60px_40px_40px]">
     <div class="max-w-container-max mx-auto">
@@ -3763,7 +3730,7 @@
                     <li><a href="/services/executive-travel/" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Executive Travel</a></li>
                     <li><a href="/services/vehicle-hire/" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Vehicle Hire</a></li>
                     <li><a href="/#reviews" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Reviews</a></li>
-                    <li><a href="/#contact" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Contact</a></li>
+                    <li><a href="/index.html#quote" class="book-now-nav-btn">Book Now</a></li>
                 </ul>
             </div>
 
@@ -4598,36 +4565,7 @@ Notes: ${notes}`;
             checkLuggageUpgrade();
         };
 
-        // Contact form WhatsApp integration
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const name = contactForm.name.value;
-                const whatsapp = contactForm.whatsapp.value;
-                const email = contactForm.email.value;
-                const message = contactForm.message.value;
-                
-                const text = 
-`New Contact Enquiry
-Name: ${name}
-WhatsApp: ${whatsapp}
-Email: ${email}
-Message: ${message}`;
-                
-                window.open(`https://wa.me/447469598219?text=${encodeURIComponent(text)}`, '_blank');
-                
-                // Show success message and replace form
-                contactForm.innerHTML = `<div class="p-6 rounded-[12px] text-center border-2 border-[#c9a84c] bg-[#0A1F44] text-white space-y-3">
-                    <svg class="w-12 h-12 text-[#c9a84c] mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h4 class="text-xl font-bold text-[#c9a84c] font-title">Thank you!</h4>
-                    <p class="text-sm">Your message has been sent to our WhatsApp. We will respond within minutes.</p>
-                </div>`;
-            });
-        }
+        
         
         // Compatibility check
         if (upgradeVehicleBtn) {
@@ -4664,7 +4602,7 @@ Message: ${message}`;
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#reviews">Reviews</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#faq">FAQ</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/gallery/">Gallery</a>
-        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="#contact">Contact</a>
+        <a class="book-now-mobile-btn bg-[#005EB8] text-white text-xl font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#004B93] transition-all duration-300 block w-64 mx-auto mt-4 text-center" href="/index.html#quote">Book Now</a>
     </nav>
 </div>
 
@@ -5515,30 +5453,7 @@ Message: ${message}`;
         }
         initExtraStops();
 
-        // Contact Us Form Submission
-        var contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                var name = contactForm.fullName.value;
-                var whatsapp = contactForm.whatsappNumber.value;
-                var email = contactForm.emailAddress.value;
-                var message = contactForm.message.value;
-                var text = encodeURIComponent(
-                    "New Contact Enquiry\n" +
-                    "Name: " + name + "\n" +
-                    "WhatsApp: " + whatsapp + "\n" +
-                    "Email: " + email + "\n" +
-                    "Message: " + message
-                );
-                window.open(
-                    "https://wa.me/447469598219?text=" + text,
-                    "_blank"
-                );
-                contactForm.reset();
-            });
-        }
+        
         // Handle clicks on local anchor links
         document.querySelectorAll('a[href^="#"], a[href*="index.html#"], a[href*="index.html#reviews"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {

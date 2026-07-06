@@ -877,6 +877,36 @@
             border-bottom: 2px solid #c9a84c;
         }
         
+
+        /* Book Now Nav Button Override */
+        a.book-now-nav-btn {
+            color: #ffffff !important;
+            background-color: #005EB8 !important;
+            border-bottom: none !important;
+            padding: 8px 18px !important;
+            border-radius: 9999px !important;
+            font-weight: 700 !important;
+            font-size: 13px !important;
+            display: inline-block !important;
+            line-height: 1.5 !important;
+        }
+        a.book-now-nav-btn::after {
+            display: none !important;
+        }
+        a.book-now-nav-btn:hover {
+            color: #ffffff !important;
+            background-color: #004B93 !important;
+            transform: translateY(-1px);
+        }
+        header.scrolled nav a.book-now-nav-btn {
+            color: #ffffff !important;
+            background-color: #005EB8 !important;
+        }
+        header.scrolled nav a.book-now-nav-btn:hover {
+            color: #ffffff !important;
+            background-color: #004B93 !important;
+        }
+
 </style>
 
 <script type="application/ld+json">
@@ -1466,7 +1496,7 @@ footer#contact .social-icon-wrapper:hover svg,
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/index.html#reviews">Reviews</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/index.html#faq">FAQ</a>
 <a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/gallery/">Gallery</a>
-<a class="text-charcoal-text dark:text-surface-variant hover:text-prestige-gold nav-link-underline font-body-md text-body-md" href="/index.html#contact">Contact</a>
+<a href="/index.html#quote" class="book-now-nav-btn">Book Now</a>
 </nav>
 <div class="flex items-center space-x-4">
 
@@ -1718,7 +1748,7 @@ footer#contact .social-icon-wrapper:hover svg,
                     <li><a href="/services/executive-travel/" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Executive Travel</a></li>
                     <li><a href="/services/vehicle-hire/" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Vehicle Hire</a></li>
                     <li><a href="/#reviews" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Reviews</a></li>
-                    <li><a href="/#contact" class="block py-[6px] text-sm text-[#0A1F44] hover:text-[#c9a84c] transition-colors duration-200">Contact</a></li>
+                    <li><a href="/index.html#quote" class="book-now-nav-btn">Book Now</a></li>
                 </ul>
             </div>
 
@@ -1765,7 +1795,7 @@ footer#contact .social-icon-wrapper:hover svg,
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/index.html#reviews">Reviews</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/index.html#faq">FAQ</a>
         <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/gallery/">Gallery</a>
-        <a class="text-white text-2xl font-semibold hover:text-[#c9a84c] py-3 block min-h-[48px]" href="/index.html#contact">Contact</a>
+        <a class="book-now-mobile-btn bg-[#005EB8] text-white text-xl font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#004B93] transition-all duration-300 block w-64 mx-auto mt-4 text-center" href="/index.html#quote">Book Now</a>
     </nav>
 </div>
 <div id="mobile-services-submenu" class="fixed inset-0 bg-[#001A3F] z-[200] transform translate-x-full transition-transform duration-300 flex flex-col p-6 overflow-y-auto">
